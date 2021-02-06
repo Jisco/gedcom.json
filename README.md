@@ -43,13 +43,13 @@ Just run npx ts-node src/index.ts  with the wanted flags. Eg if you run "npm run
 In your js\ts file you can import the parsing file via
 
 ```typescript
-import { JsonParsing } from "gedcom.json";
+import { JsonParsing, ParsingOptions } from "gedcom.json";
 ```
 
-Create an new parsing object.
+Create an new parsing options object.
 
 ```typescript
-let parse = new JsonParsing();
+let parsingOptions = new ParsingOptions();
 ```
 
 Then you have to set the path to the gedcom and the config file respectively the gedcom content and the config as string.
@@ -57,22 +57,28 @@ Then you have to set the path to the gedcom and the config file respectively the
 File content:
 
 ```typescript
- parse.SetFilePath("examples/simpsons.ged");
- parse.SetConfigFile("options/version551.yaml");
+ parsingOptions.SetFilePath("examples/simpsons.ged");
+ parsingOptions.SetConfigFile("options/version551.yaml"); // optional! uses options/version551.yaml by default
 ```
 
 String content:
 
 ```typescript
- parse.SetText(`
+ parsingOptions.SetText(`
 0 HEAD
 ...
 0TRLR
 `);
- parse.SetConfig(`
+ parsingOptions.SetConfig(`
 Definition:
 ...
 `);
+```
+
+Create an new parsing object.
+
+```typescript
+let parse = new JsonParsing(parsingOptions);
 ```
 
 To get the result there two methods for parsing of file or string content. One sync with callbacks and one that returns an promise.
