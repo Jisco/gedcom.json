@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/Jisco/gedcom.json.png?branch=master)](https://travis-ci.com/Jisco/gedcom.json) [![codecov](https://codecov.io/gh/Jisco/gedcom.json/branch/master/graph/badge.svg?token=MQ5CNQYFPU)](https://codecov.io/gh/Jisco/gedcom.json) [![Known Vulnerabilities](https://snyk.io/test/github/Jisco/gedcom.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Jisco/gedcom.json?targetFile=package.json)
 
+Live example: [CodeSandbox](https://codesandbox.io/s/blissful-elbakyan-tofq8?file=/index.html)
+
 ## Description
 
 This package can be used to parse a file or a string from gedcom format to an object. The object can be used for further data processing or just to create an JSON file. 
