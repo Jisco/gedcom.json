@@ -12,6 +12,7 @@
         "**/*.js"
     ],
     "reporter": [
+        "lcov",
         "text"
     ],
     "all": true
