@@ -1,4 +1,4 @@
-**[gedcom-node](../README.md)**
+**[gedcom.js](../README.md)**
 
 > [Globals](../globals.md) / "index"
 
@@ -8,30 +8,21 @@
 
 ### Variables
 
-* [fs](_index_.md#fs)
-* [options](_index_.md#options)
-* [yaml](_index_.md#yaml)
+* [argv](_index_.md#argv)
+* [hideBin](_index_.md#hidebin)
 
 ## Variables
 
-### fs
+### argv
 
-• `Const` **fs**: any = require('fs')
+• `Let` **argv**: object = yargs(hideBin(process.argv)).argv
 
-*Defined in [index.ts:3](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/index.ts#L3)*
-
-___
-
-### options
-
-• `Let` **options**: any = yaml.safeLoad(fs.readFileSync('src/options/version551.yaml', 'utf8'))
-
-*Defined in [index.ts:5](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/index.ts#L5)*
+*Defined in [index.ts:6](https://github.com/Jisco/gedcom.js/blob/af9d585/src/index.ts#L6)*
 
 ___
 
-### yaml
+### hideBin
 
-• `Const` **yaml**: any = require('js-yaml')
+•  **hideBin**: any
 
-*Defined in [index.ts:2](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/index.ts#L2)*
+*Defined in [index.ts:5](https://github.com/Jisco/gedcom.js/blob/af9d585/src/index.ts#L5)*

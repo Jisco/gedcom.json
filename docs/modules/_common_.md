@@ -1,4 +1,4 @@
-**[gedcom-node](../README.md)**
+**[gedcom.js](../README.md)**
 
 > [Globals](../globals.md) / "common"
 
@@ -18,7 +18,7 @@
 
 ▸ **IsEmpty**(`str`: string): Boolean
 
-*Defined in [common.ts:29](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/common.ts#L29)*
+*Defined in [common.ts:36](https://github.com/Jisco/gedcom.js/blob/af9d585/src/common.ts#L36)*
 
 Tests if an string is empty
 
@@ -36,7 +36,7 @@ ___
 
 ▸ **IsNumber**(`str`: string): Boolean
 
-*Defined in [common.ts:9](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/common.ts#L9)*
+*Defined in [common.ts:10](https://github.com/Jisco/gedcom.js/blob/af9d585/src/common.ts#L10)*
 
 Test if an string can be parsed as an number
 
@@ -54,7 +54,7 @@ ___
 
 ▸ **ToNumber**(`str`: string): number
 
-*Defined in [common.ts:21](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/common.ts#L21)*
+*Defined in [common.ts:28](https://github.com/Jisco/gedcom.js/blob/af9d585/src/common.ts#L28)*
 
 Converts a string to an number
 

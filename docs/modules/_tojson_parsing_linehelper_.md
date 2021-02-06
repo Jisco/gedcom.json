@@ -1,15 +1,15 @@
-**[gedcom-node](../README.md)**
+**[gedcom.js](../README.md)**
 
-> [Globals](../globals.md) / "parsing/lineHelper"
+> [Globals](../globals.md) / "ToJSON/parsing/lineHelper"
 
-# Module: "parsing/lineHelper"
+# Module: "ToJSON/parsing/lineHelper"
 
 ## Index
 
 ### Functions
 
-* [GetLineLevel](_parsing_linehelper_.md#getlinelevel)
-* [GetReferenceId](_parsing_linehelper_.md#getreferenceid)
+* [GetLineLevel](_tojson_parsing_linehelper_.md#getlinelevel)
+* [GetReferenceId](_tojson_parsing_linehelper_.md#getreferenceid)
 
 ## Functions
 
@@ -17,7 +17,7 @@
 
 ▸ **GetLineLevel**(`line`: string): number
 
-*Defined in [parsing/lineHelper.ts:10](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/parsing/lineHelper.ts#L10)*
+*Defined in [ToJSON/parsing/lineHelper.ts:10](https://github.com/Jisco/gedcom.js/blob/af9d585/src/ToJSON/parsing/lineHelper.ts#L10)*
 
 Parses the line level
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **GetReferenceId**(`refOrTag`: string): string \| undefined
 
-*Defined in [parsing/lineHelper.ts:28](https://github.com/Jisco/GEDCOM-Node/blob/583e05d/src/parsing/lineHelper.ts#L28)*
+*Defined in [ToJSON/parsing/lineHelper.ts:28](https://github.com/Jisco/gedcom.js/blob/af9d585/src/ToJSON/parsing/lineHelper.ts#L28)*
 
 Parses the reference id
 
