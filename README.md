@@ -10,6 +10,10 @@ A [predefined yaml configuration file](src/options/version551.yaml) ([GEDCOM Ver
 
 So this file can be used as a template if the target object should look different.
 
+## Why
+
+This is just a side project to import (and later export) GEDCOM files to another project of myself [Visual Family Tree](https://github.com/Jisco/VisualFamilyTree).
+
 I am aware that there are already several parsers for the gedcom format. However, I have found few that parse directly into an javascript object and if so, then you have to parse\search this object in order to be able to use it for your own purpose. I want to avoid this parsing and searching by parsing directly to the target format.
 
 **Through this own definition of how the parsing should be done, it is possible to process files or lines that differ from the original GEDCOM format.**
