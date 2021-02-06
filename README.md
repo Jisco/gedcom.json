@@ -268,7 +268,7 @@ Result
 
 ```javascript
 {
-  	Individuals: {
+     Individuals: {
         Id: "@Abraham_Simpson@"
     }
 }
@@ -352,7 +352,7 @@ Result:
 
 ```javascript
 {
-  	Notes:
+    Notes:
     {
         Value: [
             "A",
@@ -472,7 +472,7 @@ Result:
 
 ```javascript
 {
-  	Notes:
+    Notes:
     {
         Text: `1 | ABC | ...`
     }
@@ -509,7 +509,7 @@ Result:
 
 ```javascript
 {
- 	Date:
+    Date:
     {
         Value: new Date(1999, 5, 4, 14, 35 , 22),	// Value is date and time combined
         HasYear: true,
@@ -540,7 +540,7 @@ Result:
 
 ```javascript
 {
- 	Date:
+    Date:
     {
         Value: new Date(1999, 5, 4, 14, 35 , 22),	// Value is date and time combined
         HasYear: true,
@@ -570,7 +570,7 @@ Result:
 
 ```javascript
 {
-  	Note: [ "Note1", "Note2" ]
+    Note: [ "Note1", "Note2" ]
 }
 ```
 
@@ -587,7 +587,7 @@ Result (last value wins):
 
 ```javascript
 {
-  	Note: "Note2"
+    Note: "Note2"
 }
 ```
 
@@ -708,7 +708,7 @@ Result:
 
 ```javascript
 {
-  	Notes: {
+    Notes: {
         Id: "@N00010@",
         Text: [RCKarnes.ged]In Norse mythology, the god Bor, or Borr was the father of Odin, Ve and Vili by the frost giantess Bestla.  Bor was the son of the giant Buri....
     }
@@ -741,12 +741,12 @@ Result:
 
 ```javascript
 {
-	Notes: {
+    Notes: {
          Id: "@N00010@",
          Events: {
             Name: "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com)",
           }
-     }
+    }
 }
 ```
 
@@ -847,7 +847,7 @@ Result:
 
 ```javascript
 {
-	Persons:
+    Persons:
     {
         EMail: [ 'email@test.com', 'anotherEmail@test.com' ]
     }
@@ -883,7 +883,7 @@ Result:
 
 ```javascript
 {
- 	Persons:
+    Persons:
     {
         EMail: [ 'mail:email@@test.com', 'mail:anotherEmail@@test.com' ]
     }
@@ -913,7 +913,7 @@ Result:
 
 ```javascript
 {
- 	Persons:
+    Persons:
     {
         Note: 'Whatever'
     }
