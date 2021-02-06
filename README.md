@@ -18,7 +18,7 @@ I am aware that there are already several parsers for the gedcom format. However
 
 **Through this own definition of how the parsing should be done, it is possible to process files or lines that differ from the original GEDCOM format.**
 
-:file_folder: There are 6 example gedcom files files available which i found on the internet. I used this files to test against. All files can be found in the "examples" subfolder.  Next to the gedcom files are the converted json files, which were created with this package.
+:file_folder: There are 6 example gedcom files available which i found on the internet. I used this files to test against. All files can be found in the "examples" subfolder.  Next to the gedcom files are the converted json files, which were created with this package.
 
 ## How-To
 
