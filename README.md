@@ -1,5 +1,7 @@
 # gedcom.js
 
+[![Build Status](https://travis-ci.org/Jisco/gedcom.js.png?branch=master)](https://travis-ci.org/Jisco/gedcom.js)
+
 ## Description
 
 This package can be used to parse a file or a string from gedcom format to an object. The object can be used for further data processing or just to create an JSON file. 
