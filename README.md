@@ -6,7 +6,7 @@ This package can be used to parse a file or a string from gedcom format to an ob
 
 :warning: **Conversion from JSON or JS to GEDCOM is currently under development** :warning:
 
-A [predefined yaml configuration file](src/options/version551.yaml) ([GEDCOM Version 5.5.1](https://edge.fscdn.org/assets/img/documents/ged551-5bac5e57fe88dd37df0e153d9c515335.pdf)) is already included for parsing the data. This is based on the original long name of the gedcom tags and should reflect the structure as best as possible. It's used by default if no other configuration is given.
+A [predefined yaml configuration file](/options/version551.yaml) ([GEDCOM Version 5.5.1](https://edge.fscdn.org/assets/img/documents/ged551-5bac5e57fe88dd37df0e153d9c515335.pdf)) is already included for parsing the data. This is based on the original long name of the gedcom tags and should reflect the structure as best as possible. It's used by default if no other configuration is given.
 
 So this file can be used as a template if the target object should look different.
 
@@ -18,7 +18,7 @@ I am aware that there are already several parsers for the gedcom format. However
 
 **Through this own definition of how the parsing should be done, it is possible to process files or lines that differ from the original GEDCOM format.**
 
-:file_folder: There are 6 example gedcom files available which i found on the internet. I used this files to test against. All files can be found in the "examples" subfolder.  Next to the gedcom files are the converted json files, which were created with this package.
+:file_folder: There are 6 example gedcom files available which i found on the internet. I used this files to test against. All files can be found in the ["examples"](/examples) subfolder.  Next to the gedcom files are the converted json files, which were created with this package.
 
 ## How-To
 
