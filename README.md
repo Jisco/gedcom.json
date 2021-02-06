@@ -1,6 +1,6 @@
 # gedcom.js
 
-[![Build Status](https://travis-ci.org/Jisco/gedcom.js.png?branch=master)](https://travis-ci.org/Jisco/gedcom.js) [![codecov](https://codecov.io/gh/Jisco/gedcom.js/branch/master/graph/badge.svg?token=MQ5CNQYFPU)](https://codecov.io/gh/Jisco/gedcom.js)
+[![Build Status](https://travis-ci.org/Jisco/gedcom.js.png?branch=master)](https://travis-ci.org/Jisco/gedcom.js) [![codecov](https://codecov.io/gh/Jisco/gedcom.js/branch/master/graph/badge.svg?token=MQ5CNQYFPU)](https://codecov.io/gh/Jisco/gedcom.js) [![Known Vulnerabilities](https://snyk.io/test/github/Jisco/gedcom.js/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Jisco/gedcom.js?targetFile=package.json)
 
 ## Description
 
