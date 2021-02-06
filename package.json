@@ -1,7 +1,7 @@
 {
   "name": "gedcom.js",
   "version": "0.5.0",
-  "description": "Import and Export any JS-Object from or to GEDCOM Format",
+  "description": "Convert GEDCOM Files to an JSON File or an JavaScript-Object and vice versa",
   "main": "dist/index.js",
   "scripts": {
     "demo:JSON": "ts-node src/index.ts --path 'examples/simpsons.ged'",
