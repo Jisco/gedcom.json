@@ -1,6 +1,6 @@
 {
   "name": "gedcom.json",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "Convert GEDCOM Files to an JSON File or an JavaScript-Object and vice versa",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,16 @@
     "test:watch": "mocha --watch --watch-files src, tests/**/*.ts",
     "doc": "typedoc --out docs src"
   },
-  "keywords": [ "gedcom", "genealogy", "parser", "family tree", "family", "visual family tree", "json", "ged"],
+  "keywords": [
+    "gedcom",
+    "genealogy",
+    "parser",
+    "family tree",
+    "family",
+    "visual family tree",
+    "json",
+    "ged"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jisco/gedcom.json.git"
