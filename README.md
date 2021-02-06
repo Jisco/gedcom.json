@@ -223,14 +223,14 @@ Result
 
 ```javascript
 {
-  	Individuals: [
-        {
-            Id: "@Abraham_Simpson@",
-            Surname: "Simpson",
-            Givenname: "Abraham",
-            Fullname: "Abraham /Simpson/"
-        }
-  	]
+  Individuals: [
+    {
+      Id: "@Abraham_Simpson@",
+      Surname: "Simpson",
+      Givenname: "Abraham",
+      Fullname: "Abraham /Simpson/"
+    }
+  ]
 }
 ```
 
@@ -268,9 +268,10 @@ Result
 
 ```javascript
 {
-     Individuals: {
-        Id: "@Abraham_Simpson@"
-    }
+  Individuals: 
+  {
+    Id: "@Abraham_Simpson@"
+  }
 }
 ```
 
@@ -285,14 +286,15 @@ Result
 
 ```javascript
 {
-  	Individuals: [
-        {
-            Id: "@Abraham_Simpson@"
-        },
-        {
-            Id: "@Homer_Simpson@"
-        }
-    ]
+  Individuals: 
+  [
+    {
+      Id: "@Abraham_Simpson@"
+    },
+    {
+      Id: "@Homer_Simpson@"
+    }
+  ]
 }
 ```
 
@@ -317,11 +319,12 @@ Result
 
 ```javascript
 {
-  	Individuals: [
-        {
-            Id: "@Abraham_Simpson@"
-        }
-    ]
+  Individuals: 
+  [
+    {
+      Id: "@Abraham_Simpson@"
+    }
+  ]
 }
 ```
 
@@ -352,14 +355,10 @@ Result:
 
 ```javascript
 {
-    Notes:
-    {
-        Value: [
-            "A",
-            "B",
-            "C,D"
-        ]
-    }
+  Notes:
+  {
+    Value: [ "A", "B", "C,D" ]
+  }
 }
 ```
 
@@ -413,22 +412,23 @@ Result:
 
 ```javascript
 {
-  	Date:
+  Date:
+  {
+    Start: 
     {
-        Start: {
-            JSDate: new Date(1980, 1, 4, 0, 0 , 0),
-            HasYear: true,
-            HasMonth: true,
-            HasDay: true
-        },
-        End: {
-        	JSDate: new Date(1999, 5, 4, 0, 0 , 0),
-             HasYear: true,
-             HasMonth: true,
-             HasDay: true
-        },
-        Initial: "FROM 4 FEB 1980 TO 4 JUN 1999",
-    }
+      JSDate: new Date(1980, 1, 4, 0, 0 , 0),
+      HasYear: true,
+      HasMonth: true,
+      HasDay: true
+    },
+    End: {
+      JSDate: new Date(1999, 5, 4, 0, 0 , 0),
+      HasYear: true,
+      HasMonth: true,
+      HasDay: true
+    },
+    Initial: "FROM 4 FEB 1980 TO 4 JUN 1999",
+  }
 }
 ```
 
@@ -472,10 +472,10 @@ Result:
 
 ```javascript
 {
-    Notes:
-    {
-        Text: `1 | ABC | ...`
-    }
+  Notes:
+  {
+    Text: `1 | ABC | ...`
+  }
 }
 ```
 
@@ -509,15 +509,15 @@ Result:
 
 ```javascript
 {
-    Date:
-    {
-        Value: new Date(1999, 5, 4, 14, 35 , 22),	// Value is date and time combined
-        HasYear: true,
-        HasMonth: true,
-        HasDay: true,
-        Original: "4 JUN 1999",
-        Time: "14:35:22"  // is own property because of TIME has a property defined
-    }
+  Date:
+  {
+    Value: new Date(1999, 5, 4, 14, 35 , 22),	// Value is date and time combined
+    HasYear: true,
+    HasMonth: true,
+    HasDay: true,
+    Original: "4 JUN 1999",
+    Time: "14:35:22"  // is own property because of TIME has a property defined
+  }
 }
 ```
 
@@ -540,14 +540,14 @@ Result:
 
 ```javascript
 {
-    Date:
-    {
-        Value: new Date(1999, 5, 4, 14, 35 , 22),	// Value is date and time combined
-        HasYear: true,
-        HasMonth: true,
-        HasDay: true,
-        Original: "4 JUN 1999 14:35:22"	// date and time combined, because the original time value will else be lost	 
-    }
+Date:
+  {
+    Value: new Date(1999, 5, 4, 14, 35 , 22),	// Value is date and time combined
+    HasYear: true,
+    HasMonth: true,
+    HasDay: true,
+    Original: "4 JUN 1999 14:35:22"	// date and time combined, because the original time value will else be lost	 
+  }
 }
 ```
 
@@ -623,17 +623,18 @@ Result:
 
 ```javascript
 {
-  	A: [
-        // parsed Tag C
-        {
-            Value_C: "Value_Of_C"
-        },
-        // parsed Tag B merged with Tag D
-        {
-            Value_B: "Value_Of_B",
-            Value_D: "Value_Of_D"
-        }
-    ]
+  A: 
+  [
+    // parsed Tag C
+    {
+      Value_C: "Value_Of_C"
+    },
+    // parsed Tag B merged with Tag D
+    {
+      Value_B: "Value_Of_B",
+      Value_D: "Value_Of_D"
+    }
+  ]
 }
 ```
 
@@ -667,17 +668,18 @@ Result:
 
 ```javascript
 {
-  	A: [
-        // parsed Tag B merged with Tag D
-        {
-            Value_B: "Value_Of_B",
-            Value_D: "Value_Of_D"
-        },        
-        // parsed Tag C
-        {
-            Value_C: "Value_Of_C"
-        },
-    ]
+A: 
+  [
+    // parsed Tag B merged with Tag D
+    {
+      Value_B: "Value_Of_B",
+      Value_D: "Value_Of_D"
+    },        
+    // parsed Tag C
+    {
+      Value_C: "Value_Of_C"
+    },
+  ]
 }
 ```
 
@@ -708,10 +710,10 @@ Result:
 
 ```javascript
 {
-    Notes: {
-        Id: "@N00010@",
-        Text: [RCKarnes.ged]In Norse mythology, the god Bor, or Borr was the father of Odin, Ve and Vili by the frost giantess Bestla.  Bor was the son of the giant Buri....
-    }
+  Notes: {
+    Id: "@N00010@",
+    Text: [RCKarnes.ged]In Norse mythology, the god Bor, or Borr was the father of Odin, Ve and Vili by the frost giantess Bestla.  Bor was the son of the giant Buri....
+  }
 }
 ```
 
@@ -741,12 +743,14 @@ Result:
 
 ```javascript
 {
-    Notes: {
-         Id: "@N00010@",
-         Events: {
-            Name: "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com)",
-          }
+  Notes: 
+  {
+    Id: "@N00010@",
+    Events: 
+    {
+      Name: "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com)",
     }
+  }
 }
 ```
 
@@ -785,9 +789,10 @@ Result:
 
 ```js
 {
-    What: {
-        Id: 'ID'
-    }
+  What: 
+  {
+    Id: 'ID'
+  }
 }
 ```
 
@@ -847,10 +852,10 @@ Result:
 
 ```javascript
 {
-    Persons:
-    {
-        EMail: [ 'email@test.com', 'anotherEmail@test.com' ]
-    }
+  Persons:
+  {
+    EMail: [ 'email@test.com', 'anotherEmail@test.com' ]
+  }
 }
 ```
 
@@ -883,10 +888,10 @@ Result:
 
 ```javascript
 {
-    Persons:
-    {
-        EMail: [ 'mail:email@@test.com', 'mail:anotherEmail@@test.com' ]
-    }
+  Persons:
+  {
+  EMail: [ 'mail:email@@test.com', 'mail:anotherEmail@@test.com' ]
+  }
 }
 ```
 
@@ -913,10 +918,10 @@ Result:
 
 ```javascript
 {
-    Persons:
-    {
-        Note: 'Whatever'
-    }
+  Persons: 
+  { 
+    Note: 'Whatever' 
+  }
 }
 ```
 
