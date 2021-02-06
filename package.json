@@ -1,6 +1,6 @@
 {
   "name": "gedcom.json",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Convert GEDCOM Files to an JSON File or an JavaScript-Object and vice versa",
   "main": "dist/index.js",
   "scripts": {
