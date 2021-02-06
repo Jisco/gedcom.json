@@ -3,3 +3,10 @@ docs
 .github
 .nyc_output
 coverage
+tests
+.mocharc.js
+.nycrc.json
+.travis.yml
+package-lock.json
+LICENSE
+tsconfig.json
