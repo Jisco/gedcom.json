@@ -1,14 +1,15 @@
 import Parsing from "./models/Parsing";
+import ParsingOptions from "./models/ParsingOptions";
 
 export function Convert(argv:any) {
-    let parse = new Parsing();
+    let options = new ParsingOptions();
 
     if (argv.path) {
-        parse.SetFilePath(argv.path as string);
+        options.SetFilePath(argv.path as string);
     }
 
     if (argv.opt) {
-        parse.SetConfigFile(argv.opt as string);
+        options.SetConfigFile(argv.opt as string);
     }
 
     let silent = false;
@@ -21,6 +22,7 @@ export function Convert(argv:any) {
         onlyStats = true;
     }
 
+    let parse = new Parsing(options);
     let start = new Date().getTime();
     parse.ParseFileAsync().then(result => {
         if (argv.out) {
