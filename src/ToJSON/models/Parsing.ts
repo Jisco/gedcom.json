@@ -1,67 +1,49 @@
 import { ParseFile, ParseText } from "../parsing/parsing";
+import ParsingOptions from "./ParsingOptions";
 import ParsingResult from "./ParsingResult";
 
-const fs = require('fs');
-
 export default class Parsing {
-    constructor() {
-        this.config = fs.readFileSync('options/version551.yaml', 'utf8');
+    constructor(parsingOptions?: ParsingOptions) {
+        this.options = parsingOptions ?? new ParsingOptions();
     }
 
-    private text?: string;
-    private filePath?: string;
-    private config: string;
-
-    SetText(text: string) {
-        this.text = text;
-    }
-
-    SetFilePath(path: string) {
-        this.filePath = path;
-    }
-
-    SetConfigFile(path: string) {
-        this.config = fs.readFileSync(path, 'utf8');
-    }
-
-    SetConfig(config: string) {
-        this.config = config;
-    }
+    private options: ParsingOptions;    
 
     SaveAs(result: Object, path: string) {
-        fs.writeFileSync(path, JSON.stringify(result, null, 1));
+        require('fs').writeFileSync(path, JSON.stringify(result, null, 1));
     }
 
-    ParseText(): Object {
-        if (!this.text) {
-            return { };
+    ParseText(): ParsingResult {
+        if (!this.options.GetText()) {
+            return new ParsingResult({});
         }
 
-        return ParseText(this.text, this.config);
+        return ParseText(this.options.GetText(), this.options.GetConfig());
     }
 
     ParseTextAsync(): Promise<ParsingResult> {
-        if (!this.text) {
+        if (!this.options.GetText()) {
             return new Promise<ParsingResult>((resolve, reject) => {
                 reject("No text definied");
             });
         }
 
         return new Promise<ParsingResult>((resolve, reject) => {
-            resolve(ParseText(this.text, this.config));
+            resolve(ParseText(this.options.GetText(), this.options.GetConfig()));
         });
     }
 
     ParseFile(doneCallback: (result: ParsingResult) => void, errorCallback: Function) {
-        if (!this.filePath) {
+        let filePath = this.options.GetFilePath();
+        if (!filePath) {
             return;
         }
 
-        ParseFile(this.filePath, this.config, doneCallback, errorCallback);
+        ParseFile(filePath, this.options.GetConfig(), doneCallback, errorCallback);
     }
 
     ParseFileAsync(): Promise<ParsingResult> {
-        if (!this.filePath) {
+        if (!this.options.GetFilePath()) {
             return new Promise<ParsingResult>((resolve, reject) => {
                 reject("No file path definied");
             });
