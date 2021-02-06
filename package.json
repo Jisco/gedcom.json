@@ -1,5 +1,5 @@
 {
-  "name": "gedcom.js",
+  "name": "gedcom.json",
   "version": "0.0.1",
   "description": "Convert GEDCOM Files to an JSON File or an JavaScript-Object and vice versa",
   "main": "dist/index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jisco/gedcom.js.git"
+    "url": "git+https://github.com/Jisco/gedcom.json.git"
   },
   "author": "Jens Hoernecke",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Jisco/gedcom.js/issues"
+    "url": "https://github.com/Jisco/gedcom.json/issues"
   },
-  "homepage": "https://github.com/Jisco/gedcom.js#readme",
+  "homepage": "https://github.com/Jisco/gedcom.json#readme",
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/js-yaml": "^3.12.5",

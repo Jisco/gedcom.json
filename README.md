@@ -1,6 +1,6 @@
-# gedcom.js
+# gedcom.json
 
-[![Build Status](https://travis-ci.com/Jisco/gedcom.js.png?branch=master)](https://travis-ci.com/Jisco/gedcom.js) [![codecov](https://codecov.io/gh/Jisco/gedcom.js/branch/master/graph/badge.svg?token=MQ5CNQYFPU)](https://codecov.io/gh/Jisco/gedcom.js) [![Known Vulnerabilities](https://snyk.io/test/github/Jisco/gedcom.js/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Jisco/gedcom.js?targetFile=package.json)
+[![Build Status](https://travis-ci.com/Jisco/gedcom.json.png?branch=master)](https://travis-ci.com/Jisco/gedcom.json) [![codecov](https://codecov.io/gh/Jisco/gedcom.json/branch/master/graph/badge.svg?token=MQ5CNQYFPU)](https://codecov.io/gh/Jisco/gedcom.json) [![Known Vulnerabilities](https://snyk.io/test/github/Jisco/gedcom.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Jisco/gedcom.json?targetFile=package.json)
 
 ## Description
 
@@ -43,7 +43,7 @@ Just run npx ts-node src/index.ts  with the wanted flags. Eg if you run "npm run
 In your js\ts file you can import the parsing file via
 
 ```typescript
-import { JsonParsing } from "gedcom.js";
+import { JsonParsing } from "gedcom.json";
 ```
 
 Create an new parsing object.
