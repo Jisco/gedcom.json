@@ -1,0 +1,1417 @@
+{
+ "Head": {
+  "Source": {
+   "Name": [
+    "webtreeprint.com",
+    "webtreeprint"
+   ],
+   "Version": "1.0"
+  },
+  "File": "shakespeare.ged",
+  "Gedcom": {
+   "Version": "5.5.1",
+   "Format": "LINEAGE-LINKED"
+  },
+  "Characters": "UTF-8",
+  "Submitter": {
+   "Id": "@SUB1@"
+  }
+ },
+ "Submitter": [
+  {
+   "Id": "@SUB1@",
+   "Name": "webTreePrint"
+  }
+ ],
+ "Individuals": [
+  {
+   "Id": "@I0001@",
+   "Surname": "Shakespeare",
+   "Givenname": "William",
+   "Fullname": "William /Shakespeare/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "BEF 23 APR 1564",
+     "Before": true,
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1564-04-22T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Christening": {
+    "Date": {
+     "Original": "26 APR 1564",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1564-04-25T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Death": {
+    "Date": {
+     "Original": "23 APR 1616",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1616-04-22T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Relations": [
+    "@F001@",
+    "@F002@"
+   ]
+  },
+  {
+   "Id": "@I0002@",
+   "Surname": "Arden",
+   "Givenname": "Mary",
+   "Fullname": "Mary /Arden/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "ABT 1537",
+     "About": true,
+     "HasYear": true,
+     "HasMonth": false,
+     "HasDay": false,
+     "Value": "1536-12-31T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "SEP 1608",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1608-08-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1608-09-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": [
+    "@F005@",
+    "@F001@"
+   ]
+  },
+  {
+   "Id": "@I0003@",
+   "Surname": "Shakespeare",
+   "Givenname": "John",
+   "Fullname": "John /Shakespeare/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "ABT 1531",
+     "About": true,
+     "HasYear": true,
+     "HasMonth": false,
+     "HasDay": false,
+     "Value": "1530-12-31T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "07 SEP 1601",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1601-09-06T23:06:32.000Z"
+    }
+   },
+   "Burial": {
+    "Date": {
+     "Original": "08 SEP 1601",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1601-09-07T23:06:32.000Z"
+    }
+   },
+   "Relations": [
+    "@F003@",
+    "@F001@"
+   ]
+  },
+  {
+   "Id": "@I0004@",
+   "Surname": "Hathaway",
+   "Givenname": "Anne",
+   "Fullname": "Anne /Hathaway/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "APR 1556",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1556-03-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1556-04-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    },
+    "Place": "Shottery, Warwickshire"
+   },
+   "Death": {
+    "Date": {
+     "Original": "06 AUG 1623",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1623-08-05T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Relations": [
+    "@F010@",
+    "@F002@"
+   ]
+  },
+  {
+   "Id": "@I0005@",
+   "Surname": "Shakespeare",
+   "Givenname": "Susanna",
+   "Fullname": "Susanna /Shakespeare/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "MAY 1583",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1583-04-30T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1583-05-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Christening": {
+    "Date": {
+     "Original": "26 MAY 1583",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1583-05-25T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Death": {
+    "Date": {
+     "Original": "11 JUL 1649",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1649-07-10T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Relations": [
+    "@F002@",
+    "@F006@"
+   ]
+  },
+  {
+   "Id": "@I0006@",
+   "Surname": "Shakespeare",
+   "Givenname": "Hamnet",
+   "Fullname": "Hamnet /Shakespeare/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "JAN 1585",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1584-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1585-01-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Christening": {
+    "Date": {
+     "Original": "02 FEB 1585",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1585-02-01T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Death": {
+    "Date": {
+     "Original": "AUG 1596",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1596-07-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1596-08-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Burial": {
+    "Date": {
+     "Original": "11 AUG 1596",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1596-08-10T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Relations": "@F002@"
+  },
+  {
+   "Id": "@I0007@",
+   "Surname": "Shakespeare",
+   "Givenname": "Judith",
+   "Fullname": "Judith /Shakespeare/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "JAN 1585",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1584-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1585-01-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Christening": {
+    "Date": {
+     "Original": "02 FEB 1585",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1585-02-01T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Death": {
+    "Date": {
+     "Original": "FEB 1662",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1662-01-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1662-02-28T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Burial": {
+    "Date": {
+     "Original": "09 FEB 1662",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1662-02-08T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Relations": [
+    "@F002@",
+    "@F009@"
+   ]
+  },
+  {
+   "Id": "@I0008@",
+   "Surname": "Shakespeare",
+   "Givenname": "Joan",
+   "Fullname": "Joan /Shakespeare/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "SEP 1558",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1558-08-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1558-09-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Christening": {
+    "Date": {
+     "Original": "15 SEP 1558",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1558-09-14T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "AFT SEP 1558",
+     "After": true,
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": false,
+     "Value": "1558-08-31T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F001@"
+  },
+  {
+   "Id": "@I0009@",
+   "Surname": "Shakespeare",
+   "Givenname": "Margaret",
+   "Fullname": "Margaret /Shakespeare/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "NOV 1562",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1562-10-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1562-11-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Christening": {
+    "Date": {
+     "Original": "02 DEC 1562",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1562-12-01T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "APR 1563",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1563-03-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1563-04-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Burial": {
+    "Date": {
+     "Original": "30 APR 1563",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1563-04-29T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F001@"
+  },
+  {
+   "Id": "@I0010@",
+   "Surname": "Shakespeare",
+   "Givenname": "Gilbert",
+   "Fullname": "Gilbert /Shakespeare/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "OCT 1566",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1566-09-30T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1566-10-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "JAN 1612",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1611-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1612-01-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F001@"
+  },
+  {
+   "Id": "@I0011@",
+   "Surname": "Shakespeare",
+   "Givenname": "Joan",
+   "Fullname": "Joan /Shakespeare/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "APR 1569",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1569-03-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1569-04-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "NOV 1646",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1646-10-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1646-11-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F001@"
+  },
+  {
+   "Id": "@I0012@",
+   "Surname": "Shakespeare",
+   "Givenname": "Anne",
+   "Fullname": "Anne /Shakespeare/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "SEP 1571",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1571-08-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1571-09-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "APR 1579",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1579-03-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1579-04-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F001@"
+  },
+  {
+   "Id": "@I0013@",
+   "Surname": "Shakespeare",
+   "Givenname": "Richard",
+   "Fullname": "Richard /Shakespeare/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "MAR 1574",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1574-02-28T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1574-03-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "FEB 1613",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1613-01-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1613-02-28T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F001@"
+  },
+  {
+   "Id": "@I0014@",
+   "Surname": "Shakespeare",
+   "Givenname": "Edmund",
+   "Fullname": "Edmund /Shakespeare/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "APR 1580",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1580-03-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1580-04-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "DEC 1607",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1607-11-30T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1607-12-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F001@"
+  },
+  {
+   "Id": "@I0015@",
+   "Surname": "Shakespeare",
+   "Givenname": "Richard",
+   "Fullname": "Richard /Shakespeare/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "ABT 1490",
+     "About": true,
+     "HasYear": true,
+     "HasMonth": false,
+     "HasDay": false,
+     "Value": "1489-12-31T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "BEF 10 FEB 1561",
+     "Before": true,
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1561-02-09T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F003@"
+  },
+  {
+   "Id": "@I0016@",
+   "Surname": "Shakespeare",
+   "Givenname": "Henry",
+   "Fullname": "Henry /Shakespeare/",
+   "Sex": "M",
+   "Death": {
+    "Date": {
+     "Original": "1596",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1595-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1596-12-31T23:06:32.000Z"
+     }
+    }
+   },
+   "Relations": [
+    "@F003@",
+    "@F004@"
+   ]
+  },
+  {
+   "Id": "@I0017@",
+   "Givenname": "Margaret",
+   "Fullname": "Margaret //",
+   "Sex": "F",
+   "Death": {
+    "Date": {
+     "Original": "1597",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1596-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1597-12-31T23:06:32.000Z"
+     }
+    }
+   },
+   "Relations": "@F004@"
+  },
+  {
+   "Id": "@I0018@",
+   "Surname": "Webbe",
+   "Givenname": "Agnes",
+   "Fullname": "Agnes /Webbe/",
+   "Sex": "F",
+   "Relations": "@F005@"
+  },
+  {
+   "Id": "@I0019@",
+   "Surname": "Arden",
+   "Givenname": "Robert",
+   "Fullname": "Robert /Arden/",
+   "Sex": "M",
+   "Death": {
+    "Date": {
+     "Original": "DEC 1556",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1556-11-30T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1556-12-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F005@"
+  },
+  {
+   "Id": "@I0020@",
+   "Surname": "Hall",
+   "Givenname": "John",
+   "Fullname": "John /Hall/",
+   "Title": "Dr.",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "1575",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1574-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1575-12-31T23:06:32.000Z"
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "NOV 1635",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1635-10-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1635-11-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F006@"
+  },
+  {
+   "Id": "@I0021@",
+   "Surname": "Shakespeare",
+   "Givenname": "Elizabeth",
+   "Fullname": "Elizabeth /Shakespeare/",
+   "Sex": "F",
+   "Birth": {
+    "Date": {
+     "Original": "FEB 1608",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1608-01-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1608-02-29T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Christening": {
+    "Date": {
+     "Original": "21 FEB 1608",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1608-02-20T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Death": {
+    "Date": {
+     "Original": "FEB 1670",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1670-01-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1670-02-28T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": [
+    "@F006@",
+    "@F007@",
+    "@F008@"
+   ]
+  },
+  {
+   "Id": "@I0022@",
+   "Surname": "Nash",
+   "Givenname": "Thomas",
+   "Fullname": "Thomas /Nash/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "1593",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1592-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1593-12-31T23:06:32.000Z"
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "APR 1647",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1647-03-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1647-04-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F007@"
+  },
+  {
+   "Id": "@I0023@",
+   "Surname": "Barnard",
+   "Givenname": "John",
+   "Fullname": "John /Barnard/",
+   "Title": "Sir",
+   "Sex": "M",
+   "Death": {
+    "Date": {
+     "Original": "1674",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1673-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1674-12-31T23:06:32.000Z"
+     }
+    }
+   },
+   "Relations": "@F008@"
+  },
+  {
+   "Id": "@I0024@",
+   "Surname": "Quiney",
+   "Givenname": "Thomas",
+   "Fullname": "Thomas /Quiney/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "1589",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1588-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1589-12-31T23:06:32.000Z"
+     }
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "ABT 1655",
+     "About": true,
+     "HasYear": true,
+     "HasMonth": false,
+     "HasDay": false,
+     "Value": "1654-12-31T23:06:32.000Z"
+    }
+   },
+   "Relations": [
+    "@F009@",
+    "@F011@"
+   ]
+  },
+  {
+   "Id": "@I0025@",
+   "Surname": "Quiney",
+   "Givenname": "Shakespeare",
+   "Fullname": "Shakespeare /Quiney/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "NOV 1616",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1616-10-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1616-11-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Christening": {
+    "Date": {
+     "Original": "23 NOV 1616",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1616-11-22T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "MAY 1617",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1617-04-30T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1617-05-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Burial": {
+    "Date": {
+     "Original": "08 MAY 1617",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1617-05-07T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F009@"
+  },
+  {
+   "Id": "@I0026@",
+   "Surname": "Quiney",
+   "Givenname": "Richard",
+   "Fullname": "Richard /Quiney/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "FEB 1618",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1618-01-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1618-02-28T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Christening": {
+    "Date": {
+     "Original": "09 FEB 1618",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1618-02-08T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "FEB 1639",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1639-01-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1639-02-28T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Burial": {
+    "Date": {
+     "Original": "06 FEB 1639",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1639-02-05T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F009@"
+  },
+  {
+   "Id": "@I0027@",
+   "Surname": "Quiney",
+   "Givenname": "Thomas",
+   "Fullname": "Thomas /Quiney/",
+   "Sex": "M",
+   "Birth": {
+    "Date": {
+     "Original": "JAN 1620",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1619-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1620-01-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Christening": {
+    "Date": {
+     "Original": "23 JAN 1620",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1620-01-22T23:06:32.000Z"
+    }
+   },
+   "Death": {
+    "Date": {
+     "Original": "JAN 1639",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1638-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1639-01-31T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Burial": {
+    "Date": {
+     "Original": "28 JAN 1639",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1639-01-27T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F009@"
+  },
+  {
+   "Id": "@I0028@",
+   "Surname": "Hathaway",
+   "Givenname": "Richard",
+   "Fullname": "Richard /Hathaway/",
+   "Sex": "M",
+   "Death": {
+    "Date": {
+     "Original": "SEP 1581",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1581-08-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1581-09-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Relations": "@F010@"
+  },
+  {
+   "Id": "@I0029@",
+   "Surname": "Wheeler",
+   "Givenname": "Margaret",
+   "Fullname": "Margaret /Wheeler/",
+   "Sex": "F",
+   "Death": {
+    "Place": "Died in childbirth"
+   },
+   "Burial": {
+    "Date": {
+     "Original": "15 MAR 1616",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1616-03-14T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F011@"
+  },
+  {
+   "Id": "@I0030@",
+   "Surname": "Quiney",
+   "Givenname": "Not named",
+   "Fullname": "Not named /Quiney/",
+   "Death": {
+    "Place": "Died in childbirth"
+   },
+   "Burial": {
+    "Date": {
+     "Original": "15 MAR 1616",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1616-03-14T23:06:32.000Z"
+    }
+   },
+   "Relations": "@F011@"
+  },
+  {
+   "Id": "@I0031@",
+   "Surname": "Unknown",
+   "Fullname": "/Unknown/",
+   "Sex": "F",
+   "Relations": "@F003@"
+  }
+ ],
+ "Relations": [
+  {
+   "Id": "@F001@",
+   "Husband": "@I0003@",
+   "Wife": "@I0002@",
+   "Marriage": {
+    "Date": {
+     "Original": "ABT 1557",
+     "About": true,
+     "HasYear": true,
+     "HasMonth": false,
+     "HasDay": false,
+     "Value": "1556-12-31T23:06:32.000Z"
+    }
+   },
+   "Children": [
+    "@I0001@",
+    "@I0008@",
+    "@I0009@",
+    "@I0010@",
+    "@I0011@",
+    "@I0012@",
+    "@I0013@",
+    "@I0014@"
+   ]
+  },
+  {
+   "Id": "@F002@",
+   "Husband": "@I0001@",
+   "Wife": "@I0004@",
+   "Marriage": {
+    "Date": {
+     "Original": "NOV 1582",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1582-10-31T23:06:32.000Z"
+     },
+     "And": {
+      "Value": "1582-11-30T23:06:32.000Z",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true
+     }
+    }
+   },
+   "Children": [
+    "@I0005@",
+    "@I0006@",
+    "@I0007@"
+   ]
+  },
+  {
+   "Id": "@F003@",
+   "Husband": "@I0015@",
+   "Wife": "@I0031@",
+   "Children": [
+    "@I0016@",
+    "@I0003@"
+   ]
+  },
+  {
+   "Id": "@F004@",
+   "Husband": "@I0016@",
+   "Wife": "@I0017@"
+  },
+  {
+   "Id": "@F005@",
+   "Husband": "@I0019@",
+   "Wife": "@I0018@",
+   "Children": "@I0002@"
+  },
+  {
+   "Id": "@F006@",
+   "Husband": "@I0020@",
+   "Wife": "@I0005@",
+   "Marriage": {
+    "Date": {
+     "Original": "05 JUN 1607",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1607-06-04T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Children": "@I0021@"
+  },
+  {
+   "Id": "@F007@",
+   "Husband": "@I0022@",
+   "Wife": "@I0021@",
+   "Marriage": {
+    "Date": {
+     "Original": "1626",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1625-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1626-12-31T23:06:32.000Z"
+     }
+    }
+   }
+  },
+  {
+   "Id": "@F008@",
+   "Husband": "@I0023@",
+   "Wife": "@I0021@",
+   "Marriage": {
+    "Date": {
+     "Original": "1649",
+     "Between": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1648-12-31T23:06:32.000Z"
+     },
+     "And": {
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": "1649-12-31T23:06:32.000Z"
+     }
+    }
+   }
+  },
+  {
+   "Id": "@F009@",
+   "Husband": "@I0024@",
+   "Wife": "@I0007@",
+   "Marriage": {
+    "Date": {
+     "Original": "10 FEB 1616",
+     "HasYear": true,
+     "HasMonth": true,
+     "HasDay": true,
+     "Value": "1616-02-09T23:06:32.000Z"
+    },
+    "Place": "Stratford-upon-Avon"
+   },
+   "Children": [
+    "@I0025@",
+    "@I0026@",
+    "@I0027@"
+   ]
+  },
+  {
+   "Id": "@F010@",
+   "Husband": "@I0028@",
+   "Children": "@I0004@"
+  },
+  {
+   "Id": "@F011@",
+   "Husband": "@I0024@",
+   "Wife": "@I0029@",
+   "Marriage": {
+    "Place": "Unmarried"
+   },
+   "Children": "@I0030@"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+    "extension": [
+        ".ts",
+        ".tsx"
+    ],
+    "exclude": [
+        "**/*.d.ts",
+        "tests/*",
+        "**/Statistics.ts",
+        "**/StatisticLine.ts",
+        "**/index.ts",
+        "**/*.js"
+    ],
+    "reporter": [
+        "text"
+    ],
+    "all": true
+}

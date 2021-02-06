@@ -1,0 +1,1292 @@
+0 HEAD
+1 SOUR FTM
+2 VERS Family Tree Maker (17.0.0.440)
+2 NAME Family Tree Maker for Windows
+2 CORP The Generations Network
+3 ADDR 360 W 4800 N
+4 CONT Provo, UT 84604
+3 PHON (801) 705-7000
+1 DEST FTM
+1 DATE 20 November 2007
+1 CHAR ANSI
+1 FILE C:\Documents and Settings\socrtwo\Desktop\Norse Gods Family Tree.ged
+1 SUBM @SUBM@
+1 GEDC
+2 VERS 5.5
+2 FORM LINEAGE-LINKED
+0 @SUBM@ SUBM
+0 @I00004@ INDI
+1 NAME /Bestla/
+1 SEX F
+1 BIRT
+2 DATE ABT 194
+2 PLAC Asgard, Asia Or, East Europe
+2 SOUR @S00001@
+1 ALIA ancient frost giantess Beltsa Bestla
+1 NOTE @N00005@
+1 FAMS @F00003@
+1 FAMC @F00032@
+0 @I00024@ INDI
+1 NAME Sibil //
+1 SEX F
+1 ALIA Sif Sibil
+1 TITL Goddess of the Aesir
+1 EVEN RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet
+2 CONC .com
+2 TYPE Source
+1 NAME Sibil /(Sif)/
+2 SOUR @S00001@
+1 NOTE @N00019@
+1 FAMS @F00-25@
+0 @I00057@ INDI
+1 NAME /Angrboda/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Angrboda
+2 TYPE Source
+1 FAMS @F00035@
+0 @I00088@ INDI
+1 NAME /Annar/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Annar
+2 TYPE Source
+1 FAMS @F00051@
+0 @I00109@ INDI
+1 NAME /Au�r/
+1 SEX F
+1 EVEN Au�i the Rich, Au�
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/Au%C3%B0
+2 TYPE Source
+1 FAMS @F00058@
+1 FAMC @F00057@
+0 @I00053@ INDI
+1 NAME /Au�umbla/
+1 SEX F
+1 EVEN Au�umla, Au�humbla or Au�humla
+2 TYPE Also Known As II
+1 FAMS @F00033@
+0 @I00084@ INDI
+1 NAME /Aurbo�a/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Aurbo%C3%B0a
+2 TYPE Source
+1 EVEN Aurboda
+2 TYPE Also Known As II
+1 FAMS @F00049@
+0 @I00083@ INDI
+1 NAME /�gir/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/%C3%86gir
+2 TYPE Source
+1 EVEN Gymir or Hl�r
+2 TYPE Also Known As II
+1 FAMS @F00049@
+1 FAMS @F00054@
+1 FAMC @F00055@
+0 @I00026@ INDI
+1 NAME /Baldr/
+1 SEX M
+1 ALIA Thor Trr
+1 BIRT
+2 DATE ABT 235
+1 EVEN http://en.wikipedia.org/wiki/Baldr
+2 TYPE Source
+1 EVEN Baldur, Balder
+2 TYPE Also Known As II
+1 FAMS @F00037@
+1 FAMC @F00008@
+0 @I00144@ INDI
+1 NAME /Baugi/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Baugi
+2 TYPE Source
+1 FAMC @F00068@
+0 @I00094@ INDI
+1 NAME /B�ra/
+1 SEX F
+1 EVEN Dr�fn
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/%C3%86gir
+2 TYPE Source
+1 FAMC @F00054@
+0 @I00085@ INDI
+1 NAME /Beli/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Beli_%28Norse_giant%29
+2 TYPE Source
+1 FAMC @F00049@
+0 @I00095@ INDI
+1 NAME /Bl��ughadda/
+1 SEX F
+1 EVEN Bl��ughadda
+2 TYPE Source
+1 FAMC @F00054@
+0 @I00051@ INDI
+1 NAME /Bolthorn/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Bolthorn
+2 TYPE Source
+1 FAMS @F00032@
+0 @I00010@ INDI
+1 NAME /Borr/
+2 SOUR @S00004@
+3 DATA
+4 TEXT 25 APR 2001
+3 _FOOT Guy Allen Sims, Guy Allen Sims. 25 APR 2001
+3 _ABBR Guy Allen Sims, Guy Allen Sims
+2 SOUR @S00003@
+3 _FOOT Ronald Hillman, Aderholt Hillman Hughes Solomon Dunn Funderburg
+3 _ABBR Ronald Hillman, Aderholt Hillman Hughes Solomon Dunn Funderburg
+1 SEX M
+1 BIRT
+2 DATE ABT 190
+2 PLAC Asgard, Asia Or, East Europe
+2 SOUR @S00001@
+1 ALIA Bor Frithuwald
+1 EVEN http://en.wikipedia.org/wiki/Borr & RCKarnes-RootsWeb & John D Newport
+2 CONC -Ancestry.com (johndnewport@valornet.com
+2 TYPE Source
+1 NOTE @N00010@
+1 FAMS @F00003@
+1 FAMS @F00009@
+1 FAMC @F00007@
+0 @I00033@ INDI
+1 NAME /Bragi/
+1 SEX M
+1 EVEN http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.ht
+2 CONC ml
+2 TYPE Source
+1 FAMS @F00050@
+1 FAMC @F00008@
+0 @I00008@ INDI
+1 NAME /B�ri/
+1 SEX M
+1 ALIA Freothalaf Frealaf
+1 EVEN http://en.wikipedia.org/wiki/B%C3%BAri
+2 TYPE Source
+1 NOTE @N00007@
+1 NOTE @N00008@
+1 FAMS @F00007@
+1 FAMC @F00033@
+0 @I00096@ INDI
+1 NAME /Bylgja/
+1 SEX F
+1 FAMC @F00054@
+0 @I00064@ INDI
+1 NAME /B�leistr/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Byleist
+2 TYPE Source
+1 EVEN Byleist
+2 TYPE Also Known As II
+1 FAMC @F00034@
+0 @I00052@ INDI
+1 NAME Giant Teacher of Odin of Nine Magic /Charms/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Bolthorn
+2 TYPE Source
+1 FAMC @F00032@
+0 @I00107@ INDI
+1 NAME /Dagr/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Dagr
+2 TYPE Source
+1 EVEN Dag, Dagur
+2 TYPE Also Known As II
+1 FAMC @F00056@
+0 @I00106@ INDI
+1 NAME /Delling/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Delling
+2 TYPE Source
+1 FAMS @F00056@
+0 @I00097@ INDI
+1 NAME /D�fa/
+1 SEX F
+1 FAMC @F00054@
+0 @I00054@ INDI
+1 NAME /F�rbauti/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/F%C3%A1rbauti
+2 TYPE Source
+1 FAMS @F00034@
+0 @I00058@ INDI
+1 NAME /Fenrir/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Fenrir & http://en.wikipedia.org/wiki/Hr%
+2 CONC C3%B3dvitnir
+2 TYPE Source
+1 EVEN Fenrisulfr, Fenris�lfr, Hr�dvitnir
+2 TYPE Also Known As II
+1 FAMS @F00036@
+1 FAMC @F00035@
+0 @I00146@ INDI
+1 NAME /Fjalar/
+1 SEX M
+0 @I00080@ INDI
+1 NAME /Fj�lnir/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Fj%C3%B6lnir
+2 TYPE Source
+1 EVEN Fj�lner, Fjolner or Fjolne
+2 TYPE Also Known As II
+1 FAMS @F00048@
+1 FAMC @F00047@
+0 @I00103@ INDI
+1 NAME /Fornj�t/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Fornj%C3%B3t
+2 TYPE Source
+1 EVEN Fornj�tr
+2 TYPE Also Known As II
+1 FAMS @F00055@
+0 @I00119@ INDI
+1 NAME /Forseti/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Forseti
+2 TYPE Source
+1 FAMC @F00037@
+0 @I00086@ INDI
+1 NAME /Freyja/
+1 SEX F
+1 FAMS @F00063@
+1 FAMC @F00046@
+0 @I00079@ INDI
+1 NAME /Freyr/
+1 SEX M
+1 FAMS @F00047@
+1 FAMC @F00046@
+0 @I00009@ INDI
+1 NAME /Frigg/
+1 SEX F
+1 BIRT
+2 DATE ABT 219
+2 PLAC Asgard, Asia Or, East Europe
+2 SOUR @S00001@
+1 ALIA Frea Friege Frigg
+1 NOTE @N00009@
+1 FAMS @F00008@
+1 FAMS @F00040@
+0 @I00147@ INDI
+1 NAME /Galar/
+1 SEX M
+0 @I00076@ INDI
+1 NAME /Gangr/
+1 SEX M
+1 EVEN Gang
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/Gangr
+2 TYPE Source
+1 FAMC @F00045@
+0 @I00123@ INDI
+1 NAME /Gefjun/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Gefjun
+2 TYPE Source
+0 @I00150@ INDI
+1 NAME /Gerd/
+1 SEX F
+1 EVEN Gerd, Ger�ur, G�rd, Gerdhr, Gerda or Gerdur
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/Ger%C3%B0r
+2 TYPE Source
+1 EVEN http://en.wikipedia.org/wiki/Gerd
+2 TYPE Source
+1 FAMS @F00047@
+1 FAMC @F00049@
+0 @I00122@ INDI
+1 NAME /Gersemi/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Gersemi
+2 TYPE Source
+1 FAMC @F00063@
+0 @I00061@ INDI
+1 NAME A /Giantess/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Hati
+2 TYPE Source
+1 FAMS @F00036@
+0 @I00140@ INDI
+1 NAME /Gilling/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Gillingr
+2 TYPE Source
+1 FAMS @F00067@
+1 FAMS @F00068@
+0 @I00110@ INDI
+1 NAME Rich /Girl/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Au%C3%B0
+2 TYPE Source
+1 FAMS @F00059@
+1 FAMC @F00058@
+0 @I00134@ INDI
+1 NAME /Glaur/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Glaur
+2 TYPE Source
+1 FAMS @F00065@
+0 @I00045@ INDI
+1 NAME /Grid/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Grid_%28Jotun%29
+2 TYPE Source
+1 FAMS @F00030@
+0 @I00145@ INDI
+1 NAME /Gunnl��/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Gunnlod
+2 TYPE Source
+1 FAMC @F00069@
+0 @I00098@ INDI
+1 NAME /Hefring/
+1 SEX F
+1 FAMC @F00054@
+0 @I00035@ INDI
+1 NAME /Heimdall/
+1 SEX U
+1 EVEN http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.ht
+2 CONC ml
+2 TYPE Source
+1 FAMC @F00064@
+0 @I00063@ INDI
+1 NAME /Hel/
+1 SEX F
+1 FAMC @F00035@
+0 @I00065@ INDI
+1 NAME /Helbindi/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Helbindi
+2 TYPE Source
+1 FAMC @F00034@
+0 @I00032@ INDI
+1 NAME /Hermod/
+1 SEX M
+1 EVEN Herm��r
+2 TYPE Also Known As II
+1 FAMC @F00064@
+0 @I00099@ INDI
+1 NAME /Himingl�va/
+1 SEX F
+1 FAMC @F00054@
+0 @I00121@ INDI
+1 NAME /Hnoss/
+1 SEX F
+1 FAMC @F00063@
+0 @I00030@ INDI
+1 NAME /H��r/
+1 SEX M
+1 EVEN http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.ht
+2 CONC ml
+2 TYPE Source
+1 EVEN Hod
+2 TYPE Also Known As II
+1 FAMC @F00008@
+0 @I00059@ INDI
+1 NAME Hati /Hr�dvitnisson/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Hati
+2 TYPE Source
+1 FAMC @F00036@
+0 @I00100@ INDI
+1 NAME /Hr�nn/
+1 SEX F
+1 FAMC @F00054@
+0 @I00077@ INDI
+1 NAME /Idi/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Idi_%28giant%29
+2 TYPE Source
+1 FAMC @F00045@
+0 @I00087@ INDI
+1 NAME /I�unn/
+1 SEX F
+1 EVEN Idun
+2 TYPE Also Known As II
+1 EVEN http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.ht
+2 CONC ml
+2 TYPE Source
+1 FAMS @F00050@
+0 @I00115@ INDI
+1 NAME /J�rnsaxa/
+1 SEX F
+1 FAMS @F00061@
+0 @I00036@ INDI
+1 NAME /J�r�/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/J%C3%B6rd
+2 TYPE Source
+1 EVEN J�r�, Jar�, Jorth, Fj�rgyn, Hl�dyn
+2 TYPE Also Known As II
+1 NAME /Jord/
+1 FAMS @F00029@
+1 FAMC @F00051@
+0 @I00062@ INDI
+1 NAME /J�rmungandr/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/J%C3%B6rmungandr
+2 TYPE Source
+1 EVEN Midgard Serpent or World Serpent
+2 TYPE Also Known As II
+1 FAMC @F00035@
+0 @I00105@ INDI
+1 NAME /K�ri/
+1 SEX M
+1 FAMC @F00055@
+0 @I00101@ INDI
+1 NAME /K�lga/
+1 SEX M
+1 FAMC @F00054@
+0 @I00137@ INDI
+1 NAME /Kvasir/
+1 SEX M
+1 FAMC @F00066@
+0 @I00055@ INDI
+1 NAME /Laufey/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Laufey
+2 TYPE Source
+1 EVEN Nal
+2 TYPE Also Known As II
+1 FAMS @F00034@
+0 @I00136@ INDI
+1 NAME /Lofn/
+1 SEX F
+0 @I00104@ INDI
+1 NAME /Logi/
+1 SEX M
+1 FAMC @F00055@
+0 @I00056@ INDI
+1 NAME /Loki/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Loki
+2 TYPE Source
+1 FAMS @F00035@
+1 FAMS @F00053@
+1 FAMC @F00034@
+0 @I00116@ INDI
+1 NAME /Magni/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/M%C3%B3%C3%B0i_and_Magni
+2 TYPE Source
+1 FAMC @F00061@
+0 @I00133@ INDI
+1 NAME /M�ni/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/M%C3%A1ni
+2 TYPE Source
+1 FAMC @F00065@
+0 @I00069@ INDI
+1 NAME /M�mir/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/M%C3%ADmir
+2 TYPE Source
+1 FAMS @F00041@
+0 @I00114@ INDI
+1 NAME /M��i/
+1 SEX M
+1 EVEN M�di or Modi
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/M%C3%B3%C3%B0i_and_Magni
+2 TYPE Source
+1 FAMC @F00060@
+0 @I00130@ INDI
+1 NAME /Mundilfari/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Mundilfari
+2 TYPE Source
+1 EVEN Mundilf�ri
+2 TYPE Also Known As II
+1 FAMS @F00065@
+0 @I00108@ INDI
+1 NAME /Naglfari/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Naglfari
+2 TYPE Source
+1 FAMS @F00057@
+0 @I00066@ INDI
+1 NAME /Nanna/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Nanna_%28Norse_deity%29
+2 TYPE Source
+1 FAMS @F00037@
+1 FAMC @F00038@
+0 @I00090@ INDI
+1 NAME /Narfi/
+1 SEX M
+1 EVEN Nari? Narvi? N�rfi? N�r?
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/Narfi
+2 TYPE Source
+1 FAMS @F00052@
+1 FAMC @F00053@
+0 @I00067@ INDI
+1 NAME /Nepr/
+1 SEX M
+1 FAMS @F00038@
+1 FAMC @F00039@
+0 @I00078@ INDI
+1 NAME /Nerthus/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Nerthus
+2 TYPE Source
+1 FAMS @F00046@
+0 @I00071@ INDI
+1 NAME /Nj�r�r/
+1 SEX M
+1 EVEN Njord, Njordr
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/Njord
+2 TYPE Source
+1 FAMS @F00043@
+1 FAMS @F00046@
+1 FAMC @F00042@
+0 @I00089@ INDI
+1 NAME /N�tt/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/N%C3%B3tt
+2 TYPE Source
+1 EVEN Night
+2 TYPE Also Known As II
+1 FAMS @F00051@
+1 FAMS @F00056@
+1 FAMS @F00057@
+1 FAMC @F00052@
+0 @I00021@ INDI
+1 NAME /Odin/
+1 SEX M
+1 EVEN RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet
+2 CONC .com
+2 TYPE Source
+1 NOTE @N00016@
+1 FAMS @F00008@
+1 FAMS @F00029@
+1 FAMS @F00030@
+1 FAMS @F00031@
+1 FAMS @F00039@
+1 FAMS @F00064@
+1 FAMC @F00003@
+0 @I00075@ INDI
+1 NAME /Olvaldi/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Olvaldi
+2 TYPE Source
+1 FAMS @F00045@
+0 @I00120@ INDI
+1 NAME /��r/
+1 SEX M
+1 EVEN �dr
+2 TYPE Also Known As II
+1 EVEN http://en.wikipedia.org/wiki/%C3%93%C3%B0r
+2 TYPE Source
+1 FAMS @F00063@
+0 @I00093@ INDI
+1 NAME /R�n/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/R%C3%A1n
+2 TYPE Source
+1 FAMS @F00054@
+0 @I00048@ INDI
+1 NAME /Rindr/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Rind_%28giantess%29
+2 TYPE Source
+1 EVEN Rind
+2 TYPE Also Known As II
+1 FAMS @F00031@
+0 @I00139@ INDI
+1 NAME All the Female God's /Saliva/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Kvasir
+2 TYPE Source
+1 FAMS @F00066@
+0 @I00138@ INDI
+1 NAME All the Male God's /Saliva/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Kvasir
+2 TYPE Source
+1 FAMS @F00066@
+0 @I00135@ INDI
+1 NAME /S�ga/
+1 SEX F
+0 @I00129@ INDI
+1 NAME /Seaxneat/
+1 SEX M
+1 EVEN Saxnot
+2 TYPE Also Known As II
+0 @I00113@ INDI
+1 NAME /Sif/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Sif
+2 TYPE Source
+1 FAMS @F00060@
+1 FAMS @F00062@
+0 @I00091@ INDI
+1 NAME /Sigyn/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Sigyn
+2 TYPE Source
+1 FAMS @F00053@
+0 @I00148@ INDI
+1 NAME /Sj�fn/
+1 SEX F
+0 @I00073@ INDI
+1 NAME /Ska�i/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Ska%C3%B0i
+2 TYPE Source
+1 EVEN Skadi, �ndurgud or �ndurdis
+2 TYPE Also Known As II
+1 FAMS @F00043@
+1 FAMC @F00044@
+0 @I00149@ INDI
+1 NAME /Skirnir/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Skirnir
+2 TYPE Source
+0 @I00060@ INDI
+1 NAME /Skoll/
+1 SEX M
+1 FAMC @F00036@
+0 @I00127@ INDI
+1 NAME /Skuld/
+1 SEX F
+0 @I00070@ INDI
+1 NAME Several /Sons/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/M%C3%ADmir
+2 TYPE Source
+1 FAMC @F00041@
+0 @I00131@ INDI
+1 NAME /Sowilo/
+1 SEX F
+1 EVEN S�l, Si?el, "S�wil� ,*Saewel�", Sunna
+2 TYPE Also Known As II
+1 FAMC @F00065@
+0 @I00132@ INDI
+1 NAME /Sunna/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Sol_%28goddess%29
+2 TYPE Source
+1 FAMC @F00065@
+0 @I00142@ INDI
+1 NAME /Suttungr/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Suttungr
+2 TYPE Source
+1 FAMS @F00069@
+1 FAMC @F00067@
+0 @I00074@ INDI
+1 NAME /Thjazi/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Thjazi
+2 TYPE Source
+1 FAMS @F00044@
+1 FAMC @F00045@
+0 @I00047@ INDI
+1 NAME /Thor/
+1 SEX M
+1 FAMS @F00060@
+1 FAMS @F00061@
+1 FAMC @F00029@
+0 @I00034@ INDI
+1 NAME /T�r/
+1 SEX M
+1 EVEN http://www.winhttp://en.wikipedia.org/wiki/T%C3%BDr
+2 TYPE Source
+1 EVEN Tyr, Tyz , Tiw , Ziu, *T�waz., Ty, Ti, T�r
+2 TYPE Also Known As II
+1 FAMC @F00008@
+0 @I00112@ INDI
+1 NAME /�r��r/
+1 SEX F
+1 EVEN Thr�d or Thrud
+2 TYPE Also Known As II
+1 EVEN Thr�d or Thrud
+2 TYPE Source
+1 FAMC @F00060@
+0 @I00118@ INDI
+1 NAME /Ullr/
+1 SEX M
+1 FAMC @F00062@
+0 @I00072@ INDI
+1 NAME /Unknown/
+1 SEX M
+1 FAMS @F00042@
+0 @I00117@ INDI
+1 NAME /Unknown/
+1 SEX M
+1 FAMS @F00062@
+0 @I00143@ INDI
+1 NAME /Unknown/
+1 SEX F
+1 FAMS @F00068@
+0 @I00102@ INDI
+1 NAME /Unnr/
+1 SEX F
+1 FAMC @F00054@
+0 @I00092@ INDI
+1 NAME /V�li/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/V%C3%A1li_%28son_of_Loki%29 & http://en.w
+2 CONC ikipedia.org/wiki/Narfi
+2 TYPE Source
+1 EVEN Nari? Narfi?
+2 TYPE Also Known As II
+1 FAMC @F00053@
+0 @I00128@ INDI
+1 NAME /V�r/
+1 SEX F
+0 @I00050@ INDI
+1 NAME /Ve/
+1 SEX U
+1 EVEN http://en.wikipedia.org/wiki/Ve
+2 TYPE Source
+1 FAMC @F00003@
+0 @I00125@ INDI
+1 NAME /Verdandi/
+1 SEX F
+0 @I00046@ INDI
+1 NAME /Vidar/
+1 SEX U
+1 EVEN http://en.wikipedia.org/wiki/Vidar
+2 TYPE Source
+1 EVEN V��arr, Widar
+2 TYPE Also Known As II
+1 FAMC @F00030@
+0 @I00068@ INDI
+1 NAME /Vili/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Vili
+2 TYPE Source
+1 EVEN H�nir
+2 TYPE Also Known As II
+1 FAMS @F00040@
+1 FAMC @F00003@
+0 @I00111@ INDI
+1 NAME /Visbur/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Au%C3%B0
+2 TYPE Source
+1 FAMS @F00059@
+0 @I00124@ INDI
+1 NAME /V�r/
+1 SEX U
+0 @I00141@ INDI
+1 NAME Gilling's /Wife/
+1 SEX F
+1 EVEN http://en.wikipedia.org/wiki/Gillingr
+2 TYPE Source
+1 FAMS @F00067@
+0 @I00126@ INDI
+1 NAME /Wyrd/
+1 SEX F
+1 EVEN Ur�r, Ur�r, Urd, �rlog.
+2 TYPE Also Known As II
+0 @I00081@ INDI
+1 NAME Semi-Myth Kings of Sweden as Told in /Ynglingatal/
+1 SEX M
+1 EVEN http://en.wikipedia.org/wiki/Ynglingatal
+2 TYPE Source
+1 FAMC @F00048@
+0 @F000-1@ FAM
+1 CHIL @I00-25@
+0 @F000-2@ FAM
+1 CHIL @I000-1@
+0 @F00003@ FAM
+1 HUSB @I00010@
+1 WIFE @I00004@
+1 CHIL @I00021@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00050@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00068@
+2 _FREL Natural
+2 _MREL Natural
+0 @F000-4@ FAM
+1 CHIL @I00-29@
+0 @F000-5@ FAM
+0 @F000-6@ FAM
+1 CHIL @I000-6@
+0 @F00007@ FAM
+1 HUSB @I00008@
+1 CHIL @I00010@
+2 _FREL Natural
+0 @F00008@ FAM
+1 HUSB @I00021@
+1 WIFE @I00009@
+1 CHIL @I00026@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00030@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00033@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00034@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00009@ FAM
+1 HUSB @I00010@
+0 @F00-10@ FAM
+1 CHIL @I000-7@
+0 @F00-11@ FAM
+1 CHIL @I00-15@
+0 @F00-12@ FAM
+1 CHIL @I00-22@
+0 @F00-13@ FAM
+1 CHIL @I00-12@
+0 @F00-14@ FAM
+1 CHIL @I00-13@
+0 @F00-15@ FAM
+1 CHIL @I00-27@
+0 @F00-16@ FAM
+1 CHIL @I000-5@
+0 @F00-17@ FAM
+1 CHIL @I00-23@
+0 @F00-18@ FAM
+1 CHIL @I00-19@
+0 @F00019@ FAM
+0 @F00020@ FAM
+0 @F00021@ FAM
+0 @F00022@ FAM
+0 @F00-23@ FAM
+1 CHIL @I000-2@
+0 @F00-24@ FAM
+1 CHIL @I000-3@
+0 @F00-25@ FAM
+1 WIFE @I00024@
+1 CHIL @I00-17@
+2 _MREL Natural
+0 @F00-26@ FAM
+1 CHIL @I00-11@
+0 @F00-27@ FAM
+1 CHIL @I00-20@
+0 @F00-28@ FAM
+1 CHIL @I00-28@
+0 @F00029@ FAM
+1 HUSB @I00021@
+1 WIFE @I00036@
+1 CHIL @I00047@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00030@ FAM
+1 HUSB @I00021@
+1 WIFE @I00045@
+1 CHIL @I00046@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00031@ FAM
+1 HUSB @I00021@
+1 WIFE @I00048@
+0 @F00032@ FAM
+1 HUSB @I00051@
+1 CHIL @I00004@
+2 _FREL Natural
+1 CHIL @I00052@
+2 _FREL Natural
+0 @F00033@ FAM
+1 WIFE @I00053@
+1 CHIL @I00008@
+2 _MREL Natural
+0 @F00034@ FAM
+1 HUSB @I00054@
+1 WIFE @I00055@
+1 CHIL @I00056@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00064@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00065@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00035@ FAM
+1 HUSB @I00056@
+1 WIFE @I00057@
+1 CHIL @I00058@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00062@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00063@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00036@ FAM
+1 HUSB @I00058@
+1 WIFE @I00061@
+1 CHIL @I00059@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00060@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00037@ FAM
+1 HUSB @I00026@
+1 WIFE @I00066@
+1 CHIL @I00119@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00038@ FAM
+1 HUSB @I00067@
+1 CHIL @I00066@
+2 _FREL Natural
+0 @F00039@ FAM
+1 HUSB @I00021@
+1 CHIL @I00067@
+2 _FREL Natural
+0 @F00040@ FAM
+1 HUSB @I00068@
+1 WIFE @I00009@
+0 @F00041@ FAM
+1 HUSB @I00069@
+1 CHIL @I00070@
+2 _FREL Natural
+0 @F00042@ FAM
+1 HUSB @I00072@
+1 CHIL @I00071@
+2 _FREL Natural
+0 @F00043@ FAM
+1 HUSB @I00071@
+1 WIFE @I00073@
+0 @F00044@ FAM
+1 HUSB @I00074@
+1 CHIL @I00073@
+2 _FREL Natural
+0 @F00045@ FAM
+1 HUSB @I00075@
+1 CHIL @I00074@
+2 _FREL Natural
+1 CHIL @I00076@
+2 _FREL Natural
+1 CHIL @I00077@
+2 _FREL Natural
+0 @F00046@ FAM
+1 HUSB @I00071@
+1 WIFE @I00078@
+1 CHIL @I00079@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00086@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00047@ FAM
+1 HUSB @I00079@
+1 WIFE @I00150@
+1 CHIL @I00080@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00048@ FAM
+1 HUSB @I00080@
+1 CHIL @I00081@
+2 _FREL Natural
+0 @F00049@ FAM
+1 HUSB @I00083@
+1 WIFE @I00084@
+1 CHIL @I00085@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00150@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00050@ FAM
+1 HUSB @I00033@
+1 WIFE @I00087@
+0 @F00051@ FAM
+1 HUSB @I00088@
+1 WIFE @I00089@
+1 CHIL @I00036@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00052@ FAM
+1 HUSB @I00090@
+1 CHIL @I00089@
+2 _FREL Natural
+0 @F00053@ FAM
+1 HUSB @I00056@
+1 WIFE @I00091@
+1 CHIL @I00090@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00092@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00054@ FAM
+1 HUSB @I00083@
+1 WIFE @I00093@
+1 CHIL @I00094@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00095@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00096@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00097@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00098@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00099@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00100@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00101@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00102@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00055@ FAM
+1 HUSB @I00103@
+1 CHIL @I00083@
+2 _FREL Natural
+1 CHIL @I00104@
+2 _FREL Natural
+1 CHIL @I00105@
+2 _FREL Natural
+0 @F00056@ FAM
+1 HUSB @I00106@
+1 WIFE @I00089@
+1 CHIL @I00107@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00057@ FAM
+1 HUSB @I00108@
+1 WIFE @I00089@
+1 CHIL @I00109@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00058@ FAM
+1 WIFE @I00109@
+1 CHIL @I00110@
+2 _MREL Natural
+0 @F00059@ FAM
+1 HUSB @I00111@
+1 WIFE @I00110@
+0 @F00060@ FAM
+1 HUSB @I00047@
+1 WIFE @I00113@
+1 CHIL @I00112@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00114@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00061@ FAM
+1 HUSB @I00047@
+1 WIFE @I00115@
+1 CHIL @I00116@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00062@ FAM
+1 HUSB @I00117@
+1 WIFE @I00113@
+1 CHIL @I00118@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00063@ FAM
+1 HUSB @I00120@
+1 WIFE @I00086@
+1 CHIL @I00121@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00122@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00064@ FAM
+1 HUSB @I00021@
+1 CHIL @I00032@
+2 _FREL Natural
+1 CHIL @I00035@
+2 _FREL Natural
+0 @F00065@ FAM
+1 HUSB @I00130@
+1 WIFE @I00134@
+1 CHIL @I00131@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00132@
+2 _FREL Natural
+2 _MREL Natural
+1 CHIL @I00133@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00066@ FAM
+1 HUSB @I00138@
+1 WIFE @I00139@
+1 CHIL @I00137@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00067@ FAM
+1 HUSB @I00140@
+1 WIFE @I00141@
+1 CHIL @I00142@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00068@ FAM
+1 HUSB @I00140@
+1 WIFE @I00143@
+1 CHIL @I00144@
+2 _FREL Natural
+2 _MREL Natural
+0 @F00069@ FAM
+1 HUSB @I00142@
+1 CHIL @I00145@
+2 _FREL Natural
+0 @N00005@ NOTE
+1 CONC [RCKarnes.ged]
+1 CONT
+1 CONT In Norse mythology, Bestla was an ancient frost giantess
+1 CONT
+1 CONT ...
+0 @N00007@ NOTE
+1 CONC [RCKarnes.ged]
+1 CONT
+1 CONT Frealaf (Frallaf) son of Frithwulf (Frithuwulf)
+1 CONT
+1 CONT ...
+0 @N00008@ NOTE
+1 CONC [RCKarnes.ged]
+1 CONT
+1 CONT Frealaf (Frallaf) son of Frithwulf (Frithuwulf)
+1 CONT
+1 CONT ...
+0 @N00009@ NOTE
+1 CONC [RCKarnes.ged]
+1 CONT
+1 CONT In Norse mythology, Frigg or Frigga was the mother goddess and the wif
+1 CONC e of Odin or Odr. Considered queen of the heavens, the goddess of moth
+1 CONC erhood, fertility, love and housework. Indeed strong parallels exist b
+1 CONC etween Frigg and Freya of whom she may be a different aspect (cf. avat
+1 CONC ar). Freya was a shaman practicting the seid and Frigg was reputed toh
+1 CONC ave the ability to foresee everyone's destiny without revealing it. Th
+1 CONC e mother of Baldur, she endeavoured to protect him from his preordaine
+1 CONC d death by swearing oaths from everything in nature, but forgot the mi
+1 CONC stletoe. It may be stated with a certain degree of truth that Frigg an
+1 CONC d Freya are the same but different versions. Freya became Frigg after 
+1 CONC she lived with the Aesir. Born a Vanir she became an Aesir by marriage
+1 CONC , and as the wife of Odin she became a goddess of wifehood. However, p
+1 CONC romiscuous Freya provided a lusty choice on his part. As Frigg shehad 
+1 CONC an affair with Ve and Vili, Odin's brothers, according to Loki inLokas
+1 CONC enna. This happened when Odin was gone for so long that everyonethoug
+1 CONC h him dead (cf. Freya's crying golden tears when she thought Odr(Odin
+1 CONC ) had disappeared).  Frigg's hall in Asgard is Fensalir. With her husb
+1 CONC and, she was the mother of Bragi, Wecta and Hermod. Eir, a goddess of 
+1 CONC healing, was one of her constant companions. She had attendantsnamed G
+1 CONC lm and Syn.  She participated in the Wild Hunt (Asgardreid) along wit
+1 CONC h her husband.  She had three attendants, Hlin, Gna and Fulla, all of 
+1 CONC whom may have been the same deity in a different aspect as Frigg.  (Fr
+1 CONC om Wikipedia, the free encyclopedia)
+1 CONT
+1 CONT ...
+0 @N00010@ NOTE
+1 CONC [RCKarnes.ged]
+1 CONT
+1 CONT In Norse mythology, the god Bor, or Borr was the father of Odin, Ve an
+1 CONC d Vili by the frost giantess Bestla.  Bor was the son of the giant Bur
+1 CONC i.  In Norse mythology, Buri (also Bri, Bur) was the god formed by th
+1 CONC e cow Audumla licking the salty ice of Ginnungagap.  He was the fathe
+1 CONC r of Bor and grandfather of the Aesir.
+1 CONT
+1 CONT ...
+0 @N00016@ NOTE
+1 CONC [RCKarnes.ged]
+1 CONT
+1 CONT duplicate line (to Adam and Eve) Wotan, Wodan, Woden, Oden, Odin or in
+1 CONC n is usually considered the supreme god of Germanic and Norse mytholog
+1 CONC y.  Odin was a son of Bestla and Bor and brother of V and Vili and tog
+1 CONC ether with these brothers he cast down the frost giant Ymir and create
+1 CONC d the world from Ymir's body.  The three brothers are often mentionedt
+1 CONC ogether. "Wille" is the German word for "will" (English), "Weh" is th
+1 CONC e German word (Gothic wai) for "woe" (English: great sorrow, grief, mi
+1 CONC sery) but is more likely related to the archaic German "Wei" meaning '
+1 CONC sacred'.  Odin fathered his most famous son Thor on Jord 'Earth'. Buth
+1 CONC is wife and consort was the goddess Frigg who in the best-known tradit
+1 CONC ion was the loving mother of their son Baldr).  By the giantess Grr,Od
+1 CONC in was the father of Varr and by Rind he was father of Vali.  Also man
+1 CONC y royal families claimed descent from Odin through other sons.
+1 CONT (From Wikipedia, the free encyclopedia)
+1 CONT
+1 CONT ...
+1 CONT
+1 CONT ..
+0 @N00019@ NOTE
+1 CONC [RCKarnes.ged]
+1 CONT
+1 CONT In Norse mythology, Sif is a goddess of the Aesir, wife of Thor and mo
+1 CONC ther of Thrud, Ull and Modi. Thor is not the father of Ull. She has ha
+1 CONC ir of gold which grows just like natural hair, made by the dwarves cal
+1 CONC led "sons of Ivaldi" (Dvalin). Loki cut off Sif's hair as a prank, bu
+1 CONC t when Thor found this out he forced Loki to promise to have golden ha
+1 CONC ir made by the dark elves. Loki uses this event to taunt Sif and, indi
+1 CONC rectly, Thor in Lokasenna. Loki succeeded in having such hair made, a
+1 CONC s well as Freyr's ship Skidbladnir and Odin's spear Gungni, all made b
+1 CONC y the same dwarf Dvalin.    In Norse mythology, Sif (/siv/,"relative"
+1 CONC ) is a goddess of the Aesir, wife of Thor and mother of Thrud, Ull an
+1 CONC d Modi. Thor is not the father of Ull. Sif was not the mother of Magni
+1 CONC , this was Thor's son with Jarnsaxa. She has hair of gold which growsj
+1 CONC ust like natural hair, made by the dwarves called "sons of Ivaldi" (Dv
+1 CONC alin). Loki cut off Sif's hair as a prank, but when Thor found this ou
+1 CONC t he forced Loki to promise to have golden hair made by the dark elves
+1 CONC . Loki uses this event to taunt Sif and, indirectly, Thor in Lokasenna
+1 CONC .  Loki succeeded in having such hair made, as well as Freyr's ship Sk
+1 CONC idbladnir and Odin's spear Gungni, all made by the same dwarf Dvalin.
+1 CONT
+1 CONT ...
+0 @R00001@ REPO
+1 NAME RootsWeb
+1 ADDR
+1 EMAIL
+1 PHON
+0 @R00002@ REPO
+1 NAME rootsweb.com
+1 ADDR
+1 EMAIL
+1 PHON
+0 @R00003@ REPO
+1 NAME 559 Southern Run, Fairhope, AL  36532
+1 ADDR
+1 EMAIL
+1 PHON
+0 @S00001@ SOUR
+1 AUTH RCKarnes
+1 TITL RCKarnes
+1 REPO @R00001@
+1 NOTE
+2 CONC Source Medium: Internet
+2 CONT
+0 @S00002@ SOUR
+1 AUTH Family Tree Maker
+1 TITL World Family Tree Vol. 5
+1 PUBL Name: Name: Broderbund Software, Inc., 1996;;
+1 NOTE
+2 CONC Source Medium: Family Archive CD
+2 CONT
+2 CONT Customer pedigree.
+2 CONT
+0 @S00003@ SOUR
+1 AUTH Ronald Hillman
+1 TITL Aderholt Hillman Hughes Solomon Dunn Funderburg
+1 REPO @R00002@
+1 NOTE
+2 CONC Source Medium: Internet
+2 CONT
+0 @S00004@ SOUR
+1 AUTH Guy Allen Sims
+1 TITL Guy Allen Sims
+1 REPO @R00003@
+1 NOTE
+2 CONC Source Medium: Book
+2 CONT
+2 CONT GEDCOM File : 1503980.ged
+2 CONT
+0 TRLR
