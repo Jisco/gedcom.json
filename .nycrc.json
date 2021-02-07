@@ -9,6 +9,7 @@
         "**/Statistics.ts",
         "**/StatisticLine.ts",
         "**/index.ts",
+        "**/console.ts",
         "**/*.js"
     ],
     "reporter": [
