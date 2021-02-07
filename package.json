@@ -4,8 +4,10 @@
   "description": "Convert GEDCOM Files to an JSON File or an JavaScript-Object and vice versa",
   "main": "dist/index.js",
   "scripts": {
-    "demo:JSON": "ts-node src/index.ts --path 'examples/simpsons.ged'",
-    "demoFile:JSON": "ts-node src/index.ts --path 'examples/simpsons.ged' --out 'test.json'",
+    "build": "tsc --build ./tsconfig.json",
+    "clean": "tsc --build ./tsconfig.json --clean",
+    "demo:JSON": "ts-node src/console.ts --path 'examples/simpsons.ged'",
+    "demoFile:JSON": "ts-node src/console.ts --path 'examples/simpsons.ged' --out 'test.json'",
     "test": "nyc mocha",
     "test:watch": "mocha --watch --watch-files src, tests/**/*.ts",
     "doc": "typedoc --out docs src"
