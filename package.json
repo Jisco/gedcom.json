@@ -10,7 +10,8 @@
     "demoFile:JSON": "ts-node src/console.ts --path 'examples/simpsons.ged' --out 'test.json'",
     "test": "nyc mocha",
     "test:watch": "mocha --watch --watch-files src, tests/**/*.ts",
-    "doc": "typedoc --out docs src"
+    "doc": "typedoc --out docs src",
+    "publish": "npm run build && np"
   },
   "keywords": [
     "gedcom",
@@ -55,7 +56,7 @@
     "js-yaml": "^3.14.1",
     "julian-gregorian": "^1.0.0",
     "line-by-line": "^0.1.6",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "object-path": "^0.11.5",
     "yargs": "^16.2.0"
   }
