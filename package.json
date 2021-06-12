@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "dayjs": "^1.10.4",
-    "deepdash": "^5.3.6",
+    "deepdash": "^5.3.9",
     "fclone": "^1.0.11",
     "hebcal": "^2.3.2",
     "js-yaml": "^3.14.1",
