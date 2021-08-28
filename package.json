@@ -57,7 +57,7 @@
     "julian-gregorian": "^1.0.0",
     "line-by-line": "^0.1.6",
     "lodash": "^4.17.21",
-    "object-path": "^0.11.5",
+    "object-path": "^0.11.6",
     "yargs": "^16.2.0"
   }
 }
