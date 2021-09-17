@@ -1,6 +1,7 @@
 # gedcom.json
 
-<!-- [![Build Status](https://travis-ci.com/Jisco/gedcom.json.png?branch=master)](https://travis-ci.com/Jisco/gedcom.json) --> [![codecov](https://codecov.io/gh/Jisco/gedcom.json/branch/master/graph/badge.svg?token=MQ5CNQYFPU)](https://codecov.io/gh/Jisco/gedcom.json) [![Known Vulnerabilities](https://snyk.io/test/github/Jisco/gedcom.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Jisco/gedcom.json?targetFile=package.json)
+<!-- [![Build Status](https://travis-ci.com/Jisco/gedcom.json.png?branch=master)](https://travis-ci.com/Jisco/gedcom.json) --> 
+[![codecov](https://codecov.io/gh/Jisco/gedcom.json/branch/master/graph/badge.svg?token=MQ5CNQYFPU)](https://codecov.io/gh/Jisco/gedcom.json) [![Known Vulnerabilities](https://snyk.io/test/github/Jisco/gedcom.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Jisco/gedcom.json?targetFile=package.json)
 
 Live example: [CodeSandbox](https://codesandbox.io/s/blissful-elbakyan-tofq8?file=/index.html)
 
