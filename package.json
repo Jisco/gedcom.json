@@ -11,7 +11,7 @@
     "test": "nyc mocha",
     "test:watch": "mocha --watch --watch-files src, tests/**/*.ts",
     "doc": "typedoc --out docs src",
-    "publish": "npm run build && np"
+    "npm-publish": "npm run build && np"
   },
   "keywords": [
     "gedcom",
