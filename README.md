@@ -31,7 +31,7 @@ I am aware that there are already several parsers for the gedcom format. However
 
 ##### Via commandline
 
-Just run npx ts-node src/index.ts  with the wanted flags. Eg if you run "npm run demo:JSON" it will execute "ts-node src/index.ts --path 'examples/simpsons.get'" and will print out the Simpsons GEDCOM examplke file as JSON object in the console. With "npm run demoFile:JSON" it will do the same but prints the JSON object in a 'test.json' file.
+Just run npx ts-node src/console.ts  with the wanted flags. Eg if you run "npm run demo:JSON" it will execute "ts-node src/console.ts --path 'examples/simpsons.get'" and will print out the Simpsons GEDCOM examplke file as JSON object in the console. With "npm run demoFile:JSON" it will do the same but prints the JSON object in a 'test.json' file.
 
 | Flag             | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
@@ -40,6 +40,7 @@ Just run npx ts-node src/index.ts  with the wanted flags. Eg if you run "npm run
 | --out *xxx.json* | File path to print into                                      |
 | --path *xxx.ged* | Set the path to the GEDCOM file                              |
 | --silent         | Don't print anything to the console                          |
+| --showProgress   | Print the progress during processing the file                |
 
 ##### Via Node or JS
 

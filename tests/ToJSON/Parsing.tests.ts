@@ -28,4 +28,37 @@ describe('Parsing text', () => {
             expect(stats.NotParsedLinesWithoutGEDCOMTag).lengthOf(1);
         });
     });
+
+    it('With Progress', () => {
+        let testData = `
+        0 @N00010@ NOTE
+        0 TRLR`;
+
+        let options = `
+        Definition:
+        - Tag: NOTE
+          CollectAs: Notes
+          Property: Id
+        `;
+
+        let allLinesCount = 0;
+        let invokeCounter = 0;
+        let lineNumberArray: number[] = [];
+        let progressFunc = (linesCount: number, lineNumber:number) => {
+            allLinesCount = linesCount;
+            invokeCounter++;
+            lineNumberArray.push(lineNumber);
+        };
+
+        expect(ParseText(testData, options, progressFunc).Object).to.deep.equal({
+          Notes:
+          {
+            Id: "@N00010@"
+          }
+        });
+
+        expect(allLinesCount).to.equal(3);
+        expect(invokeCounter).to.equal(3);
+        expect(lineNumberArray).to.deep.equal([ 0, 1, 2 ]);
+    });
 });
