@@ -15,6 +15,7 @@ import ParsingPath from '../models/ParsingPath';
 import { ClearDateTimeMergingInfos } from './parseDate';
 
 const eachDeep = require('deepdash/eachDeep');
+let parsingOptions: any;
 
 /**
  * Store for file\text processing
@@ -30,7 +31,6 @@ export function ResetProcessing() {
     parsingOptions = {};
 }
 
-let parsingOptions: any;
 export function SetParsingOptions(options: any) {
     parsingOptions = options;
 }

@@ -20,9 +20,14 @@ let stats = new Statistics();
  *
  * @param text - The text
  * @param parsingOptions - The parsing options
+ * @param invokeProgressFunction - Set function that is called before each line, to show progress in some way
  * @returns An object which includes the parsed object and parsing statistics
 */
-export function ParseText(text?: string, parsingOptions?: string): ParsingResult {
+export function ParseText(
+    text?: string, 
+    parsingOptions?: string, 
+    invokeProgressFunction?: (linesCount: number, actualLine: number) => void): ParsingResult {
+
     if (!text || !parsingOptions){
         return new ParsingResult({});
     }
@@ -51,8 +56,12 @@ export function ParseText(text?: string, parsingOptions?: string): ParsingResult
         lineNumber++;
     };
 
-    forEach(lines, line => {
-        ProcessNewLine(lastLevel, lineNumber, line, nextLine);
+    forEach(lines, (line, index) => {
+      if (invokeProgressFunction) {
+        invokeProgressFunction(lines.length, index);
+      }
+
+      ProcessNewLine(lastLevel, lineNumber, line, nextLine);
     });
     
     let result = GetResult();
@@ -67,11 +76,47 @@ export function ParseText(text?: string, parsingOptions?: string): ParsingResult
  * @param parsingOptions - The parsing options
  * @param doneCallback - Returns the resulting object when file is readed completly
  * @param errorCallback - Returns file reading errors
+ * @param invokeProgressFunction - Set function that is called before each line, to show progress in some way
  * @returns An object which includes the parsed object and parsing statistics
 */
+
 /* istanbul ignore next */ // maybe later ;)
-export function ParseFile(path: string, parsingOptions: string, doneCallback: (result: ParsingResult) => void, errorCallback: any) {
-    let lr = new LineByLineReader(path);    
+export function ParseFile(
+  path: string, 
+  parsingOptions: string, 
+  doneCallback: (result: ParsingResult) => void, 
+  errorCallback: any,
+  invokeProgressFunction?: ((linesCount: number, actualLine: number) => void) | undefined) {
+
+    // if no progress should be shown, it is not necessary to get the line count of the file at first
+    if (!invokeProgressFunction) {
+      ExecuteParseFile(path, parsingOptions, doneCallback, errorCallback, 0);
+      return;
+    }
+
+    // read first time to get lines count
+    let linesCountLr = new LineByLineReader(path);
+    let linesCount = 0;
+    linesCountLr.on('line', function (line: any) {
+      linesCountLr.pause();
+      linesCount++;
+      linesCountLr.resume();
+    });
+
+    linesCountLr.on('end', function () {
+      ExecuteParseFile(path, parsingOptions, doneCallback, errorCallback, linesCount, invokeProgressFunction);
+    });
+}
+
+/* istanbul ignore next */ // maybe later ;)
+function ExecuteParseFile(
+  path: string, 
+  parsingOptions: string, 
+  doneCallback: (result: ParsingResult) => void, 
+  errorCallback: any,
+  linesCount: number,
+  invokeProgressFunction?: ((linesCount: number, actualLine: number) => void) | undefined) {
+    let lr = new LineByLineReader(path);
     let lastLevel = 0;
     let lineNumber = 1;
     let yamlOptions: string | object | undefined = {};
@@ -91,6 +136,10 @@ export function ParseFile(path: string, parsingOptions: string, doneCallback: (r
     let nextLine = (lastLine: ParsedLine | undefined = undefined) => {
         if (lastLine){
             lastLevel = lastLine.Level;
+        }
+
+        if (invokeProgressFunction) {
+          invokeProgressFunction(linesCount, lineNumber);
         }
 
         lineNumber++;
@@ -115,7 +164,7 @@ export function ParseFile(path: string, parsingOptions: string, doneCallback: (r
         // All lines are read, file is closed now.
         doneCallback(new ParsingResult(result, stats));
     });
-}
+  }
 
 /**
  * Function that processes a text line
