@@ -27,6 +27,7 @@ export function ParseText(
     text?: string, 
     parsingOptions?: string, 
     invokeProgressFunction?: (linesCount: number, actualLine: number) => void): ParsingResult {
+    stats = new Statistics();
 
     if (!text || !parsingOptions){
         return new ParsingResult({});
