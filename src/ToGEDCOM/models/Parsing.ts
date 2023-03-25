@@ -1,6 +1,6 @@
-import { ParseFile, ParseText } from "../parsing/parsing";
 import ParsingOptions from "../../Common/ParsingOptions";
-import ParsingResult from "./ParsingResult";
+import { ParseFile, ParseObject } from "../parsing/parsing";
+import ParsingResult from "./statistics/ParsingResult";
 
 export default class Parsing {
     constructor(parsingOptions?: ParsingOptions) {
@@ -9,19 +9,19 @@ export default class Parsing {
 
     private options: ParsingOptions;    
 
-    SaveAs(result: Object, path: string) {
-        require('fs').writeFileSync(path, JSON.stringify(result, null, 1));
+    SaveAs(result: string, path: string) {
+        require('fs').writeFileSync(path, result);
     }
 
-    ParseText(): ParsingResult {
+    ParseObject(): ParsingResult {
         if (!this.options.GetText()) {
-            return new ParsingResult({});
+            return new ParsingResult("");
         }
 
-        return ParseText(this.options.GetText(), this.options.GetConfig(), this.options.GetProgressFunction());
+        return ParseObject(this.options.GetObject(), this.options.GetConfig(), this.options.GetProgressFunction());
     }
 
-    ParseTextAsync(): Promise<ParsingResult> {
+    ParseObjectAsync(): Promise<ParsingResult> {
         if (!this.options.GetText()) {
             return new Promise<ParsingResult>((resolve, reject) => {
                 reject("No text definied");
@@ -29,7 +29,7 @@ export default class Parsing {
         }
 
         return new Promise<ParsingResult>((resolve, reject) => {
-            resolve(ParseText(this.options.GetText(), this.options.GetConfig(), this.options.GetProgressFunction()));
+            resolve(ParseObject(this.options.GetObject(), this.options.GetConfig(), this.options.GetProgressFunction()));
         });
     }
 

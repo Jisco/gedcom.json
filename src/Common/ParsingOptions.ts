@@ -1,11 +1,16 @@
 export default class ParsingOptions {
     private text?: string;
+    private object?: object;
     private filePath?: string;
     private config?: string;
-    private progressFunction?: (linesCount: number, actualLine: number) => void;
+    private progressFunction?: (propertiesCount: number, actualProperty: number) => void;
 
     SetText(text: string) {
         this.text = text;
+    }
+
+    SetObject(object: object) {
+        this.object = object;
     }
 
     SetFilePath(path: string) {
@@ -24,6 +29,10 @@ export default class ParsingOptions {
         return this.text;
     }
 
+    GetObject() {
+        return this.object;
+    }
+
     GetFilePath() {
         return this.filePath;
     }
@@ -32,11 +41,11 @@ export default class ParsingOptions {
         return this.config ?? require('fs').readFileSync('options/version551.yaml', 'utf8');
     }
 
-    SetProgressFunction(func: (linesCount: number, actualLine: number) => void) {
+    SetProgressFunction(func: (propertiesCount: number, actualProperty: number) => void) {
         this.progressFunction = func;
     }
 
-    GetProgressFunction() : ((linesCount: number, actualLine: number) => void) | undefined {
+    GetProgressFunction() : ((propertiesCount: number, actualProperty: number) => void) | undefined {
         return this.progressFunction;
     }
 }

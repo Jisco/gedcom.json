@@ -1,7 +1,9 @@
 import JsonParsing from "./ToJSON/models/Parsing";
-import ParsingOptions from "./ToJSON/models/ParsingOptions";
+import GedcomParsing from "./ToGEDCOM/models/Parsing";
+import ParsingOptions from "./Common/ParsingOptions";
 
 export {
     JsonParsing,
-    ParsingOptions
+    ParsingOptions,
+    GedcomParsing
 }

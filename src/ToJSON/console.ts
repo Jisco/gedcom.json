@@ -1,5 +1,5 @@
 import Parsing from "./models/Parsing";
-import ParsingOptions from "./models/ParsingOptions";
+import ParsingOptions from "../Common/ParsingOptions";
 
 export function Convert(argv:any) {
     let options = new ParsingOptions();
