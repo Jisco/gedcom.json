@@ -3,54 +3,76 @@ import { ParseFile, ParseObject } from "../parsing/parsing";
 import ParsingResult from "./statistics/ParsingResult";
 
 export default class Parsing {
-    constructor(parsingOptions?: ParsingOptions) {
-        this.options = parsingOptions ?? new ParsingOptions();
+  constructor(parsingOptions?: ParsingOptions) {
+    this.options = parsingOptions ?? new ParsingOptions();
+  }
+
+  private options: ParsingOptions;
+
+  SaveAs(result: string, path: string) {
+    require("fs").writeFileSync(path, result);
+  }
+
+  ParseObject(): ParsingResult {
+    if (!this.options.GetText()) {
+      return new ParsingResult("");
     }
 
-    private options: ParsingOptions;    
+    return ParseObject(
+      this.options.GetObject(),
+      this.options.GetConfig(),
+      this.options.GetProgressFunction()
+    );
+  }
 
-    SaveAs(result: string, path: string) {
-        require('fs').writeFileSync(path, result);
+  ParseObjectAsync(): Promise<ParsingResult> {
+    if (!this.options.GetText()) {
+      return new Promise<ParsingResult>((resolve, reject) => {
+        reject("No text definied");
+      });
     }
 
-    ParseObject(): ParsingResult {
-        if (!this.options.GetText()) {
-            return new ParsingResult("");
-        }
+    return new Promise<ParsingResult>((resolve, reject) => {
+      resolve(
+        ParseObject(
+          this.options.GetObject(),
+          this.options.GetConfig(),
+          this.options.GetProgressFunction()
+        )
+      );
+    });
+  }
 
-        return ParseObject(this.options.GetObject(), this.options.GetConfig(), this.options.GetProgressFunction());
+  ParseFile(
+    doneCallback: (result: ParsingResult) => void,
+    errorCallback: Function
+  ) {
+    const filePath = this.options.GetFilePath();
+    if (!filePath) {
+      return;
     }
 
-    ParseObjectAsync(): Promise<ParsingResult> {
-        if (!this.options.GetText()) {
-            return new Promise<ParsingResult>((resolve, reject) => {
-                reject("No text definied");
-            });
-        }
+    ParseFile(
+      filePath,
+      this.options.GetConfig(),
+      doneCallback,
+      errorCallback,
+      this.options.GetProgressFunction()
+    );
+  }
 
-        return new Promise<ParsingResult>((resolve, reject) => {
-            resolve(ParseObject(this.options.GetObject(), this.options.GetConfig(), this.options.GetProgressFunction()));
-        });
+  ParseFileAsync(): Promise<ParsingResult> {
+    if (!this.options.GetFilePath()) {
+      return new Promise<ParsingResult>((resolve, reject) => {
+        reject("No file path definied");
+      });
     }
 
-    ParseFile(doneCallback: (result: ParsingResult) => void, errorCallback: Function) {
-        let filePath = this.options.GetFilePath();
-        if (!filePath) {
-            return;
-        }
-
-        ParseFile(filePath, this.options.GetConfig(), doneCallback, errorCallback, this.options.GetProgressFunction());
-    }
-
-    ParseFileAsync(): Promise<ParsingResult> {
-        if (!this.options.GetFilePath()) {
-            return new Promise<ParsingResult>((resolve, reject) => {
-                reject("No file path definied");
-            });
-        }
-
-        return new Promise<ParsingResult>((resolve, reject) => {
-            this.ParseFile(r => resolve(r), (e:any) => reject(e));
-        });
-    }
+    return new Promise<ParsingResult>((resolve, reject) => {
+      this.ParseFile(
+        (r) => resolve(r),
+        (e: any) => reject(e)
+      );
+    });
+  }
 }

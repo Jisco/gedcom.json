@@ -1,7 +1,7 @@
 export default class ConvertTo {
-    constructor(type: string) {
-        this.Type = type;
-    }
+  constructor(type: string) {
+    this.Type = type;
+  }
 
-    Type: string;
+  Type: string;
 }

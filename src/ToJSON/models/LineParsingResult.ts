@@ -1,9 +1,9 @@
 export default class LineParsingResult {
-    constructor(parsed: Boolean, reason?: string) {
-        this.Parsed = parsed;
-        this.Reason = reason;
-    }
+  constructor(parsed: boolean, reason?: string) {
+    this.Parsed = parsed;
+    this.Reason = reason;
+  }
 
-    Parsed: Boolean;
-    Reason?: string;
+  Parsed: boolean;
+  Reason?: string;
 }
