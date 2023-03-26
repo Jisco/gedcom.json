@@ -32,7 +32,7 @@ export default class Parsing {
       });
     }
 
-    return new Promise<ParsingResult>((resolve, reject) => {
+    return new Promise<ParsingResult>((resolve) => {
       resolve(
         ParseObject(
           this.options.GetObject(),

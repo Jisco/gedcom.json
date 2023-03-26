@@ -1,7 +1,7 @@
 import ParsingResult from "../models/statistics/ParsingResult";
-import Statistics from "../models/statistics/Statistics";
-
-const stats = new Statistics();
+import yaml from "js-yaml";
+import { readFile } from "fs/promises";
+import { ProcessObject } from "./processObject";
 
 /**
  * Parses a object to an text
@@ -19,7 +19,23 @@ export function ParseObject(
     actualproperty: number
   ) => void
 ): ParsingResult {
-  return new ParsingResult("", undefined);
+  if (!object || !parsingOptions) {
+    return new ParsingResult("");
+  }
+
+  let yamlOptions: string | object | undefined = {};
+
+  try {
+    yamlOptions = yaml.safeLoad(parsingOptions);
+  } catch (e) {
+    return new ParsingResult("");
+  }
+
+  if (!yamlOptions) {
+    return new ParsingResult("");
+  }
+
+  return ProcessObject(object, yamlOptions, invokeProgressFunction);
 }
 
 /**
@@ -43,5 +59,13 @@ export function ParseFile(
     | ((linesCount: number, actualLine: number) => void)
     | undefined
 ) {
-  // TODO
+  readFile(path)
+    .then((data) => {
+      const obj = JSON.parse(data.toString());
+      const result = ParseObject(obj, parsingOptions, invokeProgressFunction);
+      doneCallback(result);
+    })
+    .catch((error) => {
+      errorCallback(error);
+    });
 }
