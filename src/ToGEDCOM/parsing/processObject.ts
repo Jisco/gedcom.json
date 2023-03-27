@@ -1,7 +1,6 @@
-import { find, get, has, isArray, isNumber, isObject, tail } from "lodash";
+import { find, isArray, isObject } from "lodash";
 import ProcessObjectValue from "../models/processing/processObjectValue";
 import ParsingResult from "../models/statistics/ParsingResult";
-import StatisticProperty from "../models/statistics/StatisticProperty";
 import Statistics from "../models/statistics/Statistics";
 
 const paths = require("deepdash/paths");
@@ -58,11 +57,11 @@ export function ProcessObject(
       return;
     }
 
-    console.log("");
-    console.log("-------------");
-    console.log("Value:\t", JSON.stringify(val, null, 1));
-    console.log("IsObject:\t", isObject(val));
-    console.log("Key:\t", key);
+    // console.log("");
+    // console.log("-------------");
+    // console.log("Value:\t", JSON.stringify(val, null, 1));
+    // console.log("IsObject:\t", isObject(val));
+    // console.log("Key:\t", key);
     let definition: any = undefined;
     const depth = context.depth - 1;
 
@@ -90,7 +89,7 @@ export function ProcessObject(
         (p) => p.Property === key
       );
 
-      console.log(definition);
+      // console.log(definition);
       if (!definition) {
         // TODO:
         return;
@@ -98,7 +97,7 @@ export function ProcessObject(
 
       const resultText = `${depth == 0 ? 1 : depth} ${definition.Tag} ${val}\n`;
 
-      console.log(resultText);
+      // console.log(resultText);
       result += resultText;
     }
 
@@ -106,9 +105,8 @@ export function ProcessObject(
     //   console.log("Definition:\t", definition);
 
     // }
-
-    result += "0 TRLR";
   });
 
+  result += "0 TRLR";
   return new ParsingResult(result, undefined);
 }

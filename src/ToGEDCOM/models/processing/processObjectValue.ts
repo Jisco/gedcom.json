@@ -11,6 +11,7 @@ export default function ProcessObjectValue(
 
   // try find definition via "CollectAs"
   let definition = find(options, (p) => p.CollectAs === key);
+  let result = "";
 
   if (!definition) {
     // try find definition via "Property"
@@ -18,15 +19,26 @@ export default function ProcessObjectValue(
 
     if (!definition || !definition.Type) {
       // TODO:
-      return;
+      return {
+        ignoreChildren,
+        result,
+      };
     } else if (definition.Type === "Date") {
-      console.log("isDate!");
       ignoreChildren = true;
+
+      // has Original value in property
+      if (val.Original) {
+        result += `${depth + 1} ${definition.Tag} ${val.Original}\n`;
+      }
+
+      return {
+        ignoreChildren,
+        result,
+      };
     }
   }
 
   // console.log(definition);
-  let result = "";
 
   // if definition has no property defined, just add tag
   if (!definition.Property) {

@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { ProcessObject } from "../../src/ToGEDCOM/parsing/processObject";
 
-describe("Parsing object", () => {
+describe.only("Parsing object", () => {
   describe("CollectAs", () => {
     it("Simple", () => {
       const testObject = {
@@ -31,6 +31,39 @@ describe("Parsing object", () => {
         "1 SOUR GRAMPS",
         "2 NAME GRAMPS",
         "2 VERS 2.2.6-1",
+        "0 TRLR",
+      ]);
+    });
+  });
+
+  describe("Date", () => {
+    it("has original value", () => {
+      const testObject = {
+        Head: {
+          Date: {
+            Original: "9 MAR 2007",
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Value: "2007-03-08T23:00:00.000Z",
+          },
+        },
+      };
+
+      const testDefinition = {
+        Definition: [
+          { Tag: "HEAD", CollectAs: "Head" },
+          { Tag: "DATE", Property: "Date", Type: "Date" },
+        ],
+      };
+
+      const result = ProcessObject(testObject, testDefinition, () => {
+        //
+      });
+
+      expect(result.Text.split("\n")).to.deep.equal([
+        "0 HEAD",
+        "1 DATE 9 MAR 2007",
         "0 TRLR",
       ]);
     });
