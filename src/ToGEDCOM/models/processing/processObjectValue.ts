@@ -1,19 +1,22 @@
-import { find, get, has, isArray, tail } from "lodash";
+import { get, has, isArray, tail } from "lodash";
+import ITagDefinition from "../../../Common/interfaces/ITagDefinition";
 import { ParseDateToLine } from "../../parsing/parseDate";
+import { SearchDefinition } from "../../parsing/searchDefinition";
 
 export default function ProcessObjectValue(
-  options: any,
+  definitions: ITagDefinition[],
+  propertyPath: string,
   depth: number,
   key: string,
   val: any
 ): any {
   // try find definition via "CollectAs"
-  let definition = find(options, (p) => p.CollectAs === key);
+  let definition = SearchDefinition(definitions, propertyPath);
   let result = "";
 
   if (!definition) {
     // try find definition via "Property"
-    definition = find(options, (p) => p.Property === key);
+    definition = SearchDefinition(definitions, key);
 
     if (!definition || !definition.Type) {
       // TODO:
@@ -51,9 +54,9 @@ export default function ProcessObjectValue(
 
       const remainingItems = tail(defPropertyValue);
       if (remainingItems.length > 0) {
-        const subDefinition = find(
-          options,
-          (p) => !p.CollectAs && p.Property === definition.Property
+        const subDefinition = SearchDefinition(
+          definitions,
+          (propertyPath += `.${definition.Property}`)
         );
 
         if (subDefinition) {

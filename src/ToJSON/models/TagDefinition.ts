@@ -1,4 +1,6 @@
 import isObject from "lodash/isObject";
+import ITagDefinition from "../../Common/interfaces/ITagDefinition";
+import IReplaceValue from "../../Common/interfaces/IReplaceValue";
 
 import ConvertTo from "./converter/ConvertTo";
 import ConvertToArray from "./converter/ConvertToArray";
@@ -6,7 +8,7 @@ import ConvertToDate from "./converter/ConvertToDate";
 import ConvertToString from "./converter/ConvertToString";
 import ConvertToTime from "./converter/ConvertToTime";
 
-export default class TagDefinition {
+export default class TagDefinition implements ITagDefinition {
   constructor(plainJsObject: any) {
     this.CollectAs = plainJsObject.CollectAs;
     this.Tag = plainJsObject.Tag;
@@ -55,13 +57,14 @@ export default class TagDefinition {
   MergeWithNext?: string;
   IsSingleValue?: boolean;
   PropertyType?: ConvertTo;
+  Properties?: TagDefinition[];
 
   get Path(): string {
     return this.CollectAs ?? this.Property ?? "";
   }
 }
 
-class ReplaceValue {
+class ReplaceValue implements IReplaceValue {
   constructor(value: string, withProperty: string) {
     this.Value = value;
     this.With = withProperty;

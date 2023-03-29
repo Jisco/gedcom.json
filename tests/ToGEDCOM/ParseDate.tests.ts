@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { ParseDateToLine } from "../../src/ToGEDCOM/parsing/parseDate";
 
-describe.only("Date parsing tests", () => {
+describe("Date parsing tests", () => {
   it("No Definition", () => {
     expect(ParseDateToLine(0, undefined, {}).result).to.be.undefined;
   });

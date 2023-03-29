@@ -1,7 +1,10 @@
-import { find, isArray, isObject } from "lodash";
+import { isArray, isObject } from "lodash";
+import IDefinition from "../../Common/interfaces/IDefinition";
+import ITagDefinition from "../../Common/interfaces/ITagDefinition";
 import ProcessObjectValue from "../models/processing/processObjectValue";
 import ParsingResult from "../models/statistics/ParsingResult";
 import Statistics from "../models/statistics/Statistics";
+import { SearchDefinition } from "./searchDefinition";
 
 const paths = require("deepdash/paths");
 const eachDeep = require("deepdash/eachDeep");
@@ -9,7 +12,7 @@ let stats = new Statistics();
 
 export function ProcessObject(
   object: object,
-  parsingOptions: string | object = {},
+  parsingOptions: IDefinition = { Definition: [] },
   invokeProgressFunction?: (
     propertiesCount: number,
     actualproperty: number
@@ -18,22 +21,22 @@ export function ProcessObject(
   stats = new Statistics();
 
   // TODO: Override real object with fake, for developing... remove for real conversion
-  object = {
-    Head: {
-      Source: {
-        Name: ["GRAMPS", "GRAMPS"],
-        Version: "2.2.6-1",
-      },
-    },
-    Destination: "GEDCOM 5.5",
-    Date: {
-      Original: "9 MAR 2007",
-      HasYear: true,
-      HasMonth: true,
-      HasDay: true,
-      Value: "2007-03-08T23:00:00.000Z",
-    },
-  };
+  // object = {
+  //   Head: {
+  //     Source: {
+  //       Name: ["GRAMPS", "GRAMPS"],
+  //       Version: "2.2.6-1",
+  //     },
+  //   },
+  //   Destination: "GEDCOM 5.5",
+  //   Date: {
+  //     Original: "9 MAR 2007",
+  //     HasYear: true,
+  //     HasMonth: true,
+  //     HasDay: true,
+  //     Value: "2007-03-08T23:00:00.000Z",
+  //   },
+  // };
 
   // get count of all properties to process
   const allPropertiesCount = paths(object).length;
@@ -62,12 +65,13 @@ export function ProcessObject(
     // console.log("Value:\t", JSON.stringify(val, null, 1));
     // console.log("IsObject:\t", isObject(val));
     // console.log("Key:\t", key);
-    let definition: any = undefined;
+    let definition: ITagDefinition | undefined = undefined;
     const depth = context.depth - 1;
 
     if (isObject(val)) {
       const processingResult = ProcessObjectValue(
-        (parsingOptions as any).Definition,
+        parsingOptions.Definition,
+        context.path,
         depth,
         key,
         val
@@ -84,10 +88,7 @@ export function ProcessObject(
       return;
     } else {
       // Property
-      definition = find(
-        (parsingOptions as any).Definition,
-        (p) => p.Property === key
-      );
+      definition = SearchDefinition(parsingOptions.Definition, context.path);
 
       // console.log(definition);
       if (!definition) {

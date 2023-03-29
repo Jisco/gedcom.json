@@ -2,6 +2,7 @@ import ParsingResult from "../models/statistics/ParsingResult";
 import yaml from "js-yaml";
 import { readFile } from "fs/promises";
 import { ProcessObject } from "./processObject";
+import IDefinition from "../../Common/interfaces/IDefinition";
 
 /**
  * Parses a object to an text
@@ -35,7 +36,11 @@ export function ParseObject(
     return new ParsingResult("");
   }
 
-  return ProcessObject(object, yamlOptions, invokeProgressFunction);
+  return ProcessObject(
+    object,
+    yamlOptions as IDefinition,
+    invokeProgressFunction
+  );
 }
 
 /**
