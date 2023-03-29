@@ -1,4 +1,5 @@
 import { find, get, has, isArray, tail } from "lodash";
+import { ParseDateToLine } from "../../parsing/parseDate";
 
 export default function ProcessObjectValue(
   options: any,
@@ -6,9 +7,6 @@ export default function ProcessObjectValue(
   key: string,
   val: any
 ): any {
-  // set to true if the children items of this value should be ignored, eg by an date
-  let ignoreChildren = false;
-
   // try find definition via "CollectAs"
   let definition = find(options, (p) => p.CollectAs === key);
   let result = "";
@@ -20,21 +18,11 @@ export default function ProcessObjectValue(
     if (!definition || !definition.Type) {
       // TODO:
       return {
-        ignoreChildren,
+        ignoreChildren: false,
         result,
       };
     } else if (definition.Type === "Date") {
-      ignoreChildren = true;
-
-      // has Original value in property
-      if (val.Original) {
-        result += `${depth + 1} ${definition.Tag} ${val.Original}\n`;
-      }
-
-      return {
-        ignoreChildren,
-        result,
-      };
+      return ParseDateToLine(depth, definition, val);
     }
   }
 
@@ -83,7 +71,7 @@ export default function ProcessObjectValue(
   // console.log(result);
   // result += resultText;
   return {
-    ignoreChildren,
+    ignoreChildren: false,
     result,
   };
 }
