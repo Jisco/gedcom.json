@@ -14,7 +14,7 @@ import dayjs, { Dayjs } from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import objectSupport from "dayjs/plugin/objectSupport";
 
-import ConvertToDate from "../models/converter/ConvertToDate";
+import ConvertToDate from "../../Common/converter/ConvertToDate";
 import fclone from "fclone";
 
 dayjs.extend(customParseFormat);

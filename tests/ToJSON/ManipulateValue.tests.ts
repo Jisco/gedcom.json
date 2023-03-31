@@ -1,40 +1,49 @@
-import { expect } from 'chai';
-import ConvertToArray from '../../src/ToJSON/models/converter/ConvertToArray';
-import ParsedLine from '../../src/ToJSON/models/ParsedLine';
-import TagDefinition from '../../src/ToJSON/models/TagDefinition';
-import { AddStartWith, ManipulateValue } from '../../src/ToJSON/processing/manipulateValues';
+import { expect } from "chai";
+import ConvertToArray from "../../src/Common/converter/ConvertToArray";
+import TagDefinition from "../../src/Common/TagDefinition";
+import ParsedLine from "../../src/ToJSON/models/ParsedLine";
+import {
+  AddStartWith,
+  ManipulateValue,
+} from "../../src/ToJSON/processing/manipulateValues";
 
-describe('Mainpulate Values', () => {
-    it('Value is ID as Array', () => {
-        let result = ManipulateValue(new TagDefinition({
-            ConvertTo: new ConvertToArray(",")
-        }), new ParsedLine(0, 0, "TAG", "", "@111@"));
+describe("Mainpulate Values", () => {
+  it("Value is ID as Array", () => {
+    const result = ManipulateValue(
+      new TagDefinition({
+        ConvertTo: new ConvertToArray(","),
+      }),
+      new ParsedLine(0, 0, "TAG", "", "@111@")
+    );
 
-        expect(result).to.be.deep.equal([ "@111@" ]);
-    });
+    expect(result).to.be.deep.equal(["@111@"]);
+  });
 
-    it('Value is empty', () => {
-        let result = ManipulateValue(new TagDefinition({
-            ConvertTo: new ConvertToArray(",")
-        }), new ParsedLine(0, 0, "TAG", undefined, undefined));
+  it("Value is empty", () => {
+    const result = ManipulateValue(
+      new TagDefinition({
+        ConvertTo: new ConvertToArray(","),
+      }),
+      new ParsedLine(0, 0, "TAG", undefined, undefined)
+    );
 
-        expect(result).to.be.deep.equal([""]);
-    });
+    expect(result).to.be.deep.equal([""]);
+  });
 });
 
-describe('AddStartWith', () => {
-    it('Start with escaped new line', () => {
-        let result = AddStartWith("\\n", "Text");
-        expect(result).to.be.equal("\nText");
-    });
+describe("AddStartWith", () => {
+  it("Start with escaped new line", () => {
+    const result = AddStartWith("\\n", "Text");
+    expect(result).to.be.equal("\nText");
+  });
 
-    it('No StartWith', () => {
-        let result = AddStartWith(undefined, "Text");
-        expect(result).to.be.equal("Text");
-    });
+  it("No StartWith", () => {
+    const result = AddStartWith(undefined, "Text");
+    expect(result).to.be.equal("Text");
+  });
 
-    it('No StartWith and value', () => {
-        let result = AddStartWith(undefined, undefined);
-        expect(result).to.be.equal("");
-    });
+  it("No StartWith and value", () => {
+    const result = AddStartWith(undefined, undefined);
+    expect(result).to.be.equal("");
+  });
 });

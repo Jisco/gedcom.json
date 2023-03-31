@@ -9,14 +9,14 @@ import isEqual from "lodash/isEqual";
 import objectPath from "object-path";
 import fclone from "fclone";
 
-import TagDefinition from "./TagDefinition";
+import TagDefinition from "../../Common/TagDefinition";
 import ParsedLine from "./ParsedLine";
-import ConvertToTime from "./converter/ConvertToTime";
+import ConvertToTime from "../../Common/converter/ConvertToTime";
 import ParsingObject from "./ParsingObject";
 import ParsingPath from "./ParsingPath";
 
 import { CreateResult } from "../processing/result";
-import { IsEmpty } from "../../common";
+import { IsEmpty } from "../../Common";
 import { AddStartWith, ManipulateValue } from "../processing/manipulateValues";
 import DefinitionCache from "./DefinitionCache";
 

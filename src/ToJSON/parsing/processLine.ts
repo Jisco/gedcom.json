@@ -8,7 +8,7 @@ import fclone from "fclone";
 
 import ParsedLine from "../models/ParsedLine";
 import Store from "../models/Store";
-import TagDefinition from "../models/TagDefinition";
+import TagDefinition from "../../Common/TagDefinition";
 import LineParsingResult from "../models/LineParsingResult";
 import ParsingPath from "../models/ParsingPath";
 

@@ -5,15 +5,15 @@ import split from "lodash/split";
 import map from "lodash/map";
 
 import ParsedLine from "../models/ParsedLine";
-import TagDefinition from "../models/TagDefinition";
-import ConvertToDate from "../models/converter/ConvertToDate";
-import ConvertToArray from "../models/converter/ConvertToArray";
+import TagDefinition from "../../Common/TagDefinition";
+import ConvertToDate from "../../Common/converter/ConvertToDate";
+import ConvertToArray from "../../Common/converter/ConvertToArray";
 
 import {
   ConvertDateStringToObject,
   ConvertTimeStringToObject,
 } from "../parsing/parseDate";
-import ConvertToTime from "../models/converter/ConvertToTime";
+import ConvertToTime from "../../Common/converter/ConvertToTime";
 
 export function ManipulateValue(definition: TagDefinition, line: ParsedLine) {
   let value: string = trim(

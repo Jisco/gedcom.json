@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import ConvertToDate from "../../src/ToJSON/models/converter/ConvertToDate";
+import ConvertToDate from "../../src/Common/converter/ConvertToDate";
 import {
   ConvertDateStringToObject,
   ConvertTimeStringToObject,

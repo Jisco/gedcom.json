@@ -1,10 +1,11 @@
 import { forEach, last } from "lodash";
 import ITagDefinition from "../../Common/interfaces/ITagDefinition";
+import TagDefinition from "../../Common/TagDefinition";
 
 export function SearchDefinition(
   definitions: ITagDefinition[],
   propertyPath: string
-): ITagDefinition | undefined {
+): TagDefinition | undefined {
   if (definitions.length === 0 || propertyPath.length === 0) {
     return undefined;
   }
@@ -61,7 +62,11 @@ export function SearchDefinition(
     definition = definitions.find(
       (x) => !x.CollectAs && x.Property === last(pathParts)
     );
+
+    if (!definition) {
+      definition = definitions.find((x) => x.CollectAs === last(pathParts));
+    }
   }
 
-  return definition;
+  return definition ? new TagDefinition(definition) : undefined;
 }

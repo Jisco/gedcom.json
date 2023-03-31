@@ -1,5 +1,5 @@
 import ParsedLine from "./ParsedLine";
-import TagDefinition from "./TagDefinition";
+import TagDefinition from "../../Common/TagDefinition";
 
 export default class ParsingObject {
   constructor(

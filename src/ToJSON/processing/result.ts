@@ -21,10 +21,10 @@ import first from "lodash/first";
 import objectPath from "object-path";
 
 import ParsingObject from "../models/ParsingObject";
-import TagDefinition from "../models/TagDefinition";
-import ConvertToString from "../models/converter/ConvertToString";
+import TagDefinition from "../../Common/TagDefinition";
+import ConvertToString from "../../Common/converter/ConvertToString";
 
-import { IsEmpty } from "../../common";
+import { IsEmpty } from "../../Common";
 import { isString } from "lodash";
 import fclone from "fclone";
 import { AddStartWith } from "./manipulateValues";

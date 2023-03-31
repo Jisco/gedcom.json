@@ -1,8 +1,9 @@
 import { expect } from "chai";
 import { first } from "lodash";
+import TagDefinition from "../../src/Common/TagDefinition";
 import { SearchDefinition } from "../../src/ToGEDCOM/parsing/searchDefinition";
 
-describe.only("Search definition deep", () => {
+describe("Search definition deep", () => {
   it("No definitions", () => {
     const result = SearchDefinition([], "");
     expect(result).to.be.undefined;
@@ -25,11 +26,17 @@ describe.only("Search definition deep", () => {
       { Tag: "TIME", Type: "Time" },
     ];
 
-    expect(SearchDefinition(definition, "Individuals")).to.equal(definition[0]);
-    expect(SearchDefinition(definition, "Changed")).to.equal(definition[1]);
-    expect(SearchDefinition(definition, "Date")).to.equal(definition[2]);
-    expect(SearchDefinition(definition, "Changed.ChangedDate")).to.equal(
-      first(definition[1].Properties)
+    expect(SearchDefinition(definition, "Individuals")).to.deep.equal(
+      new TagDefinition(definition[0])
+    );
+    expect(SearchDefinition(definition, "Changed")).to.deep.equal(
+      new TagDefinition(definition[1])
+    );
+    expect(SearchDefinition(definition, "Date")).to.deep.equal(
+      new TagDefinition(definition[2])
+    );
+    expect(SearchDefinition(definition, "Changed.ChangedDate")).to.deep.equal(
+      new TagDefinition(first(definition[1].Properties))
     );
   });
 
@@ -49,11 +56,13 @@ describe.only("Search definition deep", () => {
       { Tag: "NAME", Property: "FullName" },
     ];
 
-    expect(SearchDefinition(definition, "Individuals.FullName")).to.equal(
-      first(definition[0].Properties)
+    expect(SearchDefinition(definition, "Individuals.FullName")).to.deep.equal(
+      new TagDefinition(first(definition[0].Properties))
     );
 
-    expect(SearchDefinition(definition, "FullName")).to.equal(definition[1]);
+    expect(SearchDefinition(definition, "FullName")).to.deep.equal(
+      new TagDefinition(definition[1])
+    );
   });
 
   it("Find definition very deep", () => {
@@ -97,7 +106,9 @@ describe.only("Search definition deep", () => {
       )?.Tag
     ).to.equal("INDI5");
 
-    expect(SearchDefinition(definition, "FullName")).to.equal(definition[1]);
+    expect(SearchDefinition(definition, "FullName")).to.deep.equal(
+      new TagDefinition(definition[1])
+    );
   });
 
   it("Find definition", () => {
@@ -114,15 +125,15 @@ describe.only("Search definition deep", () => {
     ];
 
     expect(SearchDefinition(definition, "AAA.Tag")).to.deep.equal(
-      definition[0]
+      new TagDefinition(definition[0])
     );
 
     expect(SearchDefinition(definition, "AAA.BBB.Tag")).to.deep.equal(
-      definition[0]
+      new TagDefinition(definition[0])
     );
 
     expect(SearchDefinition(definition, "AAA.BBB.CCC.Tag")).to.deep.equal(
-      definition[0]
+      new TagDefinition(definition[0])
     );
   });
 
@@ -139,5 +150,34 @@ describe.only("Search definition deep", () => {
     ];
 
     expect(SearchDefinition(definition, "AAA.Tag")).to.be.undefined;
+  });
+
+  it("Find Date\\Time Definition", () => {
+    const definition = [
+      {
+        Tag: "DATES",
+        Property: "Dates",
+        Properties: [
+          {
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+            Properties: [
+              {
+                Tag: "TIME",
+                Property: "Time",
+                ConvertTo: {
+                  Type: "Time",
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ];
+
+    expect(SearchDefinition(definition, "Dates.Date")).to.deep.equal(
+      new TagDefinition(first(definition[0].Properties))
+    );
   });
 });

@@ -1,5 +1,5 @@
 import isEmpty from "lodash/isEmpty";
-import { IsNumber } from "../../common";
+import { IsNumber } from "../../Common";
 
 /**
  * Tests if a line is valid

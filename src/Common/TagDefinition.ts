@@ -1,6 +1,6 @@
 import isObject from "lodash/isObject";
-import ITagDefinition from "../../Common/interfaces/ITagDefinition";
-import IReplaceValue from "../../Common/interfaces/IReplaceValue";
+import ITagDefinition from "./interfaces/ITagDefinition";
+import IReplaceValue from "./interfaces/IReplaceValue";
 
 import ConvertTo from "./converter/ConvertTo";
 import ConvertToArray from "./converter/ConvertToArray";
