@@ -42,6 +42,8 @@ export default class TagDefinition implements ITagDefinition {
       plainJsObject.Type,
       plainJsObject.ConvertTo
     );
+
+    this.interProperties = plainJsObject.Properties;
   }
 
   CollectAs?: string;
@@ -57,7 +59,15 @@ export default class TagDefinition implements ITagDefinition {
   MergeWithNext?: string;
   IsSingleValue?: boolean;
   PropertyType?: ConvertTo;
-  Properties?: TagDefinition[];
+  private interProperties: [];
+
+  get Properties(): TagDefinition[] {
+    if (!this.interProperties) {
+      return [];
+    }
+
+    return this.interProperties.map((x) => new TagDefinition(x));
+  }
 
   get Path(): string {
     return this.CollectAs ?? this.Property ?? "";
