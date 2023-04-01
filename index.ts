@@ -1,7 +1,4 @@
 import JsonParsing from "./src/ToJSON/models/Parsing";
-import ParsingOptions from "./src/ToJSON/models/ParsingOptions";
+import ParsingOptions from "./src/Common/ParsingOptions";
 
-export {
-    JsonParsing,
-    ParsingOptions
-}
+export { JsonParsing, ParsingOptions };

@@ -30,7 +30,7 @@ export default function ProcessObjectValue(
   }
 
   if (definition.Type === "Date") {
-    return ParseDateToLine(depth - 1, definition, val);
+    return ParseDateToLine(depth, definition, val);
   }
 
   // if definition has no property defined, just add tag

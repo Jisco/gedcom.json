@@ -41,13 +41,13 @@ describe("Parsing object", () => {
           Source: {
             Name: ["GRAMPS", "GRAMPS"],
             Version: "2.2.6-1",
-            Date: {
-              Original: "9 MAR 2007",
-              HasYear: true,
-              HasMonth: true,
-              HasDay: true,
-              Value: "2007-03-08T23:00:00.000Z",
-            },
+          },
+          Date: {
+            Original: "9 MAR 2007",
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Value: "2007-03-08T23:00:00.000Z",
           },
         },
       };
