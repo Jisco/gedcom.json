@@ -178,7 +178,7 @@ export function ParseDateToLine(
 
   return {
     ignoreChildren: true,
-    result,
+    result: (result += "\n"),
   };
 }
 

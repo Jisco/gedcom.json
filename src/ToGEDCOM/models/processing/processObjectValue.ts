@@ -29,7 +29,9 @@ export default function ProcessObjectValue(
     }
   }
 
-  // console.log(definition);
+  if (definition.Type === "Date") {
+    return ParseDateToLine(depth - 1, definition, val);
+  }
 
   // if definition has no property defined, just add tag
   if (!definition.Property) {
