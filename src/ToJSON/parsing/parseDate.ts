@@ -16,13 +16,13 @@ import objectSupport from "dayjs/plugin/objectSupport";
 
 import ConvertToDate from "../../Common/converter/ConvertToDate";
 import fclone from "fclone";
+import { HDate } from "@hebcal/core";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(objectSupport);
 
 /** properties for merging time and date */
 let lastDate: object, lastConfig: ConvertToDate;
-const hebcal: any = require("hebcal");
 
 /**
  * Clears informations that are needed to merge date and time
@@ -245,12 +245,16 @@ function ParseDate(
       } else {
         if (calendarType === "Hebrew") {
           const dateSplit = split(date, " ");
-          const nextMonth = new hebcal.Month(
+          const nextMonth = new HDate(
+            1,
             ConvertShortMonthToFullMonth(dateSplit[0]),
             toNumber(dateSplit[1])
-          ).next();
-          const andDate = new hebcal.HDate(
-            `1 ${nextMonth.getName()} ${dateSplit[1]}`
+          ).add(1, "month");
+
+          const andDate = new HDate(
+            1,
+            nextMonth.getMonth(),
+            toNumber(dateSplit[1])
           );
           objectPath.set(and, config.Value, andDate.greg());
         } else {
@@ -398,7 +402,7 @@ function ConvertStringToDate(
     objectPath.set(result, config.HasDay, false);
 
     if (calendarType === "Hebrew") {
-      const hDate = new hebcal.HDate(`1 Nisan ${splitDate[0]}`);
+      const hDate = new HDate(1, "Nisan", toNumber(splitDate[0]));
       objectPath.set(result, config.Value, hDate.greg());
       return;
     }
@@ -420,9 +424,12 @@ function ConvertStringToDate(
     objectPath.set(result, config.HasDay, false);
 
     if (calendarType === "Hebrew") {
-      const hDate = new hebcal.HDate(
-        `1 ${ConvertShortMonthToFullMonth(splitDate[0])} ${splitDate[1]}`
+      const hDate = new HDate(
+        1,
+        ConvertShortMonthToFullMonth(splitDate[0]),
+        toNumber(splitDate[1])
       );
+
       objectPath.set(result, config.Value, hDate.greg());
       return;
     }
@@ -446,10 +453,10 @@ function ConvertStringToDate(
   objectPath.set(result, config.HasDay, true);
 
   if (calendarType === "Hebrew") {
-    const hDate = new hebcal.HDate(
-      `${splitDate[0]} ${ConvertShortMonthToFullMonth(splitDate[1])} ${
-        splitDate[2]
-      }`
+    const hDate = new HDate(
+      toNumber(splitDate[0]),
+      ConvertShortMonthToFullMonth(splitDate[1]),
+      toNumber(splitDate[2])
     );
     objectPath.set(result, config.Value, hDate.greg());
     return;

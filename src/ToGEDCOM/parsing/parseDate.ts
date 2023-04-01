@@ -3,7 +3,7 @@ import { find, get, split, toNumber, set } from "lodash";
 import ConvertToDate from "../../Common/converter/ConvertToDate";
 import TagDefinition from "../../Common/TagDefinition";
 import CalendarConverter from "julian-gregorian";
-const hebcal: any = require("hebcal");
+import { HDate } from "@hebcal/core";
 
 export function ParseDateToLine(
   depth: number,
@@ -114,25 +114,29 @@ export function ParseDateToLine(
     ) {
       if (between.calendar === and.calendar && between.calendar === "Hebrew") {
         if (
-          between.hebrewDate.year === and.hebrewDate.year &&
-          between.hebrewDate.month + 1 === and.hebrewDate.month
+          between.hebrewDate.getFullYear() === and.hebrewDate.getFullYear() &&
+          between.hebrewDate.add(1, "month").getMonth() ===
+            and.hebrewDate.getMonth()
         ) {
           // full month
           isSpecialPeriod = true;
           result += `${depth} ${
             definition.Tag
           } @#DHEBREW@ ${ConvertNumberToHebrewMonth(
-            between.hebrewDate.month
-          )} ${between.hebrewDate.year}`;
+            between.hebrewDate.getMonth()
+          )} ${between.hebrewDate.getFullYear()}`;
         } else if (
           // full year
-          between.hebrewDate.day === and.hebrewDate.day &&
-          between.hebrewDate.day === 1 &&
-          between.hebrewDate.month === and.hebrewDate.month &&
-          between.hebrewDate.year + 1 === and.hebrewDate.year
+          between.hebrewDate.getDate() === and.hebrewDate.getDate() &&
+          between.hebrewDate.getDate() === 1 &&
+          between.hebrewDate.getMonth() === and.hebrewDate.getMonth() &&
+          between.hebrewDate.add(1, "year").getFullYear() ===
+            and.hebrewDate.getFullYear()
         ) {
           isSpecialPeriod = true;
-          result += `${depth} ${definition.Tag} @#DHEBREW@ ${between.hebrewDate.year}`;
+          result += `${depth} ${
+            definition.Tag
+          } @#DHEBREW@ ${between.hebrewDate.getFullYear()}`;
         }
       } else {
         // full month
@@ -194,7 +198,7 @@ function ConvertSingleDate(
   let hasFullDate = true;
   let hasTime = false;
   let calendar = "Gregorian";
-  let hebrewDate = {} as any;
+  let hebrewDate = {} as HDate;
 
   /*
     Markers
@@ -255,14 +259,14 @@ function ConvertSingleDate(
 
   if (get(jsonObject, propertynameDefinition.Calendar) === "Hebrew") {
     calendar = "Hebrew";
-    hebrewDate = new hebcal.HDate(dayObject.toDate());
+    hebrewDate = new HDate(dayObject.toDate());
     result += `${result.length === 0 ? "" : " "}@#DHEBREW@`;
   }
 
   // day
   if (get(jsonObject, propertynameDefinition.HasDay)) {
     result += `${result.length === 0 ? "" : " "}${
-      calendar === "Hebrew" ? hebrewDate.day : dayObject.date()
+      calendar === "Hebrew" ? hebrewDate.getDate() : dayObject.date()
     }`;
   } else {
     hasFullDate = false;
@@ -272,7 +276,7 @@ function ConvertSingleDate(
   if (get(jsonObject, propertynameDefinition.HasMonth)) {
     result += `${result.length === 0 ? "" : " "}${
       calendar === "Hebrew"
-        ? ConvertNumberToHebrewMonth(hebrewDate.month)
+        ? ConvertNumberToHebrewMonth(hebrewDate.getMonth())
         : dayObject.format("MMM").toUpperCase()
     }`;
   } else {
@@ -282,7 +286,7 @@ function ConvertSingleDate(
   // year
   if (get(jsonObject, propertynameDefinition.HasYear)) {
     result += `${result.length === 0 ? "" : " "}${
-      calendar === "Hebrew" ? hebrewDate.year : dayObject.year()
+      calendar === "Hebrew" ? hebrewDate.getFullYear() : dayObject.year()
     }`;
   } else {
     hasFullDate = false;
