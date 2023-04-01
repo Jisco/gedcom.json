@@ -18,6 +18,672 @@ describe("Date parsing tests", () => {
       .undefined;
   });
 
+  describe("Different single date settings", () => {
+    it("HasDay only", () => {
+      const definition = new TagDefinition({
+        Tag: "DATE",
+        Property: "Date",
+        Type: "Date",
+      });
+
+      const object = {
+        Value: new Date(1999, 5, 4, 0, 0, 0), // Value is date and time combined
+        HasYear: false,
+        HasMonth: false,
+        HasDay: true,
+      };
+
+      expect(ParseDateToLine(1, definition, object).result).to.equal(
+        "1 DATE 4"
+      );
+    });
+
+    it("HasMonth only", () => {
+      const definition = new TagDefinition({
+        Tag: "DATE",
+        Property: "Date",
+        Type: "Date",
+      });
+
+      const object = {
+        Value: new Date(1999, 5, 4, 0, 0, 0), // Value is date and time combined
+        HasYear: false,
+        HasMonth: true,
+        HasDay: false,
+      };
+
+      expect(ParseDateToLine(1, definition, object).result).to.equal(
+        "1 DATE JUN"
+      );
+    });
+
+    it("HasYear only", () => {
+      const definition = new TagDefinition({
+        Tag: "DATE",
+        Property: "Date",
+        Type: "Date",
+      });
+
+      const object = {
+        Value: new Date(1999, 5, 4, 0, 0, 0), // Value is date and time combined
+        HasYear: true,
+        HasMonth: false,
+        HasDay: false,
+      };
+
+      expect(ParseDateToLine(1, definition, object).result).to.equal(
+        "1 DATE 1999"
+      );
+    });
+
+    it("HasMonth and HasYear", () => {
+      const definition = new TagDefinition({
+        Tag: "DATE",
+        Property: "Date",
+        Type: "Date",
+      });
+
+      const object = {
+        Value: new Date(1999, 5, 4, 0, 0, 0), // Value is date and time combined
+        HasYear: true,
+        HasMonth: true,
+        HasDay: false,
+      };
+
+      expect(ParseDateToLine(1, definition, object).result).to.equal(
+        "1 DATE JUN 1999"
+      );
+    });
+  });
+
+  describe("Markers", () => {
+    describe("single", () => {
+      it("EST", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: new Date(1999, 5, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Estimated: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE EST 4 JUN 1999"
+        );
+      });
+      it("ABT", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: new Date(1999, 5, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          About: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE ABT 4 JUN 1999"
+        );
+      });
+      it("CAL", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: new Date(1999, 5, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Calculated: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE CAL 4 JUN 1999"
+        );
+      });
+      it("AFT", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: new Date(1999, 5, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          After: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE AFT 4 JUN 1999"
+        );
+      });
+      it("BEF", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: new Date(1999, 5, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Before: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE BEF 4 JUN 1999"
+        );
+      });
+      it("INT", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: "Something",
+          Interpreted: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE INT Something"
+        );
+      });
+    });
+
+    describe("multiple", () => {
+      it("2 Markers", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: new Date(1999, 5, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Estimated: true,
+          About: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE EST ABT 4 JUN 1999"
+        );
+      });
+
+      it("3 Markers", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Value: new Date(1999, 5, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Estimated: true,
+          About: true,
+          Calculated: true,
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE EST ABT CAL 4 JUN 1999"
+        );
+      });
+    });
+  });
+
+  describe("Calendars", () => {
+    describe("Hebrew", () => {
+      it("Single date", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          Value: new Date(1980, 1, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Calendar: "Hebrew",
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE @#DHEBREW@ 17 SHV 5740"
+        );
+      });
+
+      it("Month/Year", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Between: {
+            Value: new Date(1980, 0, 19, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          And: {
+            Value: new Date(1980, 1, 18, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          Calendar: "Hebrew",
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE @#DHEBREW@ SHV 5740"
+        );
+      });
+
+      it("Year", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+
+        const object = {
+          Between: {
+            Value: new Date(1980, 2, 18, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          And: {
+            Value: new Date(1981, 3, 5, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          Calendar: "Hebrew",
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE @#DHEBREW@ 5740"
+        );
+      });
+
+      it("from to gregorian", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          From: {
+            Value: new Date(1980, 1, 4, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Hebrew",
+          },
+          To: {
+            Value: new Date(1980, 11, 31, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+        };
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE FROM @#DHEBREW@ 17 SHV 5740 TO 31 DEC 1980"
+        );
+      });
+
+      it("from to", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          From: {
+            Value: new Date(1980, 1, 4, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Hebrew",
+          },
+          To: {
+            Value: new Date(1980, 11, 32, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Hebrew",
+          },
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE FROM @#DHEBREW@ 17 SHV 5740 TO @#DHEBREW@ 25 TVT 5741"
+        );
+      });
+    });
+
+    describe("Julian", () => {
+      it("Single date", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          Value: new Date(1980, 1, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Calendar: "Julian",
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE @#DJULIAN@ 22 JAN 1980"
+        );
+      });
+
+      it("Month/Year", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          Between: {
+            Value: new Date(1980, 0, 14, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Julian",
+          },
+          And: {
+            Value: new Date(1980, 1, 14, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Julian",
+          },
+        };
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE @#DJULIAN@ JAN 1980"
+        );
+      });
+
+      it("Year", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          Between: {
+            Value: new Date(1980, 0, 14, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Julian",
+          },
+          And: {
+            Value: new Date(1981, 0, 14, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Julian",
+          },
+        };
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE @#DJULIAN@ 1980"
+        );
+      });
+
+      it("from to gregorian", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          From: {
+            Value: new Date(1980, 1, 4, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Julian",
+          },
+          To: {
+            Value: new Date(1980, 11, 31, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+        };
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE FROM @#DJULIAN@ 22 JAN 1980 TO 31 DEC 1980"
+        );
+      });
+
+      it("from to", () => {
+        const definition = new TagDefinition({
+          Tag: "DATE",
+          Property: "Date",
+          Type: "Date",
+        });
+        const object = {
+          From: {
+            Value: new Date(1980, 1, 4, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Julian",
+          },
+          To: {
+            Value: new Date(1980, 11, 31, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+            Calendar: "Julian",
+          },
+        };
+
+        expect(ParseDateToLine(1, definition, object).result).to.equal(
+          "1 DATE FROM @#DJULIAN@ 22 JAN 1980 TO @#DJULIAN@ 18 DEC 1980"
+        );
+      });
+    });
+  });
+
+  describe("Special cases", () => {
+    describe("Between", () => {
+      describe("Exact", () => {
+        it("Full Dates", () => {
+          const definition = new TagDefinition({
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+          });
+
+          const object = {
+            Between: {
+              Value: new Date(1980, 1, 4, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+            And: {
+              Value: new Date(1999, 5, 4, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+          };
+
+          expect(ParseDateToLine(1, definition, object).result).to.equal(
+            "1 DATE BETWEEN 4 FEB 1980 AND 4 JUN 1999"
+          );
+        });
+
+        it("Full Month", () => {
+          const definition = new TagDefinition({
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+          });
+
+          const object = {
+            Between: {
+              Value: new Date(1980, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: false,
+            },
+            And: {
+              Value: new Date(1999, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: false,
+            },
+          };
+          expect(ParseDateToLine(1, definition, object).result).to.equal(
+            "1 DATE BETWEEN JAN 1980 AND JAN 1999"
+          );
+        });
+
+        it("Full Year", () => {
+          const definition = new TagDefinition({
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+          });
+
+          const object = {
+            Between: {
+              Value: new Date(1980, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: false,
+              HasDay: false,
+            },
+            And: {
+              Value: new Date(1999, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: false,
+              HasDay: false,
+            },
+          };
+          expect(ParseDateToLine(1, definition, object).result).to.equal(
+            "1 DATE BETWEEN 1980 AND 1999"
+          );
+        });
+      });
+
+      describe("Short Format", () => {
+        it("Full Month Same Year", () => {
+          const definition = new TagDefinition({
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+          });
+
+          const object = {
+            Between: {
+              Value: new Date(1999, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+            And: {
+              Value: new Date(1999, 1, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+          };
+          expect(ParseDateToLine(1, definition, object).result).to.equal(
+            "1 DATE JAN 1999"
+          );
+        });
+
+        it("Full Month Next Year", () => {
+          const definition = new TagDefinition({
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+          });
+
+          const object = {
+            Between: {
+              Value: new Date(1999, 11, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+            And: {
+              Value: new Date(2000, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+          };
+          expect(ParseDateToLine(1, definition, object).result).to.equal(
+            "1 DATE DEC 1999"
+          );
+        });
+
+        it("Full Year", () => {
+          const definition = new TagDefinition({
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+          });
+
+          const object = {
+            Between: {
+              Value: new Date(1999, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+            And: {
+              Value: new Date(2000, 0, 1, 0, 0, 0),
+              HasYear: true,
+              HasMonth: true,
+              HasDay: true,
+            },
+          };
+          expect(ParseDateToLine(1, definition, object).result).to.equal(
+            "1 DATE 1999"
+          );
+        });
+      });
+    });
+  });
+
   describe("Different property name definition", () => {
     it("Own Value Propertyname definition", () => {
       const definition = new TagDefinition({
@@ -135,10 +801,4 @@ describe("Date parsing tests", () => {
       );
     });
   });
-
-  // describe("Convert Object to Time String", () => {
-  //   it("No Value", () => {
-  //     expect(ParseDateToLine(0, undefined, undefined)).to.be.undefined;
-  //   });
-  // });
 });
