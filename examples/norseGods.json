@@ -1,1947 +1,1797 @@
 {
- "Head": {
-  "Source": {
-   "Name": [
-    "FTM",
-    "Family Tree Maker for Windows"
-   ],
-   "Version": "Family Tree Maker (17.0.0.440)",
-   "Corporation": {
-    "Value": "The Generations Network",
-    "Address": "360 W 4800 N\nProvo, UT 84604",
-    "Phone": "(801) 705-7000"
-   }
-  },
-  "Destination": "FTM",
-  "Date": {
-   "Original": "20 November 2007",
-   "HasYear": true,
-   "HasMonth": true,
-   "HasDay": true,
-   "Value": null
-  },
-  "Characters": "ANSI",
-  "File": "C:\\Documents and Settings\\socrtwo\\Desktop\\Norse Gods Family Tree.ged",
-  "Submitter": {
-   "Id": "@SUBM@"
-  },
-  "Gedcom": {
-   "Version": "5.5",
-   "Format": "LINEAGE-LINKED"
-  }
- },
- "Submitter": [
-  {
-   "Id": "@SUBM@"
-  }
- ],
- "Individuals": [
-  {
-   "Id": "@I00004@",
-   "Fullname": "/Bestla/",
-   "Sex": "F",
-   "Birth": {
-    "Date": {
-     "Original": "ABT 194",
-     "About": true,
-     "HasYear": true,
-     "HasMonth": false,
-     "HasDay": false,
-     "Value": null
-    },
-    "Place": "Asgard, Asia Or, East Europe",
+  "Head": {
     "Source": {
-     "Name": "@S00001@"
-    }
-   },
-   "Alias": "ancient frost giantess Beltsa Bestla",
-   "Notes": {
-    "Id": "@N00005@"
-   },
-   "Relations": [
-    "@F00003@",
-    "@F00032@"
-   ]
-  },
-  {
-   "Id": "@I00024@",
-   "Fullname": [
-    "Sibil //",
-    {
-     "Value": "Sibil /(Sif)/",
-     "Source": {
-      "Name": "@S00001@"
-     }
-    }
-   ],
-   "Sex": "F",
-   "Alias": "Sif Sibil",
-   "Title": "Goddess of the Aesir",
-   "Events": {
-    "Name": "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com",
-    "Type": "Source"
-   },
-   "Notes": {
-    "Id": "@N00019@"
-   },
-   "Relations": "@F00-25@"
-  },
-  {
-   "Id": "@I00057@",
-   "Fullname": "/Angrboda/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Angrboda",
-    "Type": "Source"
-   },
-   "Relations": "@F00035@"
-  },
-  {
-   "Id": "@I00088@",
-   "Fullname": "/Annar/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Annar",
-    "Type": "Source"
-   },
-   "Relations": "@F00051@"
-  },
-  {
-   "Id": "@I00109@",
-   "Fullname": "/Au�r/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "Au�i the Rich, Au�",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/Au%C3%B0",
-     "Type": "Source"
-    }
-   ],
-   "Relations": [
-    "@F00058@",
-    "@F00057@"
-   ]
-  },
-  {
-   "Id": "@I00053@",
-   "Fullname": "/Au�umbla/",
-   "Sex": "F",
-   "Events": {
-    "Name": "Au�umla, Au�humbla or Au�humla",
-    "Type": "Also Known As II"
-   },
-   "Relations": "@F00033@"
-  },
-  {
-   "Id": "@I00084@",
-   "Fullname": "/Aurbo�a/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Aurbo%C3%B0a",
-     "Type": "Source"
-    },
-    {
-     "Name": "Aurboda",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00049@"
-  },
-  {
-   "Id": "@I00083@",
-   "Fullname": "/�gir/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/%C3%86gir",
-     "Type": "Source"
-    },
-    {
-     "Name": "Gymir or Hl�r",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": [
-    "@F00049@",
-    "@F00054@",
-    "@F00055@"
-   ]
-  },
-  {
-   "Id": "@I00026@",
-   "Fullname": "/Baldr/",
-   "Sex": "M",
-   "Alias": "Thor Trr",
-   "Birth": {
-    "Date": {
-     "Original": "ABT 235",
-     "About": true,
-     "HasYear": true,
-     "HasMonth": false,
-     "HasDay": false,
-     "Value": null
-    }
-   },
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Baldr",
-     "Type": "Source"
-    },
-    {
-     "Name": "Baldur, Balder",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": [
-    "@F00037@",
-    "@F00008@"
-   ]
-  },
-  {
-   "Id": "@I00144@",
-   "Fullname": "/Baugi/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Baugi",
-    "Type": "Source"
-   },
-   "Relations": "@F00068@"
-  },
-  {
-   "Id": "@I00094@",
-   "Fullname": "/B�ra/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "Dr�fn",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/%C3%86gir",
-     "Type": "Source"
-    }
-   ],
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00085@",
-   "Fullname": "/Beli/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Beli_%28Norse_giant%29",
-    "Type": "Source"
-   },
-   "Relations": "@F00049@"
-  },
-  {
-   "Id": "@I00095@",
-   "Fullname": "/Bl��ughadda/",
-   "Sex": "F",
-   "Events": {
-    "Name": "Bl��ughadda",
-    "Type": "Source"
-   },
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00051@",
-   "Fullname": "/Bolthorn/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Bolthorn",
-    "Type": "Source"
-   },
-   "Relations": "@F00032@"
-  },
-  {
-   "Id": "@I00010@",
-   "Fullname": {
-    "Value": "/Borr/",
-    "Source": [
-     {
-      "Name": "@S00004@",
-      "Data": {
-       "Text": "25 APR 2001"
+      "Name": ["FTM", "Family Tree Maker for Windows"],
+      "Version": "Family Tree Maker (17.0.0.440)",
+      "Corporation": {
+        "Value": "The Generations Network",
+        "Address": "360 W 4800 N\nProvo, UT 84604",
+        "Phone": "(801) 705-7000"
       }
-     },
-     {
-      "Name": "@S00003@"
-     }
-    ]
-   },
-   "Sex": "M",
-   "Birth": {
+    },
+    "Destination": "FTM",
     "Date": {
-     "Original": "ABT 190",
-     "About": true,
-     "HasYear": true,
-     "HasMonth": false,
-     "HasDay": false,
-     "Value": null
+      "Original": "20 November 2007",
+      "HasYear": true,
+      "HasMonth": true,
+      "HasDay": true,
+      "Value": null
     },
-    "Place": "Asgard, Asia Or, East Europe",
-    "Source": {
-     "Name": "@S00001@"
+    "Characters": "ANSI",
+    "File": "C:\\Documents and Settings\\socrtwo\\Desktop\\Norse Gods Family Tree.ged",
+    "Submitter": {
+      "Id": "@SUBM@"
+    },
+    "Gedcom": {
+      "Version": "5.5",
+      "Format": "LINEAGE-LINKED"
     }
-   },
-   "Alias": "Bor Frithuwald",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Borr & RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com",
-    "Type": "Source"
-   },
-   "Notes": {
-    "Id": "@N00010@"
-   },
-   "Relations": [
-    "@F00003@",
-    "@F00009@",
-    "@F00007@"
-   ]
   },
-  {
-   "Id": "@I00033@",
-   "Fullname": "/Bragi/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00050@",
-    "@F00008@"
-   ]
-  },
-  {
-   "Id": "@I00008@",
-   "Fullname": "/B�ri/",
-   "Sex": "M",
-   "Alias": "Freothalaf Frealaf",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/B%C3%BAri",
-    "Type": "Source"
-   },
-   "Notes": [
+  "Submitter": [
     {
-     "Id": "@N00007@"
-    },
-    {
-     "Id": "@N00008@"
+      "Id": "@SUBM@"
     }
-   ],
-   "Relations": [
-    "@F00007@",
-    "@F00033@"
-   ]
-  },
-  {
-   "Id": "@I00096@",
-   "Fullname": "/Bylgja/",
-   "Sex": "F",
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00064@",
-   "Fullname": "/B�leistr/",
-   "Sex": "M",
-   "Events": [
+  ],
+  "Individuals": [
     {
-     "Name": "http://en.wikipedia.org/wiki/Byleist",
-     "Type": "Source"
+      "Id": "@I00004@",
+      "Fullname": "/Bestla/",
+      "Sex": "F",
+      "Birth": {
+        "Date": {
+          "Original": "ABT 194",
+          "About": true,
+          "HasYear": true,
+          "HasMonth": false,
+          "HasDay": false,
+          "Value": null
+        },
+        "Place": "Asgard, Asia Or, East Europe",
+        "Source": {
+          "Name": "@S00001@"
+        }
+      },
+      "Alias": "ancient frost giantess Beltsa Bestla",
+      "Notes": {
+        "Id": "@N00005@"
+      },
+      "Relations": ["@F00003@", "@F00032@"]
     },
     {
-     "Name": "Byleist",
-     "Type": "Also Known As II"
+      "Id": "@I00024@",
+      "Fullname": [
+        "Sibil //",
+        {
+          "Value": "Sibil /(Sif)/",
+          "Source": {
+            "Name": "@S00001@"
+          }
+        }
+      ],
+      "Sex": "F",
+      "Alias": "Sif Sibil",
+      "Title": "Goddess of the Aesir",
+      "Events": {
+        "Name": "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com",
+        "Type": "Source"
+      },
+      "Notes": {
+        "Id": "@N00019@"
+      },
+      "Relations": "@F00-25@"
+    },
+    {
+      "Id": "@I00057@",
+      "Fullname": "/Angrboda/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Angrboda",
+        "Type": "Source"
+      },
+      "Relations": "@F00035@"
+    },
+    {
+      "Id": "@I00088@",
+      "Fullname": "/Annar/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Annar",
+        "Type": "Source"
+      },
+      "Relations": "@F00051@"
+    },
+    {
+      "Id": "@I00109@",
+      "Fullname": "/Au�r/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "Au�i the Rich, Au�",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/Au%C3%B0",
+          "Type": "Source"
+        }
+      ],
+      "Relations": ["@F00058@", "@F00057@"]
+    },
+    {
+      "Id": "@I00053@",
+      "Fullname": "/Au�umbla/",
+      "Sex": "F",
+      "Events": {
+        "Name": "Au�umla, Au�humbla or Au�humla",
+        "Type": "Also Known As II"
+      },
+      "Relations": "@F00033@"
+    },
+    {
+      "Id": "@I00084@",
+      "Fullname": "/Aurbo�a/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Aurbo%C3%B0a",
+          "Type": "Source"
+        },
+        {
+          "Name": "Aurboda",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00049@"
+    },
+    {
+      "Id": "@I00083@",
+      "Fullname": "/�gir/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/%C3%86gir",
+          "Type": "Source"
+        },
+        {
+          "Name": "Gymir or Hl�r",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00049@", "@F00054@", "@F00055@"]
+    },
+    {
+      "Id": "@I00026@",
+      "Fullname": "/Baldr/",
+      "Sex": "M",
+      "Alias": "Thor Trr",
+      "Birth": {
+        "Date": {
+          "Original": "ABT 235",
+          "About": true,
+          "HasYear": true,
+          "HasMonth": false,
+          "HasDay": false,
+          "Value": null
+        }
+      },
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Baldr",
+          "Type": "Source"
+        },
+        {
+          "Name": "Baldur, Balder",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00037@", "@F00008@"]
+    },
+    {
+      "Id": "@I00144@",
+      "Fullname": "/Baugi/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Baugi",
+        "Type": "Source"
+      },
+      "Relations": "@F00068@"
+    },
+    {
+      "Id": "@I00094@",
+      "Fullname": "/B�ra/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "Dr�fn",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/%C3%86gir",
+          "Type": "Source"
+        }
+      ],
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00085@",
+      "Fullname": "/Beli/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Beli_%28Norse_giant%29",
+        "Type": "Source"
+      },
+      "Relations": "@F00049@"
+    },
+    {
+      "Id": "@I00095@",
+      "Fullname": "/Bl��ughadda/",
+      "Sex": "F",
+      "Events": {
+        "Name": "Bl��ughadda",
+        "Type": "Source"
+      },
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00051@",
+      "Fullname": "/Bolthorn/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Bolthorn",
+        "Type": "Source"
+      },
+      "Relations": "@F00032@"
+    },
+    {
+      "Id": "@I00010@",
+      "Fullname": {
+        "Value": "/Borr/",
+        "Source": [
+          {
+            "Name": "@S00004@",
+            "Data": {
+              "Text": "25 APR 2001"
+            }
+          },
+          {
+            "Name": "@S00003@"
+          }
+        ]
+      },
+      "Sex": "M",
+      "Birth": {
+        "Date": {
+          "Original": "ABT 190",
+          "About": true,
+          "HasYear": true,
+          "HasMonth": false,
+          "HasDay": false,
+          "Value": null
+        },
+        "Place": "Asgard, Asia Or, East Europe",
+        "Source": {
+          "Name": "@S00001@"
+        }
+      },
+      "Alias": "Bor Frithuwald",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Borr & RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com",
+        "Type": "Source"
+      },
+      "Notes": {
+        "Id": "@N00010@"
+      },
+      "Relations": ["@F00003@", "@F00009@", "@F00007@"]
+    },
+    {
+      "Id": "@I00033@",
+      "Fullname": "/Bragi/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
+        "Type": "Source"
+      },
+      "Relations": ["@F00050@", "@F00008@"]
+    },
+    {
+      "Id": "@I00008@",
+      "Fullname": "/B�ri/",
+      "Sex": "M",
+      "Alias": "Freothalaf Frealaf",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/B%C3%BAri",
+        "Type": "Source"
+      },
+      "Notes": [
+        {
+          "Id": "@N00007@"
+        },
+        {
+          "Id": "@N00008@"
+        }
+      ],
+      "Relations": ["@F00007@", "@F00033@"]
+    },
+    {
+      "Id": "@I00096@",
+      "Fullname": "/Bylgja/",
+      "Sex": "F",
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00064@",
+      "Fullname": "/B�leistr/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Byleist",
+          "Type": "Source"
+        },
+        {
+          "Name": "Byleist",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00034@"
+    },
+    {
+      "Id": "@I00052@",
+      "Fullname": "Giant Teacher of Odin of Nine Magic /Charms/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Bolthorn",
+        "Type": "Source"
+      },
+      "Relations": "@F00032@"
+    },
+    {
+      "Id": "@I00107@",
+      "Fullname": "/Dagr/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Dagr",
+          "Type": "Source"
+        },
+        {
+          "Name": "Dag, Dagur",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00056@"
+    },
+    {
+      "Id": "@I00106@",
+      "Fullname": "/Delling/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Delling",
+        "Type": "Source"
+      },
+      "Relations": "@F00056@"
+    },
+    {
+      "Id": "@I00097@",
+      "Fullname": "/D�fa/",
+      "Sex": "F",
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00054@",
+      "Fullname": "/F�rbauti/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/F%C3%A1rbauti",
+        "Type": "Source"
+      },
+      "Relations": "@F00034@"
+    },
+    {
+      "Id": "@I00058@",
+      "Fullname": "/Fenrir/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Fenrir & http://en.wikipedia.org/wiki/Hr%C3%B3dvitnir",
+          "Type": "Source"
+        },
+        {
+          "Name": "Fenrisulfr, Fenris�lfr, Hr�dvitnir",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00036@", "@F00035@"]
+    },
+    {
+      "Id": "@I00146@",
+      "Fullname": "/Fjalar/",
+      "Sex": "M"
+    },
+    {
+      "Id": "@I00080@",
+      "Fullname": "/Fj�lnir/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Fj%C3%B6lnir",
+          "Type": "Source"
+        },
+        {
+          "Name": "Fj�lner, Fjolner or Fjolne",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00048@", "@F00047@"]
+    },
+    {
+      "Id": "@I00103@",
+      "Fullname": "/Fornj�t/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Fornj%C3%B3t",
+          "Type": "Source"
+        },
+        {
+          "Name": "Fornj�tr",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00055@"
+    },
+    {
+      "Id": "@I00119@",
+      "Fullname": "/Forseti/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Forseti",
+        "Type": "Source"
+      },
+      "Relations": "@F00037@"
+    },
+    {
+      "Id": "@I00086@",
+      "Fullname": "/Freyja/",
+      "Sex": "F",
+      "Relations": ["@F00063@", "@F00046@"]
+    },
+    {
+      "Id": "@I00079@",
+      "Fullname": "/Freyr/",
+      "Sex": "M",
+      "Relations": ["@F00047@", "@F00046@"]
+    },
+    {
+      "Id": "@I00009@",
+      "Fullname": "/Frigg/",
+      "Sex": "F",
+      "Birth": {
+        "Date": {
+          "Original": "ABT 219",
+          "About": true,
+          "HasYear": true,
+          "HasMonth": false,
+          "HasDay": false,
+          "Value": null
+        },
+        "Place": "Asgard, Asia Or, East Europe",
+        "Source": {
+          "Name": "@S00001@"
+        }
+      },
+      "Alias": "Frea Friege Frigg",
+      "Notes": {
+        "Id": "@N00009@"
+      },
+      "Relations": ["@F00008@", "@F00040@"]
+    },
+    {
+      "Id": "@I00147@",
+      "Fullname": "/Galar/",
+      "Sex": "M"
+    },
+    {
+      "Id": "@I00076@",
+      "Fullname": "/Gangr/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "Gang",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/Gangr",
+          "Type": "Source"
+        }
+      ],
+      "Relations": "@F00045@"
+    },
+    {
+      "Id": "@I00123@",
+      "Fullname": "/Gefjun/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Gefjun",
+        "Type": "Source"
+      }
+    },
+    {
+      "Id": "@I00150@",
+      "Fullname": "/Gerd/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "Gerd, Ger�ur, G�rd, Gerdhr, Gerda or Gerdur",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/Ger%C3%B0r",
+          "Type": "Source"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/Gerd",
+          "Type": "Source"
+        }
+      ],
+      "Relations": ["@F00047@", "@F00049@"]
+    },
+    {
+      "Id": "@I00122@",
+      "Fullname": "/Gersemi/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Gersemi",
+        "Type": "Source"
+      },
+      "Relations": "@F00063@"
+    },
+    {
+      "Id": "@I00061@",
+      "Fullname": "A /Giantess/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Hati",
+        "Type": "Source"
+      },
+      "Relations": "@F00036@"
+    },
+    {
+      "Id": "@I00140@",
+      "Fullname": "/Gilling/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Gillingr",
+        "Type": "Source"
+      },
+      "Relations": ["@F00067@", "@F00068@"]
+    },
+    {
+      "Id": "@I00110@",
+      "Fullname": "Rich /Girl/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Au%C3%B0",
+        "Type": "Source"
+      },
+      "Relations": ["@F00059@", "@F00058@"]
+    },
+    {
+      "Id": "@I00134@",
+      "Fullname": "/Glaur/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Glaur",
+        "Type": "Source"
+      },
+      "Relations": "@F00065@"
+    },
+    {
+      "Id": "@I00045@",
+      "Fullname": "/Grid/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Grid_%28Jotun%29",
+        "Type": "Source"
+      },
+      "Relations": "@F00030@"
+    },
+    {
+      "Id": "@I00145@",
+      "Fullname": "/Gunnl��/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Gunnlod",
+        "Type": "Source"
+      },
+      "Relations": "@F00069@"
+    },
+    {
+      "Id": "@I00098@",
+      "Fullname": "/Hefring/",
+      "Sex": "F",
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00035@",
+      "Fullname": "/Heimdall/",
+      "Sex": "U",
+      "Events": {
+        "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
+        "Type": "Source"
+      },
+      "Relations": "@F00064@"
+    },
+    {
+      "Id": "@I00063@",
+      "Fullname": "/Hel/",
+      "Sex": "F",
+      "Relations": "@F00035@"
+    },
+    {
+      "Id": "@I00065@",
+      "Fullname": "/Helbindi/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Helbindi",
+        "Type": "Source"
+      },
+      "Relations": "@F00034@"
+    },
+    {
+      "Id": "@I00032@",
+      "Fullname": "/Hermod/",
+      "Sex": "M",
+      "Events": {
+        "Name": "Herm��r",
+        "Type": "Also Known As II"
+      },
+      "Relations": "@F00064@"
+    },
+    {
+      "Id": "@I00099@",
+      "Fullname": "/Himingl�va/",
+      "Sex": "F",
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00121@",
+      "Fullname": "/Hnoss/",
+      "Sex": "F",
+      "Relations": "@F00063@"
+    },
+    {
+      "Id": "@I00030@",
+      "Fullname": "/H��r/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
+          "Type": "Source"
+        },
+        {
+          "Name": "Hod",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00008@"
+    },
+    {
+      "Id": "@I00059@",
+      "Fullname": "Hati /Hr�dvitnisson/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Hati",
+        "Type": "Source"
+      },
+      "Relations": "@F00036@"
+    },
+    {
+      "Id": "@I00100@",
+      "Fullname": "/Hr�nn/",
+      "Sex": "F",
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00077@",
+      "Fullname": "/Idi/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Idi_%28giant%29",
+        "Type": "Source"
+      },
+      "Relations": "@F00045@"
+    },
+    {
+      "Id": "@I00087@",
+      "Fullname": "/I�unn/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "Idun",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
+          "Type": "Source"
+        }
+      ],
+      "Relations": "@F00050@"
+    },
+    {
+      "Id": "@I00115@",
+      "Fullname": "/J�rnsaxa/",
+      "Sex": "F",
+      "Relations": "@F00061@"
+    },
+    {
+      "Id": "@I00036@",
+      "Fullname": ["/J�r�/", "/Jord/"],
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/J%C3%B6rd",
+          "Type": "Source"
+        },
+        {
+          "Name": "J�r�, Jar�, Jorth, Fj�rgyn, Hl�dyn",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00029@", "@F00051@"]
+    },
+    {
+      "Id": "@I00062@",
+      "Fullname": "/J�rmungandr/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/J%C3%B6rmungandr",
+          "Type": "Source"
+        },
+        {
+          "Name": "Midgard Serpent or World Serpent",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00035@"
+    },
+    {
+      "Id": "@I00105@",
+      "Fullname": "/K�ri/",
+      "Sex": "M",
+      "Relations": "@F00055@"
+    },
+    {
+      "Id": "@I00101@",
+      "Fullname": "/K�lga/",
+      "Sex": "M",
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00137@",
+      "Fullname": "/Kvasir/",
+      "Sex": "M",
+      "Relations": "@F00066@"
+    },
+    {
+      "Id": "@I00055@",
+      "Fullname": "/Laufey/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Laufey",
+          "Type": "Source"
+        },
+        {
+          "Name": "Nal",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00034@"
+    },
+    {
+      "Id": "@I00136@",
+      "Fullname": "/Lofn/",
+      "Sex": "F"
+    },
+    {
+      "Id": "@I00104@",
+      "Fullname": "/Logi/",
+      "Sex": "M",
+      "Relations": "@F00055@"
+    },
+    {
+      "Id": "@I00056@",
+      "Fullname": "/Loki/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Loki",
+        "Type": "Source"
+      },
+      "Relations": ["@F00035@", "@F00053@", "@F00034@"]
+    },
+    {
+      "Id": "@I00116@",
+      "Fullname": "/Magni/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/M%C3%B3%C3%B0i_and_Magni",
+        "Type": "Source"
+      },
+      "Relations": "@F00061@"
+    },
+    {
+      "Id": "@I00133@",
+      "Fullname": "/M�ni/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/M%C3%A1ni",
+        "Type": "Source"
+      },
+      "Relations": "@F00065@"
+    },
+    {
+      "Id": "@I00069@",
+      "Fullname": "/M�mir/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/M%C3%ADmir",
+        "Type": "Source"
+      },
+      "Relations": "@F00041@"
+    },
+    {
+      "Id": "@I00114@",
+      "Fullname": "/M��i/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "M�di or Modi",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/M%C3%B3%C3%B0i_and_Magni",
+          "Type": "Source"
+        }
+      ],
+      "Relations": "@F00060@"
+    },
+    {
+      "Id": "@I00130@",
+      "Fullname": "/Mundilfari/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Mundilfari",
+          "Type": "Source"
+        },
+        {
+          "Name": "Mundilf�ri",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00065@"
+    },
+    {
+      "Id": "@I00108@",
+      "Fullname": "/Naglfari/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Naglfari",
+        "Type": "Source"
+      },
+      "Relations": "@F00057@"
+    },
+    {
+      "Id": "@I00066@",
+      "Fullname": "/Nanna/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Nanna_%28Norse_deity%29",
+        "Type": "Source"
+      },
+      "Relations": ["@F00037@", "@F00038@"]
+    },
+    {
+      "Id": "@I00090@",
+      "Fullname": "/Narfi/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "Nari? Narvi? N�rfi? N�r?",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/Narfi",
+          "Type": "Source"
+        }
+      ],
+      "Relations": ["@F00052@", "@F00053@"]
+    },
+    {
+      "Id": "@I00067@",
+      "Fullname": "/Nepr/",
+      "Sex": "M",
+      "Relations": ["@F00038@", "@F00039@"]
+    },
+    {
+      "Id": "@I00078@",
+      "Fullname": "/Nerthus/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Nerthus",
+        "Type": "Source"
+      },
+      "Relations": "@F00046@"
+    },
+    {
+      "Id": "@I00071@",
+      "Fullname": "/Nj�r�r/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "Njord, Njordr",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/Njord",
+          "Type": "Source"
+        }
+      ],
+      "Relations": ["@F00043@", "@F00046@", "@F00042@"]
+    },
+    {
+      "Id": "@I00089@",
+      "Fullname": "/N�tt/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/N%C3%B3tt",
+          "Type": "Source"
+        },
+        {
+          "Name": "Night",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00051@", "@F00056@", "@F00057@", "@F00052@"]
+    },
+    {
+      "Id": "@I00021@",
+      "Fullname": "/Odin/",
+      "Sex": "M",
+      "Events": {
+        "Name": "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com",
+        "Type": "Source"
+      },
+      "Notes": {
+        "Id": "@N00016@"
+      },
+      "Relations": [
+        "@F00008@",
+        "@F00029@",
+        "@F00030@",
+        "@F00031@",
+        "@F00039@",
+        "@F00064@",
+        "@F00003@"
+      ]
+    },
+    {
+      "Id": "@I00075@",
+      "Fullname": "/Olvaldi/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Olvaldi",
+        "Type": "Source"
+      },
+      "Relations": "@F00045@"
+    },
+    {
+      "Id": "@I00120@",
+      "Fullname": "/��r/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "�dr",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "http://en.wikipedia.org/wiki/%C3%93%C3%B0r",
+          "Type": "Source"
+        }
+      ],
+      "Relations": "@F00063@"
+    },
+    {
+      "Id": "@I00093@",
+      "Fullname": "/R�n/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/R%C3%A1n",
+        "Type": "Source"
+      },
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00048@",
+      "Fullname": "/Rindr/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Rind_%28giantess%29",
+          "Type": "Source"
+        },
+        {
+          "Name": "Rind",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00031@"
+    },
+    {
+      "Id": "@I00139@",
+      "Fullname": "All the Female God's /Saliva/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Kvasir",
+        "Type": "Source"
+      },
+      "Relations": "@F00066@"
+    },
+    {
+      "Id": "@I00138@",
+      "Fullname": "All the Male God's /Saliva/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Kvasir",
+        "Type": "Source"
+      },
+      "Relations": "@F00066@"
+    },
+    {
+      "Id": "@I00135@",
+      "Fullname": "/S�ga/",
+      "Sex": "F"
+    },
+    {
+      "Id": "@I00129@",
+      "Fullname": "/Seaxneat/",
+      "Sex": "M",
+      "Events": {
+        "Name": "Saxnot",
+        "Type": "Also Known As II"
+      }
+    },
+    {
+      "Id": "@I00113@",
+      "Fullname": "/Sif/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Sif",
+        "Type": "Source"
+      },
+      "Relations": ["@F00060@", "@F00062@"]
+    },
+    {
+      "Id": "@I00091@",
+      "Fullname": "/Sigyn/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Sigyn",
+        "Type": "Source"
+      },
+      "Relations": "@F00053@"
+    },
+    {
+      "Id": "@I00148@",
+      "Fullname": "/Sj�fn/",
+      "Sex": "F"
+    },
+    {
+      "Id": "@I00073@",
+      "Fullname": "/Ska�i/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Ska%C3%B0i",
+          "Type": "Source"
+        },
+        {
+          "Name": "Skadi, �ndurgud or �ndurdis",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00043@", "@F00044@"]
+    },
+    {
+      "Id": "@I00149@",
+      "Fullname": "/Skirnir/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Skirnir",
+        "Type": "Source"
+      }
+    },
+    {
+      "Id": "@I00060@",
+      "Fullname": "/Skoll/",
+      "Sex": "M",
+      "Relations": "@F00036@"
+    },
+    {
+      "Id": "@I00127@",
+      "Fullname": "/Skuld/",
+      "Sex": "F"
+    },
+    {
+      "Id": "@I00070@",
+      "Fullname": "Several /Sons/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/M%C3%ADmir",
+        "Type": "Source"
+      },
+      "Relations": "@F00041@"
+    },
+    {
+      "Id": "@I00131@",
+      "Fullname": "/Sowilo/",
+      "Sex": "F",
+      "Events": {
+        "Name": "S�l, Si?el, \"S�wil� ,*Saewel�\", Sunna",
+        "Type": "Also Known As II"
+      },
+      "Relations": "@F00065@"
+    },
+    {
+      "Id": "@I00132@",
+      "Fullname": "/Sunna/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Sol_%28goddess%29",
+        "Type": "Source"
+      },
+      "Relations": "@F00065@"
+    },
+    {
+      "Id": "@I00142@",
+      "Fullname": "/Suttungr/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Suttungr",
+        "Type": "Source"
+      },
+      "Relations": ["@F00069@", "@F00067@"]
+    },
+    {
+      "Id": "@I00074@",
+      "Fullname": "/Thjazi/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Thjazi",
+        "Type": "Source"
+      },
+      "Relations": ["@F00044@", "@F00045@"]
+    },
+    {
+      "Id": "@I00047@",
+      "Fullname": "/Thor/",
+      "Sex": "M",
+      "Relations": ["@F00060@", "@F00061@", "@F00029@"]
+    },
+    {
+      "Id": "@I00034@",
+      "Fullname": "/T�r/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://www.winhttp://en.wikipedia.org/wiki/T%C3%BDr",
+          "Type": "Source"
+        },
+        {
+          "Name": "Tyr, Tyz , Tiw , Ziu, *T�waz., Ty, Ti, T�r",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00008@"
+    },
+    {
+      "Id": "@I00112@",
+      "Fullname": "/�r��r/",
+      "Sex": "F",
+      "Events": [
+        {
+          "Name": "Thr�d or Thrud",
+          "Type": "Also Known As II"
+        },
+        {
+          "Name": "Thr�d or Thrud",
+          "Type": "Source"
+        }
+      ],
+      "Relations": "@F00060@"
+    },
+    {
+      "Id": "@I00118@",
+      "Fullname": "/Ullr/",
+      "Sex": "M",
+      "Relations": "@F00062@"
+    },
+    {
+      "Id": "@I00072@",
+      "Fullname": "/Unknown/",
+      "Sex": "M",
+      "Relations": "@F00042@"
+    },
+    {
+      "Id": "@I00117@",
+      "Fullname": "/Unknown/",
+      "Sex": "M",
+      "Relations": "@F00062@"
+    },
+    {
+      "Id": "@I00143@",
+      "Fullname": "/Unknown/",
+      "Sex": "F",
+      "Relations": "@F00068@"
+    },
+    {
+      "Id": "@I00102@",
+      "Fullname": "/Unnr/",
+      "Sex": "F",
+      "Relations": "@F00054@"
+    },
+    {
+      "Id": "@I00092@",
+      "Fullname": "/V�li/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/V%C3%A1li_%28son_of_Loki%29 & http://en.wikipedia.org/wiki/Narfi",
+          "Type": "Source"
+        },
+        {
+          "Name": "Nari? Narfi?",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00053@"
+    },
+    {
+      "Id": "@I00128@",
+      "Fullname": "/V�r/",
+      "Sex": "F"
+    },
+    {
+      "Id": "@I00050@",
+      "Fullname": "/Ve/",
+      "Sex": "U",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Ve",
+        "Type": "Source"
+      },
+      "Relations": "@F00003@"
+    },
+    {
+      "Id": "@I00125@",
+      "Fullname": "/Verdandi/",
+      "Sex": "F"
+    },
+    {
+      "Id": "@I00046@",
+      "Fullname": "/Vidar/",
+      "Sex": "U",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Vidar",
+          "Type": "Source"
+        },
+        {
+          "Name": "V��arr, Widar",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": "@F00030@"
+    },
+    {
+      "Id": "@I00068@",
+      "Fullname": "/Vili/",
+      "Sex": "M",
+      "Events": [
+        {
+          "Name": "http://en.wikipedia.org/wiki/Vili",
+          "Type": "Source"
+        },
+        {
+          "Name": "H�nir",
+          "Type": "Also Known As II"
+        }
+      ],
+      "Relations": ["@F00040@", "@F00003@"]
+    },
+    {
+      "Id": "@I00111@",
+      "Fullname": "/Visbur/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Au%C3%B0",
+        "Type": "Source"
+      },
+      "Relations": "@F00059@"
+    },
+    {
+      "Id": "@I00124@",
+      "Fullname": "/V�r/",
+      "Sex": "U"
+    },
+    {
+      "Id": "@I00141@",
+      "Fullname": "Gilling's /Wife/",
+      "Sex": "F",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Gillingr",
+        "Type": "Source"
+      },
+      "Relations": "@F00067@"
+    },
+    {
+      "Id": "@I00126@",
+      "Fullname": "/Wyrd/",
+      "Sex": "F",
+      "Events": {
+        "Name": "Ur�r, Ur�r, Urd, �rlog.",
+        "Type": "Also Known As II"
+      }
+    },
+    {
+      "Id": "@I00081@",
+      "Fullname": "Semi-Myth Kings of Sweden as Told in /Ynglingatal/",
+      "Sex": "M",
+      "Events": {
+        "Name": "http://en.wikipedia.org/wiki/Ynglingatal",
+        "Type": "Source"
+      },
+      "Relations": "@F00048@"
     }
-   ],
-   "Relations": "@F00034@"
-  },
-  {
-   "Id": "@I00052@",
-   "Fullname": "Giant Teacher of Odin of Nine Magic /Charms/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Bolthorn",
-    "Type": "Source"
-   },
-   "Relations": "@F00032@"
-  },
-  {
-   "Id": "@I00107@",
-   "Fullname": "/Dagr/",
-   "Sex": "M",
-   "Events": [
+  ],
+  "Relations": [
     {
-     "Name": "http://en.wikipedia.org/wiki/Dagr",
-     "Type": "Source"
+      "Id": "@F000-1@",
+      "Children": "@I00-25@"
     },
     {
-     "Name": "Dag, Dagur",
-     "Type": "Also Known As II"
+      "Id": "@F000-2@",
+      "Children": "@I000-1@"
+    },
+    {
+      "Id": "@F00003@",
+      "Husband": "@I00010@",
+      "Wife": "@I00004@",
+      "Children": ["@I00021@", "@I00050@", "@I00068@"]
+    },
+    {
+      "Id": "@F000-4@",
+      "Children": "@I00-29@"
+    },
+    {
+      "Id": "@F000-5@"
+    },
+    {
+      "Id": "@F000-6@",
+      "Children": "@I000-6@"
+    },
+    {
+      "Id": "@F00007@",
+      "Husband": "@I00008@",
+      "Children": "@I00010@"
+    },
+    {
+      "Id": "@F00008@",
+      "Husband": "@I00021@",
+      "Wife": "@I00009@",
+      "Children": ["@I00026@", "@I00030@", "@I00033@", "@I00034@"]
+    },
+    {
+      "Id": "@F00009@",
+      "Husband": "@I00010@"
+    },
+    {
+      "Id": "@F00-10@",
+      "Children": "@I000-7@"
+    },
+    {
+      "Id": "@F00-11@",
+      "Children": "@I00-15@"
+    },
+    {
+      "Id": "@F00-12@",
+      "Children": "@I00-22@"
+    },
+    {
+      "Id": "@F00-13@",
+      "Children": "@I00-12@"
+    },
+    {
+      "Id": "@F00-14@",
+      "Children": "@I00-13@"
+    },
+    {
+      "Id": "@F00-15@",
+      "Children": "@I00-27@"
+    },
+    {
+      "Id": "@F00-16@",
+      "Children": "@I000-5@"
+    },
+    {
+      "Id": "@F00-17@",
+      "Children": "@I00-23@"
+    },
+    {
+      "Id": "@F00-18@",
+      "Children": "@I00-19@"
+    },
+    {
+      "Id": "@F00019@"
+    },
+    {
+      "Id": "@F00020@"
+    },
+    {
+      "Id": "@F00021@"
+    },
+    {
+      "Id": "@F00022@"
+    },
+    {
+      "Id": "@F00-23@",
+      "Children": "@I000-2@"
+    },
+    {
+      "Id": "@F00-24@",
+      "Children": "@I000-3@"
+    },
+    {
+      "Id": "@F00-25@",
+      "Wife": "@I00024@",
+      "Children": "@I00-17@"
+    },
+    {
+      "Id": "@F00-26@",
+      "Children": "@I00-11@"
+    },
+    {
+      "Id": "@F00-27@",
+      "Children": "@I00-20@"
+    },
+    {
+      "Id": "@F00-28@",
+      "Children": "@I00-28@"
+    },
+    {
+      "Id": "@F00029@",
+      "Husband": "@I00021@",
+      "Wife": "@I00036@",
+      "Children": "@I00047@"
+    },
+    {
+      "Id": "@F00030@",
+      "Husband": "@I00021@",
+      "Wife": "@I00045@",
+      "Children": "@I00046@"
+    },
+    {
+      "Id": "@F00031@",
+      "Husband": "@I00021@",
+      "Wife": "@I00048@"
+    },
+    {
+      "Id": "@F00032@",
+      "Husband": "@I00051@",
+      "Children": ["@I00004@", "@I00052@"]
+    },
+    {
+      "Id": "@F00033@",
+      "Wife": "@I00053@",
+      "Children": "@I00008@"
+    },
+    {
+      "Id": "@F00034@",
+      "Husband": "@I00054@",
+      "Wife": "@I00055@",
+      "Children": ["@I00056@", "@I00064@", "@I00065@"]
+    },
+    {
+      "Id": "@F00035@",
+      "Husband": "@I00056@",
+      "Wife": "@I00057@",
+      "Children": ["@I00058@", "@I00062@", "@I00063@"]
+    },
+    {
+      "Id": "@F00036@",
+      "Husband": "@I00058@",
+      "Wife": "@I00061@",
+      "Children": ["@I00059@", "@I00060@"]
+    },
+    {
+      "Id": "@F00037@",
+      "Husband": "@I00026@",
+      "Wife": "@I00066@",
+      "Children": "@I00119@"
+    },
+    {
+      "Id": "@F00038@",
+      "Husband": "@I00067@",
+      "Children": "@I00066@"
+    },
+    {
+      "Id": "@F00039@",
+      "Husband": "@I00021@",
+      "Children": "@I00067@"
+    },
+    {
+      "Id": "@F00040@",
+      "Husband": "@I00068@",
+      "Wife": "@I00009@"
+    },
+    {
+      "Id": "@F00041@",
+      "Husband": "@I00069@",
+      "Children": "@I00070@"
+    },
+    {
+      "Id": "@F00042@",
+      "Husband": "@I00072@",
+      "Children": "@I00071@"
+    },
+    {
+      "Id": "@F00043@",
+      "Husband": "@I00071@",
+      "Wife": "@I00073@"
+    },
+    {
+      "Id": "@F00044@",
+      "Husband": "@I00074@",
+      "Children": "@I00073@"
+    },
+    {
+      "Id": "@F00045@",
+      "Husband": "@I00075@",
+      "Children": ["@I00074@", "@I00076@", "@I00077@"]
+    },
+    {
+      "Id": "@F00046@",
+      "Husband": "@I00071@",
+      "Wife": "@I00078@",
+      "Children": ["@I00079@", "@I00086@"]
+    },
+    {
+      "Id": "@F00047@",
+      "Husband": "@I00079@",
+      "Wife": "@I00150@",
+      "Children": "@I00080@"
+    },
+    {
+      "Id": "@F00048@",
+      "Husband": "@I00080@",
+      "Children": "@I00081@"
+    },
+    {
+      "Id": "@F00049@",
+      "Husband": "@I00083@",
+      "Wife": "@I00084@",
+      "Children": ["@I00085@", "@I00150@"]
+    },
+    {
+      "Id": "@F00050@",
+      "Husband": "@I00033@",
+      "Wife": "@I00087@"
+    },
+    {
+      "Id": "@F00051@",
+      "Husband": "@I00088@",
+      "Wife": "@I00089@",
+      "Children": "@I00036@"
+    },
+    {
+      "Id": "@F00052@",
+      "Husband": "@I00090@",
+      "Children": "@I00089@"
+    },
+    {
+      "Id": "@F00053@",
+      "Husband": "@I00056@",
+      "Wife": "@I00091@",
+      "Children": ["@I00090@", "@I00092@"]
+    },
+    {
+      "Id": "@F00054@",
+      "Husband": "@I00083@",
+      "Wife": "@I00093@",
+      "Children": [
+        "@I00094@",
+        "@I00095@",
+        "@I00096@",
+        "@I00097@",
+        "@I00098@",
+        "@I00099@",
+        "@I00100@",
+        "@I00101@",
+        "@I00102@"
+      ]
+    },
+    {
+      "Id": "@F00055@",
+      "Husband": "@I00103@",
+      "Children": ["@I00083@", "@I00104@", "@I00105@"]
+    },
+    {
+      "Id": "@F00056@",
+      "Husband": "@I00106@",
+      "Wife": "@I00089@",
+      "Children": "@I00107@"
+    },
+    {
+      "Id": "@F00057@",
+      "Husband": "@I00108@",
+      "Wife": "@I00089@",
+      "Children": "@I00109@"
+    },
+    {
+      "Id": "@F00058@",
+      "Wife": "@I00109@",
+      "Children": "@I00110@"
+    },
+    {
+      "Id": "@F00059@",
+      "Husband": "@I00111@",
+      "Wife": "@I00110@"
+    },
+    {
+      "Id": "@F00060@",
+      "Husband": "@I00047@",
+      "Wife": "@I00113@",
+      "Children": ["@I00112@", "@I00114@"]
+    },
+    {
+      "Id": "@F00061@",
+      "Husband": "@I00047@",
+      "Wife": "@I00115@",
+      "Children": "@I00116@"
+    },
+    {
+      "Id": "@F00062@",
+      "Husband": "@I00117@",
+      "Wife": "@I00113@",
+      "Children": "@I00118@"
+    },
+    {
+      "Id": "@F00063@",
+      "Husband": "@I00120@",
+      "Wife": "@I00086@",
+      "Children": ["@I00121@", "@I00122@"]
+    },
+    {
+      "Id": "@F00064@",
+      "Husband": "@I00021@",
+      "Children": ["@I00032@", "@I00035@"]
+    },
+    {
+      "Id": "@F00065@",
+      "Husband": "@I00130@",
+      "Wife": "@I00134@",
+      "Children": ["@I00131@", "@I00132@", "@I00133@"]
+    },
+    {
+      "Id": "@F00066@",
+      "Husband": "@I00138@",
+      "Wife": "@I00139@",
+      "Children": "@I00137@"
+    },
+    {
+      "Id": "@F00067@",
+      "Husband": "@I00140@",
+      "Wife": "@I00141@",
+      "Children": "@I00142@"
+    },
+    {
+      "Id": "@F00068@",
+      "Husband": "@I00140@",
+      "Wife": "@I00143@",
+      "Children": "@I00144@"
+    },
+    {
+      "Id": "@F00069@",
+      "Husband": "@I00142@",
+      "Children": "@I00145@"
     }
-   ],
-   "Relations": "@F00056@"
-  },
-  {
-   "Id": "@I00106@",
-   "Fullname": "/Delling/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Delling",
-    "Type": "Source"
-   },
-   "Relations": "@F00056@"
-  },
-  {
-   "Id": "@I00097@",
-   "Fullname": "/D�fa/",
-   "Sex": "F",
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00054@",
-   "Fullname": "/F�rbauti/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/F%C3%A1rbauti",
-    "Type": "Source"
-   },
-   "Relations": "@F00034@"
-  },
-  {
-   "Id": "@I00058@",
-   "Fullname": "/Fenrir/",
-   "Sex": "M",
-   "Events": [
+  ],
+  "Notes": [
     {
-     "Name": "http://en.wikipedia.org/wiki/Fenrir & http://en.wikipedia.org/wiki/Hr%C3%B3dvitnir",
-     "Type": "Source"
+      "Id": "@N00005@",
+      "Text": "[RCKarnes.ged]\n\nIn Norse mythology, Bestla was an ancient frost giantess\n\n..."
     },
     {
-     "Name": "Fenrisulfr, Fenris�lfr, Hr�dvitnir",
-     "Type": "Also Known As II"
+      "Id": "@N00007@",
+      "Text": "[RCKarnes.ged]\n\nFrealaf (Frallaf) son of Frithwulf (Frithuwulf)\n\n..."
+    },
+    {
+      "Id": "@N00008@",
+      "Text": "[RCKarnes.ged]\n\nFrealaf (Frallaf) son of Frithwulf (Frithuwulf)\n\n..."
+    },
+    {
+      "Id": "@N00009@",
+      "Text": "[RCKarnes.ged]\n\nIn Norse mythology, Frigg or Frigga was the mother goddess and the wife of Odin or Odr. Considered queen of the heavens, the goddess of motherhood, fertility, love and housework. Indeed strong parallels exist between Frigg and Freya of whom she may be a different aspect (cf. avatar). Freya was a shaman practicting the seid and Frigg was reputed tohave the ability to foresee everyone's destiny without revealing it. The mother of Baldur, she endeavoured to protect him from his preordained death by swearing oaths from everything in nature, but forgot the mistletoe. It may be stated with a certain degree of truth that Frigg and Freya are the same but different versions. Freya became Frigg aftershe lived with the Aesir. Born a Vanir she became an Aesir by marriage, and as the wife of Odin she became a goddess of wifehood. However, promiscuous Freya provided a lusty choice on his part. As Frigg shehadan affair with Ve and Vili, Odin's brothers, according to Loki inLokasenna. This happened when Odin was gone for so long that everyonethough him dead (cf. Freya's crying golden tears when she thought Odr(Odin) had disappeared).  Frigg's hall in Asgard is Fensalir. With her husband, she was the mother of Bragi, Wecta and Hermod. Eir, a goddess ofhealing, was one of her constant companions. She had attendantsnamed Glm and Syn.  She participated in the Wild Hunt (Asgardreid) along with her husband.  She had three attendants, Hlin, Gna and Fulla, all ofwhom may have been the same deity in a different aspect as Frigg.  (From Wikipedia, the free encyclopedia)\n\n..."
+    },
+    {
+      "Id": "@N00010@",
+      "Text": "[RCKarnes.ged]\n\nIn Norse mythology, the god Bor, or Borr was the father of Odin, Ve and Vili by the frost giantess Bestla.  Bor was the son of the giant Buri.  In Norse mythology, Buri (also Bri, Bur) was the god formed by the cow Audumla licking the salty ice of Ginnungagap.  He was the father of Bor and grandfather of the Aesir.\n\n..."
+    },
+    {
+      "Id": "@N00016@",
+      "Text": "[RCKarnes.ged]\n\nduplicate line (to Adam and Eve) Wotan, Wodan, Woden, Oden, Odin or inn is usually considered the supreme god of Germanic and Norse mythology.  Odin was a son of Bestla and Bor and brother of V and Vili and together with these brothers he cast down the frost giant Ymir and created the world from Ymir's body.  The three brothers are often mentionedtogether. \"Wille\" is the German word for \"will\" (English), \"Weh\" is the German word (Gothic wai) for \"woe\" (English: great sorrow, grief, misery) but is more likely related to the archaic German \"Wei\" meaning 'sacred'.  Odin fathered his most famous son Thor on Jord 'Earth'. Buthis wife and consort was the goddess Frigg who in the best-known tradition was the loving mother of their son Baldr).  By the giantess Grr,Odin was the father of Varr and by Rind he was father of Vali.  Also many royal families claimed descent from Odin through other sons.\n(From Wikipedia, the free encyclopedia)\n\n...\n\n.."
+    },
+    {
+      "Id": "@N00019@",
+      "Text": "[RCKarnes.ged]\n\nIn Norse mythology, Sif is a goddess of the Aesir, wife of Thor and mother of Thrud, Ull and Modi. Thor is not the father of Ull. She has hair of gold which grows just like natural hair, made by the dwarves called \"sons of Ivaldi\" (Dvalin). Loki cut off Sif's hair as a prank, but when Thor found this out he forced Loki to promise to have golden hair made by the dark elves. Loki uses this event to taunt Sif and, indirectly, Thor in Lokasenna. Loki succeeded in having such hair made, as well as Freyr's ship Skidbladnir and Odin's spear Gungni, all made by the same dwarf Dvalin.    In Norse mythology, Sif (/siv/,\"relative\") is a goddess of the Aesir, wife of Thor and mother of Thrud, Ull and Modi. Thor is not the father of Ull. Sif was not the mother of Magni, this was Thor's son with Jarnsaxa. She has hair of gold which growsjust like natural hair, made by the dwarves called \"sons of Ivaldi\" (Dvalin). Loki cut off Sif's hair as a prank, but when Thor found this out he forced Loki to promise to have golden hair made by the dark elves. Loki uses this event to taunt Sif and, indirectly, Thor in Lokasenna.  Loki succeeded in having such hair made, as well as Freyr's ship Skidbladnir and Odin's spear Gungni, all made by the same dwarf Dvalin.\n\n..."
     }
-   ],
-   "Relations": [
-    "@F00036@",
-    "@F00035@"
-   ]
-  },
-  {
-   "Id": "@I00146@",
-   "Fullname": "/Fjalar/",
-   "Sex": "M"
-  },
-  {
-   "Id": "@I00080@",
-   "Fullname": "/Fj�lnir/",
-   "Sex": "M",
-   "Events": [
+  ],
+  "Repositories": [
     {
-     "Name": "http://en.wikipedia.org/wiki/Fj%C3%B6lnir",
-     "Type": "Source"
+      "Id": "@R00001@",
+      "Name": "RootsWeb"
     },
     {
-     "Name": "Fj�lner, Fjolner or Fjolne",
-     "Type": "Also Known As II"
+      "Id": "@R00002@",
+      "Name": "rootsweb.com"
+    },
+    {
+      "Id": "@R00003@",
+      "Name": "559 Southern Run, Fairhope, AL  36532"
     }
-   ],
-   "Relations": [
-    "@F00048@",
-    "@F00047@"
-   ]
-  },
-  {
-   "Id": "@I00103@",
-   "Fullname": "/Fornj�t/",
-   "Sex": "M",
-   "Events": [
+  ],
+  "Source": [
     {
-     "Name": "http://en.wikipedia.org/wiki/Fornj%C3%B3t",
-     "Type": "Source"
+      "Name": "@S00001@",
+      "Author": "RCKarnes",
+      "Title": "RCKarnes",
+      "Repositories": {
+        "Id": "@R00001@"
+      },
+      "Notes": {
+        "Text": "Source Medium: Internet\n"
+      }
     },
     {
-     "Name": "Fornj�tr",
-     "Type": "Also Known As II"
+      "Name": "@S00002@",
+      "Author": "Family Tree Maker",
+      "Title": "World Family Tree Vol. 5",
+      "Publication": "Name: Name: Broderbund Software, Inc., 1996;;",
+      "Notes": {
+        "Text": "Source Medium: Family Archive CD\n\nCustomer pedigree.\n"
+      }
+    },
+    {
+      "Name": "@S00003@",
+      "Author": "Ronald Hillman",
+      "Title": "Aderholt Hillman Hughes Solomon Dunn Funderburg",
+      "Repositories": {
+        "Id": "@R00002@"
+      },
+      "Notes": {
+        "Text": "Source Medium: Internet\n"
+      }
+    },
+    {
+      "Name": "@S00004@",
+      "Author": "Guy Allen Sims",
+      "Title": "Guy Allen Sims",
+      "Repositories": {
+        "Id": "@R00003@"
+      },
+      "Notes": {
+        "Text": "Source Medium: Book\n\nGEDCOM File : 1503980.ged\n"
+      }
     }
-   ],
-   "Relations": "@F00055@"
-  },
-  {
-   "Id": "@I00119@",
-   "Fullname": "/Forseti/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Forseti",
-    "Type": "Source"
-   },
-   "Relations": "@F00037@"
-  },
-  {
-   "Id": "@I00086@",
-   "Fullname": "/Freyja/",
-   "Sex": "F",
-   "Relations": [
-    "@F00063@",
-    "@F00046@"
-   ]
-  },
-  {
-   "Id": "@I00079@",
-   "Fullname": "/Freyr/",
-   "Sex": "M",
-   "Relations": [
-    "@F00047@",
-    "@F00046@"
-   ]
-  },
-  {
-   "Id": "@I00009@",
-   "Fullname": "/Frigg/",
-   "Sex": "F",
-   "Birth": {
-    "Date": {
-     "Original": "ABT 219",
-     "About": true,
-     "HasYear": true,
-     "HasMonth": false,
-     "HasDay": false,
-     "Value": null
-    },
-    "Place": "Asgard, Asia Or, East Europe",
-    "Source": {
-     "Name": "@S00001@"
-    }
-   },
-   "Alias": "Frea Friege Frigg",
-   "Notes": {
-    "Id": "@N00009@"
-   },
-   "Relations": [
-    "@F00008@",
-    "@F00040@"
-   ]
-  },
-  {
-   "Id": "@I00147@",
-   "Fullname": "/Galar/",
-   "Sex": "M"
-  },
-  {
-   "Id": "@I00076@",
-   "Fullname": "/Gangr/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "Gang",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/Gangr",
-     "Type": "Source"
-    }
-   ],
-   "Relations": "@F00045@"
-  },
-  {
-   "Id": "@I00123@",
-   "Fullname": "/Gefjun/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Gefjun",
-    "Type": "Source"
-   }
-  },
-  {
-   "Id": "@I00150@",
-   "Fullname": "/Gerd/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "Gerd, Ger�ur, G�rd, Gerdhr, Gerda or Gerdur",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/Ger%C3%B0r",
-     "Type": "Source"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/Gerd",
-     "Type": "Source"
-    }
-   ],
-   "Relations": [
-    "@F00047@",
-    "@F00049@"
-   ]
-  },
-  {
-   "Id": "@I00122@",
-   "Fullname": "/Gersemi/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Gersemi",
-    "Type": "Source"
-   },
-   "Relations": "@F00063@"
-  },
-  {
-   "Id": "@I00061@",
-   "Fullname": "A /Giantess/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Hati",
-    "Type": "Source"
-   },
-   "Relations": "@F00036@"
-  },
-  {
-   "Id": "@I00140@",
-   "Fullname": "/Gilling/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Gillingr",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00067@",
-    "@F00068@"
-   ]
-  },
-  {
-   "Id": "@I00110@",
-   "Fullname": "Rich /Girl/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Au%C3%B0",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00059@",
-    "@F00058@"
-   ]
-  },
-  {
-   "Id": "@I00134@",
-   "Fullname": "/Glaur/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Glaur",
-    "Type": "Source"
-   },
-   "Relations": "@F00065@"
-  },
-  {
-   "Id": "@I00045@",
-   "Fullname": "/Grid/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Grid_%28Jotun%29",
-    "Type": "Source"
-   },
-   "Relations": "@F00030@"
-  },
-  {
-   "Id": "@I00145@",
-   "Fullname": "/Gunnl��/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Gunnlod",
-    "Type": "Source"
-   },
-   "Relations": "@F00069@"
-  },
-  {
-   "Id": "@I00098@",
-   "Fullname": "/Hefring/",
-   "Sex": "F",
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00035@",
-   "Fullname": "/Heimdall/",
-   "Sex": "U",
-   "Events": {
-    "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
-    "Type": "Source"
-   },
-   "Relations": "@F00064@"
-  },
-  {
-   "Id": "@I00063@",
-   "Fullname": "/Hel/",
-   "Sex": "F",
-   "Relations": "@F00035@"
-  },
-  {
-   "Id": "@I00065@",
-   "Fullname": "/Helbindi/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Helbindi",
-    "Type": "Source"
-   },
-   "Relations": "@F00034@"
-  },
-  {
-   "Id": "@I00032@",
-   "Fullname": "/Hermod/",
-   "Sex": "M",
-   "Events": {
-    "Name": "Herm��r",
-    "Type": "Also Known As II"
-   },
-   "Relations": "@F00064@"
-  },
-  {
-   "Id": "@I00099@",
-   "Fullname": "/Himingl�va/",
-   "Sex": "F",
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00121@",
-   "Fullname": "/Hnoss/",
-   "Sex": "F",
-   "Relations": "@F00063@"
-  },
-  {
-   "Id": "@I00030@",
-   "Fullname": "/H��r/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
-     "Type": "Source"
-    },
-    {
-     "Name": "Hod",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00008@"
-  },
-  {
-   "Id": "@I00059@",
-   "Fullname": "Hati /Hr�dvitnisson/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Hati",
-    "Type": "Source"
-   },
-   "Relations": "@F00036@"
-  },
-  {
-   "Id": "@I00100@",
-   "Fullname": "/Hr�nn/",
-   "Sex": "F",
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00077@",
-   "Fullname": "/Idi/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Idi_%28giant%29",
-    "Type": "Source"
-   },
-   "Relations": "@F00045@"
-  },
-  {
-   "Id": "@I00087@",
-   "Fullname": "/I�unn/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "Idun",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://www.windows.ucar.edu/tour/link=/mythology/viking_family_tree.html",
-     "Type": "Source"
-    }
-   ],
-   "Relations": "@F00050@"
-  },
-  {
-   "Id": "@I00115@",
-   "Fullname": "/J�rnsaxa/",
-   "Sex": "F",
-   "Relations": "@F00061@"
-  },
-  {
-   "Id": "@I00036@",
-   "Fullname": [
-    "/J�r�/",
-    "/Jord/"
-   ],
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/J%C3%B6rd",
-     "Type": "Source"
-    },
-    {
-     "Name": "J�r�, Jar�, Jorth, Fj�rgyn, Hl�dyn",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": [
-    "@F00029@",
-    "@F00051@"
-   ]
-  },
-  {
-   "Id": "@I00062@",
-   "Fullname": "/J�rmungandr/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/J%C3%B6rmungandr",
-     "Type": "Source"
-    },
-    {
-     "Name": "Midgard Serpent or World Serpent",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00035@"
-  },
-  {
-   "Id": "@I00105@",
-   "Fullname": "/K�ri/",
-   "Sex": "M",
-   "Relations": "@F00055@"
-  },
-  {
-   "Id": "@I00101@",
-   "Fullname": "/K�lga/",
-   "Sex": "M",
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00137@",
-   "Fullname": "/Kvasir/",
-   "Sex": "M",
-   "Relations": "@F00066@"
-  },
-  {
-   "Id": "@I00055@",
-   "Fullname": "/Laufey/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Laufey",
-     "Type": "Source"
-    },
-    {
-     "Name": "Nal",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00034@"
-  },
-  {
-   "Id": "@I00136@",
-   "Fullname": "/Lofn/",
-   "Sex": "F"
-  },
-  {
-   "Id": "@I00104@",
-   "Fullname": "/Logi/",
-   "Sex": "M",
-   "Relations": "@F00055@"
-  },
-  {
-   "Id": "@I00056@",
-   "Fullname": "/Loki/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Loki",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00035@",
-    "@F00053@",
-    "@F00034@"
-   ]
-  },
-  {
-   "Id": "@I00116@",
-   "Fullname": "/Magni/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/M%C3%B3%C3%B0i_and_Magni",
-    "Type": "Source"
-   },
-   "Relations": "@F00061@"
-  },
-  {
-   "Id": "@I00133@",
-   "Fullname": "/M�ni/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/M%C3%A1ni",
-    "Type": "Source"
-   },
-   "Relations": "@F00065@"
-  },
-  {
-   "Id": "@I00069@",
-   "Fullname": "/M�mir/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/M%C3%ADmir",
-    "Type": "Source"
-   },
-   "Relations": "@F00041@"
-  },
-  {
-   "Id": "@I00114@",
-   "Fullname": "/M��i/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "M�di or Modi",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/M%C3%B3%C3%B0i_and_Magni",
-     "Type": "Source"
-    }
-   ],
-   "Relations": "@F00060@"
-  },
-  {
-   "Id": "@I00130@",
-   "Fullname": "/Mundilfari/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Mundilfari",
-     "Type": "Source"
-    },
-    {
-     "Name": "Mundilf�ri",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00065@"
-  },
-  {
-   "Id": "@I00108@",
-   "Fullname": "/Naglfari/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Naglfari",
-    "Type": "Source"
-   },
-   "Relations": "@F00057@"
-  },
-  {
-   "Id": "@I00066@",
-   "Fullname": "/Nanna/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Nanna_%28Norse_deity%29",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00037@",
-    "@F00038@"
-   ]
-  },
-  {
-   "Id": "@I00090@",
-   "Fullname": "/Narfi/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "Nari? Narvi? N�rfi? N�r?",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/Narfi",
-     "Type": "Source"
-    }
-   ],
-   "Relations": [
-    "@F00052@",
-    "@F00053@"
-   ]
-  },
-  {
-   "Id": "@I00067@",
-   "Fullname": "/Nepr/",
-   "Sex": "M",
-   "Relations": [
-    "@F00038@",
-    "@F00039@"
-   ]
-  },
-  {
-   "Id": "@I00078@",
-   "Fullname": "/Nerthus/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Nerthus",
-    "Type": "Source"
-   },
-   "Relations": "@F00046@"
-  },
-  {
-   "Id": "@I00071@",
-   "Fullname": "/Nj�r�r/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "Njord, Njordr",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/Njord",
-     "Type": "Source"
-    }
-   ],
-   "Relations": [
-    "@F00043@",
-    "@F00046@",
-    "@F00042@"
-   ]
-  },
-  {
-   "Id": "@I00089@",
-   "Fullname": "/N�tt/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/N%C3%B3tt",
-     "Type": "Source"
-    },
-    {
-     "Name": "Night",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": [
-    "@F00051@",
-    "@F00056@",
-    "@F00057@",
-    "@F00052@"
-   ]
-  },
-  {
-   "Id": "@I00021@",
-   "Fullname": "/Odin/",
-   "Sex": "M",
-   "Events": {
-    "Name": "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com",
-    "Type": "Source"
-   },
-   "Notes": {
-    "Id": "@N00016@"
-   },
-   "Relations": [
-    "@F00008@",
-    "@F00029@",
-    "@F00030@",
-    "@F00031@",
-    "@F00039@",
-    "@F00064@",
-    "@F00003@"
-   ]
-  },
-  {
-   "Id": "@I00075@",
-   "Fullname": "/Olvaldi/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Olvaldi",
-    "Type": "Source"
-   },
-   "Relations": "@F00045@"
-  },
-  {
-   "Id": "@I00120@",
-   "Fullname": "/��r/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "�dr",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "http://en.wikipedia.org/wiki/%C3%93%C3%B0r",
-     "Type": "Source"
-    }
-   ],
-   "Relations": "@F00063@"
-  },
-  {
-   "Id": "@I00093@",
-   "Fullname": "/R�n/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/R%C3%A1n",
-    "Type": "Source"
-   },
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00048@",
-   "Fullname": "/Rindr/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Rind_%28giantess%29",
-     "Type": "Source"
-    },
-    {
-     "Name": "Rind",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00031@"
-  },
-  {
-   "Id": "@I00139@",
-   "Fullname": "All the Female God's /Saliva/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Kvasir",
-    "Type": "Source"
-   },
-   "Relations": "@F00066@"
-  },
-  {
-   "Id": "@I00138@",
-   "Fullname": "All the Male God's /Saliva/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Kvasir",
-    "Type": "Source"
-   },
-   "Relations": "@F00066@"
-  },
-  {
-   "Id": "@I00135@",
-   "Fullname": "/S�ga/",
-   "Sex": "F"
-  },
-  {
-   "Id": "@I00129@",
-   "Fullname": "/Seaxneat/",
-   "Sex": "M",
-   "Events": {
-    "Name": "Saxnot",
-    "Type": "Also Known As II"
-   }
-  },
-  {
-   "Id": "@I00113@",
-   "Fullname": "/Sif/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Sif",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00060@",
-    "@F00062@"
-   ]
-  },
-  {
-   "Id": "@I00091@",
-   "Fullname": "/Sigyn/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Sigyn",
-    "Type": "Source"
-   },
-   "Relations": "@F00053@"
-  },
-  {
-   "Id": "@I00148@",
-   "Fullname": "/Sj�fn/",
-   "Sex": "F"
-  },
-  {
-   "Id": "@I00073@",
-   "Fullname": "/Ska�i/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Ska%C3%B0i",
-     "Type": "Source"
-    },
-    {
-     "Name": "Skadi, �ndurgud or �ndurdis",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": [
-    "@F00043@",
-    "@F00044@"
-   ]
-  },
-  {
-   "Id": "@I00149@",
-   "Fullname": "/Skirnir/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Skirnir",
-    "Type": "Source"
-   }
-  },
-  {
-   "Id": "@I00060@",
-   "Fullname": "/Skoll/",
-   "Sex": "M",
-   "Relations": "@F00036@"
-  },
-  {
-   "Id": "@I00127@",
-   "Fullname": "/Skuld/",
-   "Sex": "F"
-  },
-  {
-   "Id": "@I00070@",
-   "Fullname": "Several /Sons/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/M%C3%ADmir",
-    "Type": "Source"
-   },
-   "Relations": "@F00041@"
-  },
-  {
-   "Id": "@I00131@",
-   "Fullname": "/Sowilo/",
-   "Sex": "F",
-   "Events": {
-    "Name": "S�l, Si?el, \"S�wil� ,*Saewel�\", Sunna",
-    "Type": "Also Known As II"
-   },
-   "Relations": "@F00065@"
-  },
-  {
-   "Id": "@I00132@",
-   "Fullname": "/Sunna/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Sol_%28goddess%29",
-    "Type": "Source"
-   },
-   "Relations": "@F00065@"
-  },
-  {
-   "Id": "@I00142@",
-   "Fullname": "/Suttungr/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Suttungr",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00069@",
-    "@F00067@"
-   ]
-  },
-  {
-   "Id": "@I00074@",
-   "Fullname": "/Thjazi/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Thjazi",
-    "Type": "Source"
-   },
-   "Relations": [
-    "@F00044@",
-    "@F00045@"
-   ]
-  },
-  {
-   "Id": "@I00047@",
-   "Fullname": "/Thor/",
-   "Sex": "M",
-   "Relations": [
-    "@F00060@",
-    "@F00061@",
-    "@F00029@"
-   ]
-  },
-  {
-   "Id": "@I00034@",
-   "Fullname": "/T�r/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "http://www.winhttp://en.wikipedia.org/wiki/T%C3%BDr",
-     "Type": "Source"
-    },
-    {
-     "Name": "Tyr, Tyz , Tiw , Ziu, *T�waz., Ty, Ti, T�r",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00008@"
-  },
-  {
-   "Id": "@I00112@",
-   "Fullname": "/�r��r/",
-   "Sex": "F",
-   "Events": [
-    {
-     "Name": "Thr�d or Thrud",
-     "Type": "Also Known As II"
-    },
-    {
-     "Name": "Thr�d or Thrud",
-     "Type": "Source"
-    }
-   ],
-   "Relations": "@F00060@"
-  },
-  {
-   "Id": "@I00118@",
-   "Fullname": "/Ullr/",
-   "Sex": "M",
-   "Relations": "@F00062@"
-  },
-  {
-   "Id": "@I00072@",
-   "Fullname": "/Unknown/",
-   "Sex": "M",
-   "Relations": "@F00042@"
-  },
-  {
-   "Id": "@I00117@",
-   "Fullname": "/Unknown/",
-   "Sex": "M",
-   "Relations": "@F00062@"
-  },
-  {
-   "Id": "@I00143@",
-   "Fullname": "/Unknown/",
-   "Sex": "F",
-   "Relations": "@F00068@"
-  },
-  {
-   "Id": "@I00102@",
-   "Fullname": "/Unnr/",
-   "Sex": "F",
-   "Relations": "@F00054@"
-  },
-  {
-   "Id": "@I00092@",
-   "Fullname": "/V�li/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/V%C3%A1li_%28son_of_Loki%29 & http://en.wikipedia.org/wiki/Narfi",
-     "Type": "Source"
-    },
-    {
-     "Name": "Nari? Narfi?",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00053@"
-  },
-  {
-   "Id": "@I00128@",
-   "Fullname": "/V�r/",
-   "Sex": "F"
-  },
-  {
-   "Id": "@I00050@",
-   "Fullname": "/Ve/",
-   "Sex": "U",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Ve",
-    "Type": "Source"
-   },
-   "Relations": "@F00003@"
-  },
-  {
-   "Id": "@I00125@",
-   "Fullname": "/Verdandi/",
-   "Sex": "F"
-  },
-  {
-   "Id": "@I00046@",
-   "Fullname": "/Vidar/",
-   "Sex": "U",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Vidar",
-     "Type": "Source"
-    },
-    {
-     "Name": "V��arr, Widar",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": "@F00030@"
-  },
-  {
-   "Id": "@I00068@",
-   "Fullname": "/Vili/",
-   "Sex": "M",
-   "Events": [
-    {
-     "Name": "http://en.wikipedia.org/wiki/Vili",
-     "Type": "Source"
-    },
-    {
-     "Name": "H�nir",
-     "Type": "Also Known As II"
-    }
-   ],
-   "Relations": [
-    "@F00040@",
-    "@F00003@"
-   ]
-  },
-  {
-   "Id": "@I00111@",
-   "Fullname": "/Visbur/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Au%C3%B0",
-    "Type": "Source"
-   },
-   "Relations": "@F00059@"
-  },
-  {
-   "Id": "@I00124@",
-   "Fullname": "/V�r/",
-   "Sex": "U"
-  },
-  {
-   "Id": "@I00141@",
-   "Fullname": "Gilling's /Wife/",
-   "Sex": "F",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Gillingr",
-    "Type": "Source"
-   },
-   "Relations": "@F00067@"
-  },
-  {
-   "Id": "@I00126@",
-   "Fullname": "/Wyrd/",
-   "Sex": "F",
-   "Events": {
-    "Name": "Ur�r, Ur�r, Urd, �rlog.",
-    "Type": "Also Known As II"
-   }
-  },
-  {
-   "Id": "@I00081@",
-   "Fullname": "Semi-Myth Kings of Sweden as Told in /Ynglingatal/",
-   "Sex": "M",
-   "Events": {
-    "Name": "http://en.wikipedia.org/wiki/Ynglingatal",
-    "Type": "Source"
-   },
-   "Relations": "@F00048@"
-  }
- ],
- "Relations": [
-  {
-   "Id": "@F000-1@",
-   "Children": "@I00-25@"
-  },
-  {
-   "Id": "@F000-2@",
-   "Children": "@I000-1@"
-  },
-  {
-   "Id": "@F00003@",
-   "Husband": "@I00010@",
-   "Wife": "@I00004@",
-   "Children": [
-    "@I00021@",
-    "@I00050@",
-    "@I00068@"
-   ]
-  },
-  {
-   "Id": "@F000-4@",
-   "Children": "@I00-29@"
-  },
-  {
-   "Id": "@F000-5@"
-  },
-  {
-   "Id": "@F000-6@",
-   "Children": "@I000-6@"
-  },
-  {
-   "Id": "@F00007@",
-   "Husband": "@I00008@",
-   "Children": "@I00010@"
-  },
-  {
-   "Id": "@F00008@",
-   "Husband": "@I00021@",
-   "Wife": "@I00009@",
-   "Children": [
-    "@I00026@",
-    "@I00030@",
-    "@I00033@",
-    "@I00034@"
-   ]
-  },
-  {
-   "Id": "@F00009@",
-   "Husband": "@I00010@"
-  },
-  {
-   "Id": "@F00-10@",
-   "Children": "@I000-7@"
-  },
-  {
-   "Id": "@F00-11@",
-   "Children": "@I00-15@"
-  },
-  {
-   "Id": "@F00-12@",
-   "Children": "@I00-22@"
-  },
-  {
-   "Id": "@F00-13@",
-   "Children": "@I00-12@"
-  },
-  {
-   "Id": "@F00-14@",
-   "Children": "@I00-13@"
-  },
-  {
-   "Id": "@F00-15@",
-   "Children": "@I00-27@"
-  },
-  {
-   "Id": "@F00-16@",
-   "Children": "@I000-5@"
-  },
-  {
-   "Id": "@F00-17@",
-   "Children": "@I00-23@"
-  },
-  {
-   "Id": "@F00-18@",
-   "Children": "@I00-19@"
-  },
-  {
-   "Id": "@F00019@"
-  },
-  {
-   "Id": "@F00020@"
-  },
-  {
-   "Id": "@F00021@"
-  },
-  {
-   "Id": "@F00022@"
-  },
-  {
-   "Id": "@F00-23@",
-   "Children": "@I000-2@"
-  },
-  {
-   "Id": "@F00-24@",
-   "Children": "@I000-3@"
-  },
-  {
-   "Id": "@F00-25@",
-   "Wife": "@I00024@",
-   "Children": "@I00-17@"
-  },
-  {
-   "Id": "@F00-26@",
-   "Children": "@I00-11@"
-  },
-  {
-   "Id": "@F00-27@",
-   "Children": "@I00-20@"
-  },
-  {
-   "Id": "@F00-28@",
-   "Children": "@I00-28@"
-  },
-  {
-   "Id": "@F00029@",
-   "Husband": "@I00021@",
-   "Wife": "@I00036@",
-   "Children": "@I00047@"
-  },
-  {
-   "Id": "@F00030@",
-   "Husband": "@I00021@",
-   "Wife": "@I00045@",
-   "Children": "@I00046@"
-  },
-  {
-   "Id": "@F00031@",
-   "Husband": "@I00021@",
-   "Wife": "@I00048@"
-  },
-  {
-   "Id": "@F00032@",
-   "Husband": "@I00051@",
-   "Children": [
-    "@I00004@",
-    "@I00052@"
-   ]
-  },
-  {
-   "Id": "@F00033@",
-   "Wife": "@I00053@",
-   "Children": "@I00008@"
-  },
-  {
-   "Id": "@F00034@",
-   "Husband": "@I00054@",
-   "Wife": "@I00055@",
-   "Children": [
-    "@I00056@",
-    "@I00064@",
-    "@I00065@"
-   ]
-  },
-  {
-   "Id": "@F00035@",
-   "Husband": "@I00056@",
-   "Wife": "@I00057@",
-   "Children": [
-    "@I00058@",
-    "@I00062@",
-    "@I00063@"
-   ]
-  },
-  {
-   "Id": "@F00036@",
-   "Husband": "@I00058@",
-   "Wife": "@I00061@",
-   "Children": [
-    "@I00059@",
-    "@I00060@"
-   ]
-  },
-  {
-   "Id": "@F00037@",
-   "Husband": "@I00026@",
-   "Wife": "@I00066@",
-   "Children": "@I00119@"
-  },
-  {
-   "Id": "@F00038@",
-   "Husband": "@I00067@",
-   "Children": "@I00066@"
-  },
-  {
-   "Id": "@F00039@",
-   "Husband": "@I00021@",
-   "Children": "@I00067@"
-  },
-  {
-   "Id": "@F00040@",
-   "Husband": "@I00068@",
-   "Wife": "@I00009@"
-  },
-  {
-   "Id": "@F00041@",
-   "Husband": "@I00069@",
-   "Children": "@I00070@"
-  },
-  {
-   "Id": "@F00042@",
-   "Husband": "@I00072@",
-   "Children": "@I00071@"
-  },
-  {
-   "Id": "@F00043@",
-   "Husband": "@I00071@",
-   "Wife": "@I00073@"
-  },
-  {
-   "Id": "@F00044@",
-   "Husband": "@I00074@",
-   "Children": "@I00073@"
-  },
-  {
-   "Id": "@F00045@",
-   "Husband": "@I00075@",
-   "Children": [
-    "@I00074@",
-    "@I00076@",
-    "@I00077@"
-   ]
-  },
-  {
-   "Id": "@F00046@",
-   "Husband": "@I00071@",
-   "Wife": "@I00078@",
-   "Children": [
-    "@I00079@",
-    "@I00086@"
-   ]
-  },
-  {
-   "Id": "@F00047@",
-   "Husband": "@I00079@",
-   "Wife": "@I00150@",
-   "Children": "@I00080@"
-  },
-  {
-   "Id": "@F00048@",
-   "Husband": "@I00080@",
-   "Children": "@I00081@"
-  },
-  {
-   "Id": "@F00049@",
-   "Husband": "@I00083@",
-   "Wife": "@I00084@",
-   "Children": [
-    "@I00085@",
-    "@I00150@"
-   ]
-  },
-  {
-   "Id": "@F00050@",
-   "Husband": "@I00033@",
-   "Wife": "@I00087@"
-  },
-  {
-   "Id": "@F00051@",
-   "Husband": "@I00088@",
-   "Wife": "@I00089@",
-   "Children": "@I00036@"
-  },
-  {
-   "Id": "@F00052@",
-   "Husband": "@I00090@",
-   "Children": "@I00089@"
-  },
-  {
-   "Id": "@F00053@",
-   "Husband": "@I00056@",
-   "Wife": "@I00091@",
-   "Children": [
-    "@I00090@",
-    "@I00092@"
-   ]
-  },
-  {
-   "Id": "@F00054@",
-   "Husband": "@I00083@",
-   "Wife": "@I00093@",
-   "Children": [
-    "@I00094@",
-    "@I00095@",
-    "@I00096@",
-    "@I00097@",
-    "@I00098@",
-    "@I00099@",
-    "@I00100@",
-    "@I00101@",
-    "@I00102@"
-   ]
-  },
-  {
-   "Id": "@F00055@",
-   "Husband": "@I00103@",
-   "Children": [
-    "@I00083@",
-    "@I00104@",
-    "@I00105@"
-   ]
-  },
-  {
-   "Id": "@F00056@",
-   "Husband": "@I00106@",
-   "Wife": "@I00089@",
-   "Children": "@I00107@"
-  },
-  {
-   "Id": "@F00057@",
-   "Husband": "@I00108@",
-   "Wife": "@I00089@",
-   "Children": "@I00109@"
-  },
-  {
-   "Id": "@F00058@",
-   "Wife": "@I00109@",
-   "Children": "@I00110@"
-  },
-  {
-   "Id": "@F00059@",
-   "Husband": "@I00111@",
-   "Wife": "@I00110@"
-  },
-  {
-   "Id": "@F00060@",
-   "Husband": "@I00047@",
-   "Wife": "@I00113@",
-   "Children": [
-    "@I00112@",
-    "@I00114@"
-   ]
-  },
-  {
-   "Id": "@F00061@",
-   "Husband": "@I00047@",
-   "Wife": "@I00115@",
-   "Children": "@I00116@"
-  },
-  {
-   "Id": "@F00062@",
-   "Husband": "@I00117@",
-   "Wife": "@I00113@",
-   "Children": "@I00118@"
-  },
-  {
-   "Id": "@F00063@",
-   "Husband": "@I00120@",
-   "Wife": "@I00086@",
-   "Children": [
-    "@I00121@",
-    "@I00122@"
-   ]
-  },
-  {
-   "Id": "@F00064@",
-   "Husband": "@I00021@",
-   "Children": [
-    "@I00032@",
-    "@I00035@"
-   ]
-  },
-  {
-   "Id": "@F00065@",
-   "Husband": "@I00130@",
-   "Wife": "@I00134@",
-   "Children": [
-    "@I00131@",
-    "@I00132@",
-    "@I00133@"
-   ]
-  },
-  {
-   "Id": "@F00066@",
-   "Husband": "@I00138@",
-   "Wife": "@I00139@",
-   "Children": "@I00137@"
-  },
-  {
-   "Id": "@F00067@",
-   "Husband": "@I00140@",
-   "Wife": "@I00141@",
-   "Children": "@I00142@"
-  },
-  {
-   "Id": "@F00068@",
-   "Husband": "@I00140@",
-   "Wife": "@I00143@",
-   "Children": "@I00144@"
-  },
-  {
-   "Id": "@F00069@",
-   "Husband": "@I00142@",
-   "Children": "@I00145@"
-  }
- ],
- "Notes": [
-  {
-   "Id": "@N00005@",
-   "Text": "[RCKarnes.ged]\n\nIn Norse mythology, Bestla was an ancient frost giantess\n\n..."
-  },
-  {
-   "Id": "@N00007@",
-   "Text": "[RCKarnes.ged]\n\nFrealaf (Frallaf) son of Frithwulf (Frithuwulf)\n\n..."
-  },
-  {
-   "Id": "@N00008@",
-   "Text": "[RCKarnes.ged]\n\nFrealaf (Frallaf) son of Frithwulf (Frithuwulf)\n\n..."
-  },
-  {
-   "Id": "@N00009@",
-   "Text": "[RCKarnes.ged]\n\nIn Norse mythology, Frigg or Frigga was the mother goddess and the wife of Odin or Odr. Considered queen of the heavens, the goddess of motherhood, fertility, love and housework. Indeed strong parallels exist between Frigg and Freya of whom she may be a different aspect (cf. avatar). Freya was a shaman practicting the seid and Frigg was reputed tohave the ability to foresee everyone's destiny without revealing it. The mother of Baldur, she endeavoured to protect him from his preordained death by swearing oaths from everything in nature, but forgot the mistletoe. It may be stated with a certain degree of truth that Frigg and Freya are the same but different versions. Freya became Frigg aftershe lived with the Aesir. Born a Vanir she became an Aesir by marriage, and as the wife of Odin she became a goddess of wifehood. However, promiscuous Freya provided a lusty choice on his part. As Frigg shehadan affair with Ve and Vili, Odin's brothers, according to Loki inLokasenna. This happened when Odin was gone for so long that everyonethough him dead (cf. Freya's crying golden tears when she thought Odr(Odin) had disappeared).  Frigg's hall in Asgard is Fensalir. With her husband, she was the mother of Bragi, Wecta and Hermod. Eir, a goddess ofhealing, was one of her constant companions. She had attendantsnamed Glm and Syn.  She participated in the Wild Hunt (Asgardreid) along with her husband.  She had three attendants, Hlin, Gna and Fulla, all ofwhom may have been the same deity in a different aspect as Frigg.  (From Wikipedia, the free encyclopedia)\n\n..."
-  },
-  {
-   "Id": "@N00010@",
-   "Text": "[RCKarnes.ged]\n\nIn Norse mythology, the god Bor, or Borr was the father of Odin, Ve and Vili by the frost giantess Bestla.  Bor was the son of the giant Buri.  In Norse mythology, Buri (also Bri, Bur) was the god formed by the cow Audumla licking the salty ice of Ginnungagap.  He was the father of Bor and grandfather of the Aesir.\n\n..."
-  },
-  {
-   "Id": "@N00016@",
-   "Text": "[RCKarnes.ged]\n\nduplicate line (to Adam and Eve) Wotan, Wodan, Woden, Oden, Odin or inn is usually considered the supreme god of Germanic and Norse mythology.  Odin was a son of Bestla and Bor and brother of V and Vili and together with these brothers he cast down the frost giant Ymir and created the world from Ymir's body.  The three brothers are often mentionedtogether. \"Wille\" is the German word for \"will\" (English), \"Weh\" is the German word (Gothic wai) for \"woe\" (English: great sorrow, grief, misery) but is more likely related to the archaic German \"Wei\" meaning 'sacred'.  Odin fathered his most famous son Thor on Jord 'Earth'. Buthis wife and consort was the goddess Frigg who in the best-known tradition was the loving mother of their son Baldr).  By the giantess Grr,Odin was the father of Varr and by Rind he was father of Vali.  Also many royal families claimed descent from Odin through other sons.\n(From Wikipedia, the free encyclopedia)\n\n...\n\n.."
-  },
-  {
-   "Id": "@N00019@",
-   "Text": "[RCKarnes.ged]\n\nIn Norse mythology, Sif is a goddess of the Aesir, wife of Thor and mother of Thrud, Ull and Modi. Thor is not the father of Ull. She has hair of gold which grows just like natural hair, made by the dwarves called \"sons of Ivaldi\" (Dvalin). Loki cut off Sif's hair as a prank, but when Thor found this out he forced Loki to promise to have golden hair made by the dark elves. Loki uses this event to taunt Sif and, indirectly, Thor in Lokasenna. Loki succeeded in having such hair made, as well as Freyr's ship Skidbladnir and Odin's spear Gungni, all made by the same dwarf Dvalin.    In Norse mythology, Sif (/siv/,\"relative\") is a goddess of the Aesir, wife of Thor and mother of Thrud, Ull and Modi. Thor is not the father of Ull. Sif was not the mother of Magni, this was Thor's son with Jarnsaxa. She has hair of gold which growsjust like natural hair, made by the dwarves called \"sons of Ivaldi\" (Dvalin). Loki cut off Sif's hair as a prank, but when Thor found this out he forced Loki to promise to have golden hair made by the dark elves. Loki uses this event to taunt Sif and, indirectly, Thor in Lokasenna.  Loki succeeded in having such hair made, as well as Freyr's ship Skidbladnir and Odin's spear Gungni, all made by the same dwarf Dvalin.\n\n..."
-  }
- ],
- "Repositories": [
-  {
-   "Id": "@R00001@",
-   "Name": "RootsWeb"
-  },
-  {
-   "Id": "@R00002@",
-   "Name": "rootsweb.com"
-  },
-  {
-   "Id": "@R00003@",
-   "Name": "559 Southern Run, Fairhope, AL  36532"
-  }
- ],
- "Source": [
-  {
-   "Name": "@S00001@",
-   "Author": "RCKarnes",
-   "Title": "RCKarnes",
-   "Repositories": {
-    "Id": "@R00001@"
-   },
-   "Notes": {
-    "Text": "Source Medium: Internet\n"
-   }
-  },
-  {
-   "Name": "@S00002@",
-   "Author": "Family Tree Maker",
-   "Title": "World Family Tree Vol. 5",
-   "Publication": "Name: Name: Broderbund Software, Inc., 1996;;",
-   "Notes": {
-    "Text": "Source Medium: Family Archive CD\n\nCustomer pedigree.\n"
-   }
-  },
-  {
-   "Name": "@S00003@",
-   "Author": "Ronald Hillman",
-   "Title": "Aderholt Hillman Hughes Solomon Dunn Funderburg",
-   "Repositories": {
-    "Id": "@R00002@"
-   },
-   "Notes": {
-    "Text": "Source Medium: Internet\n"
-   }
-  },
-  {
-   "Name": "@S00004@",
-   "Author": "Guy Allen Sims",
-   "Title": "Guy Allen Sims",
-   "Repositories": {
-    "Id": "@R00003@"
-   },
-   "Notes": {
-    "Text": "Source Medium: Book\n\nGEDCOM File : 1503980.ged\n"
-   }
-  }
- ]
+  ]
 }
