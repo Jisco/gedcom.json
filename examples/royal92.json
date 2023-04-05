@@ -13089,7 +13089,7 @@
           "HasYear": true,
           "HasMonth": true,
           "HasDay": true,
-          "Value": null
+          "Value": "0742-04-01T23:06:32.000Z"
         },
         "Place": "Aachen,West Germany"
       },
@@ -13100,13 +13100,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0813-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0814-12-31T23:06:32.000Z"
           }
         }
       },
@@ -40785,13 +40785,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0995-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0996-12-31T23:06:32.000Z"
           }
         }
       },
@@ -40838,7 +40838,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0967-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -41084,7 +41084,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0994-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -45524,13 +45524,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0810-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0811-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47046,7 +47046,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0974-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -47227,13 +47227,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0943-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0944-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47244,13 +47244,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0974-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0975-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47312,13 +47312,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0969-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0970-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47341,13 +47341,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0938-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0939-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47358,13 +47358,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0945-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0946-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47415,13 +47415,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0923-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0924-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47478,13 +47478,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0894-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0895-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47495,13 +47495,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0939-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0940-12-31T23:06:32.000Z"
           }
         }
       },
@@ -47539,13 +47539,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0923-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0924-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49125,13 +49125,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0967-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0968-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49154,13 +49154,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0908-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0909-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49189,13 +49189,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0941-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0942-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49230,13 +49230,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0985-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0986-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49271,13 +49271,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0995-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0996-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49385,13 +49385,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0848-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0849-12-31T23:06:32.000Z"
           }
         },
         "Place": "Wantage,,,England"
@@ -49403,13 +49403,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0898-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0899-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49426,13 +49426,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0904-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0905-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49450,13 +49450,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0857-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0858-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49473,13 +49473,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0845-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0846-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49503,13 +49503,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0859-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0860-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49533,13 +49533,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0865-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0866-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49557,13 +49557,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0870-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0871-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49581,13 +49581,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0838-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0839-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49622,13 +49622,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0887-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0888-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49672,13 +49672,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0921-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0922-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49695,13 +49695,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0936-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0937-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49718,13 +49718,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0936-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0937-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49742,13 +49742,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0917-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0918-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49786,13 +49786,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0909-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0910-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49837,13 +49837,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0533-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0534-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49861,13 +49861,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0559-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0560-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49884,13 +49884,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0592-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0593-12-31T23:06:32.000Z"
           }
         }
       },
@@ -49908,13 +49908,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0583-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0584-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50088,13 +50088,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0543-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0544-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50112,13 +50112,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0596-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0597-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50174,13 +50174,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0635-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0636-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50265,13 +50265,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0660-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0661-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50289,13 +50289,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0688-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0689-12-31T23:06:32.000Z"
           }
         },
         "Place": "Rome,,,Italy"
@@ -50314,13 +50314,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0686-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0687-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50337,13 +50337,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0728-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0729-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50367,13 +50367,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0727-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0728-12-31T23:06:32.000Z"
           }
         },
         "Place": "Rome,,Italy"
@@ -50409,13 +50409,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0717-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0718-12-31T23:06:32.000Z"
           }
         }
       },
@@ -50453,13 +50453,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0785-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0786-12-31T23:06:32.000Z"
           }
         }
       },
@@ -52390,13 +52390,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0983-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0984-12-31T23:06:32.000Z"
           }
         }
       },
@@ -53289,13 +53289,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0833-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0834-12-31T23:06:32.000Z"
           }
         }
       },
@@ -57009,7 +57009,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0969-12-31T23:06:32.000Z"
         },
         "Place": "Orleans,France"
       },
@@ -57112,7 +57112,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0961-12-31T23:06:32.000Z"
         }
       },
       "Relations": "@F1164@"
@@ -57129,16 +57129,24 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0937-12-31T23:06:32.000Z"
         }
       },
       "Death": {
         "Date": {
           "Original": "AUG  996",
-          "HasYear": true,
-          "HasMonth": true,
-          "HasDay": true,
-          "Value": null
+          "Between": {
+            "HasYear": true,
+            "HasMonth": true,
+            "HasDay": true,
+            "Value": "0996-07-31T23:06:32.000Z"
+          },
+          "And": {
+            "Value": "0000-08-31T23:06:32.000Z",
+            "HasYear": true,
+            "HasMonth": true,
+            "HasDay": true
+          }
         }
       },
       "Burial": {
@@ -59097,7 +59105,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0756-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -59107,13 +59115,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0782-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0783-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59130,13 +59138,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0810-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0811-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59154,13 +59162,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0776-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0777-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59171,13 +59179,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0809-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0810-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59195,13 +59203,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0777-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0778-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59212,13 +59220,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0839-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0840-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59241,13 +59249,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0793-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0794-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59264,13 +59272,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0799-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0800-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59306,13 +59314,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0794-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0795-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59323,13 +59331,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0854-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0855-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59347,13 +59355,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0837-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0838-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59377,7 +59385,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0804-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -59387,13 +59395,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0875-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0876-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59411,13 +59419,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0822-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0823-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59427,7 +59435,7 @@
           "HasYear": true,
           "HasMonth": true,
           "HasDay": true,
-          "Value": null
+          "Value": "0877-10-05T23:06:32.000Z"
         },
         "Place": "Modano"
       },
@@ -59445,7 +59453,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0798-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -59455,13 +59463,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0817-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0818-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59485,7 +59493,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0821-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -59495,13 +59503,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0874-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0875-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59519,7 +59527,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0825-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -59529,13 +59537,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0867-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0868-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59553,13 +59561,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0862-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0863-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59577,13 +59585,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0869-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0870-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59600,13 +59608,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0875-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0876-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59624,7 +59632,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0827-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -59634,13 +59642,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0879-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0880-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59658,13 +59666,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0881-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0882-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59682,13 +59690,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0838-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0839-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59699,13 +59707,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0886-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0887-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59722,13 +59730,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0868-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0869-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59746,13 +59754,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0845-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0846-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59763,13 +59771,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0878-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0879-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59787,13 +59795,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0865-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0866-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59810,13 +59818,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0875-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0876-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59846,7 +59854,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0862-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -59856,13 +59864,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0881-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0882-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59880,13 +59888,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0883-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0884-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59910,13 +59918,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0878-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0879-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59927,13 +59935,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0928-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0929-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59950,13 +59958,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0901-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0902-12-31T23:06:32.000Z"
           }
         }
       },
@@ -59986,13 +59994,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0886-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0887-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60010,7 +60018,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0879-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -60020,13 +60028,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0927-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0928-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60062,7 +60070,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0862-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -60072,13 +60080,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0898-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0899-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60102,13 +60110,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0892-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0893-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60119,13 +60127,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0910-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0911-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60143,13 +60151,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0899-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0900-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60205,13 +60213,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0967-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0968-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60228,7 +60236,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0919-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -60238,13 +60246,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0953-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0954-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60262,13 +60270,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0940-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0941-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60279,13 +60287,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0985-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0986-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60302,13 +60310,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0953-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0954-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60319,13 +60327,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0985-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0986-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60342,7 +60350,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0985-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -60352,13 +60360,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0996-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0997-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60400,13 +60408,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0713-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0714-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60417,13 +60425,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0767-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0768-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60440,13 +60448,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0782-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0783-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60464,7 +60472,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0750-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -60474,13 +60482,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0770-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0771-12-31T23:06:32.000Z"
           }
         }
       },
@@ -60503,7 +60511,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0685-12-31T23:06:32.000Z"
         }
       },
       "Death": {
@@ -60513,13 +60521,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0740-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0741-12-31T23:06:32.000Z"
           }
         }
       },
@@ -78919,7 +78927,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0984-12-31T23:06:32.000Z"
         }
       }
     },
@@ -80206,13 +80214,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0769-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0770-12-31T23:06:32.000Z"
           }
         }
       }
@@ -83455,13 +83463,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0995-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0996-12-31T23:06:32.000Z"
           }
         }
       }
@@ -83906,13 +83914,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0770-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0771-12-31T23:06:32.000Z"
           }
         }
       }
@@ -83928,13 +83936,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0783-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0784-12-31T23:06:32.000Z"
           }
         }
       }
@@ -83950,13 +83958,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0793-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0794-12-31T23:06:32.000Z"
           }
         }
       }
@@ -83979,13 +83987,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0797-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0798-12-31T23:06:32.000Z"
           }
         }
       }
@@ -84025,13 +84033,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0841-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0842-12-31T23:06:32.000Z"
           }
         }
       }
@@ -84048,13 +84056,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0861-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0862-12-31T23:06:32.000Z"
           }
         }
       }
@@ -84077,13 +84085,13 @@
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0916-12-31T23:06:32.000Z"
           },
           "And": {
             "HasYear": true,
             "HasMonth": true,
             "HasDay": true,
-            "Value": null
+            "Value": "0917-12-31T23:06:32.000Z"
           }
         }
       }

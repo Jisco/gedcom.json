@@ -205,6 +205,133 @@ describe("Date parsing tests", () => {
     });
   });
 
+  describe("Years", () => {
+    describe("Full date", () => {
+      it("< 1000", () => {
+        const result = ConvertDateStringToObject(
+          new ConvertToDate(),
+          "4 FEB 999"
+        );
+
+        expect(result).to.deep.equal({
+          Value: new Date(999, 1, 4, 0, 0, 0),
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Original: "4 FEB 999",
+        });
+      });
+
+      it("< 100", () => {
+        const result = ConvertDateStringToObject(
+          new ConvertToDate(),
+          "4 FEB 99"
+        );
+        const resultDate = new Date(
+          new Date(99, 1, 4, 0, 0, 0).setFullYear(99)
+        );
+        expect(result).to.deep.equal({
+          Value: resultDate,
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Original: "4 FEB 99",
+        });
+      });
+
+      it("< 10", () => {
+        const result = ConvertDateStringToObject(
+          new ConvertToDate(),
+          "4 FEB 9"
+        );
+        const resultDate = new Date(new Date(99, 1, 4, 0, 0, 0).setFullYear(9));
+        expect(result).to.deep.equal({
+          Value: resultDate,
+          HasYear: true,
+          HasMonth: true,
+          HasDay: true,
+          Original: "4 FEB 9",
+        });
+      });
+    });
+
+    describe("Month/Year", () => {
+      it("< 1000", () => {
+        const result = ConvertDateStringToObject(
+          new ConvertToDate(),
+          "JAN 999"
+        );
+        expect(result).to.deep.equal({
+          Between: {
+            Value: new Date(999, 0, 1, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          And: {
+            Value: new Date(999, 1, 1, 0, 0, 0),
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          Original: "JAN 999",
+        });
+      });
+
+      it("< 100", () => {
+        const result = ConvertDateStringToObject(new ConvertToDate(), "JAN 99");
+
+        const resultBetweenDate = new Date(
+          new Date(1999, 0, 1, 0, 0, 0).setFullYear(99)
+        );
+        const resultAndDate = new Date(
+          new Date(1999, 1, 1, 0, 0, 0).setFullYear(99)
+        );
+        expect(result).to.deep.equal({
+          Between: {
+            Value: resultBetweenDate,
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          And: {
+            Value: resultAndDate,
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          Original: "JAN 99",
+        });
+      });
+
+      it("< 10", () => {
+        const result = ConvertDateStringToObject(new ConvertToDate(), "JAN 9");
+
+        const resultBetweenDate = new Date(
+          new Date(1999, 0, 1, 0, 0, 0).setFullYear(9)
+        );
+        const resultAndDate = new Date(
+          new Date(1999, 1, 1, 0, 0, 0).setFullYear(9)
+        );
+        expect(result).to.deep.equal({
+          Between: {
+            Value: resultBetweenDate,
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          And: {
+            Value: resultAndDate,
+            HasYear: true,
+            HasMonth: true,
+            HasDay: true,
+          },
+          Original: "JAN 9",
+        });
+      });
+    });
+  });
+
   describe("Calendars", () => {
     it("GREGORIAN", () => {
       const result = ConvertDateStringToObject(

@@ -200,6 +200,18 @@ function ConvertSingleDate(
   let calendar = "Gregorian";
   let hebrewDate = {} as HDate;
 
+  if (value === null) {
+    return {
+      result,
+      hasMarkers,
+      hasFullDate,
+      jsDate: undefined,
+      hasTime,
+      calendar,
+      hebrewDate,
+    };
+  }
+
   /*
     Markers
   */

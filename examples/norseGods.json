@@ -44,7 +44,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0193-12-31T23:06:32.000Z"
         },
         "Place": "Asgard, Asia Or, East Europe",
         "Source": {
@@ -170,7 +170,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0234-12-31T23:06:32.000Z"
         }
       },
       "Events": [
@@ -265,7 +265,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0189-12-31T23:06:32.000Z"
         },
         "Place": "Asgard, Asia Or, East Europe",
         "Source": {
@@ -471,7 +471,7 @@
           "HasYear": true,
           "HasMonth": false,
           "HasDay": false,
-          "Value": null
+          "Value": "0218-12-31T23:06:32.000Z"
         },
         "Place": "Asgard, Asia Or, East Europe",
         "Source": {

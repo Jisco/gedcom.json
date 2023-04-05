@@ -17,6 +17,7 @@ import objectSupport from "dayjs/plugin/objectSupport";
 import ConvertToDate from "../../Common/converter/ConvertToDate";
 import fclone from "fclone";
 import { HDate } from "@hebcal/core";
+import { filter } from "lodash";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(objectSupport);
@@ -259,7 +260,11 @@ function ParseDate(
           objectPath.set(and, config.Value, andDate.greg());
         } else {
           // last day of month
-          let dateValue = dayjs(upperFirst(date), "MMM YYYY").add(1, "month");
+          const dateSplit = split(date, " ");
+          let dateValue = correctYearIfNeeded(
+            dateSplit[1],
+            dayjs(upperFirst(date), "MMM Y").add(1, "month")
+          );
 
           if (calendarType === "Julian") {
             dateValue = ConvertFromJulian(dateValue);
@@ -393,7 +398,7 @@ function ConvertStringToDate(
   config: ConvertToDate,
   calendarType: string
 ) {
-  const splitDate = split(date, " ");
+  const splitDate = filter(split(date, " "), (x) => x !== "");
 
   if (splitDate.length === 1) {
     // year
@@ -407,7 +412,7 @@ function ConvertStringToDate(
       return;
     }
 
-    let dateValue = dayjs(splitDate[0], "YYYY");
+    let dateValue = correctYearIfNeeded(splitDate[0], dayjs(splitDate[0], "Y"));
 
     if (calendarType === "Julian") {
       dateValue = ConvertFromJulian(dateValue);
@@ -434,9 +439,9 @@ function ConvertStringToDate(
       return;
     }
 
-    let dateValue = dayjs(
-      `${upperFirst(splitDate[0])}-${splitDate[1]}`,
-      "MMM-YYYY"
+    let dateValue = correctYearIfNeeded(
+      splitDate[1],
+      dayjs(`${upperFirst(splitDate[0])}-${splitDate[1]}`, "MMM-Y")
     );
 
     if (calendarType === "Julian") {
@@ -452,6 +457,8 @@ function ConvertStringToDate(
   objectPath.set(result, config.HasMonth, true);
   objectPath.set(result, config.HasDay, true);
 
+  // TODO: Fehler wenn Jahr kleiner als 1970, be Shakespear zb gehts... doch bloß bei kleiner 1000?
+
   if (calendarType === "Hebrew") {
     const hDate = new HDate(
       toNumber(splitDate[0]),
@@ -462,9 +469,12 @@ function ConvertStringToDate(
     return;
   }
 
-  let dateValue = dayjs(
-    `${splitDate[0]}-${upperFirst(splitDate[1])}-${splitDate[2]}`,
-    "D-MMM-YYYY"
+  let dateValue = correctYearIfNeeded(
+    splitDate[2],
+    dayjs(
+      `${splitDate[0]}-${upperFirst(splitDate[1])}-${splitDate[2]}`,
+      "D-MMM-Y"
+    )
   );
 
   if (calendarType === "Julian") {
@@ -472,4 +482,12 @@ function ConvertStringToDate(
   }
 
   objectPath.set(result, config.Value, dateValue.toDate());
+}
+
+function correctYearIfNeeded(yearString: string, date: Dayjs): Dayjs {
+  if (toNumber(yearString) < 100) {
+    date = dayjs(date.toDate().setFullYear(toNumber(yearString)));
+  }
+
+  return date;
 }
