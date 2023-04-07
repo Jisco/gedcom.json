@@ -1,7 +1,8 @@
 import { get, has, isArray, tail } from "lodash";
-import ITagDefinition from "../../../Common/interfaces/ITagDefinition";
-import { ParseDateToLine } from "../../parsing/parseDate";
-import { SearchDefinition } from "../../parsing/searchDefinition";
+import ITagDefinition from "../../Common/interfaces/ITagDefinition";
+import { ParseDateToLine } from "./parseDate";
+import { SearchDefinition } from "./searchDefinition";
+import IObjectParsingResult from "../models/processing/IObjectParsingResult";
 
 export default function ProcessObjectValue(
   definitions: ITagDefinition[],
@@ -9,10 +10,10 @@ export default function ProcessObjectValue(
   depth: number,
   key: string,
   val: any
-): any {
+): IObjectParsingResult {
   // try find definition via "CollectAs"
   let definition = SearchDefinition(definitions, propertyPath);
-  let result = "";
+  const lines: string[] = [];
 
   if (!definition) {
     // try find definition via "Property"
@@ -22,7 +23,7 @@ export default function ProcessObjectValue(
       // TODO:
       return {
         ignoreChildren: false,
-        result,
+        lines,
       };
     } else if (definition.Type === "Date") {
       return ParseDateToLine(depth, definition, val);
@@ -35,7 +36,7 @@ export default function ProcessObjectValue(
 
   // if definition has no property defined, just add tag
   if (!definition.Property) {
-    result += `${depth} ${definition.Tag}\n`;
+    lines.push(`${depth} ${definition.Tag}`);
   }
   // if a property is defined, test if value has property
   else if (has(val, definition.Property)) {
@@ -43,7 +44,10 @@ export default function ProcessObjectValue(
 
     if (!defPropertyValue) {
       // TODO:
-      return;
+      return {
+        ignoreChildren: false,
+        lines: [],
+      };
     }
 
     // if property is definied an is an array
@@ -51,7 +55,7 @@ export default function ProcessObjectValue(
     // then if more values are defined get them as property value
     if (isArray(defPropertyValue)) {
       if (defPropertyValue.length > 0) {
-        result += `${depth} ${definition.Tag} ${defPropertyValue[0]}\n`;
+        lines.push(`${depth} ${definition.Tag} ${defPropertyValue[0]}`);
       }
 
       const remainingItems = tail(defPropertyValue);
@@ -62,11 +66,15 @@ export default function ProcessObjectValue(
         );
 
         if (subDefinition) {
-          result += `${depth + 1} ${subDefinition.Tag} ${
-            defPropertyValue[0]
-          }\n`;
+          lines.push(
+            `${depth + 1} ${subDefinition.Tag} ${defPropertyValue[0]}`
+          );
         }
       }
+    }
+    // just add reference line, object itself should become later
+    else if (definition.CollectAs && defPropertyValue[0] === "@") {
+      lines.push(`${depth} ${definition.Tag} ${defPropertyValue}`);
     }
 
     // console.log();
@@ -77,6 +85,6 @@ export default function ProcessObjectValue(
   // result += resultText;
   return {
     ignoreChildren: false,
-    result,
+    lines,
   };
 }

@@ -4,12 +4,13 @@ import ConvertToDate from "../../Common/converter/ConvertToDate";
 import TagDefinition from "../../Common/TagDefinition";
 import CalendarConverter from "julian-gregorian";
 import { HDate } from "@hebcal/core";
+import IObjectParsingResult from "../models/processing/IObjectParsingResult";
 
 export function ParseDateToLine(
   depth: number,
   definition: TagDefinition | undefined,
   val: any
-) {
+): IObjectParsingResult {
   let propertyNameDefinition = new ConvertToDate();
   if (definition?.ConvertTo && definition.ConvertTo.Type === "Date") {
     propertyNameDefinition = definition.ConvertTo as ConvertToDate;
@@ -28,23 +29,25 @@ export function ParseDateToLine(
   ) {
     return {
       ignoreChildren: true,
-      result: undefined,
+      lines: [],
     };
   }
 
-  let result = "";
+  const lines: string[] = [];
 
   // Single Value
   if (get(val, propertyNameDefinition.Value)) {
-    result += `${depth} ${definition.Tag} ${
-      ConvertSingleDate(
-        depth,
-        val,
-        get(val, propertyNameDefinition.Value),
-        propertyNameDefinition,
-        definition
-      ).result
-    }`;
+    lines.push(
+      `${depth} ${definition.Tag} ${
+        ConvertSingleDate(
+          depth,
+          val,
+          get(val, propertyNameDefinition.Value),
+          propertyNameDefinition,
+          definition
+        ).result
+      }`
+    );
   }
   // From - To
   else if (
@@ -72,7 +75,7 @@ export function ParseDateToLine(
       definition
     ).result;
 
-    result += `${depth} ${definition.Tag} FROM ${from} TO ${to}`;
+    lines.push(`${depth} ${definition.Tag} FROM ${from} TO ${to}`);
   }
   // Between
   else if (
@@ -120,11 +123,11 @@ export function ParseDateToLine(
         ) {
           // full month
           isSpecialPeriod = true;
-          result += `${depth} ${
-            definition.Tag
-          } @#DHEBREW@ ${ConvertNumberToHebrewMonth(
-            between.hebrewDate.getMonth()
-          )} ${between.hebrewDate.getFullYear()}`;
+          lines.push(
+            `${depth} ${definition.Tag} @#DHEBREW@ ${ConvertNumberToHebrewMonth(
+              between.hebrewDate.getMonth()
+            )} ${between.hebrewDate.getFullYear()}`
+          );
         } else if (
           // full year
           between.hebrewDate.getDate() === and.hebrewDate.getDate() &&
@@ -134,9 +137,11 @@ export function ParseDateToLine(
             and.hebrewDate.getFullYear()
         ) {
           isSpecialPeriod = true;
-          result += `${depth} ${
-            definition.Tag
-          } @#DHEBREW@ ${between.hebrewDate.getFullYear()}`;
+          lines.push(
+            `${depth} ${
+              definition.Tag
+            } @#DHEBREW@ ${between.hebrewDate.getFullYear()}`
+          );
         }
       } else {
         // full month
@@ -155,20 +160,24 @@ export function ParseDateToLine(
               firstDayOfBetween.year() + 1 === firstDayOfAnd.year()
             ) {
               isSpecialPeriod = true;
-              result += `${depth} ${definition.Tag} ${
-                between.calendar === "Julian" ? "@#DJULIAN@ " : ""
-              }${firstDayOfBetween.year()}`;
+              lines.push(
+                `${depth} ${definition.Tag} ${
+                  between.calendar === "Julian" ? "@#DJULIAN@ " : ""
+                }${firstDayOfBetween.year()}`
+              );
             }
             // test if and month is the one after between
             else if (
               firstDayOfBetween.add(1, "month").diff(firstDayOfAnd) === 0
             ) {
               isSpecialPeriod = true;
-              result += `${depth} ${definition.Tag} ${
-                between.calendar === "Julian" ? "@#DJULIAN@ " : ""
-              }${firstDayOfBetween
-                .format("MMM")
-                .toUpperCase()} ${firstDayOfBetween.year()}`;
+              lines.push(
+                `${depth} ${definition.Tag} ${
+                  between.calendar === "Julian" ? "@#DJULIAN@ " : ""
+                }${firstDayOfBetween
+                  .format("MMM")
+                  .toUpperCase()} ${firstDayOfBetween.year()}`
+              );
             }
           }
         }
@@ -176,13 +185,15 @@ export function ParseDateToLine(
     }
 
     if (!isSpecialPeriod) {
-      result += `${depth} ${definition.Tag} BETWEEN ${between.result} AND ${and.result}`;
+      lines.push(
+        `${depth} ${definition.Tag} BETWEEN ${between.result} AND ${and.result}`
+      );
     }
   }
 
   return {
     ignoreChildren: true,
-    result: (result += "\n"),
+    lines,
   };
 }
 

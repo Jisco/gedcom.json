@@ -21,7 +21,7 @@ export function ParseObject(
   ) => void
 ): ParsingResult {
   if (!object || !parsingOptions) {
-    return new ParsingResult("");
+    return new ParsingResult([]);
   }
 
   let yamlOptions: string | object | undefined = {};
@@ -29,11 +29,11 @@ export function ParseObject(
   try {
     yamlOptions = yaml.safeLoad(parsingOptions);
   } catch (e) {
-    return new ParsingResult("");
+    return new ParsingResult([]);
   }
 
   if (!yamlOptions) {
-    return new ParsingResult("");
+    return new ParsingResult([]);
   }
 
   return ProcessObject(

@@ -15,7 +15,7 @@ export default class Parsing {
 
   ParseObject(): ParsingResult {
     if (!this.options.GetText()) {
-      return new ParsingResult("");
+      return new ParsingResult([]);
     }
 
     return ParseObject(

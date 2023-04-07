@@ -1,13 +1,13 @@
 import Statistics from "./Statistics";
 
 export default class ParsingResult {
-  constructor(text: string, stats?: Statistics) {
-    this.Text = text;
+  constructor(lines: string[], stats?: Statistics) {
+    this.Lines = lines;
 
     /* istanbul ignore next */
     this.Statistics = stats ?? new Statistics();
   }
 
-  Text: string;
+  Lines: string[];
   Statistics: Statistics;
 }
