@@ -1,10 +1,21 @@
-import { each, forEach, isArray, isObject } from "lodash";
+import {
+  each,
+  filter,
+  forEach,
+  get,
+  has,
+  isArray,
+  isObject,
+  set,
+} from "lodash";
 import IDefinition from "../../Common/interfaces/IDefinition";
 import ITagDefinition from "../../Common/interfaces/ITagDefinition";
 import ProcessObjectValue from "./processObjectValue";
 import ParsingResult from "../models/statistics/ParsingResult";
 import Statistics from "../models/statistics/Statistics";
 import { SearchDefinition } from "./searchDefinition";
+import TagDefinition from "../../Common/TagDefinition";
+import ObjectParsingResult from "../models/processing/ObjectParsingResult";
 
 const paths = require("deepdash/paths");
 const eachDeep = require("deepdash/eachDeep");
@@ -58,12 +69,15 @@ export function ProcessObject(
   // get count of all properties to process
   const allPropertiesCount = paths(object).length;
   let propertyCount = 0;
-  const result: string[] = [];
-  let ignoreDeeperThen = 0;
+  const result = new ObjectParsingResult();
+  result.mergeLineProperties = filter(
+    parsingOptions.Definition,
+    (x) => x.StartWith !== undefined
+  );
 
   // iterate over each main property
   each(object, (value, key) => {
-    const def = SearchDefinition(parsingOptions.Definition, key);
+    const def = SearchDefinition(undefined, parsingOptions.Definition, key);
 
     if (!def) {
       // ?? Keine Definiton gefunden
@@ -89,113 +103,78 @@ export function ProcessObject(
       // single objekt
       if (!def.CollectAsArray) {
         // iterate properties
-        result.push(`0 ${def.Tag}`);
+        result.addLine(0, def.Tag);
 
-        eachDeep(value, (val: any, key: string, parent: any, context: any) => {
-          if (!key || isArray(parent) || isArray(val)) {
+        iterateInnerProperties(def, value, parsingOptions, result);
+      }
+      // collection of entites
+      else if (def.Property) {
+        if (!isArray(value)) {
+          return;
+        }
+
+        const propertyName = def.Property;
+        forEach(value, (item: any) => {
+          if (!has(item, propertyName)) {
             return;
           }
 
-          const depth = context.depth;
-          let definition: ITagDefinition | undefined = undefined;
-          if (isObject(val)) {
-            const processingResult = ProcessObjectValue(
-              parsingOptions.Definition,
-              context.path,
-              depth,
-              key,
-              val
-            );
-            if (processingResult?.ignoreChildren) {
-              ignoreDeeperThen = depth + 1;
-            }
-            if (processingResult?.lines) {
-              forEach(processingResult.lines, (r) => {
-                result.push(r);
-              });
-            }
-            return;
-          } else {
-            // console.log(parent, context.path, key, val);
-            // Property
-            definition = SearchDefinition(
-              parsingOptions.Definition,
-              context.path
-            );
-            if (!definition) {
-              // TODO:
-              return;
-            }
-            const resultText = `${depth == 0 ? 1 : depth} ${
-              definition.Tag
-            } ${val}`;
-            // console.log(resultText);
-            result.push(resultText);
-          }
-          // if (definition) {
-          //   console.log("Definition:\t", definition);
-          // }
+          const idTag = get(item, propertyName);
+          result.addLine(0, idTag, def.Tag);
+          set(item, propertyName, undefined);
+          iterateInnerProperties(def, item, parsingOptions, result);
         });
       }
     } else {
       // TODO: Single Property ?
+      // console.log(def)
     }
-
-    // console.log(key, value);
-    // eachDeep(value, (val: any, key: string, parent: any, context: any) => {
-    //   if (ignoreDeeperThen > 0 && ignoreDeeperThen < context.depth) {
-    //     return;
-    //   }
-    //   ignoreDeeperThen = 0;
-    //   propertyCount++;
-    //   if (invokeProgressFunction) {
-    //     invokeProgressFunction(allPropertiesCount, propertyCount);
-    //   }
-    //   if (!key || isArray(parent) || isArray(val)) {
-    //     return;
-    //   }
-    //   // console.log("");
-    //   // console.log("-------------");
-    //   // console.log("Value:\t", JSON.stringify(val, null, 1));
-    //   // console.log("IsObject:\t", isObject(val));
-    //   // console.log("Key:\t", key);
-    //   let definition: ITagDefinition | undefined = undefined;
-    //   const depth = context.depth - 1;
-    //   if (isObject(val)) {
-    //     const processingResult = ProcessObjectValue(
-    //       parsingOptions.Definition,
-    //       context.path,
-    //       depth,
-    //       key,
-    //       val
-    //     );
-    //     if (processingResult?.ignoreChildren) {
-    //       ignoreDeeperThen = depth + 1;
-    //     }
-    //     if (processingResult?.lines) {
-    //       forEach(processingResult.lines, (r) => {
-    //         result.push(r);
-    //       });
-    //     }
-    //     return;
-    //   } else {
-    //     // console.log(parent, context.path, key, val);
-    //     // Property
-    //     definition = SearchDefinition(parsingOptions.Definition, context.path);
-    //     if (!definition) {
-    //       // TODO:
-    //       return;
-    //     }
-    //     const resultText = `${depth == 0 ? 1 : depth} ${definition.Tag} ${val}`;
-    //     // console.log(resultText);
-    //     result.push(resultText);
-    //   }
-    //   // if (definition) {
-    //   //   console.log("Definition:\t", definition);
-    //   // }
-    // });
   });
 
-  result.push("0 TRLR");
+  result.addLine(0, "TRLR");
   return new ParsingResult(result, undefined);
+}
+function iterateInnerProperties(
+  parentDefinition: TagDefinition,
+  value: any,
+  parsingOptions: IDefinition,
+  result: ObjectParsingResult
+) {
+  eachDeep(value, (val: any, key: string, parent: any, context: any) => {
+    if (!key || !val || isArray(parent) || isArray(val)) {
+      return;
+    }
+
+    const depth = context.depth;
+    let definition: ITagDefinition | undefined = undefined;
+    if (isObject(val)) {
+      ProcessObjectValue(
+        parentDefinition,
+        parsingOptions.Definition,
+        context.path,
+        depth,
+        key,
+        val,
+        result
+      );
+      return;
+    } else {
+      // console.log(parent, context.path, key, val);
+      // Property
+      definition = SearchDefinition(
+        parentDefinition.Properties,
+        parsingOptions.Definition,
+        context.path
+      );
+      if (!definition) {
+        // TODO:
+        return;
+      }
+
+      result.addLine(depth == 0 ? 1 : depth, definition.Tag, val);
+    }
+    // if (definition) {
+    //   console.log("Definition:\t", definition);
+    // }
+  });
 }

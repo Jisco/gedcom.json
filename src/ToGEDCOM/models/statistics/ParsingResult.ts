@@ -1,13 +1,14 @@
+import ObjectParsingResult from "../processing/ObjectParsingResult";
 import Statistics from "./Statistics";
 
 export default class ParsingResult {
-  constructor(lines: string[], stats?: Statistics) {
-    this.Lines = lines;
+  constructor(lines: ObjectParsingResult, stats?: Statistics) {
+    this.Result = lines;
 
     /* istanbul ignore next */
     this.Statistics = stats ?? new Statistics();
   }
 
-  Lines: string[];
+  Result: ObjectParsingResult;
   Statistics: Statistics;
 }

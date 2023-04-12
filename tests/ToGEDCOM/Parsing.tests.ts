@@ -26,7 +26,7 @@ describe("Parsing object", () => {
         //
       });
 
-      expect(result.Lines).to.deep.equal([
+      expect(result.Result.lines).to.deep.equal([
         "0 HEAD",
         "1 SOUR GRAMPS",
         "2 NAME GRAMPS",
@@ -66,7 +66,7 @@ describe("Parsing object", () => {
         //
       });
 
-      expect(result.Lines).to.deep.equal([
+      expect(result.Result.lines).to.deep.equal([
         "0 HEAD",
         "1 SOUR GRAMPS",
         "2 NAME GRAMPS",
@@ -126,7 +126,7 @@ describe("Parsing object", () => {
         //
       });
 
-      expect(result.Lines).to.deep.equal([
+      expect(result.Result.lines).to.deep.equal([
         "0 HEAD",
         "1 SOUR GRAMPS",
         "2 VERS 2.2.6-1",

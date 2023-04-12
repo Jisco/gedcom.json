@@ -4,13 +4,14 @@ import ConvertToDate from "../../Common/converter/ConvertToDate";
 import TagDefinition from "../../Common/TagDefinition";
 import CalendarConverter from "julian-gregorian";
 import { HDate } from "@hebcal/core";
-import IObjectParsingResult from "../models/processing/IObjectParsingResult";
+import ObjectParsingResult from "../models/processing/ObjectParsingResult";
 
 export function ParseDateToLine(
   depth: number,
   definition: TagDefinition | undefined,
-  val: any
-): IObjectParsingResult {
+  val: any,
+  result: ObjectParsingResult
+) {
   let propertyNameDefinition = new ConvertToDate();
   if (definition?.ConvertTo && definition.ConvertTo.Type === "Date") {
     propertyNameDefinition = definition.ConvertTo as ConvertToDate;
@@ -27,26 +28,21 @@ export function ParseDateToLine(
       get(val, propertyNameDefinition.And)
     )
   ) {
-    return {
-      ignoreChildren: true,
-      lines: [],
-    };
+    return result;
   }
-
-  const lines: string[] = [];
 
   // Single Value
   if (get(val, propertyNameDefinition.Value)) {
-    lines.push(
-      `${depth} ${definition.Tag} ${
-        ConvertSingleDate(
-          depth,
-          val,
-          get(val, propertyNameDefinition.Value),
-          propertyNameDefinition,
-          definition
-        ).result
-      }`
+    result.addLine(
+      depth,
+      definition.Tag,
+      ConvertSingleDate(
+        depth,
+        val,
+        get(val, propertyNameDefinition.Value),
+        propertyNameDefinition,
+        definition
+      ).result
     );
   }
   // From - To
@@ -75,7 +71,7 @@ export function ParseDateToLine(
       definition
     ).result;
 
-    lines.push(`${depth} ${definition.Tag} FROM ${from} TO ${to}`);
+    result.addLine(depth, definition.Tag, `FROM ${from} TO ${to}`);
   }
   // Between
   else if (
@@ -123,8 +119,10 @@ export function ParseDateToLine(
         ) {
           // full month
           isSpecialPeriod = true;
-          lines.push(
-            `${depth} ${definition.Tag} @#DHEBREW@ ${ConvertNumberToHebrewMonth(
+          result.addLine(
+            depth,
+            definition.Tag,
+            `@#DHEBREW@ ${ConvertNumberToHebrewMonth(
               between.hebrewDate.getMonth()
             )} ${between.hebrewDate.getFullYear()}`
           );
@@ -137,10 +135,10 @@ export function ParseDateToLine(
             and.hebrewDate.getFullYear()
         ) {
           isSpecialPeriod = true;
-          lines.push(
-            `${depth} ${
-              definition.Tag
-            } @#DHEBREW@ ${between.hebrewDate.getFullYear()}`
+          result.addLine(
+            depth,
+            definition.Tag,
+            `@#DHEBREW@ ${between.hebrewDate.getFullYear()}`
           );
         }
       } else {
@@ -160,8 +158,10 @@ export function ParseDateToLine(
               firstDayOfBetween.year() + 1 === firstDayOfAnd.year()
             ) {
               isSpecialPeriod = true;
-              lines.push(
-                `${depth} ${definition.Tag} ${
+              result.addLine(
+                depth,
+                definition.Tag,
+                `${
                   between.calendar === "Julian" ? "@#DJULIAN@ " : ""
                 }${firstDayOfBetween.year()}`
               );
@@ -171,8 +171,10 @@ export function ParseDateToLine(
               firstDayOfBetween.add(1, "month").diff(firstDayOfAnd) === 0
             ) {
               isSpecialPeriod = true;
-              lines.push(
-                `${depth} ${definition.Tag} ${
+              result.addLine(
+                depth,
+                definition.Tag,
+                `${
                   between.calendar === "Julian" ? "@#DJULIAN@ " : ""
                 }${firstDayOfBetween
                   .format("MMM")
@@ -185,16 +187,15 @@ export function ParseDateToLine(
     }
 
     if (!isSpecialPeriod) {
-      lines.push(
-        `${depth} ${definition.Tag} BETWEEN ${between.result} AND ${and.result}`
+      result.addLine(
+        depth,
+        definition.Tag,
+        `BETWEEN ${between.result} AND ${and.result}`
       );
     }
   }
 
-  return {
-    ignoreChildren: true,
-    lines,
-  };
+  return result;
 }
 
 function ConvertSingleDate(
