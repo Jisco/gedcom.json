@@ -1,8 +1,10 @@
-import ParsingResult from "../models/statistics/ParsingResult";
-import yaml from "js-yaml";
 import { readFile } from "fs/promises";
-import { ProcessObject } from "./processObject";
+import yaml from "js-yaml";
+
 import IDefinition from "../../Common/interfaces/IDefinition";
+import ObjectParsingResult from "../models/processing/ObjectParsingResult";
+import ParsingResult from "../models/statistics/ParsingResult";
+import { ProcessObject } from "./processObject";
 
 /**
  * Parses a object to an text
@@ -21,7 +23,7 @@ export function ParseObject(
   ) => void
 ): ParsingResult {
   if (!object || !parsingOptions) {
-    return new ParsingResult([]);
+    return new ParsingResult(new ObjectParsingResult());
   }
 
   let yamlOptions: string | object | undefined = {};
@@ -29,11 +31,11 @@ export function ParseObject(
   try {
     yamlOptions = yaml.safeLoad(parsingOptions);
   } catch (e) {
-    return new ParsingResult([]);
+    return new ParsingResult(new ObjectParsingResult());
   }
 
   if (!yamlOptions) {
-    return new ParsingResult([]);
+    return new ParsingResult(new ObjectParsingResult());
   }
 
   return ProcessObject(

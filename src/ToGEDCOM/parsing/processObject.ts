@@ -8,14 +8,15 @@ import {
   isObject,
   set,
 } from "lodash";
+
 import IDefinition from "../../Common/interfaces/IDefinition";
 import ITagDefinition from "../../Common/interfaces/ITagDefinition";
-import ProcessObjectValue from "./processObjectValue";
-import ParsingResult from "../models/statistics/ParsingResult";
-import Statistics from "../models/statistics/Statistics";
-import { SearchDefinition } from "./searchDefinition";
 import TagDefinition from "../../Common/TagDefinition";
 import ObjectParsingResult from "../models/processing/ObjectParsingResult";
+import ParsingResult from "../models/statistics/ParsingResult";
+import Statistics from "../models/statistics/Statistics";
+import ProcessObjectValue from "./processObjectValue";
+import { SearchDefinition } from "./searchDefinition";
 
 const paths = require("deepdash/paths");
 const eachDeep = require("deepdash/eachDeep");
@@ -73,7 +74,15 @@ export function ProcessObject(
   result.mergeLineProperties = filter(
     parsingOptions.Definition,
     (x) => x.StartWith !== undefined
-  );
+  ).map((x) => {
+    if (x.StartWith === "\\n") {
+      x.StartWith = "\n";
+    }
+
+    return x;
+  });
+
+  console.log(result.mergeLineProperties);
 
   // iterate over each main property
   each(object, (value, key) => {

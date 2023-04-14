@@ -1,4 +1,5 @@
 import { expect } from "chai";
+
 import { ProcessObject } from "../../src/ToGEDCOM/parsing/processObject";
 
 describe("Parsing object", () => {

@@ -1,5 +1,6 @@
 import ParsingOptions from "../../Common/ParsingOptions";
 import { ParseFile, ParseObject } from "../parsing/parsing";
+import ObjectParsingResult from "./processing/ObjectParsingResult";
 import ParsingResult from "./statistics/ParsingResult";
 
 export default class Parsing {
@@ -15,7 +16,7 @@ export default class Parsing {
 
   ParseObject(): ParsingResult {
     if (!this.options.GetText()) {
-      return new ParsingResult([]);
+      return new ParsingResult(new ObjectParsingResult());
     }
 
     return ParseObject(

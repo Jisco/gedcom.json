@@ -1,5 +1,5 @@
-import Parsing from "./models/Parsing";
 import ParsingOptions from "../Common/ParsingOptions";
+import Parsing from "./models/Parsing";
 import StatisticProperty from "./models/statistics/StatisticProperty";
 
 export function Convert(argv: any) {
@@ -37,7 +37,10 @@ export function Convert(argv: any) {
     .ParseFileAsync()
     .then((result) => {
       if (argv.out) {
-        parse.SaveAs(result.Text, argv.out as string);
+        parse.SaveAs(
+          result.Result.linesToString().join("\n"),
+          argv.out as string
+        );
       } else {
         if (silent) {
           return;
@@ -45,7 +48,7 @@ export function Convert(argv: any) {
 
         if (!onlyStats) {
           // print in console
-          console.log(JSON.stringify(result.Text, null, 1));
+          console.log(JSON.stringify(result.Result.linesToString(), null, 1));
         }
       }
 
