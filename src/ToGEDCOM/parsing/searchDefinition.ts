@@ -1,6 +1,14 @@
 import { forEach, last } from "lodash";
+
 import ITagDefinition from "../../Common/interfaces/ITagDefinition";
 import TagDefinition from "../../Common/TagDefinition";
+
+export function SearchDefinitionFromRoot(
+  allDefinitions: ITagDefinition[],
+  propertyPath: string
+) {
+  return SearchDefinition(undefined, allDefinitions, propertyPath);
+}
 
 export function SearchDefinition(
   subDefinitions: ITagDefinition[] | undefined,
@@ -15,51 +23,20 @@ export function SearchDefinition(
   const pathParts = propertyPath.split(".");
 
   if (subDefinitions) {
-    let breakLoop = false;
-    forEach(pathParts, (pathPart, index) => {
-      if (breakLoop) {
-        return;
-      }
-  
-      if (index === pathParts.length - 1) {
-        if (definition) {
-          const previousDef = definition;
-          definition = previousDef.Properties?.find(
-            (x) => x.Property === pathPart
-          );
-  
-          if (!definition) {
-            definition = previousDef.Properties?.find(
-              (x) => x.CollectAs === pathPart
-            );
-          }
-        } else {
-          definition = subDefinitions.find((x) => x.Property === pathPart);
-  
-          if (!definition) {
-            definition = subDefinitions.find((x) => x.CollectAs === pathPart);
-          }
-        }
-      } else {
-        if (!definition) {
-          definition = subDefinitions.find((x) => x.CollectAs === pathPart);
-  
-          if (!definition) {
-            definition = subDefinitions.find((x) => x.Property === pathPart);
-          }
-        } else if (definition.Properties) {
-          definition = definition.Properties.find(
-            (x) => x.CollectAs === pathPart
-          );
-        } else {
-          definition = undefined;
-          breakLoop = true;
-          return;
-        }
-      }
-    });
+    definition = searchInDefinitions(pathParts, definition, subDefinitions);
   }
- 
+
+  // if (!definition) {
+  //   forEach(subDefinitions, (subDef) => {
+  //     if (definition) {
+  //       return;
+  //     }
+  //     if (subDef.Properties) {
+  //       definition = searchInDefinitions(pathParts, subDef, subDef.Properties);
+  //     }
+  //   });
+  // }
+
   // no nested definition found, get definition of last path property name
   if (!definition) {
     definition = allDefinitions.find(
@@ -72,4 +49,55 @@ export function SearchDefinition(
   }
 
   return definition ? new TagDefinition(definition) : undefined;
+}
+
+function searchInDefinitions(
+  pathParts: string[],
+  definition: ITagDefinition | undefined,
+  subDefinitions: ITagDefinition[]
+) {
+  let breakLoop = false;
+  forEach(pathParts, (pathPart, index) => {
+    if (breakLoop) {
+      return;
+    }
+
+    if (index === pathParts.length - 1) {
+      if (definition) {
+        const previousDef = definition;
+        definition = previousDef.Properties?.find(
+          (x) => x.Property === pathPart
+        );
+
+        if (!definition) {
+          definition = previousDef.Properties?.find(
+            (x) => x.CollectAs === pathPart
+          );
+        }
+      } else {
+        definition = subDefinitions.find((x) => x.Property === pathPart);
+
+        if (!definition) {
+          definition = subDefinitions.find((x) => x.CollectAs === pathPart);
+        }
+      }
+    } else {
+      if (!definition) {
+        definition = subDefinitions.find((x) => x.CollectAs === pathPart);
+
+        if (!definition) {
+          definition = subDefinitions.find((x) => x.Property === pathPart);
+        }
+      } else if (definition.Properties) {
+        definition = definition.Properties.find(
+          (x) => x.CollectAs === pathPart
+        );
+      } else {
+        definition = undefined;
+        breakLoop = true;
+        return;
+      }
+    }
+  });
+  return definition;
 }

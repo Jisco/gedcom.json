@@ -2,8 +2,8 @@ import ObjectParsingResult from "../processing/ObjectParsingResult";
 import Statistics from "./Statistics";
 
 export default class ParsingResult {
-  constructor(lines: ObjectParsingResult, stats?: Statistics) {
-    this.Result = lines;
+  constructor(result: ObjectParsingResult, stats?: Statistics) {
+    this.Result = result;
 
     /* istanbul ignore next */
     this.Statistics = stats ?? new Statistics();

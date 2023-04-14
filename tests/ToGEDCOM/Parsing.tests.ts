@@ -140,5 +140,86 @@ describe("Parsing object", () => {
         "0 TRLR",
       ]);
     });
+
+    it.skip("Individuals", () => {
+      const testObject = {
+        Head: {},
+        Individuals: [
+          {
+            Id: "@Abraham_Simpson@",
+            Surname: "Simpson",
+            Givenname: "Abraham",
+            Fullname: "Abraham /Simpson/",
+            Sex: "M",
+            Relations: "@F0002@",
+            Changed: {
+              Date: {
+                Original: "11 FEB 2007 15:05:36",
+                HasYear: true,
+                HasMonth: true,
+                HasDay: true,
+                Value: "2007-02-11T14:05:36.000Z",
+              },
+            },
+          },
+        ],
+      };
+
+      const testDefinition = {
+        Definition: [
+          { Tag: "HEAD", CollectAs: "Head" },
+          { Tag: "SEX", CollectAs: "Sex" },
+          {
+            Tag: "FAM",
+            CollectAs: "Relations",
+            CollectAsArray: true,
+            Property: "Id",
+          },
+          { Tag: "CHAN", CollectAs: "Changed" },
+          { Tag: "FAMC", CollectAs: "Relations" },
+          { Tag: "FAMS", CollectAs: "Relations" },
+          { Tag: "FAMF", CollectAs: "FamilyFile" },
+          {
+            Tag: "DATE",
+            Property: "Date",
+            Type: "Date",
+          },
+          {
+            Tag: "INDI",
+            CollectAs: "Individuals",
+            CollectAsArray: true,
+            Property: "Id",
+            Properties: [
+              {
+                Tag: "NAME",
+                Property: "Fullname",
+                Properties: [
+                  { Tag: "GIVN", Property: "Givenname", MergeWithLast: "INDI" },
+                  { Tag: "SURN", Property: "Surname", MergeWithLast: "INDI" },
+                ],
+              },
+            ],
+          },
+        ],
+      };
+
+      const result = ProcessObject(testObject, testDefinition, () => {
+        //
+      });
+
+      expect(result.Result.lines).to.deep.equal([
+        "0 HEAD",
+        "0 @Abraham_Simpson@ INDI",
+        "1 NAME Abraham /Simpson/",
+        "2 GIVN Abraham",
+        "2 SURN Simpson",
+        "1 SEX M",
+        "1 FAMS @F0002@",
+        "1 CHAN",
+        "2 DATE 11 FEB 2007",
+        "3 TIME 15:05:36",
+        "0 TRLR",
+      ]);
+    });
   });
 });

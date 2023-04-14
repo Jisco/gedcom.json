@@ -1,43 +1,33 @@
 import { get, has, isArray, tail } from "lodash";
+
 import ITagDefinition from "../../Common/interfaces/ITagDefinition";
 import { ParseDateToLine } from "./parseDate";
+import { GetActualResult } from "./processObject";
 import { SearchDefinition } from "./searchDefinition";
-import ObjectParsingResult from "../models/processing/ObjectParsingResult";
 
 export default function ProcessObjectValue(
   parentDefinition: ITagDefinition,
   definitions: ITagDefinition[],
   propertyPath: string,
   depth: number,
-  key: string,
-  val: any,
-  result: ObjectParsingResult
+  val: any
 ) {
   // try find definition via "CollectAs"
-  let definition = SearchDefinition(
+  const definition = SearchDefinition(
     parentDefinition.Properties,
     definitions,
     propertyPath
   );
 
-  if (!definition) {
-    // try find definition via "Property"
-    definition = SearchDefinition(
-      parentDefinition.Properties,
-      definitions,
-      key
-    );
+  const result = GetActualResult();
 
-    if (!definition || !definition.Type) {
-      // TODO:
-      return;
-    } else if (definition.Type === "Date") {
-      return ParseDateToLine(depth, definition, val, result);
-    }
+  if (!definition) {
+    console.log("Merken! Könnte Kind vom späterem Objekt sein");
+    return;
   }
 
   if (definition.Type === "Date") {
-    return ParseDateToLine(depth, definition, val, result);
+    return ParseDateToLine(depth, definition, val);
   }
 
   // if definition has no property defined, just add tag
@@ -71,6 +61,8 @@ export default function ProcessObjectValue(
 
         if (subDefinition) {
           result.addLine(depth + 1, subDefinition.Tag, defPropertyValue[0]);
+        } else {
+          console.log("Merken! Könnte Kind vom späterem Objekt sein");
         }
       }
     }

@@ -1,26 +1,31 @@
 import { expect } from "chai";
-import { ParseDateToLine } from "../../src/ToGEDCOM/parsing/parseDate";
-import TagDefinition from "../../src/Common/TagDefinition";
+
 import ConvertToDate from "../../src/Common/converter/ConvertToDate";
-import ObjectParsingResult from "../../src/ToGEDCOM/models/processing/ObjectParsingResult";
+import TagDefinition from "../../src/Common/TagDefinition";
+import { ParseDateToLine } from "../../src/ToGEDCOM/parsing/parseDate";
+import {
+  GetActualResult,
+  ResetResult,
+} from "../../src/ToGEDCOM/parsing/processObject";
 
 describe("Date parsing tests", () => {
+  beforeEach(() => {
+    ResetResult();
+  });
+
   it("No Definition", () => {
-    const result = new ObjectParsingResult();
-    ParseDateToLine(0, undefined, {}, result);
-    expect(result.lines).to.have.lengthOf(0);
+    ParseDateToLine(0, undefined, {});
+    expect(GetActualResult().lines).to.have.lengthOf(0);
   });
 
   it("No Object", () => {
-    const result = new ObjectParsingResult();
-    ParseDateToLine(0, new TagDefinition({}), undefined, result);
-    expect(result.lines).to.have.lengthOf(0);
+    ParseDateToLine(0, new TagDefinition({}), undefined);
+    expect(GetActualResult().lines).to.have.lengthOf(0);
   });
 
   it("No Value Property in Object", () => {
-    const result = new ObjectParsingResult();
-    ParseDateToLine(0, new TagDefinition({}), {}, result);
-    expect(result.lines).to.have.lengthOf(0);
+    ParseDateToLine(0, new TagDefinition({}), {});
+    expect(GetActualResult().lines).to.have.lengthOf(0);
   });
 
   describe("Different single date settings", () => {
@@ -37,9 +42,9 @@ describe("Date parsing tests", () => {
         HasMonth: false,
         HasDay: true,
       };
-      const result = new ObjectParsingResult();
-      ParseDateToLine(1, definition, object, result);
-      expect(result.lines).to.deep.equal(["1 DATE 4"]);
+
+      ParseDateToLine(1, definition, object);
+      expect(GetActualResult().lines).to.deep.equal(["1 DATE 4"]);
     });
 
     it("HasMonth only", () => {
@@ -55,9 +60,9 @@ describe("Date parsing tests", () => {
         HasMonth: true,
         HasDay: false,
       };
-      const result = new ObjectParsingResult();
-      ParseDateToLine(1, definition, object, result);
-      expect(result.lines).to.deep.equal(["1 DATE JUN"]);
+
+      ParseDateToLine(1, definition, object);
+      expect(GetActualResult().lines).to.deep.equal(["1 DATE JUN"]);
     });
 
     it("HasYear only", () => {
@@ -73,9 +78,9 @@ describe("Date parsing tests", () => {
         HasMonth: false,
         HasDay: false,
       };
-      const result = new ObjectParsingResult();
-      ParseDateToLine(1, definition, object, result);
-      expect(result.lines).to.deep.equal(["1 DATE 1999"]);
+
+      ParseDateToLine(1, definition, object);
+      expect(GetActualResult().lines).to.deep.equal(["1 DATE 1999"]);
     });
 
     it("HasMonth and HasYear", () => {
@@ -91,9 +96,9 @@ describe("Date parsing tests", () => {
         HasMonth: true,
         HasDay: false,
       };
-      const result = new ObjectParsingResult();
-      ParseDateToLine(1, definition, object, result);
-      expect(result.lines).to.deep.equal(["1 DATE JUN 1999"]);
+
+      ParseDateToLine(1, definition, object);
+      expect(GetActualResult().lines).to.deep.equal(["1 DATE JUN 1999"]);
     });
   });
 
@@ -113,10 +118,11 @@ describe("Date parsing tests", () => {
           HasDay: true,
           Estimated: true,
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE EST 4 JUN 1999"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE EST 4 JUN 1999",
+        ]);
       });
       it("ABT", () => {
         const definition = new TagDefinition({
@@ -132,9 +138,11 @@ describe("Date parsing tests", () => {
           HasDay: true,
           About: true,
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE ABT 4 JUN 1999"]);
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE ABT 4 JUN 1999",
+        ]);
       });
       it("CAL", () => {
         const definition = new TagDefinition({
@@ -150,10 +158,11 @@ describe("Date parsing tests", () => {
           HasDay: true,
           Calculated: true,
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE CAL 4 JUN 1999"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE CAL 4 JUN 1999",
+        ]);
       });
       it("AFT", () => {
         const definition = new TagDefinition({
@@ -169,9 +178,11 @@ describe("Date parsing tests", () => {
           HasDay: true,
           After: true,
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE AFT 4 JUN 1999"]);
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE AFT 4 JUN 1999",
+        ]);
       });
       it("BEF", () => {
         const definition = new TagDefinition({
@@ -187,10 +198,11 @@ describe("Date parsing tests", () => {
           HasDay: true,
           Before: true,
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE BEF 4 JUN 1999"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE BEF 4 JUN 1999",
+        ]);
       });
       it("INT", () => {
         const definition = new TagDefinition({
@@ -203,9 +215,9 @@ describe("Date parsing tests", () => {
           Value: "Something",
           Interpreted: true,
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE INT Something"]);
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal(["1 DATE INT Something"]);
       });
     });
 
@@ -225,10 +237,11 @@ describe("Date parsing tests", () => {
           Estimated: true,
           About: true,
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE EST ABT 4 JUN 1999"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE EST ABT 4 JUN 1999",
+        ]);
       });
 
       it("3 Markers", () => {
@@ -247,10 +260,11 @@ describe("Date parsing tests", () => {
           About: true,
           Calculated: true,
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE EST ABT CAL 4 JUN 1999"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE EST ABT CAL 4 JUN 1999",
+        ]);
       });
     });
   });
@@ -270,9 +284,11 @@ describe("Date parsing tests", () => {
           HasDay: true,
           Calendar: "Hebrew",
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE @#DHEBREW@ 17 SHV 5740"]);
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE @#DHEBREW@ 17 SHV 5740",
+        ]);
       });
 
       it("Month/Year", () => {
@@ -297,10 +313,11 @@ describe("Date parsing tests", () => {
           },
           Calendar: "Hebrew",
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE @#DHEBREW@ SHV 5740"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE @#DHEBREW@ SHV 5740",
+        ]);
       });
 
       it("Year", () => {
@@ -325,10 +342,11 @@ describe("Date parsing tests", () => {
           },
           Calendar: "Hebrew",
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE @#DHEBREW@ 5740"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE @#DHEBREW@ 5740",
+        ]);
       });
 
       it("from to gregorian", () => {
@@ -352,9 +370,9 @@ describe("Date parsing tests", () => {
             HasDay: true,
           },
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal([
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
           "1 DATE FROM @#DHEBREW@ 17 SHV 5740 TO 31 DEC 1980",
         ]);
       });
@@ -381,9 +399,9 @@ describe("Date parsing tests", () => {
             Calendar: "Hebrew",
           },
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal([
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
           "1 DATE FROM @#DHEBREW@ 17 SHV 5740 TO @#DHEBREW@ 25 TVT 5741",
         ]);
       });
@@ -403,10 +421,11 @@ describe("Date parsing tests", () => {
           HasDay: true,
           Calendar: "Julian",
         };
-        const result = new ObjectParsingResult();
 
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE @#DJULIAN@ 22 JAN 1980"]);
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE @#DJULIAN@ 22 JAN 1980",
+        ]);
       });
 
       it("Month/Year", () => {
@@ -431,9 +450,11 @@ describe("Date parsing tests", () => {
             Calendar: "Julian",
           },
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE @#DJULIAN@ JAN 1980"]);
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE @#DJULIAN@ JAN 1980",
+        ]);
       });
 
       it("Year", () => {
@@ -458,9 +479,11 @@ describe("Date parsing tests", () => {
             Calendar: "Julian",
           },
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal(["1 DATE @#DJULIAN@ 1980"]);
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
+          "1 DATE @#DJULIAN@ 1980",
+        ]);
       });
 
       it("from to gregorian", () => {
@@ -484,9 +507,9 @@ describe("Date parsing tests", () => {
             HasDay: true,
           },
         };
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal([
+
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
           "1 DATE FROM @#DJULIAN@ 22 JAN 1980 TO 31 DEC 1980",
         ]);
       });
@@ -514,9 +537,8 @@ describe("Date parsing tests", () => {
           },
         };
 
-        const result = new ObjectParsingResult();
-        ParseDateToLine(1, definition, object, result);
-        expect(result.lines).to.deep.equal([
+        ParseDateToLine(1, definition, object);
+        expect(GetActualResult().lines).to.deep.equal([
           "1 DATE FROM @#DJULIAN@ 22 JAN 1980 TO @#DJULIAN@ 18 DEC 1980",
         ]);
       });
@@ -548,9 +570,8 @@ describe("Date parsing tests", () => {
             },
           };
 
-          const result = new ObjectParsingResult();
-          ParseDateToLine(1, definition, object, result);
-          expect(result.lines).to.deep.equal([
+          ParseDateToLine(1, definition, object);
+          expect(GetActualResult().lines).to.deep.equal([
             "1 DATE BETWEEN 4 FEB 1980 AND 4 JUN 1999",
           ]);
         });
@@ -576,9 +597,9 @@ describe("Date parsing tests", () => {
               HasDay: false,
             },
           };
-          const result = new ObjectParsingResult();
-          ParseDateToLine(1, definition, object, result);
-          expect(result.lines).to.deep.equal([
+
+          ParseDateToLine(1, definition, object);
+          expect(GetActualResult().lines).to.deep.equal([
             "1 DATE BETWEEN JAN 1980 AND JAN 1999",
           ]);
         });
@@ -604,9 +625,11 @@ describe("Date parsing tests", () => {
               HasDay: false,
             },
           };
-          const result = new ObjectParsingResult();
-          ParseDateToLine(1, definition, object, result);
-          expect(result.lines).to.deep.equal(["1 DATE BETWEEN 1980 AND 1999"]);
+
+          ParseDateToLine(1, definition, object);
+          expect(GetActualResult().lines).to.deep.equal([
+            "1 DATE BETWEEN 1980 AND 1999",
+          ]);
         });
       });
 
@@ -632,9 +655,9 @@ describe("Date parsing tests", () => {
               HasDay: true,
             },
           };
-          const result = new ObjectParsingResult();
-          ParseDateToLine(1, definition, object, result);
-          expect(result.lines).to.deep.equal(["1 DATE JAN 1999"]);
+
+          ParseDateToLine(1, definition, object);
+          expect(GetActualResult().lines).to.deep.equal(["1 DATE JAN 1999"]);
         });
 
         it("Full Month Next Year", () => {
@@ -658,9 +681,9 @@ describe("Date parsing tests", () => {
               HasDay: true,
             },
           };
-          const result = new ObjectParsingResult();
-          ParseDateToLine(1, definition, object, result);
-          expect(result.lines).to.deep.equal(["1 DATE DEC 1999"]);
+
+          ParseDateToLine(1, definition, object);
+          expect(GetActualResult().lines).to.deep.equal(["1 DATE DEC 1999"]);
         });
 
         it("Full Year", () => {
@@ -684,9 +707,9 @@ describe("Date parsing tests", () => {
               HasDay: true,
             },
           };
-          const result = new ObjectParsingResult();
-          ParseDateToLine(1, definition, object, result);
-          expect(result.lines).to.deep.equal(["1 DATE 1999"]);
+
+          ParseDateToLine(1, definition, object);
+          expect(GetActualResult().lines).to.deep.equal(["1 DATE 1999"]);
         });
       });
     });
@@ -711,9 +734,8 @@ describe("Date parsing tests", () => {
         Initial: "4 FEB 1980",
       };
 
-      const result = new ObjectParsingResult();
-      ParseDateToLine(0, definition, object, result);
-      expect(result.lines).to.deep.equal(["0 DATE 4 FEB 1980"]);
+      ParseDateToLine(0, definition, object);
+      expect(GetActualResult().lines).to.deep.equal(["0 DATE 4 FEB 1980"]);
     });
 
     it("Own Propertynames definition", () => {
@@ -744,9 +766,8 @@ describe("Date parsing tests", () => {
         Initial: "FROM 4 FEB 1980 TO 4 JUN 1999",
       };
 
-      const result = new ObjectParsingResult();
-      ParseDateToLine(0, definition, object, result);
-      expect(result.lines).to.deep.equal([
+      ParseDateToLine(0, definition, object);
+      expect(GetActualResult().lines).to.deep.equal([
         "0 DATE FROM 4 FEB 1980 TO 4 JUN 1999",
       ]);
     });
@@ -778,9 +799,8 @@ describe("Date parsing tests", () => {
         Time: "14:35:22", // is own property because of TIME has a property defined
       };
 
-      const result = new ObjectParsingResult();
-      ParseDateToLine(1, definition, object, result);
-      expect(result.lines).to.deep.equal([
+      ParseDateToLine(1, definition, object);
+      expect(GetActualResult().lines).to.deep.equal([
         "1 DATE 4 JUN 1999\n2 TIME 14:35:22",
       ]);
     });
@@ -808,9 +828,10 @@ describe("Date parsing tests", () => {
         Original: "4 JUN 1999 14:35:22",
       };
 
-      const result = new ObjectParsingResult();
-      ParseDateToLine(1, definition, object, result);
-      expect(result.lines).to.deep.equal(["1 DATE 4 JUN 1999 14:35:22"]);
+      ParseDateToLine(1, definition, object);
+      expect(GetActualResult().lines).to.deep.equal([
+        "1 DATE 4 JUN 1999 14:35:22",
+      ]);
     });
   });
 });

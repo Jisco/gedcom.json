@@ -1,16 +1,16 @@
 import dayjs from "dayjs";
+import CalendarConverter from "julian-gregorian";
 import { find, get, split, toNumber, set } from "lodash";
+import { HDate } from "@hebcal/core";
+
 import ConvertToDate from "../../Common/converter/ConvertToDate";
 import TagDefinition from "../../Common/TagDefinition";
-import CalendarConverter from "julian-gregorian";
-import { HDate } from "@hebcal/core";
-import ObjectParsingResult from "../models/processing/ObjectParsingResult";
+import { GetActualResult } from "./processObject";
 
 export function ParseDateToLine(
   depth: number,
   definition: TagDefinition | undefined,
-  val: any,
-  result: ObjectParsingResult
+  val: any
 ) {
   let propertyNameDefinition = new ConvertToDate();
   if (definition?.ConvertTo && definition.ConvertTo.Type === "Date") {
@@ -28,8 +28,10 @@ export function ParseDateToLine(
       get(val, propertyNameDefinition.And)
     )
   ) {
-    return result;
+    return;
   }
+
+  const result = GetActualResult();
 
   // Single Value
   if (get(val, propertyNameDefinition.Value)) {

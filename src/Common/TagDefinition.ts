@@ -1,12 +1,13 @@
 import isObject from "lodash/isObject";
-import ITagDefinition from "./interfaces/ITagDefinition";
-import IReplaceValue from "./interfaces/IReplaceValue";
 
 import ConvertTo from "./converter/ConvertTo";
 import ConvertToArray from "./converter/ConvertToArray";
+
 import ConvertToDate from "./converter/ConvertToDate";
 import ConvertToString from "./converter/ConvertToString";
 import ConvertToTime from "./converter/ConvertToTime";
+import IReplaceValue from "./interfaces/IReplaceValue";
+import ITagDefinition from "./interfaces/ITagDefinition";
 
 export default class TagDefinition implements ITagDefinition {
   constructor(plainJsObject: any) {
@@ -43,7 +44,7 @@ export default class TagDefinition implements ITagDefinition {
       plainJsObject.ConvertTo
     );
 
-    this.interProperties = plainJsObject.Properties;
+    this.internProperties = plainJsObject.Properties;
   }
 
   CollectAs?: string;
@@ -59,14 +60,14 @@ export default class TagDefinition implements ITagDefinition {
   MergeWithNext?: string;
   IsSingleValue?: boolean;
   PropertyType?: ConvertTo;
-  private interProperties: [];
+  private internProperties: [];
 
   get Properties(): TagDefinition[] {
-    if (!this.interProperties) {
+    if (!this.internProperties) {
       return [];
     }
 
-    return this.interProperties.map((x) => new TagDefinition(x));
+    return this.internProperties.map((x) => new TagDefinition(x));
   }
 
   get Path(): string {

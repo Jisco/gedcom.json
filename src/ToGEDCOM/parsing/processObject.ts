@@ -16,11 +16,20 @@ import ObjectParsingResult from "../models/processing/ObjectParsingResult";
 import ParsingResult from "../models/statistics/ParsingResult";
 import Statistics from "../models/statistics/Statistics";
 import ProcessObjectValue from "./processObjectValue";
-import { SearchDefinition } from "./searchDefinition";
+import { SearchDefinition, SearchDefinitionFromRoot } from "./searchDefinition";
 
-const paths = require("deepdash/paths");
 const eachDeep = require("deepdash/eachDeep");
 let stats = new Statistics();
+let result: ObjectParsingResult = new ObjectParsingResult();
+
+export function GetActualResult() {
+  return result;
+}
+
+export function ResetResult() {
+  result = new ObjectParsingResult();
+  stats = new Statistics();
+}
 
 export function ProcessObject(
   object: object,
@@ -30,47 +39,11 @@ export function ProcessObject(
     actualproperty: number
   ) => void
 ): ParsingResult {
-  stats = new Statistics();
-
-  // TODO: Override real object with fake, for developing... remove for real conversion
-  // object = {
-  //   Head: {
-  //     Source: {
-  //       Name: ["GRAMPS", "GRAMPS"],
-  //       Version: "2.2.6-1",
-  //     },
-  //     Destination: "GEDCOM 5.5",
-  //     Date: {
-  //       Original: "9 MAR 2007",
-  //       HasYear: true,
-  //       HasMonth: true,
-  //       HasDay: true,
-  //       Value: "2007-03-08T23:00:00.000Z",
-  //     },
-  //     Characters: "UTF-8",
-  //     Submitter: {
-  //       Id: "@SUBM@",
-  //     },
-  //     File: "/home/bodon/dok/gramps_data/Untitled_1.ged",
-  //     Copyright: "Copyright (c) 2007 .",
-  //     Gedcom: {
-  //       Version: "5.5",
-  //       Format: "LINEAGE-LINKED",
-  //     },
-  //   },
-  //   Submitter: [
-  //     {
-  //       Id: "@SUBM@",
-  //       Name: "Not Provided",
-  //       Address: "Not Provided\nNot Provided",
-  //     },
-  //   ],
-  // };
+  ResetResult();
 
   // get count of all properties to process
-  const allPropertiesCount = paths(object).length;
-  let propertyCount = 0;
-  const result = new ObjectParsingResult();
+  // const allPropertiesCount = paths(object).length;
+  // let propertyCount = 0;
   result.mergeLineProperties = filter(
     parsingOptions.Definition,
     (x) => x.StartWith !== undefined
@@ -82,11 +55,9 @@ export function ProcessObject(
     return x;
   });
 
-  console.log(result.mergeLineProperties);
-
   // iterate over each main property
   each(object, (value, key) => {
-    const def = SearchDefinition(undefined, parsingOptions.Definition, key);
+    const def = SearchDefinitionFromRoot(parsingOptions.Definition, key);
 
     if (!def) {
       // ?? Keine Definiton gefunden
@@ -114,7 +85,7 @@ export function ProcessObject(
         // iterate properties
         result.addLine(0, def.Tag);
 
-        iterateInnerProperties(def, value, parsingOptions, result);
+        iterateInnerProperties(def, value, parsingOptions);
       }
       // collection of entites
       else if (def.Property) {
@@ -131,7 +102,7 @@ export function ProcessObject(
           const idTag = get(item, propertyName);
           result.addLine(0, idTag, def.Tag);
           set(item, propertyName, undefined);
-          iterateInnerProperties(def, item, parsingOptions, result);
+          iterateInnerProperties(def, item, parsingOptions);
         });
       }
     } else {
@@ -141,13 +112,12 @@ export function ProcessObject(
   });
 
   result.addLine(0, "TRLR");
-  return new ParsingResult(result, undefined);
+  return new ParsingResult(result, stats);
 }
 function iterateInnerProperties(
   parentDefinition: TagDefinition,
   value: any,
-  parsingOptions: IDefinition,
-  result: ObjectParsingResult
+  parsingOptions: IDefinition
 ) {
   eachDeep(value, (val: any, key: string, parent: any, context: any) => {
     if (!key || !val || isArray(parent) || isArray(val)) {
@@ -162,9 +132,7 @@ function iterateInnerProperties(
         parsingOptions.Definition,
         context.path,
         depth,
-        key,
-        val,
-        result
+        val
       );
       return;
     } else {
@@ -177,10 +145,11 @@ function iterateInnerProperties(
       );
       if (!definition) {
         // TODO:
+        console.log("Merken! Könnte Kind vom späterem Objekt sein");
         return;
       }
 
-      result.addLine(depth == 0 ? 1 : depth, definition.Tag, val);
+      result.addLine(depth, definition.Tag, val);
     }
     // if (definition) {
     //   console.log("Definition:\t", definition);
