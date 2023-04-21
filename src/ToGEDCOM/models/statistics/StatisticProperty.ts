@@ -2,10 +2,10 @@
  * Class with informations about a property
  */
 export default class StatisticProperty {
-  constructor(path: string, propertyname: string, value?: string) {
+  constructor(path: string, value?: string, error?: string | undefined) {
     this.Path = path;
-    this.PropertyName = propertyname;
     this.Value = value;
+    this.Error = error;
   }
 
   /**
@@ -14,12 +14,12 @@ export default class StatisticProperty {
   Path: string;
 
   /**
-   * name of the property
-   */
-  PropertyName: string;
-
-  /**
    * value of the property
    */
   Value?: string;
+
+  /**
+  
+   */
+  Error?: string;
 }

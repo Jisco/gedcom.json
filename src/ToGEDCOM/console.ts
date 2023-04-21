@@ -1,3 +1,4 @@
+import { filter, includes, remove } from "lodash";
 import ParsingOptions from "../Common/ParsingOptions";
 import Parsing from "./models/Parsing";
 import StatisticProperty from "./models/statistics/StatisticProperty";
@@ -73,23 +74,30 @@ export function Convert(argv: any) {
       console.log("-----------------------------------------------");
       console.log("");
       if (result.Statistics.NotParsedPropertiesCount > 0) {
-        console.log(
-          `Not Parsed Lines: ${result.Statistics.NotParsedPropertiesList}`
-        );
+        // console.log(
+        //   `Not Parsed Lines: ${result.Statistics.NotParsedPropertiesList}`
+        // );
       }
 
       if (result.Statistics.IncorrectPropertiesCount > 0) {
         console.log("");
         console.log("Incorrect Lines:");
         console.log("");
-        console.log("Line\tText");
+        console.log("Line\tError");
         console.log("-----------------------------------------------");
         result.Statistics.IncorrectProperties.forEach(
           (line: StatisticProperty) => {
-            console.log(`${line.Path}\t${line.PropertyName}\t${line.Value}`);
+            console.log(`${line.Path}\t${line.Error}`);
           }
         );
       }
+
+      // console.log(
+      //   filter(
+      //     result.Result.processableProperties,
+      //     (p) => !includes(result.Result.processedProperties, p)
+      //   )
+      // );
     })
     .catch((e) => {
       console.log(e);

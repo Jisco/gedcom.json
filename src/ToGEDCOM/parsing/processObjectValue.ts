@@ -22,17 +22,17 @@ export default function ProcessObjectValue(
   const result = GetActualResult();
 
   if (!definition) {
-    console.log("Merken! Könnte Kind vom späterem Objekt sein");
+    // TODO: console.log("Merken! Könnte Kind vom späterem Objekt sein");
     return;
   }
 
   if (definition.Type === "Date") {
-    return ParseDateToLine(depth, definition, val);
+    return ParseDateToLine(propertyPath, depth, definition, val);
   }
 
   // if definition has no property defined, just add tag
   if (!definition.Property) {
-    result.addLine(depth, definition.Tag);
+    result.addLine(propertyPath, depth, definition.Tag);
   }
   // if a property is defined, test if value has property
   else if (has(val, definition.Property)) {
@@ -48,7 +48,12 @@ export default function ProcessObjectValue(
     // then if more values are defined get them as property value
     if (isArray(defPropertyValue)) {
       if (defPropertyValue.length > 0) {
-        result.addLine(depth, definition.Tag, defPropertyValue[0]);
+        result.addLine(
+          propertyPath,
+          depth,
+          definition.Tag,
+          defPropertyValue[0]
+        );
       }
 
       const remainingItems = tail(defPropertyValue);
@@ -60,15 +65,20 @@ export default function ProcessObjectValue(
         );
 
         if (subDefinition) {
-          result.addLine(depth + 1, subDefinition.Tag, defPropertyValue[0]);
+          result.addLine(
+            (propertyPath += `.${definition.Property}`),
+            depth + 1,
+            subDefinition.Tag,
+            defPropertyValue[0]
+          );
         } else {
-          console.log("Merken! Könnte Kind vom späterem Objekt sein");
+          //TODO: console.log("Merken! Könnte Kind vom späterem Objekt sein");
         }
       }
     }
     // just add reference line, object itself should become later
     else if (definition.CollectAs && defPropertyValue[0] === "@") {
-      result.addLine(depth, definition.Tag, defPropertyValue);
+      result.addLine(propertyPath, depth, definition.Tag, defPropertyValue);
     }
 
     // console.log();

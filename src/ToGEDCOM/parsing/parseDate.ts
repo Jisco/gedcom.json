@@ -8,6 +8,7 @@ import TagDefinition from "../../Common/TagDefinition";
 import { GetActualResult } from "./processObject";
 
 export function ParseDateToLine(
+  path: string,
   depth: number,
   definition: TagDefinition | undefined,
   val: any
@@ -36,6 +37,7 @@ export function ParseDateToLine(
   // Single Value
   if (get(val, propertyNameDefinition.Value)) {
     result.addLine(
+      path,
       depth,
       definition.Tag,
       ConvertSingleDate(
@@ -73,7 +75,7 @@ export function ParseDateToLine(
       definition
     ).result;
 
-    result.addLine(depth, definition.Tag, `FROM ${from} TO ${to}`);
+    result.addLine(path, depth, definition.Tag, `FROM ${from} TO ${to}`);
   }
   // Between
   else if (
@@ -122,6 +124,7 @@ export function ParseDateToLine(
           // full month
           isSpecialPeriod = true;
           result.addLine(
+            path,
             depth,
             definition.Tag,
             `@#DHEBREW@ ${ConvertNumberToHebrewMonth(
@@ -138,6 +141,7 @@ export function ParseDateToLine(
         ) {
           isSpecialPeriod = true;
           result.addLine(
+            path,
             depth,
             definition.Tag,
             `@#DHEBREW@ ${between.hebrewDate.getFullYear()}`
@@ -161,6 +165,7 @@ export function ParseDateToLine(
             ) {
               isSpecialPeriod = true;
               result.addLine(
+                path,
                 depth,
                 definition.Tag,
                 `${
@@ -174,6 +179,7 @@ export function ParseDateToLine(
             ) {
               isSpecialPeriod = true;
               result.addLine(
+                path,
                 depth,
                 definition.Tag,
                 `${
@@ -190,6 +196,7 @@ export function ParseDateToLine(
 
     if (!isSpecialPeriod) {
       result.addLine(
+        path,
         depth,
         definition.Tag,
         `BETWEEN ${between.result} AND ${and.result}`

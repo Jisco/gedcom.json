@@ -76,7 +76,7 @@ export default class Statistics {
   get NotParsedPropertiesList(): string {
     const paths: string[] = [];
     this.NotParsedProperties.forEach((line) => {
-      paths.push((line.Path += `/${line.PropertyName}`));
+      paths.push(line.Path);
     });
 
     return join(paths, ", ");
