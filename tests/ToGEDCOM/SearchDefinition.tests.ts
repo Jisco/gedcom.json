@@ -6,15 +6,18 @@ import {
   SearchDefinition,
   SearchDefinitionFromRoot,
 } from "../../src/ToGEDCOM/parsing/searchDefinition";
+import { SetDefinitions } from "../../src/ToGEDCOM/parsing/processObject";
 
 describe("Search definition deep", () => {
   it("No definitions", () => {
-    const result = SearchDefinitionFromRoot([], "");
+    SetDefinitions([]);
+    const result = SearchDefinitionFromRoot("");
     expect(result).to.be.undefined;
   });
 
   it("No Path", () => {
-    const result = SearchDefinitionFromRoot([{ Tag: "Test" }], "");
+    SetDefinitions([{ Tag: "Test" }]);
+    const result = SearchDefinitionFromRoot("");
     expect(result).to.be.undefined;
   });
 
@@ -29,22 +32,19 @@ describe("Search definition deep", () => {
       { Tag: "DATE", Property: "Date", Type: "Date" },
       { Tag: "TIME", Type: "Time" },
     ];
+    SetDefinitions(definition);
 
-    expect(SearchDefinitionFromRoot(definition, "Individuals")).to.deep.equal(
+    expect(SearchDefinitionFromRoot("Individuals")).to.deep.equal(
       new TagDefinition(definition[0])
     );
-    expect(SearchDefinitionFromRoot(definition, "Changed")).to.deep.equal(
+    expect(SearchDefinitionFromRoot("Changed")).to.deep.equal(
       new TagDefinition(definition[1])
     );
-    expect(SearchDefinitionFromRoot(definition, "Date")).to.deep.equal(
+    expect(SearchDefinitionFromRoot("Date")).to.deep.equal(
       new TagDefinition(definition[2])
     );
     expect(
-      SearchDefinition(
-        definition[1].Properties,
-        definition,
-        "Changed.ChangedDate"
-      )
+      SearchDefinition(definition[1].Properties, "Changed.ChangedDate")
     ).to.deep.equal(new TagDefinition(first(definition[1].Properties)));
   });
 
@@ -63,16 +63,13 @@ describe("Search definition deep", () => {
       },
       { Tag: "NAME", Property: "FullName" },
     ];
+    SetDefinitions(definition);
 
     expect(
-      SearchDefinition(
-        definition[0].Properties,
-        definition,
-        "Individuals.FullName"
-      )
+      SearchDefinition(definition[0].Properties, "Individuals.FullName")
     ).to.deep.equal(new TagDefinition(first(definition[0].Properties)));
 
-    expect(SearchDefinitionFromRoot(definition, "FullName")).to.deep.equal(
+    expect(SearchDefinitionFromRoot("FullName")).to.deep.equal(
       new TagDefinition(definition[1])
     );
   });
@@ -110,16 +107,16 @@ describe("Search definition deep", () => {
       },
       { Tag: "NAME", Property: "FullName" },
     ];
+    SetDefinitions(definition);
 
     expect(
       SearchDefinition(
         new TagDefinition(definition[0]).Properties,
-        definition,
         "Individuals.Individuals2.Individuals3.Individuals4.FullName"
       )?.Tag
     ).to.equal("INDI5");
 
-    expect(SearchDefinitionFromRoot(definition, "FullName")).to.deep.equal(
+    expect(SearchDefinitionFromRoot("FullName")).to.deep.equal(
       new TagDefinition(definition[1])
     );
   });
@@ -136,18 +133,19 @@ describe("Search definition deep", () => {
         ],
       },
     ];
+    SetDefinitions(definition);
 
-    expect(SearchDefinitionFromRoot(definition, "AAA.Tag")).to.deep.equal(
+    expect(SearchDefinitionFromRoot("AAA.Tag")).to.deep.equal(
       new TagDefinition(definition[0])
     );
 
-    expect(SearchDefinitionFromRoot(definition, "AAA.BBB.Tag")).to.deep.equal(
+    expect(SearchDefinitionFromRoot("AAA.BBB.Tag")).to.deep.equal(
       new TagDefinition(definition[0])
     );
 
-    expect(
-      SearchDefinitionFromRoot(definition, "AAA.BBB.CCC.Tag")
-    ).to.deep.equal(new TagDefinition(definition[0]));
+    expect(SearchDefinitionFromRoot("AAA.BBB.CCC.Tag")).to.deep.equal(
+      new TagDefinition(definition[0])
+    );
   });
 
   it("No definition of tag in properties", () => {
@@ -161,8 +159,9 @@ describe("Search definition deep", () => {
         ],
       },
     ];
+    SetDefinitions(definition);
 
-    expect(SearchDefinitionFromRoot(definition, "AAA.Tag")).to.be.undefined;
+    expect(SearchDefinitionFromRoot("AAA.Tag")).to.be.undefined;
   });
 
   it("Find Date\\Time Definition", () => {
@@ -188,9 +187,10 @@ describe("Search definition deep", () => {
         ],
       },
     ];
+    SetDefinitions(definition);
 
     expect(
-      SearchDefinition(definition[0].Properties, definition, "Dates.Date")
+      SearchDefinition(definition[0].Properties, "Dates.Date")
     ).to.deep.equal(new TagDefinition(first(definition[0].Properties)));
   });
 });

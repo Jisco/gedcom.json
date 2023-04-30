@@ -2,17 +2,14 @@ import { forEach, last } from "lodash";
 
 import ITagDefinition from "../../Common/interfaces/ITagDefinition";
 import TagDefinition from "../../Common/TagDefinition";
+import { GetDefinitions } from "./processObject";
 
-export function SearchDefinitionFromRoot(
-  allDefinitions: ITagDefinition[],
-  propertyPath: string
-) {
-  return SearchDefinition(undefined, allDefinitions, propertyPath);
+export function SearchDefinitionFromRoot(propertyPath: string) {
+  return SearchDefinition(undefined, propertyPath);
 }
 
 export function SearchDefinition(
   subDefinitions: ITagDefinition[] | undefined,
-  allDefinitions: ITagDefinition[],
   propertyPath: string
 ): TagDefinition | undefined {
   if (propertyPath.length === 0) {
@@ -21,6 +18,7 @@ export function SearchDefinition(
 
   let definition: ITagDefinition | undefined;
   const pathParts = propertyPath.split(".");
+  const allDefinitions = GetDefinitions();
 
   if (subDefinitions) {
     definition = searchInDefinitions(pathParts, definition, subDefinitions);

@@ -5,7 +5,7 @@ import { HDate } from "@hebcal/core";
 
 import ConvertToDate from "../../Common/converter/ConvertToDate";
 import TagDefinition from "../../Common/TagDefinition";
-import { GetActualResult } from "./processObject";
+import { GetActualResult, GetDefinitions } from "./processObject";
 
 export function ParseDateToLine(
   path: string,
@@ -36,18 +36,24 @@ export function ParseDateToLine(
 
   // Single Value
   if (get(val, propertyNameDefinition.Value)) {
-    result.addLine(
-      path,
+    const res = ConvertSingleDate(
       depth,
-      definition.Tag,
-      ConvertSingleDate(
-        depth,
-        val,
-        get(val, propertyNameDefinition.Value),
-        propertyNameDefinition,
-        definition
-      ).result
+      val,
+      get(val, propertyNameDefinition.Value),
+      propertyNameDefinition,
+      definition
     );
+
+    result.addLine(path, depth, definition.Tag, res.result);
+
+    if (res.singleLineTime?.value) {
+      result.addLine(
+        path,
+        depth + 1,
+        res.singleLineTime.tag,
+        res.singleLineTime.value
+      );
+    }
   }
   // From - To
   else if (
@@ -326,11 +332,15 @@ function ConvertSingleDate(
   }
 
   // time
-  const timeDefinitionViaProperty = find(
+  let timeDefinitionViaProperty = find(
     tagDefinition.Properties,
     (x) => x.Property === "Time"
   );
 
+  const singleLineTime = {
+    value: "",
+    tag: "",
+  };
   // add time as own line
   if (
     timeDefinitionViaProperty &&
@@ -338,13 +348,31 @@ function ConvertSingleDate(
   ) {
     result += `\n${depth + 1} ${
       timeDefinitionViaProperty.Tag
-    } ${dayObject.hour()}:${dayObject.minute()}:${dayObject.second()}`;
+    } ${dayObject.format("HH")}:${dayObject.format("mm")}:${dayObject.format(
+      "ss"
+    )}`;
     hasTime = true;
   } else if (
     find(tagDefinition.Properties, (x) => x.ConvertTo?.Type === "Time")
   ) {
-    result += ` ${dayObject.hour()}:${dayObject.minute()}:${dayObject.second()}`;
+    result += ` ${dayObject.format("HH")}:${dayObject.format(
+      "mm"
+    )}:${dayObject.format("ss")}`;
     hasTime = true;
+  } else if (!timeDefinitionViaProperty) {
+    // global definition
+    timeDefinitionViaProperty = find(
+      GetDefinitions() as TagDefinition[],
+      (x) => x.Property === "Time"
+    );
+
+    if (timeDefinitionViaProperty) {
+      singleLineTime.value = `${dayObject.format("HH")}:${dayObject.format(
+        "mm"
+      )}:${dayObject.format("ss")}`;
+      singleLineTime.tag = timeDefinitionViaProperty.Tag;
+      hasTime = true;
+    }
   }
 
   return {
@@ -355,6 +383,7 @@ function ConvertSingleDate(
     hasTime,
     calendar,
     hebrewDate,
+    singleLineTime,
   };
 }
 

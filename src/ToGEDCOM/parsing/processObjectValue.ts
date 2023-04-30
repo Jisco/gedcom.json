@@ -7,7 +7,6 @@ import { SearchDefinition } from "./searchDefinition";
 
 export default function ProcessObjectValue(
   parentDefinition: ITagDefinition,
-  definitions: ITagDefinition[],
   propertyPath: string,
   depth: number,
   val: any
@@ -15,7 +14,6 @@ export default function ProcessObjectValue(
   // try find definition via "CollectAs"
   const definition = SearchDefinition(
     parentDefinition.Properties,
-    definitions,
     propertyPath
   );
 
@@ -60,7 +58,6 @@ export default function ProcessObjectValue(
       if (remainingItems.length > 0) {
         const subDefinition = SearchDefinition(
           parentDefinition.Properties,
-          definitions,
           (propertyPath += `.${definition.Property}`)
         );
 

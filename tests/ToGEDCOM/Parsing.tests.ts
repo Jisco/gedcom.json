@@ -163,6 +163,24 @@ describe("Parsing object", () => {
             },
           },
         ],
+        Relations: [
+          {
+            Id: "@F0002@",
+            Reference: "2",
+            Husband: "@Abraham_Simpson@",
+            Wife: "@Mona_Simpson@",
+            Children: "@Homer_Simpson@",
+            Changed: {
+              Date: {
+                Original: "11 FEB 2007 15:05:36",
+                HasYear: true,
+                HasMonth: true,
+                HasDay: true,
+                Value: "2007-02-11T14:05:36.000Z",
+              },
+            },
+          },
+        ],
       };
 
       const testDefinition = {
@@ -179,6 +197,10 @@ describe("Parsing object", () => {
           { Tag: "FAMC", CollectAs: "Relations" },
           { Tag: "FAMS", CollectAs: "Relations" },
           { Tag: "FAMF", CollectAs: "FamilyFile" },
+          { Tag: "HUSB", Property: "Husband" },
+          { Tag: "WIFE", Property: "Wife" },
+          { Tag: "CHIL", Property: "Children" },
+          { Tag: "TIME", Property: "Time" },
           {
             Tag: "DATE",
             Property: "Date",
@@ -215,6 +237,13 @@ describe("Parsing object", () => {
         "2 SURN Simpson",
         "1 SEX M",
         "1 FAMS @F0002@",
+        "1 CHAN",
+        "2 DATE 11 FEB 2007",
+        "3 TIME 15:05:36",
+        "0 @F0002@ FAM",
+        "1 HUSB @Abraham_Simpson@",
+        "1 WIFE @Mona_Simpson@",
+        "1 CHIL @Homer_Simpson@",
         "1 CHAN",
         "2 DATE 11 FEB 2007",
         "3 TIME 15:05:36",

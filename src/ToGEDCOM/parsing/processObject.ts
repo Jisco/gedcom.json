@@ -18,8 +18,8 @@ import ProcessObjectValue from "./processObjectValue";
 import { SearchDefinition, SearchDefinitionFromRoot } from "./searchDefinition";
 
 const eachDeep = require("deepdash/eachDeep");
-const paths = require("deepdash/paths");
 let result: ObjectParsingResult = new ObjectParsingResult();
+let definitions: ITagDefinition[];
 
 export function GetActualResult() {
   return result;
@@ -27,6 +27,14 @@ export function GetActualResult() {
 
 export function ResetResult() {
   result = new ObjectParsingResult();
+}
+
+export function GetDefinitions() {
+  return definitions;
+}
+
+export function SetDefinitions(defs: ITagDefinition[]) {
+  definitions = defs;
 }
 
 export function ProcessObject(
@@ -44,6 +52,8 @@ export function ProcessObject(
     result.setProcessablePropertyPaths(object);
   }
 
+  SetDefinitions(parsingOptions.Definition);
+
   // get count of all properties to process
   result.mergeLineProperties = filter(
     parsingOptions.Definition,
@@ -59,7 +69,7 @@ export function ProcessObject(
   // iterate over each main property
   each(object, (value, key) => {
     result.startProcessingProperty(key);
-    const def = SearchDefinitionFromRoot(parsingOptions.Definition, key);
+    const def = SearchDefinitionFromRoot(key);
 
     if (!def) {
       // ?? Keine Definiton gefunden
@@ -179,22 +189,12 @@ function iterateInnerProperties(
     const depth = context.depth;
     let definition: ITagDefinition | undefined = undefined;
     if (isObject(val)) {
-      ProcessObjectValue(
-        parentDefinition,
-        parsingOptions.Definition,
-        context.path,
-        depth,
-        val
-      );
+      ProcessObjectValue(parentDefinition, context.path, depth, val);
       return;
     } else {
       // console.log(parent, context.path, key, val);
       // Property
-      definition = SearchDefinition(
-        parentDefinition.Properties,
-        parsingOptions.Definition,
-        context.path
-      );
+      definition = SearchDefinition(parentDefinition.Properties, context.path);
       if (!definition) {
         // TODO: console.log("Merken! Könnte Kind vom späterem Objekt sein");
         return;
