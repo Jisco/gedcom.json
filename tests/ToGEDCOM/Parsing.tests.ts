@@ -141,7 +141,7 @@ describe("Parsing object", () => {
       ]);
     });
 
-    it.skip("Individuals", () => {
+    it.only("Individuals", () => {
       const testObject = {
         Head: {},
         Individuals: [

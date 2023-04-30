@@ -1,4 +1,4 @@
-import { forEach, last } from "lodash";
+import { find, first, forEach, last } from "lodash";
 
 import ITagDefinition from "../../Common/interfaces/ITagDefinition";
 import TagDefinition from "../../Common/TagDefinition";
@@ -42,7 +42,20 @@ export function SearchDefinition(
     );
 
     if (!definition) {
-      definition = allDefinitions.find((x) => x.CollectAs === last(pathParts));
+      const multipleDefinitions = allDefinitions.filter(
+        (x) => x.CollectAs === last(pathParts)
+      );
+
+      definition = first(multipleDefinitions);
+
+      // multiple defintions with same CollectAs Property, take the most specific
+      // TODO: how to make this better? The case is her FAM, FAMS and FAMC
+      if (multipleDefinitions.length > 1) {
+        definition = find(
+          multipleDefinitions,
+          (x) => x.CollectAsArray === true
+        );
+      }
     }
   }
 

@@ -1,11 +1,14 @@
 import {
   each,
   filter,
+  find,
   forEach,
   get,
   has,
+  includes,
   isArray,
   isObject,
+  isString,
   set,
 } from "lodash";
 
@@ -20,6 +23,8 @@ import { SearchDefinition, SearchDefinitionFromRoot } from "./searchDefinition";
 const eachDeep = require("deepdash/eachDeep");
 let result: ObjectParsingResult = new ObjectParsingResult();
 let definitions: ITagDefinition[];
+let objectToParse: Object;
+let lastIndividualId: string;
 
 export function GetActualResult() {
   return result;
@@ -46,6 +51,7 @@ export function ProcessObject(
   ) => void
 ): ParsingResult {
   ResetResult();
+  objectToParse = object;
 
   if (invokeProgressFunction) {
     result.setProgressFunction(invokeProgressFunction);
@@ -112,7 +118,7 @@ export function ProcessObject(
       if (!def.CollectAsArray) {
         // iterate properties
         result.addLine(key, 0, def.Tag);
-        iterateInnerProperties(key, undefined, def, value, parsingOptions);
+        iterateInnerProperties(key, undefined, def, value);
       }
       // collection of entites
       else if (def.Property) {
@@ -139,8 +145,13 @@ export function ProcessObject(
 
           const idTag = get(item, propertyName);
           result.addLine(key, 0, idTag, def.Tag);
+
+          if (def.Tag === "INDI") {
+            lastIndividualId = idTag;
+          }
+
           set(item, propertyName, undefined);
-          iterateInnerProperties(key, index, def, item, parsingOptions);
+          iterateInnerProperties(key, index, def, item);
         });
       }
     } else {
@@ -161,8 +172,7 @@ function iterateInnerProperties(
   parentKey: string,
   index: number | undefined,
   parentDefinition: TagDefinition,
-  value: any,
-  parsingOptions: IDefinition
+  value: any
 ) {
   eachDeep(value, (val: any, key: string, parent: any, context: any) => {
     if (context.path) {
@@ -200,7 +210,47 @@ function iterateInnerProperties(
         return;
       }
 
-      result.addLine(context.path, depth, definition.Tag, val);
+      // reference to array
+      if (
+        definition.CollectAs &&
+        definition.CollectAsArray &&
+        definition.Property &&
+        has(objectToParse, definition.CollectAs)
+      ) {
+        // TODO: good idea to be so specific?! The tag name is immutable, so why not?!
+        if (definition.Tag === "FAM") {
+          let tag = "FAMS";
+          const relation = find(
+            get(objectToParse, definition.CollectAs),
+            (r) => get(r, definition?.Property ?? "Id") === val
+          );
+          if (relation) {
+            const childPropertyName = find(
+              GetDefinitions(),
+              (d) => d.Tag === "CHIL"
+            );
+            const children = get(
+              relation,
+              childPropertyName?.Property ?? "Children"
+            );
+
+            if (children) {
+              if (
+                (isArray(children) && includes(children, lastIndividualId)) ||
+                (isString(children) && children === lastIndividualId)
+              ) {
+                tag = "FAMC";
+              }
+            }
+
+            result.addLine(context.path, depth, tag, val);
+          }
+        } else {
+          // result.addLine(context.path, depth, definition.Tag, val);
+        }
+      } else {
+        result.addLine(context.path, depth, definition.Tag, val);
+      }
     }
     // if (definition) {
     //   console.log("Definition:\t", definition);
