@@ -177,7 +177,17 @@ export function CreateMainObject(objects: ParsingObject[]): MainObject {
                 return;
             }
 
-            partPath.push(property);
+            partPath.push(property); 
+            
+            const parentPath = dropRight(partPath);
+            const parentObj = objectPath.get(result, parentPath);
+
+            if (parentPath.length > 0 && objectPath.has(result, parentPath) && isArray(parentObj)) {
+                partPath = parentPath;
+                partPath.push(`${parentObj.length - 1}`);
+                partPath.push(property);
+            }
+
             if (!objectPath.has(result, partPath)) {
                 objectPath.set(result, partPath, {});
                 return;
