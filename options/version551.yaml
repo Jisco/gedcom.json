@@ -1,3 +1,7 @@
+Config:
+- IgnoreMaxLineLength: true
+- ExcludeParsedLinesFromStats: true
+- ReplaceIdentifiersWithUUIDs: true
 Definition:
 - Tag: ABBR
   Property: Abbreviation

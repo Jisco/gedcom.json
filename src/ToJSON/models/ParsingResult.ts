@@ -1,10 +1,14 @@
 import Statistics from "./Statistics";
 
 export default class ParsingResult {
-    constructor(obj: Object, stats?: Statistics) {
+    constructor(obj: Object, stats?: Statistics, excludeParsedLinesFromStats?: boolean) {
         this.Object = obj;
-        
-        /* istanbul ignore next */ 
+
+        if (stats && excludeParsedLinesFromStats) {
+            delete stats.ParsedLines;
+        }
+
+        /* istanbul ignore next */
         this.Statistics = stats ?? new Statistics();
     }
 

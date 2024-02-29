@@ -29,6 +29,36 @@ describe('Parsing text', () => {
         });
     });
 
+    it('Replaces GEDCOM references with UUIDs', () => {
+
+        let testData = `
+            0 INDI @I1@
+            0 @M1@ OBJE
+            0 TRLR
+        `.trimStart().trimEnd();
+
+        let options = `
+            Config:
+              - IgnoreMaxLineLength: true
+              - ExcludeParsedLinesFromStats: true
+              - ReplaceIdentifiersWithUUIDs: true
+            Definition:
+              - Tag: INDI
+                CollectAs: Individuals
+                Property: Id
+                CollectAsArray: true
+              - Tag: OBJE
+                Property: Id
+                CollectAs: Objects
+        `
+        const obj: any = ParseText(testData, options).Object;
+        const individual = obj.Individuals[0];
+        const media = obj.Objects;
+        expect(individual.Id).to.match(/.{8}-.{4}-.{4}-.{4}-.{12}/);
+        expect(media.Id).to.match(/.{8}-.{4}-.{4}-.{4}-.{12}/);
+
+    });
+
     it('With Progress', () => {
         let testData = `
         0 @N00010@ NOTE

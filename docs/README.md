@@ -32,13 +32,15 @@ I am aware that there are already several parsers for the gedcom format. However
 
 Just run npx ts-node src/index.ts  with the wanted flags. Eg if you run "npm run demo:JSON" it will execute "ts-node src/index.ts --path 'examples/simpsons.get'" and will print out the Simpsons GEDCOM examplke file as JSON object in the console. With "npm run demoFile:JSON" it will do the same but prints the JSON object in a 'test.json' file.
 
-| Flag             | Description                                                  |
-| ---------------- | ------------------------------------------------------------ |
-| --onlyStats      | Only print the parsing statistcs to the console              |
-| --opt *xxx.yaml* | Set the path to the yaml [definition file](#create-your-own-defintion-file) |
-| --out *xxx.json* | File path to print into                                      |
-| --path *xxx.ged* | Set the path to the GEDCOM file                              |
-| --silent         | Don't print anything to the console                          |
+| Flag                 | Description                                                                 |
+| -------------------- | --------------------------------------------------------------------------- |
+| --onlyStats          | Only print the parsing statistics to the console                            |
+| --opt *xxx.yaml*     | Set the path to the yaml [definition file](#create-your-own-defintion-file) |
+| --out *xxx.json*     | File path to print into                                                     |
+| --path *xxx.ged*     | Set the path to the GEDCOM file                                             |
+| --silent             | Don't print anything to the console                                         |
+| --showProgress       | Print the progress during processing the file                               |
+| --saveWithStatistics | Save the processing statistics with the converted GEDCOM                    |
 
 ##### Via Node or JS
 

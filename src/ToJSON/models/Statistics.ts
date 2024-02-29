@@ -10,12 +10,13 @@ export default class Statistics {
         this.IncorrectLines = [];
         this.NotParsedLines = [];
         this.NotParsedLinesWithoutGEDCOMTag = [];
+        this.ParsedLineCount = 0;
     }
 
     /**
      * @returns list of all correct parsed lines
      */
-    ParsedLines: StatisticLine[];
+    ParsedLines?: StatisticLine[];
     /**
      * @returns list of all incorrect parsed lines
      */
@@ -30,11 +31,13 @@ export default class Statistics {
      */
     NotParsedLinesWithoutGEDCOMTag: StatisticLine[];
 
+    ParsedLineCount: number;
+
     /**
      * @returns a count of all correctly parsed lines
      */
     get ParsedLinesCount(): number {
-        return this.ParsedLines.length;
+        return this.ParsedLineCount;
     }
 
     /**
@@ -62,7 +65,7 @@ export default class Statistics {
      * @returns a count of all processed lines
      */
     get LinesCount(): number {
-        return this.ParsedLines.length + this.IncorrectLines.length + this.NotParsedLines.length + this.NotParsedLinesWithoutGEDCOMTag.length;
+        return this.ParsedLineCount + this.IncorrectLines.length + this.NotParsedLines.length + this.NotParsedLinesWithoutGEDCOMTag.length;
     }
 
     /**

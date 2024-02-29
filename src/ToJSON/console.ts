@@ -32,7 +32,11 @@ export function Convert(argv:any) {
     let start = new Date().getTime();
     parse.ParseFileAsync().then(result => {
         if (argv.out) {
-            parse.SaveAs(result.Object, argv.out as string);
+            if (argv.saveWithStatistics) {
+                parse.SaveAs(result, argv.out as string);
+            } else {
+                parse.SaveAs(result.Object, argv.out as string);
+            }
         }
         else {
 

@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import trimStart from 'lodash/trimStart';
 import forEach from 'lodash/forEach';
 import split from 'lodash/split';
@@ -15,9 +16,12 @@ import yaml from 'js-yaml';
 const LineByLineReader = require('line-by-line');
 let stats = new Statistics();
 
+let REPLACED_REFS: { [key: string]: string } = {};
+
 /**
  * Parses a text to an object 
  *
+ * @param ignoreMaxLineLength - Ignore line length validation
  * @param text - The text
  * @param parsingOptions - The parsing options
  * @param invokeProgressFunction - Set function that is called before each line, to show progress in some way
@@ -28,6 +32,7 @@ export function ParseText(
     parsingOptions?: string, 
     invokeProgressFunction?: (linesCount: number, actualLine: number) => void): ParsingResult {
     stats = new Statistics();
+    REPLACED_REFS = {};
 
     if (!text || !parsingOptions){
         return new ParsingResult({});
@@ -40,9 +45,22 @@ export function ParseText(
     let lines = split(text, "\n");
     let yamlOptions: string | object | undefined = {};
 
+    let ignoreMaxLineLength = false;
+    let excludeParsedLinesFromStats = false;
+    let replaceIdentifiersWithUUIDs = false;
+
     try{
         yamlOptions = yaml.safeLoad(parsingOptions);
         SetParsingOptions(yamlOptions);
+        if (yamlOptions) {
+            const yamlConfig = JSON.parse(JSON.stringify(yamlOptions)).Config;
+            if (yamlConfig) {
+                const configOptions: any = Object.assign({}, ...yamlConfig);
+                ignoreMaxLineLength = configOptions.IgnoreMaxLineLength.toString() === 'true';
+                excludeParsedLinesFromStats = configOptions.ExcludeParsedLinesFromStats.toString() === 'true';
+                replaceIdentifiersWithUUIDs = configOptions.ReplaceIdentifiersWithUUIDs.toString() === 'true';
+            }
+        }
     }
     catch(e) {
         ResetProcessing();
@@ -62,17 +80,18 @@ export function ParseText(
         invokeProgressFunction(lines.length, index);
       }
 
-      ProcessNewLine(lastLevel, lineNumber, line, nextLine);
+      ProcessNewLine(lastLevel, lineNumber, line, nextLine, replaceIdentifiersWithUUIDs, ignoreMaxLineLength);
     });
     
     let result = GetResult();
     ResetProcessing();
-    return new ParsingResult(result, stats);
+    return new ParsingResult(result, stats, excludeParsedLinesFromStats);
 }
 
 /**
  * Parses a file to an object
  *
+ * @param ignoreMaxLineLength - Ignore line length validation
  * @param path - The file path
  * @param parsingOptions - The parsing options
  * @param doneCallback - Returns the resulting object when file is readed completly
@@ -88,6 +107,8 @@ export function ParseFile(
   doneCallback: (result: ParsingResult) => void, 
   errorCallback: any,
   invokeProgressFunction?: ((linesCount: number, actualLine: number) => void) | undefined) {
+
+    REPLACED_REFS = {};
 
     // if no progress should be shown, it is not necessary to get the line count of the file at first
     if (!invokeProgressFunction) {
@@ -122,9 +143,22 @@ function ExecuteParseFile(
     let lineNumber = 1;
     let yamlOptions: string | object | undefined = {};
 
+    let ignoreMaxLineLength = false;
+    let excludeParsedLinesFromStats = false;
+    let replaceIdentifiersWithUUIDs = false;
+
     try{
         yamlOptions = yaml.safeLoad(parsingOptions);
         SetParsingOptions(yamlOptions);
+        if (yamlOptions) {
+            const yamlConfig = JSON.parse(JSON.stringify(yamlOptions)).Config;
+            if (yamlConfig) {
+                const configOptions: any = Object.assign({}, ...yamlConfig);
+                ignoreMaxLineLength = configOptions.IgnoreMaxLineLength.toString() === 'true';
+                excludeParsedLinesFromStats = configOptions.ExcludeParsedLinesFromStats.toString() === 'true';
+                replaceIdentifiersWithUUIDs = configOptions.ReplaceIdentifiersWithUUIDs.toString() === 'true';
+            }
+        }
     }
     catch(e) {
         errorCallback(e);
@@ -155,7 +189,7 @@ function ExecuteParseFile(
 
     lr.on('line', function (line: any) {
         lr.pause();
-        ProcessNewLine(lastLevel, lineNumber, line, nextLine);
+        ProcessNewLine(lastLevel, lineNumber, line, nextLine, replaceIdentifiersWithUUIDs, ignoreMaxLineLength);
     });
     
     lr.on('end', function () {
@@ -163,7 +197,7 @@ function ExecuteParseFile(
         ResetProcessing();
 
         // All lines are read, file is closed now.
-        doneCallback(new ParsingResult(result, stats));
+        doneCallback(new ParsingResult(result, stats, excludeParsedLinesFromStats));
     });
   }
 
@@ -173,18 +207,22 @@ function ExecuteParseFile(
  * @param lineNumber line number
  * @param line line content
  * @param nextLine function to invoke the processing of the next line
+ * @param replaceIdentifiersWithUUIDs Should ID keys in the GEDCOM be replaced with UUIDs?
+ * @param ignoreMaxLineLength Ignore line length validation
  * @internal
  */
-export function ProcessNewLine(lastLevel: number, lineNumber: number, line: string, nextLine: Function) {
+export function ProcessNewLine(lastLevel: number, lineNumber: number, line: string, nextLine: Function, replaceIdentifiersWithUUIDs?: boolean, ignoreMaxLineLength?: boolean) {
     let actualLine = trimStart(line);
 
-    if (!IsValidLine(actualLine)) {
+    if (!IsValidLine(actualLine, ignoreMaxLineLength)) {
         stats.IncorrectLines.push(new StatisticLine(lineNumber, actualLine));
         nextLine();
         return stats;
     }
 
-    var parsedLine = ParseLine(actualLine, lineNumber, lastLevel);
+    const replacedRefLine = replaceIdentifiersWithUUIDs ? ReplaceRef(actualLine) : actualLine;
+
+    var parsedLine = ParseLine(replacedRefLine, lineNumber, lastLevel);
 
     if (parsedLine === undefined) {
         stats.IncorrectLines.push(new StatisticLine(lineNumber, actualLine));
@@ -194,7 +232,10 @@ export function ProcessNewLine(lastLevel: number, lineNumber: number, line: stri
    
     let processingResult = ProcessLine(parsedLine, lastLevel);
     if (processingResult.Parsed) {
-        stats.ParsedLines.push(new StatisticLine(lineNumber, actualLine));
+        if (stats.ParsedLines) {
+            stats.ParsedLines.push(new StatisticLine(lineNumber, actualLine));
+        }
+        stats.ParsedLineCount++;
     }
     else
     {        
@@ -209,3 +250,29 @@ export function ProcessNewLine(lastLevel: number, lineNumber: number, line: stri
     nextLine(parsedLine);
     return stats;
 }
+
+/**
+ * Replace GEDCOM ID references with UUIDs
+ * @param line Line from a Gedcom file
+ * @returns line with reference ID replaced with a UUID
+ */
+function ReplaceRef(line: string) {
+    const refStartMatch = line.match(/\d+ (@.+@) [A-Z]+$/);
+    const refEndMatch = line.match(/ (@.+@)$/);
+
+    if (refStartMatch) {
+        if (!REPLACED_REFS[refStartMatch[1]]) {
+            REPLACED_REFS[refStartMatch[1]] = uuidv4().toUpperCase();
+        }
+        return line.replace(/@.+@/, `@${REPLACED_REFS[refStartMatch[1]]}@`);
+    }
+
+    if (refEndMatch) {
+        if (!REPLACED_REFS[refEndMatch[1]]) {
+            REPLACED_REFS[refEndMatch[1]] = uuidv4().toUpperCase();
+        }
+        return line.replace(/@.+@/, `@${REPLACED_REFS[refEndMatch[1]]}@`);
+    }
+
+    return line;
+};

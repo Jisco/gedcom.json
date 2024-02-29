@@ -7,7 +7,7 @@
     "build": "tsc --build ./tsconfig.json",
     "clean": "tsc --build ./tsconfig.json --clean",
     "demo:JSON": "ts-node src/console.ts --path 'examples/simpsons.ged'",
-    "demoFile:JSON": "ts-node src/console.ts --path 'examples/simpsons.ged' --out 'test.json'",
+    "demoFile:JSON": "ts-node src/console.ts --path 'examples/simpsons.ged' --out 'test.json' --saveWithStatistics",
     "demoFileWithProgress:JSON": "ts-node src/console.ts --path 'examples/royal92.ged' --out 'test.json' --showProgress",
     "test": "nyc mocha",
     "test:watch": "mocha --watch --watch-files src, tests/**/*.ts",
@@ -42,6 +42,7 @@
     "@types/node": "^14.14.12",
     "@types/object-path": "^0.11.0",
     "@types/yargs": "^15.0.12",
+    "@types/uuid": "9.0.8",
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
@@ -60,6 +61,7 @@
     "line-by-line": "^0.1.6",
     "lodash": "^4.17.21",
     "object-path": "^0.11.8",
+    "uuid": "^9.0.1",
     "yargs": "^16.2.0"
   }
 }
