@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-import { ParseText } from "../../src/ToJSON/parsing/parsing";
+import { ParseText } from '../../src/ToJSON/parsing/parsing';
 
 describe('CollectAs', () => {
-    let testData = `
+  let testData = `
     0 @ID@ WHAT
     1 ATTR1 Hey attribute 1
     1 ATTR2 Hey another attribute
@@ -13,8 +13,8 @@ describe('CollectAs', () => {
     2 ATTR2 Hey a second sub attribute
     0 TRLR`;
 
-    it('Dont Parse DEEP', () => {
-      let options = `
+  it('Dont Parse DEEP', () => {
+    let options = `
       Definition:
       - Tag: WHAT
         CollectAs: Collection
@@ -33,20 +33,19 @@ describe('CollectAs', () => {
             MergeWithLast: WHAT
       `;
 
-      expect(ParseText(testData, options).Object).to.deep.equal({
-          Collection:
-          {
-            Id: '@ID@',
-            Attribute1: 'Hey attribute 1',
-            Attribute2: 'Hey another attribute',
-            SubProp: 'What?!',
-            Attr1: 'Hey an sub attribute',
-          }
-        });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: 'Hey attribute 1',
+        Attribute2: 'Hey another attribute',
+        SubProp: 'What?!',
+        Attr1: 'Hey an sub attribute',
+      },
     });
+  });
 
-    it('Flatten attributes', () => {
-        let options = `
+  it('Flatten attributes', () => {
+    let options = `
         Definition:
           - Tag: WHAT
             CollectAs: Collection
@@ -69,21 +68,20 @@ describe('CollectAs', () => {
                         MergeWithLast: WHAT
         `;
 
-        expect(ParseText(testData, options).Object).to.deep.equal({
-          Collection:
-          {
-            Id: '@ID@',
-            Attribute1: 'Hey attribute 1',
-            Attribute2: 'Hey another attribute',
-            SubProp: 'What?!',
-            Attr1: 'Hey an sub attribute',
-            Deep: [ 'Super Deep too', 'Super Deep']
-          }
-        });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: 'Hey attribute 1',
+        Attribute2: 'Hey another attribute',
+        SubProp: 'What?!',
+        Attr1: 'Hey an sub attribute',
+        Deep: ['Super Deep too', 'Super Deep'],
+      },
     });
+  });
 
-    it('Collect as subitems', () => {
-        let options = `
+  it('Collect as subitems', () => {
+    let options = `
         Definition:
           - Tag: WHAT
             CollectAs: Collection
@@ -105,23 +103,22 @@ describe('CollectAs', () => {
                         MergeWithLast: WHAT
         `;
 
-        expect(ParseText(testData, options).Object).to.deep.equal({
-            Collection:
-            {
-              Id: '@ID@',
-              Attribute1: 'Hey attribute 1',
-              Attribute2: 'Hey another attribute',
-              SubItems: {
-                SubItemId: 'What?!',
-                Attr1: 'Hey an sub attribute'
-              },
-              Deep: [ 'Super Deep too', 'Super Deep']
-            }
-        });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: 'Hey attribute 1',
+        Attribute2: 'Hey another attribute',
+        SubItems: {
+          SubItemId: 'What?!',
+          Attr1: 'Hey an sub attribute',
+        },
+        Deep: ['Super Deep too', 'Super Deep'],
+      },
     });
+  });
 
-    it('Collect merge with last tagged item', () => {
-        let options = `
+  it('Collect merge with last tagged item', () => {
+    let options = `
         Definition:
           - Tag: WHAT
             CollectAs: Collection
@@ -143,24 +140,22 @@ describe('CollectAs', () => {
                         Property: Deep
         `;
 
-        expect(ParseText(testData, options).Object).to.deep.equal({
-            Collection:
-            {
-              Id: '@ID@',
-              Attribute1: 'Hey attribute 1',
-              Attribute2: 'Hey another attribute',
-              SubItems: 
-              {
-                SubItemId: 'What?!',
-                Attr1: 'Hey an sub attribute',
-                Deep: [ 'Super Deep too', 'Super Deep']
-              }
-            }
-        });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: 'Hey attribute 1',
+        Attribute2: 'Hey another attribute',
+        SubItems: {
+          SubItemId: 'What?!',
+          Attr1: 'Hey an sub attribute',
+          Deep: ['Super Deep too', 'Super Deep'],
+        },
+      },
     });
+  });
 
-    it('Create Object and Arrays if needed', () => {
-      let options = `
+  it('Create Object and Arrays if needed', () => {
+    let options = `
       Definition:
         - Tag: WHAT
           CollectAs: Collection
@@ -183,26 +178,25 @@ describe('CollectAs', () => {
                   Property: Attr2
       `;
 
-      expect(ParseText(testData, options).Object).to.deep.equal({
-        Collection: {
-          Id: '@ID@',
-          Attribute1: 'Hey attribute 1',
-          Attribute2: 'Hey another attribute',
-          SubItems: 
-          {
-              SubItemId: 'What?!',
-              Attr1: {
-                Value: 'Hey an sub attribute',
-                Deep: [ 'Super Deep', 'Super Deep too']
-              },
-              Attr2: 'Hey a second sub attribute'
-          }
-        }
-      });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: 'Hey attribute 1',
+        Attribute2: 'Hey another attribute',
+        SubItems: {
+          SubItemId: 'What?!',
+          Attr1: {
+            Value: 'Hey an sub attribute',
+            Deep: ['Super Deep', 'Super Deep too'],
+          },
+          Attr2: 'Hey a second sub attribute',
+        },
+      },
     });
+  });
 
-    it('Collect as single value', () => {
-        let options = `
+  it('Collect as single value', () => {
+    let options = `
         Definition:
           - Tag: WHAT
             CollectAs: Collection
@@ -226,25 +220,23 @@ describe('CollectAs', () => {
                     Property: Attr2
         `;
 
-        expect(ParseText(testData, options).Object).to.deep.equal({
-            Collection:
-            {
-              Id: '@ID@',
-              Attribute1: 'Hey attribute 1',
-              Attribute2: 'Hey another attribute',
-              SubItems: 
-              {
-                  SubItemId: 'What?!',
-                  Attr1: 'Hey an sub attribute',
-                  Deep: [ 'Super Deep too', 'Super Deep'],
-                  Attr2: 'Hey a second sub attribute'
-              }
-            }
-        });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: 'Hey attribute 1',
+        Attribute2: 'Hey another attribute',
+        SubItems: {
+          SubItemId: 'What?!',
+          Attr1: 'Hey an sub attribute',
+          Deep: ['Super Deep too', 'Super Deep'],
+          Attr2: 'Hey a second sub attribute',
+        },
+      },
     });
+  });
 
-    it('Collect as independent single value', () => {
-      let options = `
+  it('Collect as independent single value', () => {
+    let options = `
       Definition:
         - Tag: WHAT
           CollectAs: Collection
@@ -266,26 +258,24 @@ describe('CollectAs', () => {
                       Property: Deep
       `;
 
-      expect(ParseText(testData, options).Object).to.deep.equal({
-          Collection:
-          {
-            Id: '@ID@',
-            Attribute1: 'Hey attribute 1',
-            Attribute2: 'Hey another attribute',
-            SubItems: 
-            {
-                SubItemId: 'What?!',
-                Attr1: {
-                  Attr1Id: 'Hey an sub attribute',
-                  Deep: [ 'Super Deep', 'Super Deep too']
-              }                            
-            } 
-        }
-      });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: 'Hey attribute 1',
+        Attribute2: 'Hey another attribute',
+        SubItems: {
+          SubItemId: 'What?!',
+          Attr1: {
+            Attr1Id: 'Hey an sub attribute',
+            Deep: ['Super Deep', 'Super Deep too'],
+          },
+        },
+      },
     });
+  });
 
-    it('Collect as sub property', () => {
-        let options = `
+  it('Collect as sub property', () => {
+    let options = `
         Definition:
           - Tag: WHAT
             CollectAs: Collection
@@ -297,15 +287,14 @@ describe('CollectAs', () => {
                 Property: Attribute1.Attr2
         `;
 
-        expect(ParseText(testData, options).Object).to.deep.equal({
-            Collection:
-            {
-              Id: '@ID@',
-              Attribute1: {
-                  Attr1: 'Hey attribute 1',
-                  Attr2: 'Hey another attribute'
-              }
-          }
-        });
+    expect(ParseText(testData, options).Object).to.deep.equal({
+      Collection: {
+        Id: '@ID@',
+        Attribute1: {
+          Attr1: 'Hey attribute 1',
+          Attr2: 'Hey another attribute',
+        },
+      },
     });
-})
+  });
+});

@@ -1,0 +1,523 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>gedcom.json</title><meta name="description" content="Documentation for gedcom.json"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">gedcom.json</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>gedcom.json</h2></div><div class="tsd-panel tsd-typography"><a id="md:gedcomjson" class="tsd-anchor"></a><h1><a href="#md:gedcomjson">gedcom.json</a></h1><!-- [![Build Status](https://travis-ci.com/Jisco/gedcom.json.png?branch=master)](https://travis-ci.com/Jisco/gedcom.json) -->
+
+<p><a href="https://codecov.io/gh/Jisco/gedcom.json"><img src="https://codecov.io/gh/Jisco/gedcom.json/branch/master/graph/badge.svg?token=MQ5CNQYFPU" alt="codecov"></a> <a href="https://snyk.io/test/github/Jisco/gedcom.json?targetFile=package.json"><img src="https://snyk.io/test/github/Jisco/gedcom.json/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a></p>
+<p>Live example: <a href="https://codesandbox.io/s/blissful-elbakyan-tofq8?file=/index.html">CodeSandbox</a></p>
+<a id="md:description" class="tsd-anchor"></a><h2><a href="#md:description">Description</a></h2><p>This package can be used to parse a file or a string from gedcom format to an object. The object can be used for further data processing or just to create an JSON file.</p>
+<p>:warning: <strong>Conversion from JSON or JS to GEDCOM is currently under development</strong> :warning:</p>
+<p>A <a href="/options/version551.yaml">predefined yaml configuration file</a> (<a href="https://edge.fscdn.org/assets/img/documents/ged551-5bac5e57fe88dd37df0e153d9c515335.pdf">GEDCOM Version 5.5.1</a>) is already included for parsing the data. This is based on the original long name of the gedcom tags and should reflect the structure as best as possible. It&#39;s used by default if no other configuration is given.</p>
+<p>So this file can be used as a template if the target object should look different.</p>
+<a id="md:why" class="tsd-anchor"></a><h2><a href="#md:why">Why</a></h2><p>This is just a side project to import (and later export) GEDCOM files to another project of myself <a href="https://github.com/Jisco/VisualFamilyTree">Visual Family Tree</a>.</p>
+<p>I am aware that there are already several parsers for the gedcom format. However, I have found few that parse directly into an javascript object and if so, then you have to parse\search this object in order to be able to use it for your own purpose. I want to avoid this parsing and searching by parsing directly to the target format.</p>
+<p><strong>Through this own definition of how the parsing should be done, it is possible to process files or lines that differ from the original GEDCOM format.</strong></p>
+<p>:file_folder: There are 6 example gedcom files available which i found on the internet. I used this files to test against. All files can be found in the <a href="/examples">&quot;examples&quot;</a> subfolder. Next to the gedcom files are the converted json files, which were created with this package.</p>
+<a id="md:how-to" class="tsd-anchor"></a><h2><a href="#md:how-to">How-To</a></h2><a id="md:use" class="tsd-anchor"></a><h3><a href="#md:use">Use</a></h3><a id="md:via-commandline" class="tsd-anchor"></a><h5><a href="#md:via-commandline">Via commandline</a></h5><p>Just run npx ts-node src/console.ts with the wanted flags. Eg if you run &quot;npm run demo:JSON&quot; it will execute &quot;ts-node src/console.ts --path &#39;examples/simpsons.get&#39;&quot; and will print out the Simpsons GEDCOM example file as JSON object in the console. With &quot;npm run demoFile:JSON&quot; it will do the same but prints the JSON object in a &#39;test.json&#39; file.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--onlyStats</td>
+<td>Only print the parsing statistcs to the console</td>
+</tr>
+<tr>
+<td>--opt <em>xxx.yaml</em></td>
+<td>Set the path to the yaml <a href="#md:create-your-own-defintion-file">definition file</a></td>
+</tr>
+<tr>
+<td>--out <em>xxx.json</em></td>
+<td>File path to print into</td>
+</tr>
+<tr>
+<td>--path <em>xxx.ged</em></td>
+<td>Set the path to the GEDCOM file</td>
+</tr>
+<tr>
+<td>--silent</td>
+<td>Don&#39;t print anything to the console</td>
+</tr>
+<tr>
+<td>--showProgress</td>
+<td>Print the progress during processing the file</td>
+</tr>
+</tbody></table>
+<a id="md:via-node-or-js" class="tsd-anchor"></a><h5><a href="#md:via-node-or-js">Via Node or JS</a></h5><p>In your js\ts file you can import the parsing file via</p>
+<pre><code class="language-typescript"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">JsonParsing</span><span class="hl-1">, </span><span class="hl-2">ParsingOptions</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;gedcom.json&#39;</span><span class="hl-1">;</span>
+</code><button>Copy</button></pre>
+<p>Create an new parsing options object.</p>
+<pre><code class="language-typescript"><span class="hl-4">let</span><span class="hl-1"> </span><span class="hl-2">parsingOptions</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">ParsingOptions</span><span class="hl-1">();</span>
+</code><button>Copy</button></pre>
+<p>Then you have to set the path to the gedcom and the config file respectively the gedcom content and the config as string.</p>
+<p>File content:</p>
+<pre><code class="language-typescript"><span class="hl-2">parsingOptions</span><span class="hl-1">.</span><span class="hl-5">SetFilePath</span><span class="hl-1">(</span><span class="hl-3">&#39;examples/simpsons.ged&#39;</span><span class="hl-1">);</span><br/><span class="hl-2">parsingOptions</span><span class="hl-1">.</span><span class="hl-5">SetConfigFile</span><span class="hl-1">(</span><span class="hl-3">&#39;options/version551.yaml&#39;</span><span class="hl-1">); </span><span class="hl-6">// optional! uses options/version551.yaml by default</span>
+</code><button>Copy</button></pre>
+<p>String content:</p>
+<pre><code class="language-typescript"><span class="hl-2">parsingOptions</span><span class="hl-1">.</span><span class="hl-5">SetText</span><span class="hl-1">(</span><span class="hl-3">`</span><br/><span class="hl-3">0 HEAD</span><br/><span class="hl-3">...</span><br/><span class="hl-3">0TRLR</span><br/><span class="hl-3">`</span><span class="hl-1">);</span><br/><span class="hl-2">parsingOptions</span><span class="hl-1">.</span><span class="hl-5">SetConfig</span><span class="hl-1">(</span><span class="hl-3">`</span><br/><span class="hl-3">Definition:</span><br/><span class="hl-3">...</span><br/><span class="hl-3">`</span><span class="hl-1">);</span>
+</code><button>Copy</button></pre>
+<p>Create an new parsing object.</p>
+<pre><code class="language-typescript"><span class="hl-4">let</span><span class="hl-1"> </span><span class="hl-2">parse</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">JsonParsing</span><span class="hl-1">(</span><span class="hl-2">parsingOptions</span><span class="hl-1">);</span>
+</code><button>Copy</button></pre>
+<p>To get the result there two methods for parsing of file or string content. One sync with callbacks and one that returns an promise.</p>
+<p>File content:</p>
+<pre><code class="language-typescript"><span class="hl-6">// async</span><br/><span class="hl-2">parse</span><span class="hl-1">.</span><span class="hl-5">ParseFileAsync</span><span class="hl-1">().</span><span class="hl-5">then</span><span class="hl-1">(</span><span class="hl-2">result</span><span class="hl-1"> </span><span class="hl-4">=&gt;</span><span class="hl-1"> { ... }).</span><span class="hl-5">catch</span><span class="hl-1">(</span><span class="hl-2">e</span><span class="hl-1"> </span><span class="hl-4">=&gt;</span><span class="hl-1"> {...});</span><br/><span class="hl-6">// callbacks because the file is parsed line by line</span><br/><span class="hl-2">parse</span><span class="hl-1">.</span><span class="hl-5">ParseFile</span><span class="hl-1">(</span><span class="hl-2">result</span><span class="hl-1"> </span><span class="hl-4">=&gt;</span><span class="hl-1"> {...}, </span><span class="hl-2">error</span><span class="hl-1"> </span><span class="hl-4">=&gt;</span><span class="hl-1"> {...});</span>
+</code><button>Copy</button></pre>
+<p>String content</p>
+<pre><code class="language-typescript"><span class="hl-6">// async</span><br/><span class="hl-2">parse</span><span class="hl-1">.</span><span class="hl-5">ParseTextAsync</span><span class="hl-1">().</span><span class="hl-5">then</span><span class="hl-1">(</span><span class="hl-2">result</span><span class="hl-1"> </span><span class="hl-4">=&gt;</span><span class="hl-1"> { ... }).</span><span class="hl-5">catch</span><span class="hl-1">(</span><span class="hl-2">e</span><span class="hl-1"> </span><span class="hl-4">=&gt;</span><span class="hl-1"> {...});</span><br/><span class="hl-6">// sync</span><br/><span class="hl-2">parse</span><span class="hl-1">.</span><span class="hl-5">ParseText</span><span class="hl-1">(); </span><span class="hl-6">// returns also the result object</span>
+</code><button>Copy</button></pre>
+<p>The <strong>result</strong> object has two properties: &#39;Object&#39; and &#39;Statistics&#39;.</p>
+<p>The <strong>Object</strong> property contains the javascript object. This can be used **directly **or printed to file via</p>
+<pre><code class="language-typescript"><span class="hl-2">parse</span><span class="hl-1">.</span><span class="hl-5">SaveAs</span><span class="hl-1">(</span><span class="hl-2">result</span><span class="hl-1">.</span><span class="hl-2">Object</span><span class="hl-1">, </span><span class="hl-3">&#39;test.json&#39;</span><span class="hl-1">);</span>
+</code><button>Copy</button></pre>
+<p><strong>Statistics</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LinesCount</td>
+<td>Count of all lines</td>
+</tr>
+<tr>
+<td>ParsedLinesCount</td>
+<td>Count of all lines that has been parsed</td>
+</tr>
+<tr>
+<td>NotParsedLinesCount</td>
+<td>Count of all lines that has <em>NOT</em> been parsed</td>
+</tr>
+<tr>
+<td>NotParsedLinesList</td>
+<td>List of all line numbers of not parsed lines</td>
+</tr>
+<tr>
+<td>NotParsedLinesWithoutGEDCOMTagCount</td>
+<td>Count of all lines that has <em>NOT</em> been parsed because their tag is not defined in the yaml definition file</td>
+</tr>
+<tr>
+<td>IncorrectLinesCount</td>
+<td>Count of all incorrect lines (no tag, too long etc pp)</td>
+</tr>
+<tr>
+<td>IncorrectLines</td>
+<td>Array of object from incorrect lines. Properties: <em>LineNumber</em>, <em>Line</em> and <em>Text</em></td>
+</tr>
+</tbody></table>
+<a id="md:create-your-own-defintion-file" class="tsd-anchor"></a><h3><a href="#md:create-your-own-defintion-file">Create your own defintion file</a></h3><a id="md:structure" class="tsd-anchor"></a><h4><a href="#md:structure">Structure</a></h4><p>The configuration file has to begin with the <strong>Definition</strong> Property. Followed by multiple <a href="#md:tag"><strong>Tag</strong></a> definitions. Each Tag can have different properties including further Tags. It&#39;s possible to do a flat Tags definition list, or to do specific defintions of each Tag beneath another Tag. :laughing:</p>
+<p>When a line with a specific tag is parsed the parser searches the matching <em>Tag</em> defintion.</p>
+<pre><code><span class="hl-7">NAME</span><span class="hl-1"> </span><span class="hl-2">Test</span><span class="hl-1"> /</span><span class="hl-2">Name</span><span class="hl-1">/</span>
+</code><button>Copy</button></pre>
+<p>will search a for an matching <em>Tag</em> defintion in the yaml definition</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NAME</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Name</span>
+</code><button>Copy</button></pre>
+<p>The search will always been executed in the given context of the gedcom file.</p>
+<p>Example:</p>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-2">Abraham_Simpson</span><span class="hl-1">@ </span><span class="hl-7">INDI</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">NAME</span><span class="hl-1"> </span><span class="hl-2">Abraham</span><span class="hl-1"> /</span><span class="hl-2">Simpson</span><span class="hl-1">/</span>
+</code><button>Copy</button></pre>
+<p>Will first look for an defintion of the <em>NAME</em> Tag beneath the <em>INDI</em> Tag.</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">  </span><span class="hl-10">...</span><br/><span class="hl-1">  </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NAME</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Fullname</span>
+</code><button>Copy</button></pre>
+<p>If this is not defined the search continues be going higher in the defintion until it ends by the &#39;<em>global</em>&#39; defintion for the <em>NAME</em> Tag.</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NAME</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Name</span>
+</code><button>Copy</button></pre>
+<p>In this way it is possible to parse the <em>NAME</em> Tag by default with a property name <em>Name</em> but beneath the <em>INDI</em> object it will be parsed as <em>Fullname</em> property.</p>
+<a id="md:tag-definition" class="tsd-anchor"></a><h4><a href="#md:tag-definition">Tag definition</a></h4><p>The most simple defintion of an <em>Tag</em> looks like the following</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NAME</span><span class="hl-1"> </span><span class="hl-6"># Tag name matching the tag in the gedcom file</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Name</span><span class="hl-1"> </span><span class="hl-6"># Name of the target property</span>
+</code><button>Copy</button></pre>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>GEDCOM Line</th>
+<th>JS Property</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 NAME Abraham /Simpson/</td>
+<td>Name: &quot;Abraham /Simpson/&quot;</td>
+</tr>
+</tbody></table>
+<p>But mostly there is no single value (eg property) defined in the gedcom files, the common case is an object in an array of objects</p>
+<p>This will be done via the <em>CollectAs</em> property.</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><span class="hl-1"> </span><span class="hl-6"># Tag name mathing the tag in the gedcom file</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Individuals</span><span class="hl-1"> </span><span class="hl-6"># Name of the target collection property</span><br/><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NAME</span><span class="hl-1"> </span><span class="hl-6"># Tag name matching the tag in the gedcom file</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Name</span><span class="hl-1"> </span><span class="hl-6"># Name of the target property</span>
+</code><button>Copy</button></pre>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>GEDCOM Lines (order matters)</th>
+<th>JS Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0 @Abraham_Simpson@ INDI</td>
+<td><pre>{<br /> Individuals: []<br />}</pre></td>
+</tr>
+<tr>
+<td>1 NAME Abraham /Simpson/</td>
+<td><pre>{<br /> Individuals: [<br/> Name: "Abraham /Simpson/"<br/> ]<br />}</pre></td>
+</tr>
+</tbody></table>
+<p>Extended example of the <em>INDI</em> Tag (all properties will be explained below the example:</p>
+<p>YAML Definition:</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Individuals</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAsArray</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Id</span><br/><span class="hl-1">  </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">    - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NAME</span><br/><span class="hl-1">      </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Fullname</span><br/><span class="hl-1">      </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">        - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">GIVN</span><br/><span class="hl-1">          </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Givenname</span><br/><span class="hl-1">          </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">        - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">SURN</span><br/><span class="hl-1">          </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Surname</span><br/><span class="hl-1">          </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-9">INDI</span>
+</code><button>Copy</button></pre>
+<p>GEDCOM Lines</p>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-2">Abraham_Simpson</span><span class="hl-1">@ </span><span class="hl-7">INDI</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">NAME</span><span class="hl-1"> </span><span class="hl-2">Abraham</span><span class="hl-1"> /</span><span class="hl-2">Simpson</span><span class="hl-1">/</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">GIVN</span><span class="hl-1"> </span><span class="hl-2">Abraham</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">SURN</span><span class="hl-1"> </span><span class="hl-2">Simpson</span>
+</code><button>Copy</button></pre>
+<p>Result</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Individuals</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Id:</span><span class="hl-1"> </span><span class="hl-3">&#39;@Abraham_Simpson@&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">Surname:</span><span class="hl-1"> </span><span class="hl-3">&#39;Simpson&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">Givenname:</span><span class="hl-1"> </span><span class="hl-3">&#39;Abraham&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">Fullname:</span><span class="hl-1"> </span><span class="hl-3">&#39;Abraham /Simpson/&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ];</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:tag-properties" class="tsd-anchor"></a><h4><a href="#md:tag-properties">Tag Properties</a></h4><a id="md:collectas-string" class="tsd-anchor"></a><h5><a href="#md:collectas-string">CollectAs (String)</a></h5><p>Name of the collection for all contained sub-objects. This can be interpretated as an object path if &quot;.&quot; are included.</p>
+<a id="md:collectasarray-boolean" class="tsd-anchor"></a><h5><a href="#md:collectasarray-boolean">CollectAsArray (Boolean)</a></h5><p>Default value is false.</p>
+<p>If set to false or not set the collection is an object if only a single item is in the collection, and an array if more than one object is collect.</p>
+<p>If set to true, the collection will be always an array.</p>
+<p>Example:</p>
+<p>YAML Config:</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Individuals</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Id</span>
+</code><button>Copy</button></pre>
+<p>GEDCOM Lines (only one object)</p>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-2">Abraham_Simpson</span><span class="hl-1">@ </span><span class="hl-7">INDI</span>
+</code><button>Copy</button></pre>
+<p>Result</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Individuals</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">Id</span><span class="hl-1">: </span><span class="hl-3">&#39;@Abraham_Simpson@&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>GEDCOM Lines (two objects) with same config</p>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-2">Abraham_Simpson</span><span class="hl-1">@ </span><span class="hl-7">INDI</span><br/><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-2">Homer_Simpson</span><span class="hl-1">@ </span><span class="hl-7">INDI</span>
+</code><button>Copy</button></pre>
+<p>Result</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Individuals</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Id:</span><span class="hl-1"> </span><span class="hl-3">&#39;@Abraham_Simpson@&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Id:</span><span class="hl-1"> </span><span class="hl-3">&#39;@Homer_Simpson@&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ];</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Set CollectAsArray to true.</p>
+<p>YAML Config:</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Individuals</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAsArray</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Id</span>
+</code><button>Copy</button></pre>
+<p>GEDCOM Lines (only one object)</p>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-2">Abraham_Simpson</span><span class="hl-1">@ </span><span class="hl-7">INDI</span>
+</code><button>Copy</button></pre>
+<p>Result</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Individuals</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Id:</span><span class="hl-1"> </span><span class="hl-3">&#39;@Abraham_Simpson@&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ];</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:convertto" class="tsd-anchor"></a><h5><a href="#md:convertto">ConvertTo</a></h5><p>Long form of <a href="#md:Type">Type</a> property. Allows input of conversion options.</p>
+<a id="md:array" class="tsd-anchor"></a><h6><a href="#md:array">Array</a></h6><p>Optional: Delimiter (default value is &#39;,&#39;)</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Notes</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">:</span><br/><span class="hl-1">      </span><span class="hl-8">Name</span><span class="hl-1">: </span><span class="hl-9">Value</span><br/><span class="hl-1">      </span><span class="hl-8">ConvertTo</span><span class="hl-1">:</span><br/><span class="hl-1">        </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Array</span><br/><span class="hl-1">        </span><span class="hl-8">Delimiter</span><span class="hl-1">: </span><span class="hl-9">&#39;#&#39;</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> </span><span class="hl-7">NOTE</span><span class="hl-1"> </span><span class="hl-7">A</span><span class="hl-1">#</span><span class="hl-7">B</span><span class="hl-1">#</span><span class="hl-7">C</span><span class="hl-1">,</span><span class="hl-7">D</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Notes</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">Value</span><span class="hl-1">: [</span><span class="hl-3">&#39;A&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;B&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;C,D&#39;</span><span class="hl-1">];</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:date" class="tsd-anchor"></a><h6><a href="#md:date">Date</a></h6><p>A detailed explanaition of Date\Time conversions can be found <a href="#md:date-and-time-parsing">here.</a></p>
+<p>Optional:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>About</td>
+<td>About</td>
+</tr>
+<tr>
+<td>And</td>
+<td>And</td>
+</tr>
+<tr>
+<td>After</td>
+<td>After</td>
+</tr>
+<tr>
+<td>Before</td>
+<td>Before</td>
+</tr>
+<tr>
+<td>Between</td>
+<td>Between</td>
+</tr>
+<tr>
+<td>Calculated</td>
+<td>Calculated</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>Calendar</td>
+</tr>
+<tr>
+<td>Estimated</td>
+<td>Estimated</td>
+</tr>
+<tr>
+<td>From</td>
+<td>From</td>
+</tr>
+<tr>
+<td>HasDay</td>
+<td>HasDay</td>
+</tr>
+<tr>
+<td>HasMonth</td>
+<td>HasMonth</td>
+</tr>
+<tr>
+<td>HasYear</td>
+<td>HasYear</td>
+</tr>
+<tr>
+<td>Interpreted</td>
+<td>Interpreted</td>
+</tr>
+<tr>
+<td>Original</td>
+<td>Original</td>
+</tr>
+<tr>
+<td>To</td>
+<td>To</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>Value</td>
+</tr>
+</tbody></table>
+<p>Converts a GEDCOM Date String to a date. Because there a multiple variants possible, it will parse the date into an object with the date(s) as values an different flags. So no information will be lost.</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">DATES</span><br/><span class="hl-1">    </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">DATE</span><br/><span class="hl-1">        </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">        </span><span class="hl-8">ConvertTo</span><span class="hl-1">:</span><br/><span class="hl-1">          </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">          </span><span class="hl-8">From</span><span class="hl-1">: </span><span class="hl-9">Start</span><span class="hl-1"> </span><span class="hl-6"># Property will be &quot;Start&quot; instead the default value &quot;From&quot;</span><br/><span class="hl-1">          </span><span class="hl-8">To</span><span class="hl-1">: </span><span class="hl-9">End</span><span class="hl-1"> </span><span class="hl-6"># Property will be &quot;End&quot; instead the default value &quot;To&quot;</span><br/><span class="hl-1">          </span><span class="hl-8">Original</span><span class="hl-1">: </span><span class="hl-9">Initial</span><span class="hl-1"> </span><span class="hl-6"># Property will be &quot;Initial&quot; instead the default value &quot;Original&quot;</span><br/><span class="hl-1">          </span><span class="hl-8">Value</span><span class="hl-1">: </span><span class="hl-9">JSDate</span><span class="hl-1"> </span><span class="hl-6"># Property will be &quot;JSDate&quot; instead the default value &quot;Value&quot;</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-10">1</span><span class="hl-1">@ </span><span class="hl-7">DATES</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">DATE</span><span class="hl-1"> </span><span class="hl-7">FROM</span><span class="hl-1"> </span><span class="hl-10">4</span><span class="hl-1"> </span><span class="hl-7">FEB</span><span class="hl-1"> </span><span class="hl-10">1980</span><span class="hl-1"> </span><span class="hl-7">TO</span><span class="hl-1"> </span><span class="hl-10">4</span><span class="hl-1"> </span><span class="hl-7">JUN</span><span class="hl-1"> </span><span class="hl-10">1999</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Date</span><span class="hl-1">:</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-11">Start</span><span class="hl-1">:</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-11">JSDate</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1980</span><span class="hl-1">, </span><span class="hl-10">1</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">      </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-11">End</span><span class="hl-1">: {</span><br/><span class="hl-1">      </span><span class="hl-11">JSDate</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1999</span><span class="hl-1">, </span><span class="hl-10">5</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">      </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-11">Initial</span><span class="hl-1">: </span><span class="hl-3">&quot;FROM 4 FEB 1980 TO 4 JUN 1999&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:string" class="tsd-anchor"></a><h6><a href="#md:string">String</a></h6><p>Optional:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NewLineCharacter</td>
+<td>\n</td>
+<td>Defines the new line character</td>
+</tr>
+<tr>
+<td>NewLineIfEmpty</td>
+<td>false</td>
+<td>Defines if a new line is added if the object value is empty</td>
+</tr>
+</tbody></table>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Notes</span><br/><span class="hl-1">    </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">CONC</span><br/><span class="hl-1">        </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Text</span><br/><span class="hl-1">        </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">String</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">CONT</span><br/><span class="hl-1">        </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Text</span><br/><span class="hl-1">        </span><span class="hl-8">ConvertTo</span><span class="hl-1">:</span><br/><span class="hl-1">          </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">String</span><br/><span class="hl-1">          </span><span class="hl-8">NewLineIfEmpty</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1"> </span><span class="hl-6"># all empty CONT values will add a new line</span><br/><span class="hl-1">          </span><span class="hl-8">NewLineCharacter</span><span class="hl-1">: </span><span class="hl-9">&#39; | &#39;</span><span class="hl-1"> </span><span class="hl-6"># value of new line</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-7">N00010</span><span class="hl-1">@ </span><span class="hl-7">NOTE</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONC</span><span class="hl-1"> </span><span class="hl-10">1</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><span class="hl-1"> </span><span class="hl-7">A</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><span class="hl-1"> </span><span class="hl-7">B</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><span class="hl-1"> </span><span class="hl-7">C</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><span class="hl-1"> ...</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Notes</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">Text</span><span class="hl-1">: </span><span class="hl-3">`1 | ABC | ...`</span><span class="hl-1">;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:time" class="tsd-anchor"></a><h6><a href="#md:time">Time</a></h6><p>A detailed explanaition of Date\Time conversions can be found <a href="#md:date-and-time-parsing">here.</a></p>
+<p>Works only in combination with a previous defined explicit date eg <strong>1 JAN 1999</strong>. Will add the time to the date</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">DATES</span><br/><span class="hl-1">    </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">DATE</span><br/><span class="hl-1">        </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">        </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">        </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">          - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">TIME</span><br/><span class="hl-1">            </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Time</span><br/><span class="hl-1">            </span><span class="hl-8">ConvertTo</span><span class="hl-1">:</span><br/><span class="hl-1">              </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Time</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-10">1</span><span class="hl-1">@ </span><span class="hl-7">DATES</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">DATE</span><span class="hl-1"> </span><span class="hl-10">4</span><span class="hl-1"> </span><span class="hl-7">JUN</span><span class="hl-1"> </span><span class="hl-10">1999</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">TIME</span><span class="hl-1"> </span><span class="hl-10">14</span><span class="hl-1">:</span><span class="hl-10">35</span><span class="hl-1">:</span><span class="hl-10">22</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Date</span><span class="hl-1">:</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1999</span><span class="hl-1">, </span><span class="hl-10">5</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">14</span><span class="hl-1">, </span><span class="hl-10">35</span><span class="hl-1"> , </span><span class="hl-10">22</span><span class="hl-1">),	</span><span class="hl-6">// Value is date and time combined</span><br/><span class="hl-1">    </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Original</span><span class="hl-1">: </span><span class="hl-3">&quot;4 JUN 1999&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Time</span><span class="hl-1">: </span><span class="hl-3">&quot;14:35:22&quot;</span><span class="hl-1">  </span><span class="hl-6">// is own property because of TIME has a property defined</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Time has no own property</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">DATES</span><br/><span class="hl-1">    </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">DATE</span><br/><span class="hl-1">        </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">        </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">        </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">          - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">TIME</span><br/><span class="hl-1">            </span><span class="hl-8">ConvertTo</span><span class="hl-1">:</span><br/><span class="hl-1">              </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Time</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-11">Date</span><span class="hl-1">:</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1999</span><span class="hl-1">, </span><span class="hl-10">5</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">14</span><span class="hl-1">, </span><span class="hl-10">35</span><span class="hl-1"> , </span><span class="hl-10">22</span><span class="hl-1">),	</span><span class="hl-6">// Value is date and time combined</span><br/><span class="hl-1">    </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Original</span><span class="hl-1">: </span><span class="hl-3">&quot;4 JUN 1999 14:35:22&quot;</span><span class="hl-1">	</span><span class="hl-6">// date and time combined, because the original time value will else be lost</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:issinglevalue-boolean" class="tsd-anchor"></a><h5><a href="#md:issinglevalue-boolean">IsSingleValue (Boolean)</a></h5><p>Normally if a property value is found twice or more it will be converted to an array of values. With <em>IsSingleValue</em> it is possible to force the last found value to win.</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Note</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> </span><span class="hl-7">NOTE</span><span class="hl-1"> </span><span class="hl-2">Note1</span><br/><span class="hl-10">0</span><span class="hl-1"> </span><span class="hl-7">NOTE</span><span class="hl-1"> </span><span class="hl-2">Note2</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Note</span><span class="hl-1">: [</span><span class="hl-3">&#39;Note1&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;Note2&#39;</span><span class="hl-1">];</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Set IsSingleValue to be &#39;true&#39;;</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Note</span><br/><span class="hl-1">    </span><span class="hl-8">IsSingleValue</span><span class="hl-1">: </span><span class="hl-4">true</span>
+</code><button>Copy</button></pre>
+<p>Result (last value wins):</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Note</span><span class="hl-1">: </span><span class="hl-3">&#39;Note2&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:" class="tsd-anchor"></a><h6><a href="#md:"></a></h6><a id="md:mergewithnext-string" class="tsd-anchor"></a><h5><a href="#md:mergewithnext-string">MergeWithNext (String)</a></h5><p>It&#39;s possible to merge a value with the next object with the given Tag. If no next Tag will be found, the value will be ignored.</p>
+<p>Example:</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">A</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">A</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">B</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Value_B</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">C</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Value_C</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">D</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Value_D</span><br/><span class="hl-1">    </span><span class="hl-8">MergeWithNext</span><span class="hl-1">: </span><span class="hl-9">B</span><span class="hl-1"> </span><span class="hl-6"># merge result with next Tag B</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> </span><span class="hl-7">A</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">D</span><span class="hl-1"> </span><span class="hl-2">Value_Of_D</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">C</span><span class="hl-1"> </span><span class="hl-2">Value_Of_C</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">B</span><span class="hl-1"> </span><span class="hl-2">Value_Of_B</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">A</span><span class="hl-1">: [</span><br/><span class="hl-1">    </span><span class="hl-6">// parsed Tag C</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Value_C:</span><span class="hl-1"> </span><span class="hl-3">&#39;Value_Of_C&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-6">// parsed Tag B merged with Tag D</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Value_B:</span><span class="hl-1"> </span><span class="hl-3">&#39;Value_Of_B&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">Value_D:</span><span class="hl-1"> </span><span class="hl-3">&#39;Value_Of_D&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ];</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:mergewithlast-string-or-boolean" class="tsd-anchor"></a><h5><a href="#md:mergewithlast-string-or-boolean">MergeWithLast (String OR Boolean)</a></h5><p>Same as <a href="#md:mergewithnext">MergeWithNext</a> but in the reversed direction. Can be an string to define a specific Tag or &#39;true&#39; to merge with the last defined object before this object.</p>
+<p>Example (String)</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">A</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">A</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">B</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Value_B</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">C</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Value_C</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">D</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Value_D</span><br/><span class="hl-1">    </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-9">B</span><span class="hl-1"> </span><span class="hl-6"># merge result with last Tag B</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> </span><span class="hl-7">A</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">B</span><span class="hl-1"> </span><span class="hl-2">Value_Of_B</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">D</span><span class="hl-1"> </span><span class="hl-2">Value_Of_D</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">C</span><span class="hl-1"> </span><span class="hl-2">Value_Of_C</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">A</span><span class="hl-1">: [</span><br/><span class="hl-1">    </span><span class="hl-6">// parsed Tag B merged with Tag D</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Value_B:</span><span class="hl-1"> </span><span class="hl-3">&#39;Value_Of_B&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">Value_D:</span><span class="hl-1"> </span><span class="hl-3">&#39;Value_Of_D&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-6">// parsed Tag C</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">Value_C:</span><span class="hl-1"> </span><span class="hl-3">&#39;Value_Of_C&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  ];</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Example (Boolean)</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Id</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Notes</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">CONC</span><br/><span class="hl-1">    </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">CONT</span><br/><span class="hl-1">    </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-4">true</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-7">N00010</span><span class="hl-1">@ </span><span class="hl-7">NOTE</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONC</span><span class="hl-1"> [</span><span class="hl-2">RCKarnes</span><span class="hl-1">.</span><span class="hl-2">ged</span><span class="hl-1">]</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><span class="hl-1"> </span><span class="hl-2">In</span><span class="hl-1"> </span><span class="hl-2">Norse</span><span class="hl-1"> </span><span class="hl-2">mythology</span><span class="hl-1">, </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">god</span><span class="hl-1"> </span><span class="hl-2">Bor</span><span class="hl-1">, </span><span class="hl-2">or</span><span class="hl-1"> </span><span class="hl-2">Borr</span><span class="hl-1"> </span><span class="hl-2">was</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">father</span><span class="hl-1"> </span><span class="hl-4">of</span><span class="hl-1"> </span><span class="hl-2">Odin</span><span class="hl-1">, </span><span class="hl-2">Ve</span><span class="hl-1"> </span><span class="hl-2">an</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONC</span><span class="hl-1"> </span><span class="hl-2">d</span><span class="hl-1"> </span><span class="hl-2">Vili</span><span class="hl-1"> </span><span class="hl-2">by</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">frost</span><span class="hl-1"> </span><span class="hl-2">giantess</span><span class="hl-1"> </span><span class="hl-2">Bestla</span><span class="hl-1">.  </span><span class="hl-2">Bor</span><span class="hl-1"> </span><span class="hl-2">was</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">son</span><span class="hl-1"> </span><span class="hl-4">of</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">giant</span><span class="hl-1"> </span><span class="hl-2">Buri</span><span class="hl-1">.</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">CONT</span><span class="hl-1"> ...</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Notes</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">Id</span><span class="hl-1">: </span><span class="hl-3">&quot;@N00010@&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Text</span><span class="hl-1">: [</span><span class="hl-2">RCKarnes</span><span class="hl-1">.</span><span class="hl-2">ged</span><span class="hl-1">]</span><span class="hl-2">In</span><span class="hl-1"> </span><span class="hl-2">Norse</span><span class="hl-1"> </span><span class="hl-2">mythology</span><span class="hl-1">, </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">god</span><span class="hl-1"> </span><span class="hl-2">Bor</span><span class="hl-1">, </span><span class="hl-2">or</span><span class="hl-1"> </span><span class="hl-2">Borr</span><span class="hl-1"> </span><span class="hl-2">was</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">father</span><span class="hl-1"> </span><span class="hl-4">of</span><span class="hl-1"> </span><span class="hl-2">Odin</span><span class="hl-1">, </span><span class="hl-2">Ve</span><span class="hl-1"> </span><span class="hl-2">and</span><span class="hl-1"> </span><span class="hl-2">Vili</span><span class="hl-1"> </span><span class="hl-2">by</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">frost</span><span class="hl-1"> </span><span class="hl-2">giantess</span><span class="hl-1"> </span><span class="hl-2">Bestla</span><span class="hl-1">.  </span><span class="hl-2">Bor</span><span class="hl-1"> </span><span class="hl-2">was</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">son</span><span class="hl-1"> </span><span class="hl-4">of</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">giant</span><span class="hl-1"> </span><span class="hl-2">Buri</span><span class="hl-1">....</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>:warning: Because the object has no last property (<em>CONC</em> has no defined property) there will be created on property with the name <em>Text</em>.</p>
+<p>Example (Boolean) WITH defined parent property</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Id</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Notes</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">EVEN</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Events</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Name</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">CONC</span><br/><span class="hl-1">    </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-4">true</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-7">N00010</span><span class="hl-1">@ </span><span class="hl-7">NOTE</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">EVEN</span><span class="hl-1"> </span><span class="hl-2">RCKarnes</span><span class="hl-1">-</span><span class="hl-2">RootsWeb</span><span class="hl-1"> &amp; </span><span class="hl-2">John</span><span class="hl-1"> </span><span class="hl-7">D</span><span class="hl-1"> </span><span class="hl-2">Newport</span><span class="hl-1">-</span><span class="hl-2">Ancestry</span><span class="hl-1">.</span><span class="hl-5">com</span><span class="hl-1"> (</span><span class="hl-2">johndnewport</span><span class="hl-1">@</span><span class="hl-2">valornet</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">CONC</span><span class="hl-1"> .</span><span class="hl-2">com</span><span class="hl-1">)</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Notes</span><span class="hl-1">:</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-11">Id</span><span class="hl-1">: </span><span class="hl-3">&quot;@N00010@&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Events</span><span class="hl-1">:</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-11">Name</span><span class="hl-1">: </span><span class="hl-3">&quot;RCKarnes-RootsWeb &amp; John D Newport-Ancestry.com (johndnewport@valornet.com)&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:property-string" class="tsd-anchor"></a><h5><a href="#md:property-string">Property (String)</a></h5><p>Property Name in the object. This can be interpretated as an object path if &quot;.&quot; are included.</p>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-7">ID</span><span class="hl-1">@ </span><span class="hl-7">WHAT</span><br/><span class="hl-10">0</span><span class="hl-1"> </span><span class="hl-7">TRLR</span>
+</code><button>Copy</button></pre>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">WHAT</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Id</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Id</span><span class="hl-1">: </span><span class="hl-3">&#39;ID&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Configuration with &#39;path&#39;:</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">WHAT</span><br/><span class="hl-1">    </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">What.Id</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">What</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">Id</span><span class="hl-1">: </span><span class="hl-3">&#39;ID&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:properties-object" class="tsd-anchor"></a><h5><a href="#md:properties-object">Properties (Object)</a></h5><p>Defines that a Tag definition has specific definitions for following Tags.</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Individuals</span><br/><span class="hl-1">  </span><span class="hl-8">CollectAsArray</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Id</span><br/><span class="hl-1">  </span><span class="hl-8">Properties</span><span class="hl-1">: </span><span class="hl-6"># specifies the NAME Tag</span><br/><span class="hl-1">    - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NAME</span><br/><span class="hl-1">      </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Fullname</span><br/><span class="hl-1">      </span><span class="hl-8">Properties</span><span class="hl-1">: </span><span class="hl-6"># specifies the GIVN and SURN Tag</span><br/><span class="hl-1">        - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">GIVN</span><br/><span class="hl-1">          </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Givenname</span><br/><span class="hl-1">          </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">        - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">SURN</span><br/><span class="hl-1">          </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Surname</span><br/><span class="hl-1">          </span><span class="hl-8">MergeWithLast</span><span class="hl-1">: </span><span class="hl-9">INDI</span>
+</code><button>Copy</button></pre>
+<a id="md:replace-object" class="tsd-anchor"></a><h5><a href="#md:replace-object">Replace (Object)</a></h5><p>Could be used to replace substring in the property value.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Value</td>
+<td>Text to replace</td>
+</tr>
+<tr>
+<td>With</td>
+<td>Text to replace with</td>
+</tr>
+</tbody></table>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Persons</span><br/><span class="hl-1">    </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">RESI</span><br/><span class="hl-1">        </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">          - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">EMAIL</span><br/><span class="hl-1">            </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">EMail</span><br/><span class="hl-1">            </span><span class="hl-8">Replace</span><span class="hl-1">:</span><br/><span class="hl-1">              </span><span class="hl-8">Value</span><span class="hl-1">: </span><span class="hl-9">&#39;@@&#39;</span><span class="hl-1"> </span><span class="hl-6"># replace &#39;@@&#39;</span><br/><span class="hl-1">              </span><span class="hl-8">With</span><span class="hl-1">: </span><span class="hl-9">&#39;@&#39;</span><span class="hl-1"> </span><span class="hl-6"># with a single &#39;@&#39;</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-10">1</span><span class="hl-1">@ </span><span class="hl-7">INDI</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">RESI</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">EMAIL</span><span class="hl-1"> </span><span class="hl-2">email</span><span class="hl-1">@@</span><span class="hl-2">test</span><span class="hl-1">.</span><span class="hl-2">com</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">RESI</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">EMAIL</span><span class="hl-1"> </span><span class="hl-2">anotherEmail</span><span class="hl-1">@@</span><span class="hl-2">test</span><span class="hl-1">.</span><span class="hl-2">com</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Persons</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">EMail</span><span class="hl-1">: [</span><span class="hl-3">&#39;email@test.com&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;anotherEmail@test.com&#39;</span><span class="hl-1">];</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:startwith-string" class="tsd-anchor"></a><h5><a href="#md:startwith-string">StartWith (String)</a></h5><p>Adds the given string at the beginning of the value.</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Persons</span><br/><span class="hl-1">    </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">RESI</span><br/><span class="hl-1">        </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">          - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">EMAIL</span><br/><span class="hl-1">            </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">EMail</span><br/><span class="hl-1">            </span><span class="hl-8">StartWith</span><span class="hl-1">: </span><span class="hl-0">&gt;</span><span class="hl-4">-</span><span class="hl-1"> </span><span class="hl-6"># needed in yaml because the string value &#39;mail:&#39; end with &#39;:&#39;</span><br/><span class="hl-9">              mail:		    # add &#39;mail:&#39; at the beginning of each EMail value</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-10">1</span><span class="hl-1">@ </span><span class="hl-7">INDI</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">RESI</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">EMAIL</span><span class="hl-1"> </span><span class="hl-2">email</span><span class="hl-1">@@</span><span class="hl-2">test</span><span class="hl-1">.</span><span class="hl-2">com</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">RESI</span><br/><span class="hl-10">2</span><span class="hl-1"> </span><span class="hl-7">EMAIL</span><span class="hl-1"> </span><span class="hl-2">anotherEmail</span><span class="hl-1">@@</span><span class="hl-2">test</span><span class="hl-1">.</span><span class="hl-2">com</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Persons</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">EMail</span><span class="hl-1">: [</span><span class="hl-3">&#39;mail:email@@test.com&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;mail:anotherEmail@@test.com&#39;</span><span class="hl-1">];</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:striphtml-boolean" class="tsd-anchor"></a><h5><a href="#md:striphtml-boolean">StripHtml (Boolean)</a></h5><p>Could be used to remove html from property values.</p>
+<pre><code class="language-yaml"><span class="hl-8">Definition</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">INDI</span><br/><span class="hl-1">    </span><span class="hl-8">CollectAs</span><span class="hl-1">: </span><span class="hl-9">Persons</span><br/><span class="hl-1">    </span><span class="hl-8">Properties</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">        </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Note</span><br/><span class="hl-1">        </span><span class="hl-8">StripHtml</span><span class="hl-1">: </span><span class="hl-4">true</span>
+</code><button>Copy</button></pre>
+<pre><code><span class="hl-10">0</span><span class="hl-1"> @</span><span class="hl-10">1</span><span class="hl-1">@ </span><span class="hl-7">INDI</span><br/><span class="hl-10">1</span><span class="hl-1"> </span><span class="hl-7">NOTE</span><span class="hl-1"> &lt;</span><span class="hl-2">p</span><span class="hl-1">&gt;</span><span class="hl-2">Whatever</span><span class="hl-1">&lt;/</span><span class="hl-2">p</span><span class="hl-1">&gt;</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-11">Persons</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-11">Note</span><span class="hl-1">: </span><span class="hl-3">&#39;Whatever&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:tag" class="tsd-anchor"></a><h5><a href="#md:tag">Tag</a></h5><p>Reference to GEDCOM format. This activates parsing of this tag. If a tag that has not been defined occurs when a GEDCOM formatted line is run through, this and all subsequent subordinate lines are ignored.</p>
+<p>Tags must be redefined for each property within the main tag. Any tag can be used and is not tied to a defined GEDCOM tag. :rocket: If you defined it the parser can parse it.</p>
+<a id="md:type" class="tsd-anchor"></a><h5><a href="#md:type">Type</a></h5><p>Short version of <a href="#md:convertto">ConvertTo</a> without options. The default values of the options will be used.</p>
+<pre><code class="language-yaml"><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">CONC</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Text</span><br/><span class="hl-1">  </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">String</span><br/><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">DATE</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">  </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Date</span><br/><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">NOTE</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Time</span><br/><span class="hl-1">  </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Array</span><br/><span class="hl-1">- </span><span class="hl-8">Tag</span><span class="hl-1">: </span><span class="hl-9">TIME</span><br/><span class="hl-1">  </span><span class="hl-8">Property</span><span class="hl-1">: </span><span class="hl-9">Time</span><br/><span class="hl-1">  </span><span class="hl-8">Type</span><span class="hl-1">: </span><span class="hl-9">Time</span>
+</code><button>Copy</button></pre>
+<a id="md:date-and-time-parsing" class="tsd-anchor"></a><h4><a href="#md:date-and-time-parsing">Date and Time Parsing</a></h4><p>Only done if the <a href="#md:type">Type</a> or <a href="#md:convertTo">ConvertTo</a> property is defined. All property names of the parsed object can be changed via configuration.</p>
+<p>Is a single date is not explicit like <strong>1 JAN 1999</strong> it will be interpreted as a <a href="#md:between"><strong>between</strong></a> value. For example <strong>JAN 1999</strong> is a value between <strong>1 JAN 1999</strong> and <strong>31 JAN 1999</strong> and <strong>1999</strong> is a value between <strong>1 JAN 1999</strong> and <strong>31 DEC 1999</strong>.</p>
+<p>Also other date formats are supported.</p>
+<pre><code class="language-yaml"><span class="hl-1">@#</span><span class="hl-9">DGREGORIAN@ 4 FEB 1980</span><span class="hl-1">	</span><span class="hl-6"># gregorian calendar -&gt; standard</span><br/><span class="hl-1">@#</span><span class="hl-9">DJULIAN@ 22 JAN 1980</span><span class="hl-1">		</span><span class="hl-6"># julian calendar</span><br/><span class="hl-1">@#</span><span class="hl-9">DHEBREW@ 17 SHV 5740</span><span class="hl-1">		</span><span class="hl-6"># hebrew calendar</span>
+</code><button>Copy</button></pre>
+<a id="md:from-to" class="tsd-anchor"></a><h6><a href="#md:from-to">From-To</a></h6><p>A date string that define a ranges of dates.</p>
+<pre><code><span class="hl-7">FROM</span><span class="hl-1"> </span><span class="hl-10">4</span><span class="hl-1"> </span><span class="hl-7">FEB</span><span class="hl-1"> </span><span class="hl-10">1980</span><span class="hl-1"> </span><span class="hl-7">TO</span><span class="hl-1"> </span><span class="hl-10">4</span><span class="hl-1"> </span><span class="hl-7">JUN</span><span class="hl-1"> </span><span class="hl-10">1999</span>
+</code><button>Copy</button></pre>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-11">From</span><span class="hl-1">: {</span><br/><span class="hl-1">        </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1980</span><span class="hl-1">, </span><span class="hl-10">1</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">        </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-11">To</span><span class="hl-1">: {</span><br/><span class="hl-1">        </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1999</span><span class="hl-1">, </span><span class="hl-10">5</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">        </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-11">Original</span><span class="hl-1">: </span><span class="hl-3">&quot;FROM 4 FEB 1980 TO 4 JUN 1999&quot;</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:between" class="tsd-anchor"></a><h6><a href="#md:between">Between</a></h6><p>A date string that define a date between a range of dates. Actually the same as with &quot;From-To&quot; but the property names are different.</p>
+<pre><code><span class="hl-7">BETWEEN</span><span class="hl-1"> </span><span class="hl-10">4</span><span class="hl-1"> </span><span class="hl-7">FEB</span><span class="hl-1"> </span><span class="hl-10">1980</span><span class="hl-1"> </span><span class="hl-7">AND</span><span class="hl-1"> </span><span class="hl-10">4</span><span class="hl-1"> </span><span class="hl-7">JUN</span><span class="hl-1"> </span><span class="hl-10">1999</span>
+</code><button>Copy</button></pre>
+<p>Result:</p>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-11">Between</span><span class="hl-1">: {</span><br/><span class="hl-1">        </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1980</span><span class="hl-1">, </span><span class="hl-10">1</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">        </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-11">And</span><span class="hl-1">: {</span><br/><span class="hl-1">        </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1999</span><span class="hl-1">, </span><span class="hl-10">5</span><span class="hl-1">, </span><span class="hl-10">4</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">        </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-11">Original</span><span class="hl-1">: </span><span class="hl-3">&quot;BETWEEN 4 FEB 1980 AND 4 JUN 1999&quot;</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Dates like <strong>JAN 1999</strong> will also be converted to a between value. <strong>JAN 1999</strong> for example is between 01.01.1999 and 01.02.1999</p>
+<a id="md:single-dates" class="tsd-anchor"></a><h6><a href="#md:single-dates">Single Dates</a></h6><p>A single date in the GEDCOM format looks like <strong>20 JAN 1999</strong>.</p>
+<pre><code><span class="hl-10">20</span><span class="hl-1"> </span><span class="hl-7">JAN</span><span class="hl-1"> </span><span class="hl-10">1999</span>
+</code><button>Copy</button></pre>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1999</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">20</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">    </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Original</span><span class="hl-1">: </span><span class="hl-3">&quot;20 JAN 1999&quot;</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>There are different markings for dates. These are optional. For each a new property with the value &#39;true&#39; is added.</p>
+<table>
+<thead>
+<tr>
+<th>Marker</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EST</td>
+<td>Estimated based on an algorithm using some other event date</td>
+<td>EST 20 JAN 1999</td>
+</tr>
+<tr>
+<td>ABT</td>
+<td>About, meaning the date is not exact.</td>
+<td>ABT 20 JAN 1999</td>
+</tr>
+<tr>
+<td>CAL</td>
+<td>Calculated mathematically, for example, from an event date and age.</td>
+<td>CAL 20 JAN 1999</td>
+</tr>
+<tr>
+<td>AFT</td>
+<td>Event happened after the given date.</td>
+<td>AFT 20 JAN 1999</td>
+</tr>
+<tr>
+<td>BEF</td>
+<td>Event happened before the given date.</td>
+<td>BEF 20 JAN 1999</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>Interpreted from knowledge about the associated date phrase included in parentheses. Returns just the text value.</td>
+<td>INT Sometime</td>
+</tr>
+</tbody></table>
+<p>Estimated example (but it&#39;s the same for ABT, CAL, AFT and BEF).</p>
+<pre><code><span class="hl-7">EST</span><span class="hl-1"> </span><span class="hl-10">20</span><span class="hl-1"> </span><span class="hl-7">JAN</span><span class="hl-1"> </span><span class="hl-10">1999</span>
+</code><button>Copy</button></pre>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-5">Date</span><span class="hl-1">(</span><span class="hl-10">1999</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">20</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1">, </span><span class="hl-10">0</span><span class="hl-1"> , </span><span class="hl-10">0</span><span class="hl-1">),</span><br/><span class="hl-1">    </span><span class="hl-11">HasYear</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasMonth</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">HasDay</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Original</span><span class="hl-1">: </span><span class="hl-3">&quot;20 JAN 1999&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Estimated</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Interpreted example</p>
+<pre><code><span class="hl-7">INT</span><span class="hl-1"> </span><span class="hl-2">At</span><span class="hl-1"> </span><span class="hl-2">the</span><span class="hl-1"> </span><span class="hl-2">end</span><span class="hl-1"> </span><span class="hl-4">of</span><span class="hl-1"> </span><span class="hl-10">2020</span>
+</code><button>Copy</button></pre>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-11">Value</span><span class="hl-1">: </span><span class="hl-3">&quot;At the end of 2020&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Original</span><span class="hl-1">: </span><span class="hl-3">&quot;INT At the end of 2020&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-11">Interpreted</span><span class="hl-1">: </span><span class="hl-4">true</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:time-1" class="tsd-anchor"></a><h6><a href="#md:time-1">Time</a></h6><p>It is possible that a subordinate time is specified for a date. These can be summarized.</p>
+<p>But <strong>ONLY</strong> when the date is explicit. Dates with only a year or a combination of month and year, don&#39;t work.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:gedcomjson"><span>gedcom.json</span></a><ul><li><a href="#md:description"><span>Description</span></a></li><li><a href="#md:why"><span>Why</span></a></li><li><a href="#md:how-to"><span>How-<wbr/>To</span></a></li><li><ul><li><a href="#md:use"><span>Use</span></a></li><li><ul><li><ul><li><a href="#md:via-commandline"><span>Via commandline</span></a></li><li><a href="#md:via-node-or-js"><span>Via <wbr/>Node or JS</span></a></li></ul></li></ul></li><li><a href="#md:create-your-own-defintion-file"><span>Create your own defintion file</span></a></li><li><ul><li><a href="#md:structure"><span>Structure</span></a></li><li><a href="#md:tag-definition"><span>Tag definition</span></a></li><li><a href="#md:tag-properties"><span>Tag <wbr/>Properties</span></a></li><li><ul><li><a href="#md:collectas-string"><span>Collect<wbr/>As (<wbr/>String)</span></a></li><li><a href="#md:collectasarray-boolean"><span>Collect<wbr/>As<wbr/>Array (<wbr/>Boolean)</span></a></li><li><a href="#md:convertto"><span>Convert<wbr/>To</span></a></li><li><ul><li><a href="#md:array"><span>Array</span></a></li><li><a href="#md:date"><span>Date</span></a></li><li><a href="#md:string"><span>String</span></a></li><li><a href="#md:time"><span>Time</span></a></li></ul></li><li><a href="#md:issinglevalue-boolean"><span>Is<wbr/>Single<wbr/>Value (<wbr/>Boolean)</span></a></li><li><ul><li><a href="#md:"><span></span></a></li></ul></li><li><a href="#md:mergewithnext-string"><span>Merge<wbr/>With<wbr/>Next (<wbr/>String)</span></a></li><li><a href="#md:mergewithlast-string-or-boolean"><span>Merge<wbr/>With<wbr/>Last (<wbr/>String OR <wbr/>Boolean)</span></a></li><li><a href="#md:property-string"><span>Property (<wbr/>String)</span></a></li><li><a href="#md:properties-object"><span>Properties (<wbr/>Object)</span></a></li><li><a href="#md:replace-object"><span>Replace (<wbr/>Object)</span></a></li><li><a href="#md:startwith-string"><span>Start<wbr/>With (<wbr/>String)</span></a></li><li><a href="#md:striphtml-boolean"><span>Strip<wbr/>Html (<wbr/>Boolean)</span></a></li><li><a href="#md:tag"><span>Tag</span></a></li><li><a href="#md:type"><span>Type</span></a></li></ul></li><li><a href="#md:date-and-time-parsing"><span>Date and <wbr/>Time <wbr/>Parsing</span></a></li><li><ul><li><a href="#md:from-to"><span>From-<wbr/>To</span></a></li><li><a href="#md:between"><span>Between</span></a></li><li><a href="#md:single-dates"><span>Single <wbr/>Dates</span></a></li><li><a href="#md:time-1"><span>Time</span></a></li></ul></li></ul></li></ul></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>gedcom.json</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><div class="tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div></body></html>

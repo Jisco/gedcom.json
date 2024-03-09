@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { ParseText } from "../../src/ToJSON/parsing/parsing";
+import { ParseText } from '../../src/ToJSON/parsing/parsing';
 
 describe('Definitions', () => {
   it('Define all as main objects', () => {
@@ -24,19 +24,18 @@ describe('Definitions', () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-      Individuals:
-      {
-        Id: "@111@",
+      Individuals: {
+        Id: '@111@',
         Changed: {
-          Date: {                                   
-            HasDay: true,                            
-            HasMonth: true,                          
-            HasYear: true,       
-            Original: "11 FEB 2007 15:05:36",   
-            Value: new Date(2007, 1, 11, 15, 5, 36)
-          }                                           
-        }
-      }
+          Date: {
+            HasDay: true,
+            HasMonth: true,
+            HasYear: true,
+            Original: '11 FEB 2007 15:05:36',
+            Value: new Date(2007, 1, 11, 15, 5, 36),
+          },
+        },
+      },
     });
   });
 
@@ -66,19 +65,18 @@ describe('Definitions', () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-      Individuals:
-      {
-        Id: "@111@",
+      Individuals: {
+        Id: '@111@',
         Changed: {
-          ChangedDate: {                                   
-            HasDay: true,                            
-            HasMonth: true,                          
-            HasYear: true,       
-            Original: "11 FEB 2007 15:05:36",   
-            Value: new Date(2007, 1, 11, 15, 5, 36)
-          }                                           
-        }
-      }
+          ChangedDate: {
+            HasDay: true,
+            HasMonth: true,
+            HasYear: true,
+            Original: '11 FEB 2007 15:05:36',
+            Value: new Date(2007, 1, 11, 15, 5, 36),
+          },
+        },
+      },
     });
   });
 
@@ -112,20 +110,19 @@ describe('Definitions', () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-      Individuals:
-      {
-        Id: "@111@",
+      Individuals: {
+        Id: '@111@',
         Changed: {
-          ChangedDate: {                                   
-            HasDay: true,                            
-            HasMonth: true,                          
-            HasYear: true,       
-            Original: "11 FEB 2007",   
-            Time: "15:05:36",
-            Value: new Date(2007, 1, 11, 15, 5, 36)
-          }                                           
-        }
-      }
+          ChangedDate: {
+            HasDay: true,
+            HasMonth: true,
+            HasYear: true,
+            Original: '11 FEB 2007',
+            Time: '15:05:36',
+            Value: new Date(2007, 1, 11, 15, 5, 36),
+          },
+        },
+      },
     });
   });
 
@@ -161,27 +158,26 @@ describe('Definitions', () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-      Individuals:
-      {
-        Id: "@111@",
+      Individuals: {
+        Id: '@111@',
         Changed: {
-          ChangedDate: {                                   
-            HasDay: true,                            
-            HasMonth: true,                          
-            HasYear: true,       
-            Original: "11 FEB 2007",   
-            Time: "15:05:36",
-            Value: new Date(2007, 1, 11, 15, 5, 36)
-          }                                           
-        },        
-        Date: {                                   
-            HasDay: true,                            
-            HasMonth: true,                          
-            HasYear: true,       
-            Original: "12 FEB 2007 11:05:36",
-            Value: new Date(2007, 1, 12, 11, 5, 36)
-          } 
-      }
+          ChangedDate: {
+            HasDay: true,
+            HasMonth: true,
+            HasYear: true,
+            Original: '11 FEB 2007',
+            Time: '15:05:36',
+            Value: new Date(2007, 1, 11, 15, 5, 36),
+          },
+        },
+        Date: {
+          HasDay: true,
+          HasMonth: true,
+          HasYear: true,
+          Original: '12 FEB 2007 11:05:36',
+          Value: new Date(2007, 1, 12, 11, 5, 36),
+        },
+      },
     });
   });
 });

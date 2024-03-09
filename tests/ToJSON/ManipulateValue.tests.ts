@@ -5,36 +5,42 @@ import TagDefinition from '../../src/ToJSON/models/TagDefinition';
 import { AddStartWith, ManipulateValue } from '../../src/ToJSON/processing/manipulateValues';
 
 describe('Mainpulate Values', () => {
-    it('Value is ID as Array', () => {
-        let result = ManipulateValue(new TagDefinition({
-            ConvertTo: new ConvertToArray(",")
-        }), new ParsedLine(0, 0, "TAG", "", "@111@"));
+  it('Value is ID as Array', () => {
+    let result = ManipulateValue(
+      new TagDefinition({
+        ConvertTo: new ConvertToArray(','),
+      }),
+      new ParsedLine(0, 0, 'TAG', '', '@111@')
+    );
 
-        expect(result).to.be.deep.equal([ "@111@" ]);
-    });
+    expect(result).to.be.deep.equal(['@111@']);
+  });
 
-    it('Value is empty', () => {
-        let result = ManipulateValue(new TagDefinition({
-            ConvertTo: new ConvertToArray(",")
-        }), new ParsedLine(0, 0, "TAG", undefined, undefined));
+  it('Value is empty', () => {
+    let result = ManipulateValue(
+      new TagDefinition({
+        ConvertTo: new ConvertToArray(','),
+      }),
+      new ParsedLine(0, 0, 'TAG', undefined, undefined)
+    );
 
-        expect(result).to.be.deep.equal([""]);
-    });
+    expect(result).to.be.deep.equal(['']);
+  });
 });
 
 describe('AddStartWith', () => {
-    it('Start with escaped new line', () => {
-        let result = AddStartWith("\\n", "Text");
-        expect(result).to.be.equal("\nText");
-    });
+  it('Start with escaped new line', () => {
+    let result = AddStartWith('\\n', 'Text');
+    expect(result).to.be.equal('\nText');
+  });
 
-    it('No StartWith', () => {
-        let result = AddStartWith(undefined, "Text");
-        expect(result).to.be.equal("Text");
-    });
+  it('No StartWith', () => {
+    let result = AddStartWith(undefined, 'Text');
+    expect(result).to.be.equal('Text');
+  });
 
-    it('No StartWith and value', () => {
-        let result = AddStartWith(undefined, undefined);
-        expect(result).to.be.equal("");
-    });
+  it('No StartWith and value', () => {
+    let result = AddStartWith(undefined, undefined);
+    expect(result).to.be.equal('');
+  });
 });

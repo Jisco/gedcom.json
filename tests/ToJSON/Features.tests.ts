@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { ParseText } from '../../src/ToJSON/parsing/parsing';
 
-describe("Features", () => {
+describe('Features', () => {
   it('Replace Text', () => {
     let testData = `
     0 @1@ INDI
@@ -26,10 +26,9 @@ describe("Features", () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-        Persons:
-        {
-          EMail: [ 'email@test.com', 'anotherEmail@test.com' ]
-        }
+      Persons: {
+        EMail: ['email@test.com', 'anotherEmail@test.com'],
+      },
     });
   });
 
@@ -58,10 +57,9 @@ describe("Features", () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-        Persons:
-        {
-          EMail: [ 'mail:email@@test.com', 'mail:anotherEmail@@test.com' ]
-        }
+      Persons: {
+        EMail: ['mail:email@@test.com', 'mail:anotherEmail@@test.com'],
+      },
     });
   });
 
@@ -92,11 +90,11 @@ describe("Features", () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-      "Notes": {
-         Id: "@N00010@",
-         Text: '[RCKarnes.ged]$$In Norse mythology, the god Bor, or Borr was the father of Odin, Ve and Vili by the frost giantess Bestla.  Bor was the son of the giant Buri.  In Norse mythology, Buri (also Bri, Bur) was the god formed by the cow Audumla licking the salty ice of Ginnungagap.  He was the father of Bor and grandfather of the Aesir.$$...'
-        }
-     });
+      Notes: {
+        Id: '@N00010@',
+        Text: '[RCKarnes.ged]$$In Norse mythology, the god Bor, or Borr was the father of Odin, Ve and Vili by the frost giantess Bestla.  Bor was the son of the giant Buri.  In Norse mythology, Buri (also Bri, Bur) was the god formed by the cow Audumla licking the salty ice of Ginnungagap.  He was the father of Bor and grandfather of the Aesir.$$...',
+      },
+    });
   });
 
   it('Merge texts over levels', () => {
@@ -119,13 +117,13 @@ describe("Features", () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-      "Notes": {
-         Id: "@N00010@",
-         Events: {
-            Name: "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com",
-          }
-        }
-     });
+      Notes: {
+        Id: '@N00010@',
+        Events: {
+          Name: 'RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com',
+        },
+      },
+    });
   });
 
   it('Replace Text needs Value AND With', () => {
@@ -151,10 +149,9 @@ describe("Features", () => {
     `;
 
     expect(ParseText(testData, options).Object).to.deep.equal({
-        Persons:
-        {
-          EMail: [ 'email@@test.com', 'anotherEmail@@test.com' ]
-        }
+      Persons: {
+        EMail: ['email@@test.com', 'anotherEmail@@test.com'],
+      },
     });
   });
 
@@ -165,7 +162,7 @@ describe("Features", () => {
     0 TRLR`;
 
     let options = (stripHtml: Boolean) => {
-        return `
+      return `
         Definition:
           - Tag: INDI
             CollectAs: Persons
@@ -173,21 +170,19 @@ describe("Features", () => {
               - Tag: NOTE
                 Property: Note
                 StripHtml: ${stripHtml}
-        `
+        `;
     };
 
     expect(ParseText(testData, options(false)).Object).to.deep.equal({
-        Persons:
-        {
-          Note: '<p>Whatever</p>'
-        }
+      Persons: {
+        Note: '<p>Whatever</p>',
+      },
     });
 
     expect(ParseText(testData, options(true)).Object).to.deep.equal({
-        Persons:
-        {
-          Note: 'Whatever'
-        }
+      Persons: {
+        Note: 'Whatever',
+      },
     });
   });
 });
