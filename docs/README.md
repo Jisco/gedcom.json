@@ -6,7 +6,7 @@
 
 ## Description
 
-This package can be used to parse a file or a string from gedcom format to an object. The object can be used for further data processing or just to create an JSON file. 
+This package can be used to parse a file or a string from gedcom format to an object. The object can be used for further data processing or just to create an JSON file.
 
 :warning: **Conversion from JSON or JS to GEDCOM is currently under development** :warning:
 
@@ -22,7 +22,7 @@ I am aware that there are already several parsers for the gedcom format. However
 
 **Through this own definition of how the parsing should be done, it is possible to process files or lines that differ from the original GEDCOM format.**
 
-:file_folder: There are 6 example gedcom files available which i found on the internet. I used this files to test against. All files can be found in the ["examples"](/examples) subfolder.  Next to the gedcom files are the converted json files, which were created with this package.
+:file_folder: There are 6 example gedcom files available which i found on the internet. I used this files to test against. All files can be found in the ["examples"](/examples) subfolder. Next to the gedcom files are the converted json files, which were created with this package.
 
 ## How-To
 
@@ -30,22 +30,22 @@ I am aware that there are already several parsers for the gedcom format. However
 
 ##### Via commandline
 
-Just run npx ts-node src/index.ts  with the wanted flags. Eg if you run "npm run demo:JSON" it will execute "ts-node src/index.ts --path 'examples/simpsons.get'" and will print out the Simpsons GEDCOM examplke file as JSON object in the console. With "npm run demoFile:JSON" it will do the same but prints the JSON object in a 'test.json' file.
+Just run npx ts-node src/index.ts with the wanted flags. Eg if you run "npm run demo:JSON" it will execute "ts-node src/index.ts --path 'examples/simpsons.get'" and will print out the Simpsons GEDCOM example file as JSON object in the console. With "npm run demoFile:JSON" it will do the same but prints the JSON object in a 'test.json' file.
 
-| Flag             | Description                                                  |
-| ---------------- | ------------------------------------------------------------ |
-| --onlyStats      | Only print the parsing statistcs to the console              |
-| --opt *xxx.yaml* | Set the path to the yaml [definition file](#create-your-own-defintion-file) |
-| --out *xxx.json* | File path to print into                                      |
-| --path *xxx.ged* | Set the path to the GEDCOM file                              |
-| --silent         | Don't print anything to the console                          |
+| Flag             | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| --onlyStats      | Only print the parsing statistcs to the console                             |
+| --opt _xxx.yaml_ | Set the path to the yaml [definition file](#create-your-own-defintion-file) |
+| --out _xxx.json_ | File path to print into                                                     |
+| --path _xxx.ged_ | Set the path to the GEDCOM file                                             |
+| --silent         | Don't print anything to the console                                         |
 
 ##### Via Node or JS
 
 In your js\ts file you can import the parsing file via
 
 ```typescript
-import { JsonParsing } from "gedcom.js";
+import { JsonParsing } from 'gedcom.js';
 ```
 
 Create an new parsing object.
@@ -59,19 +59,19 @@ Then you have to set the path to the gedcom and the config file respectively the
 File content:
 
 ```typescript
- parse.SetFilePath("examples/simpsons.ged");
- parse.SetConfigFile("options/version551.yaml");
+parse.SetFilePath('examples/simpsons.ged');
+parse.SetConfigFile('options/version551.yaml');
 ```
 
 String content:
 
 ```typescript
- parse.SetText(`
+parse.SetText(`
 0 HEAD
 ...
 0TRLR
 `);
- parse.SetConfig(`
+parse.SetConfig(`
 Definition:
 ...
 `);
@@ -102,34 +102,34 @@ The **result** object has two properties: 'Object' and 'Statistics'.
 The **Object** property contains the javascript object. This can be used **directly **or printed to file via
 
 ```typescript
-parse.SaveAs(result.Object, "test.json");
+parse.SaveAs(result.Object, 'test.json');
 ```
 
 **Statistics**
 
-| Property                            | Description                                                  |
-| ----------------------------------- | ------------------------------------------------------------ |
-| LinesCount                          | Count of all lines                                           |
-| ParsedLinesCount                    | Count of all lines that has been parsed                      |
-| NotParsedLinesCount                 | Count of all lines that has *NOT* been parsed                |
-| NotParsedLinesList                  | List of all line numbers of not parsed lines                 |
-| NotParsedLinesWithoutGEDCOMTagCount | Count of all lines that has *NOT* been parsed because their tag is not defined in the yaml definition file |
-| IncorrectLinesCount                 | Count of all incorrect lines (no tag, too long etc pp)       |
-| IncorrectLines                      | Array of object from incorrect lines. Properties: *LineNumber*, *Line* and *Text* |
+| Property                            | Description                                                                                                |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| LinesCount                          | Count of all lines                                                                                         |
+| ParsedLinesCount                    | Count of all lines that has been parsed                                                                    |
+| NotParsedLinesCount                 | Count of all lines that has _NOT_ been parsed                                                              |
+| NotParsedLinesList                  | List of all line numbers of not parsed lines                                                               |
+| NotParsedLinesWithoutGEDCOMTagCount | Count of all lines that has _NOT_ been parsed because their tag is not defined in the yaml definition file |
+| IncorrectLinesCount                 | Count of all incorrect lines (no tag, too long etc pp)                                                     |
+| IncorrectLines                      | Array of object from incorrect lines. Properties: _LineNumber_, _Line_ and _Text_                          |
 
 ### Create your own defintion file
 
 #### Structure
 
-The configuration file has to begin with the **Definition** Property.  Followed by multiple [**Tag**](#tag) definitions. Each Tag can have different properties including further Tags.  It's possible to do a flat Tags definition list, or to do specific defintions of each Tag beneath another Tag. :laughing:
+The configuration file has to begin with the **Definition** Property. Followed by multiple [**Tag**](#tag) definitions. Each Tag can have different properties including further Tags. It's possible to do a flat Tags definition list, or to do specific defintions of each Tag beneath another Tag. :laughing:
 
-When a line with a specific tag is parsed the parser searches the matching *Tag* defintion.
+When a line with a specific tag is parsed the parser searches the matching _Tag_ defintion.
 
 ```
 NAME Test /Name/
 ```
 
-will search a for an matching *Tag* defintion in the yaml definition
+will search a for an matching _Tag_ defintion in the yaml definition
 
 ```yaml
 - Tag: NAME
@@ -145,7 +145,7 @@ Example:
 1 NAME Abraham /Simpson/
 ```
 
-Will first look for an defintion of the *NAME* Tag beneath the *INDI* Tag.
+Will first look for an defintion of the _NAME_ Tag beneath the _INDI_ Tag.
 
 ```yaml
 - Tag: INDI
@@ -155,22 +155,22 @@ Will first look for an defintion of the *NAME* Tag beneath the *INDI* Tag.
     Property: Fullname
 ```
 
-If this is not defined the search continues be going higher in the defintion until it ends by the '*global*' defintion for the *NAME* Tag.
+If this is not defined the search continues be going higher in the defintion until it ends by the '_global_' defintion for the _NAME_ Tag.
 
 ```yaml
 - Tag: NAME
   Property: Name
 ```
 
-In this way it is possible to parse the *NAME* Tag by default with a property name *Name* but beneath the *INDI* object it will be parsed as *Fullname* property.
+In this way it is possible to parse the _NAME_ Tag by default with a property name _Name_ but beneath the _INDI_ object it will be parsed as _Fullname_ property.
 
 #### Tag definition
 
-The most simple defintion of an *Tag* looks like the following
+The most simple defintion of an _Tag_ looks like the following
 
 ```yaml
-- Tag: NAME			# Tag name matching the tag in the gedcom file
-  Property: Name	# Name of the target property
+- Tag: NAME # Tag name matching the tag in the gedcom file
+  Property: Name # Name of the target property
 ```
 
 Example:
@@ -181,23 +181,23 @@ Example:
 
 But mostly there is no single value (eg property) defined in the gedcom files, the common case is an object in an array of objects
 
-This will be done via the *CollectAs* property.
+This will be done via the _CollectAs_ property.
 
 ```yaml
-- Tag: INDI					# Tag name mathing the tag in the gedcom file
-  CollectAs: Individuals	# Name of the target collection property
-- Tag: NAME					# Tag name matching the tag in the gedcom file
-  Property: Name			# Name of the target property
+- Tag: INDI # Tag name mathing the tag in the gedcom file
+  CollectAs: Individuals # Name of the target collection property
+- Tag: NAME # Tag name matching the tag in the gedcom file
+  Property: Name # Name of the target property
 ```
 
 Example:
 
-| GEDCOM Lines (order matters) | JS Result                                                    |
-| ---------------------------- | ------------------------------------------------------------ |
-| 0 @Abraham_Simpson@ INDI     | <pre>{<br />  Individuals: []<br />}</pre>                   |
-| 1 NAME Abraham /Simpson/     | <pre>{<br />  Individuals: [<br/>    Name: "Abraham /Simpson/"<br/>  ]<br />}</pre> |
+| GEDCOM Lines (order matters) | JS Result                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------ |
+| 0 @Abraham_Simpson@ INDI     | <pre>{<br /> Individuals: []<br />}</pre>                                      |
+| 1 NAME Abraham /Simpson/     | <pre>{<br /> Individuals: [<br/> Name: "Abraham /Simpson/"<br/> ]<br />}</pre> |
 
-Extended example of the *INDI* Tag (all properties will be explained below the example:
+Extended example of the _INDI_ Tag (all properties will be explained below the example:
 
 YAML Definition:
 
@@ -207,15 +207,15 @@ YAML Definition:
   CollectAsArray: true
   Property: Id
   Properties:
-  - Tag: NAME
-    Property: Fullname
-    Properties:
-    - Tag: GIVN
-      Property: Givenname
-      MergeWithLast: INDI
-    - Tag: SURN
-      Property: Surname
-      MergeWithLast: INDI
+    - Tag: NAME
+      Property: Fullname
+      Properties:
+        - Tag: GIVN
+          Property: Givenname
+          MergeWithLast: INDI
+        - Tag: SURN
+          Property: Surname
+          MergeWithLast: INDI
 ```
 
 GEDCOM Lines
@@ -233,12 +233,12 @@ Result
 {
   Individuals: [
     {
-      Id: "@Abraham_Simpson@",
-      Surname: "Simpson",
-      Givenname: "Abraham",
-      Fullname: "Abraham /Simpson/"
-    }
-  ]
+      Id: '@Abraham_Simpson@',
+      Surname: 'Simpson',
+      Givenname: 'Abraham',
+      Fullname: 'Abraham /Simpson/',
+    },
+  ];
 }
 ```
 
@@ -276,9 +276,8 @@ Result
 
 ```javascript
 {
-  Individuals: 
-  {
-    Id: "@Abraham_Simpson@"
+  Individuals: {
+    Id: '@Abraham_Simpson@';
   }
 }
 ```
@@ -294,15 +293,14 @@ Result
 
 ```javascript
 {
-  Individuals: 
-  [
+  Individuals: [
     {
-      Id: "@Abraham_Simpson@"
+      Id: '@Abraham_Simpson@',
     },
     {
-      Id: "@Homer_Simpson@"
-    }
-  ]
+      Id: '@Homer_Simpson@',
+    },
+  ];
 }
 ```
 
@@ -327,12 +325,11 @@ Result
 
 ```javascript
 {
-  Individuals: 
-  [
+  Individuals: [
     {
-      Id: "@Abraham_Simpson@"
-    }
-  ]
+      Id: '@Abraham_Simpson@',
+    },
+  ];
 }
 ```
 
@@ -345,14 +342,14 @@ Long form of [Type](#Type) property. Allows input of conversion options.
 Optional: Delimiter (default value is ',')
 
 ```yaml
- Definition:
- - Tag: NOTE
-   CollectAs: Notes
-   Property: 
-     Name: Value
-     ConvertTo:
-       Type: Array
-       Delimiter: "#"
+Definition:
+  - Tag: NOTE
+    CollectAs: Notes
+    Property:
+      Name: Value
+      ConvertTo:
+        Type: Array
+        Delimiter: '#'
 ```
 
 ```
@@ -363,9 +360,8 @@ Result:
 
 ```javascript
 {
-  Notes:
-  {
-    Value: [ "A", "B", "C,D" ]
+  Notes: {
+    Value: ['A', 'B', 'C,D'];
   }
 }
 ```
@@ -399,16 +395,16 @@ Converts a GEDCOM Date String to a date. Because there a multiple variants possi
 
 ```yaml
 Definition:
-- Tag: DATES
-  Properties:
-  - Tag: DATE
-    Property: Date
-    ConvertTo: 
-      Type: Date
-      From: Start		# Property will be "Start" instead the default value "From"
-      To: End		    # Property will be "End" instead the default value "To"
-      Original: Initial	# Property will be "Initial" instead the default value "Original"
-      Value: JSDate		# Property will be "JSDate" instead the default value "Value"
+  - Tag: DATES
+    Properties:
+      - Tag: DATE
+        Property: Date
+        ConvertTo:
+          Type: Date
+          From: Start # Property will be "Start" instead the default value "From"
+          To: End # Property will be "End" instead the default value "To"
+          Original: Initial # Property will be "Initial" instead the default value "Original"
+          Value: JSDate # Property will be "JSDate" instead the default value "Value"
 ```
 
 ```
@@ -422,7 +418,7 @@ Result:
 {
   Date:
   {
-    Start: 
+    Start:
     {
       JSDate: new Date(1980, 1, 4, 0, 0 , 0),
       HasYear: true,
@@ -451,18 +447,18 @@ Optional:
 
 ```yaml
 Definition:
-- Tag: NOTE
-  CollectAs: Notes
-  Properties:
-  - Tag: CONC
-    Property: Text   
-    Type: String 
-  - Tag: CONT
-    Property: Text
-    ConvertTo:
-      Type: String
-      NewLineIfEmpty: true		# all empty CONT values will add a new line
-      NewLineCharacter: " | "   # value of new line
+  - Tag: NOTE
+    CollectAs: Notes
+    Properties:
+      - Tag: CONC
+        Property: Text
+        Type: String
+      - Tag: CONT
+        Property: Text
+        ConvertTo:
+          Type: String
+          NewLineIfEmpty: true # all empty CONT values will add a new line
+          NewLineCharacter: ' | ' # value of new line
 ```
 
 ```
@@ -480,9 +476,8 @@ Result:
 
 ```javascript
 {
-  Notes:
-  {
-    Text: `1 | ABC | ...`
+  Notes: {
+    Text: `1 | ABC | ...`;
   }
 }
 ```
@@ -495,16 +490,16 @@ Works only in combination with a previous defined explicit date eg **1 JAN 1999*
 
 ```yaml
 Definition:
-- Tag: DATES
-  Properties:
-  - Tag: DATE
-    Property: Date
-    Type: Date
+  - Tag: DATES
     Properties:
-    - Tag: TIME
-      Property: Time
-      ConvertTo:
-        Type: Time
+      - Tag: DATE
+        Property: Date
+        Type: Date
+        Properties:
+          - Tag: TIME
+            Property: Time
+            ConvertTo:
+              Type: Time
 ```
 
 ```
@@ -533,15 +528,15 @@ Time has no own property
 
 ```yaml
 Definition:
-- Tag: DATES
-  Properties:
-  - Tag: DATE
-    Property: Date
-    Type: Date
+  - Tag: DATES
     Properties:
-    - Tag: TIME
-      ConvertTo:
-        Type: Time
+      - Tag: DATE
+        Property: Date
+        Type: Date
+        Properties:
+          - Tag: TIME
+            ConvertTo:
+              Type: Time
 ```
 
 Result:
@@ -554,19 +549,19 @@ Date:
     HasYear: true,
     HasMonth: true,
     HasDay: true,
-    Original: "4 JUN 1999 14:35:22"	// date and time combined, because the original time value will else be lost	 
+    Original: "4 JUN 1999 14:35:22"	// date and time combined, because the original time value will else be lost
   }
 }
 ```
 
 ##### IsSingleValue (Boolean)
 
-Normally if a property value is found twice or more it will be converted to an array of values. With *IsSingleValue* it is possible to force the last found value to win.
+Normally if a property value is found twice or more it will be converted to an array of values. With _IsSingleValue_ it is possible to force the last found value to win.
 
 ```yaml
- Definition:
- - Tag: NOTE
-   Property: Note
+Definition:
+  - Tag: NOTE
+    Property: Note
 ```
 
 ```
@@ -578,28 +573,28 @@ Result:
 
 ```javascript
 {
-    Note: [ "Note1", "Note2" ]
+  Note: ['Note1', 'Note2'];
 }
 ```
 
 Set IsSingleValue to be 'true';
 
 ```yaml
- Definition:
- - Tag: NOTE
-   Property: Note
-   IsSingleValue: true
+Definition:
+  - Tag: NOTE
+    Property: Note
+    IsSingleValue: true
 ```
 
 Result (last value wins):
 
 ```javascript
 {
-    Note: "Note2"
+  Note: 'Note2';
 }
 ```
 
-###### 
+######
 
 ##### MergeWithNext (String)
 
@@ -608,16 +603,16 @@ It's possible to merge a value with the next object with the given Tag. If no ne
 Example:
 
 ```yaml
- Definition:
- - Tag: A
-   CollectAs: A
- - Tag: B
-   Property: Value_B
- - Tag: C
-   Property: Value_C
- - Tag: D
-   Property: Value_D
-   MergeWithNext: B	# merge result with next Tag B
+Definition:
+  - Tag: A
+    CollectAs: A
+  - Tag: B
+    Property: Value_B
+  - Tag: C
+    Property: Value_C
+  - Tag: D
+    Property: Value_D
+    MergeWithNext: B # merge result with next Tag B
 ```
 
 ```
@@ -631,18 +626,17 @@ Result:
 
 ```javascript
 {
-  A: 
-  [
+  A: [
     // parsed Tag C
     {
-      Value_C: "Value_Of_C"
+      Value_C: 'Value_Of_C',
     },
     // parsed Tag B merged with Tag D
     {
-      Value_B: "Value_Of_B",
-      Value_D: "Value_Of_D"
-    }
-  ]
+      Value_B: 'Value_Of_B',
+      Value_D: 'Value_Of_D',
+    },
+  ];
 }
 ```
 
@@ -653,16 +647,16 @@ Same as [MergeWithNext](#mergewithnext) but in the reversed direction. Can be an
 Example (String)
 
 ```yaml
- Definition:
- - Tag: A
-   CollectAs: A
- - Tag: B
-   Property: Value_B
- - Tag: C
-   Property: Value_C
- - Tag: D
-   Property: Value_D
-   MergeWithLast: B	# merge result with last Tag B
+Definition:
+  - Tag: A
+    CollectAs: A
+  - Tag: B
+    Property: Value_B
+  - Tag: C
+    Property: Value_C
+  - Tag: D
+    Property: Value_D
+    MergeWithLast: B # merge result with last Tag B
 ```
 
 ```
@@ -676,18 +670,17 @@ Result:
 
 ```javascript
 {
-A: 
-  [
+  A: [
     // parsed Tag B merged with Tag D
     {
-      Value_B: "Value_Of_B",
-      Value_D: "Value_Of_D"
-    },        
+      Value_B: 'Value_Of_B',
+      Value_D: 'Value_Of_D',
+    },
     // parsed Tag C
     {
-      Value_C: "Value_Of_C"
+      Value_C: 'Value_Of_C',
     },
-  ]
+  ];
 }
 ```
 
@@ -695,13 +688,13 @@ Example (Boolean)
 
 ```yaml
 Definition:
-- Tag: NOTE
-  Property: Id
-  CollectAs: Notes
-- Tag: CONC
-  MergeWithLast: true
-- Tag: CONT
-  MergeWithLast: true
+  - Tag: NOTE
+    Property: Id
+    CollectAs: Notes
+  - Tag: CONC
+    MergeWithLast: true
+  - Tag: CONT
+    MergeWithLast: true
 ```
 
 ```
@@ -725,20 +718,20 @@ Result:
 }
 ```
 
-:warning: Because the object has no last property (*CONC* has no defined property) there will be created on property with the name *Text*.
+:warning: Because the object has no last property (_CONC_ has no defined property) there will be created on property with the name _Text_.
 
 Example (Boolean) WITH defined parent property
 
 ```yaml
 Definition:
-- Tag: NOTE
-  Property: Id
-  CollectAs: Notes
-- Tag: EVEN
-  CollectAs: Events
-  Property: Name
-- Tag: CONC
-  MergeWithLast: true
+  - Tag: NOTE
+    Property: Id
+    CollectAs: Notes
+  - Tag: EVEN
+    CollectAs: Events
+    Property: Name
+  - Tag: CONC
+    MergeWithLast: true
 ```
 
 ```
@@ -751,10 +744,10 @@ Result:
 
 ```javascript
 {
-  Notes: 
+  Notes:
   {
     Id: "@N00010@",
-    Events: 
+    Events:
     {
       Name: "RCKarnes-RootsWeb & John D Newport-Ancestry.com (johndnewport@valornet.com)",
     }
@@ -773,15 +766,15 @@ Property Name in the object. This can be interpretated as an object path if "." 
 
 ```yaml
 Definition:
-- Tag: WHAT
-  Property: Id
+  - Tag: WHAT
+    Property: Id
 ```
 
 Result:
 
 ```js
 {
-    Id: 'ID'
+  Id: 'ID';
 }
 ```
 
@@ -789,17 +782,16 @@ Configuration with 'path':
 
 ```yaml
 Definition:
-- Tag: WHAT
-  Property: What.Id
+  - Tag: WHAT
+    Property: What.Id
 ```
 
 Result:
 
 ```js
 {
-  What: 
-  {
-    Id: 'ID'
+  What: {
+    Id: 'ID';
   }
 }
 ```
@@ -813,16 +805,16 @@ Defines that a Tag definition has specific definitions for following Tags.
   CollectAs: Individuals
   CollectAsArray: true
   Property: Id
-  Properties:				# specifies the NAME Tag
-  - Tag: NAME
-    Property: Fullname
-    Properties:				# specifies the GIVN and SURN Tag
-    - Tag: GIVN
-      Property: Givenname
-      MergeWithLast: INDI
-    - Tag: SURN
-      Property: Surname
-      MergeWithLast: INDI
+  Properties: # specifies the NAME Tag
+    - Tag: NAME
+      Property: Fullname
+      Properties: # specifies the GIVN and SURN Tag
+        - Tag: GIVN
+          Property: Givenname
+          MergeWithLast: INDI
+        - Tag: SURN
+          Property: Surname
+          MergeWithLast: INDI
 ```
 
 ##### Replace (Object)
@@ -836,16 +828,16 @@ Could be used to replace substring in the property value.
 
 ```yaml
 Definition:
-- Tag: INDI
-  CollectAs: Persons
-  Properties:
-  - Tag: RESI
+  - Tag: INDI
+    CollectAs: Persons
     Properties:
-    - Tag: EMAIL
-      Property: EMail
-      Replace:
-        Value: "@@"		# replace '@@'
-        With: "@"		# with a single '@'
+      - Tag: RESI
+        Properties:
+          - Tag: EMAIL
+            Property: EMail
+            Replace:
+              Value: '@@' # replace '@@'
+              With: '@' # with a single '@'
 ```
 
 ```
@@ -860,9 +852,8 @@ Result:
 
 ```javascript
 {
-  Persons:
-  {
-    EMail: [ 'email@test.com', 'anotherEmail@test.com' ]
+  Persons: {
+    EMail: ['email@test.com', 'anotherEmail@test.com'];
   }
 }
 ```
@@ -873,15 +864,15 @@ Adds the given string at the beginning of the value.
 
 ```yaml
 Definition:
-- Tag: INDI
-  CollectAs: Persons
-  Properties:
-  - Tag: RESI
+  - Tag: INDI
+    CollectAs: Persons
     Properties:
-    - Tag: EMAIL
-      Property: EMail
-      StartWith: >-		# needed in yaml because the string value 'mail:' end with ':'
-        mail:		    # add 'mail:' at the beginning of each EMail value
+      - Tag: RESI
+        Properties:
+          - Tag: EMAIL
+            Property: EMail
+            StartWith: >- # needed in yaml because the string value 'mail:' end with ':'
+              mail:		    # add 'mail:' at the beginning of each EMail value
 ```
 
 ```
@@ -896,9 +887,8 @@ Result:
 
 ```javascript
 {
-  Persons:
-  {
-  EMail: [ 'mail:email@@test.com', 'mail:anotherEmail@@test.com' ]
+  Persons: {
+    EMail: ['mail:email@@test.com', 'mail:anotherEmail@@test.com'];
   }
 }
 ```
@@ -909,12 +899,12 @@ Could be used to remove html from property values.
 
 ```yaml
 Definition:
-- Tag: INDI
-  CollectAs: Persons
-  Properties:
-  - Tag: NOTE
-    Property: Note
-    StripHtml: true
+  - Tag: INDI
+    CollectAs: Persons
+    Properties:
+      - Tag: NOTE
+        Property: Note
+        StripHtml: true
 ```
 
 ```
@@ -926,9 +916,8 @@ Result:
 
 ```javascript
 {
-  Persons: 
-  { 
-    Note: 'Whatever' 
+  Persons: {
+    Note: 'Whatever';
   }
 }
 ```
@@ -937,7 +926,7 @@ Result:
 
 Reference to GEDCOM format. This activates parsing of this tag. If a tag that has not been defined occurs when a GEDCOM formatted line is run through, this and all subsequent subordinate lines are ignored.
 
-Tags must be redefined for each property within the main tag. Any tag can be used and is not tied to a defined GEDCOM tag. :rocket: If you defined it the parser can parse it. 
+Tags must be redefined for each property within the main tag. Any tag can be used and is not tied to a defined GEDCOM tag. :rocket: If you defined it the parser can parse it.
 
 ##### Type
 
@@ -945,8 +934,8 @@ Short version of [ConvertTo](#convertto) without options. The default values of 
 
 ```yaml
 - Tag: CONC
-  Property: Text   
-  Type: String 
+  Property: Text
+  Type: String
 - Tag: DATE
   Property: Date
   Type: Date
@@ -1026,11 +1015,11 @@ Result:
 }
 ```
 
-Dates like **JAN 1999** will also be converted to a between value. **JAN 1999**  for example is between 01.01.1999 and 01.02.1999
+Dates like **JAN 1999** will also be converted to a between value. **JAN 1999** for example is between 01.01.1999 and 01.02.1999
 
- ###### Single Dates
+###### Single Dates
 
-A single date in the GEDCOM format looks like **20 JAN 1999**. 
+A single date in the GEDCOM format looks like **20 JAN 1999**.
 
 ```
 20 JAN 1999
@@ -1048,13 +1037,13 @@ A single date in the GEDCOM format looks like **20 JAN 1999**.
 
 There are different markings for dates. These are optional. For each a new property with the value 'true' is added.
 
-| Marker | Description                                                  | Example         |
-| ------ | ------------------------------------------------------------ | --------------- |
-| EST    | Estimated based on an algorithm using some other event date  | EST 20 JAN 1999 |
-| ABT    | About, meaning the date is not exact.                        | ABT 20 JAN 1999 |
-| CAL    | Calculated mathematically, for example, from an event date and age. | CAL 20 JAN 1999 |
-| AFT    | Event happened after the given date.                         | AFT 20 JAN 1999 |
-| BEF    | Event happened before the given date.                        | BEF 20 JAN 1999 |
+| Marker | Description                                                                                                       | Example         |
+| ------ | ----------------------------------------------------------------------------------------------------------------- | --------------- |
+| EST    | Estimated based on an algorithm using some other event date                                                       | EST 20 JAN 1999 |
+| ABT    | About, meaning the date is not exact.                                                                             | ABT 20 JAN 1999 |
+| CAL    | Calculated mathematically, for example, from an event date and age.                                               | CAL 20 JAN 1999 |
+| AFT    | Event happened after the given date.                                                                              | AFT 20 JAN 1999 |
+| BEF    | Event happened before the given date.                                                                             | BEF 20 JAN 1999 |
 | INT    | Interpreted from knowledge about the associated date phrase included in parentheses. Returns just the text value. | INT Sometime    |
 
 Estimated example (but it's the same for ABT, CAL, AFT and BEF).
