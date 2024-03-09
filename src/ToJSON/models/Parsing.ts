@@ -52,6 +52,7 @@ export default class Parsing {
     return new Promise<ParsingResult>((resolve, reject) => {
       this.ParseFile(
         (r) => resolve(r),
+        /* istanbul ignore next */
         (e: any) => reject(e)
       );
     });
