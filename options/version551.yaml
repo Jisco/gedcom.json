@@ -1,298 +1,305 @@
 Definition:
-- Tag: ABBR
-  Property: Abbreviation
-- Tag: ADDR
-  Property: Address
-- Tag: ADR1
-  Property: Adress1
-- Tag: ADR2
-  Property: Adress2
-- Tag: ADR3
-  Property: Adress3
-- Tag: ADOP
-  Property: Adoption
-- Tag: AFN
-  Property: AncestralFileNumber
-- Tag: AGE
-  Property: Age
-- Tag: AGNC
-  Property: Agency
-- Tag: ALIA
-  Property: Alias
-- Tag: ANCE
-  Property: Ancestors
-- Tag: ANCI
-  Property: AncesInterest
-- Tag: ANUL
-  Property: Annulment
-- Tag: ASSO
-  Property: Associates
-- Tag: AUTH
-  Property: Author
-- Tag: BAPL
-  Property: BaptismLds
-- Tag: BAPM
-  Property: Baptism
-- Tag: BARM
-  Property: BarMitzvah
-- Tag: BASM
-  Property: BasMitzvah
-- Tag: BIRT
-  Property: Birth
-- Tag: BLES
-  Property: Blessing
-- Tag: CALN
-  Property: CallNumber
-- Tag: CAST
-  Property: Caste
-- Tag: CAUS
-  Property: Cause
-- Tag: CENS
-  Property: Census
-- Tag: CHIL
-  Property: Children
-- Tag: BASM
-  Property: BasMitzvah
-- Tag: BURI
-  Property: Burial
-- Tag: CHAN
-  Property: Changed
-- Tag: CHAR
-  Property: Characters
-- Tag: CHR
-  Property: Christening
-- Tag: CHRA
-  Property: AdultChristening
-- Tag: CITY
-  Property: City
-- Tag: CONC
-  MergeWithLast: true
-- Tag: CONF
-  Property: Confirmation
-- Tag: CONL
-  Property: ConfirmationLds
-- Tag: CONT
-  MergeWithLast: true
-  StartWith: \n
-- Tag: COPR
-  Property: Copyright
-- Tag: CORP
-  Property: Corporation
-- Tag: CREM
-  Property: Cremation
-- Tag: CTRY
-  Property: Country
-- Tag: DATA
-  Property: Data
-- Tag: DATE
-  Property: Date
-  Type: Date
-- Tag: DESC
-  Property: Descendants
-- Tag: DESI
-  Property: DescendantInt
-- Tag: DEST
-  Property: Destination
-- Tag: DEAT
-  Property: Death
-- Tag: DIV
-  Property: Divorce
-- Tag: DIVF
-  Property: DivorceFiled
-- Tag: DSCR
-  Property: PhysicalDescription
-- Tag: EDUC
-  Property: Education
-- Tag: EMAIL
-  Property: EMail
-  Replace:
-    Value: "@@"
-    With: "@"
-- Tag: EMIG
-  Property: Emigration
-- Tag: ENDL
-  Property: Endowment
-- Tag: ENGA
-  Property: Engagement
-- Tag: EVEN
-  CollectAs: Events
-  Property: Name
-- Tag: FACT
-  Property: Fact
-- Tag: FAM
-  CollectAs: Relations
-  CollectAsArray: true
-  Property: Id
-- Tag: FAMC
-  Property: Relations
-- Tag: FAMF
-  Property: FamilyFile
-- Tag: FAMS
-  Property: Relations
-- Tag: FAX
-  Property: Fax
-- Tag: FCOM
-  Property: FirstCommunion
-- Tag: FILE
-  Property: File
-- Tag: FONE
-  Property: Phonetic
-- Tag: FORM
-  Property: Format
-- Tag: GRAD
-  Property: Graduation
-- Tag: GEDC
-  CollectAs: Gedcom
-- Tag: HEAD
-  CollectAs: Head
-- Tag: HUSB
-  Property: Husband
-- Tag: INDI
-  CollectAs: Individuals
-  CollectAsArray: true
-  Property: Id
-  Properties:
-  - Tag: NAME
-    Property: Fullname
+  - Tag: ABBR
+    Property: Abbreviation
+  - Tag: ADDR
+    Property: Address
+  - Tag: ADR1
+    Property: Adress1
+  - Tag: ADR2
+    Property: Adress2
+  - Tag: ADR3
+    Property: Adress3
+  - Tag: ADOP
+    Property: Adoption
+  - Tag: AFN
+    Property: AncestralFileNumber
+  - Tag: AGE
+    Property: Age
+  - Tag: AGNC
+    Property: Agency
+  - Tag: ALIA
+    Property: Alias
+  - Tag: ANCE
+    Property: Ancestors
+  - Tag: ANCI
+    Property: AncesInterest
+  - Tag: ANUL
+    Property: Annulment
+  - Tag: ASSO
+    Property: Associates
+  - Tag: AUTH
+    Property: Author
+  - Tag: BAPL
+    Property: BaptismLds
+  - Tag: BAPM
+    Property: Baptism
+  - Tag: BARM
+    Property: BarMitzvah
+  - Tag: BASM
+    Property: BasMitzvah
+  - Tag: BIRT
+    Property: Birth
+  - Tag: BLES
+    Property: Blessing
+  - Tag: CALN
+    Property: CallNumber
+  - Tag: CAST
+    Property: Caste
+  - Tag: CAUS
+    Property: Cause
+  - Tag: CENS
+    Property: Census
+  - Tag: CHIL
+    Property: Children
+  - Tag: BASM
+    Property: BasMitzvah
+  - Tag: BURI
+    Property: Burial
+  - Tag: CHAN
+    Property: Changed
+  - Tag: CHAR
+    Property: Characters
+  - Tag: CHR
+    Property: Christening
+  - Tag: CHRA
+    Property: AdultChristening
+  - Tag: CITY
+    Property: City
+  - Tag: CONC
+    MergeWithLast: true
+  - Tag: CONF
+    Property: Confirmation
+  - Tag: CONL
+    Property: ConfirmationLds
+  - Tag: CONT
+    MergeWithLast: true
+    StartWith: \n
+  - Tag: COPR
+    Property: Copyright
+  - Tag: CORP
+    Property: Corporation
+  - Tag: CREM
+    Property: Cremation
+  - Tag: CTRY
+    Property: Country
+  - Tag: DATA
+    Property: Data
+  - Tag: DATE
+    Property: Date
+    Type: Date
+  - Tag: DESC
+    Property: Descendants
+  - Tag: DESI
+    Property: DescendantInt
+  - Tag: DEST
+    Property: Destination
+  - Tag: DEAT
+    Property: Death
+  - Tag: DIV
+    Property: Divorce
+  - Tag: DIVF
+    Property: DivorceFiled
+  - Tag: DSCR
+    Property: PhysicalDescription
+  - Tag: EDUC
+    Property: Education
+  - Tag: EMAIL
+    Property: EMail
+    Replace:
+      Value: '@@'
+      With: '@'
+  - Tag: EMIG
+    Property: Emigration
+  - Tag: ENDL
+    Property: Endowment
+  - Tag: ENGA
+    Property: Engagement
+  - Tag: EVEN
+    CollectAs: Events
+    Property: Name
     Properties:
-    - Tag: GIVN
-      Property: Givenname
-      MergeWithLast: INDI
-    - Tag: SURN
-      Property: Surname
-      MergeWithLast: INDI
-- Tag: IDNO
-  Property: IdentNumber
-- Tag: IMMI
-  Property: Immigration
-- Tag: LANG
-  Property: Language
-- Tag: LATI
-  Property: Latitude
-- Tag: LONG
-  Property: Longitude
-- Tag: MAP
-  Property: Map
-- Tag: MARB
-  Property: MarriageBanns
-- Tag: MARC
-  Property: MarriageContract
-- Tag: MARL
-  Property: MarriageLicense
-- Tag: MARS
-  Property: MarriageSettlement
-- Tag: MARR
-  Property: Marriage
-- Tag: MEDI
-  Property: Media
-- Tag: NAME
-  Property: Name
-- Tag: NATI
-  Property: Nationality
-- Tag: NATU
-  Property: Naturalization
-- Tag: NCHI
-  Property: ChildrenCount
-- Tag: NICK
-  Property: Nickname
-- Tag: NMR
-  Property: MarriageCount
-- Tag: NOTE
-  Property: Id
-  CollectAs: Notes
-- Tag: NPFX
-  Property: NamePrefix
-- Tag: NSFX
-  Property: NameSuffix
-- Tag: OBJE
-  CollectAs: Object
-- Tag: OCCU
-  Property: Occupation
-- Tag: ORDI
-  Property: Ordianance
-- Tag: ORDN
-  Property: Ordination
-- Tag: PEDI
-  Property: Pedigree
-- Tag: PHON
-  Property: Phone
-- Tag: PLAC
-  Property: Place
-- Tag: POST
-  Property: PostalCode
-- Tag: PROB
-  Property: Probate
-- Tag: PROP
-  Property: Property
-- Tag: PUBL
-  Property: Publication
-- Tag: QUAY
-  Property: QualityOfData
-- Tag: REFN
-  Property: Reference
-- Tag: REPO
-  Property: Id
-  CollectAs: Repositories
-  CollectAsArray: true
-- Tag: RELA
-  Property: Relationship
-- Tag: RELI
-  Property: Religion
-- Tag: RESI
-  Property: Residence
-- Tag: RESN
-  Property: Restriction
-- Tag: RETI
-  Property: Retirement
-- Tag: RFN
-  Property: RecordFileNumber
-- Tag: RIN
-  Property: RecordIdNumber
-- Tag: ROLE
-  Property: Role
-- Tag: ROMN
-  Property: Romanized
-- Tag: SEX
-  Property: Sex
-- Tag: SLGC
-  Property: SealingChild
-- Tag: SLGS
-  Property: SealingSpouse
-- Tag: SOUR
-  Property: Name
-  CollectAs: Source
-- Tag: SPFX
-  Property: SurnamePrefix
-- Tag: SSN
-  Property: SocialSecNumber
-- Tag: STAE
-  Property: State
-- Tag: STAT
-  Property: Status
-- Tag: SUBM
-  CollectAs: Submitter
-  CollectAsArray: true
-  Property: Id
-- Tag: SUBN
-  Property: Submission
-- Tag: TEMP
-  Property: TempFile
-- Tag: TEXT
-  Property: Text
-- Tag: TIME
-  Type: Time
-- Tag: TITL
-  Property: Title
-- Tag: TYPE
-  Property: Type
-- Tag: VERS
-  Property: Version
-- Tag: WIFE
-  Property: Wife
-- Tag: WILL
-  Property: Will
-- Tag: WWW
-  Property: Web
-# not included in version 5.5.1
-- Tag: COMM
-  Property: Comment
+      - Tag: TYPE
+        Property: Type
+        MergeWithLast: EVEN
+      - Tag: PLAC
+        Property: Place
+        MergeWithLast: EVEN
+  - Tag: FACT
+    Property: Fact
+  - Tag: FAM
+    CollectAs: Relations
+    CollectAsArray: true
+    Property: Id
+  - Tag: FAMC
+    Property: Relations
+  - Tag: FAMF
+    Property: FamilyFile
+  - Tag: FAMS
+    Property: Relations
+  - Tag: FAX
+    Property: Fax
+  - Tag: FCOM
+    Property: FirstCommunion
+  - Tag: FILE
+    Property: File
+  - Tag: FONE
+    Property: Phonetic
+  - Tag: FORM
+    Property: Format
+  - Tag: GRAD
+    Property: Graduation
+  - Tag: GEDC
+    CollectAs: Gedcom
+  - Tag: HEAD
+    CollectAs: Head
+  - Tag: HUSB
+    Property: Husband
+  - Tag: INDI
+    CollectAs: Individuals
+    CollectAsArray: true
+    Property: Id
+    Properties:
+      - Tag: NAME
+        Property: Fullname
+        Properties:
+          - Tag: GIVN
+            Property: Givenname
+            MergeWithLast: INDI
+          - Tag: SURN
+            Property: Surname
+            MergeWithLast: INDI
+  - Tag: IDNO
+    Property: IdentNumber
+  - Tag: IMMI
+    Property: Immigration
+  - Tag: LANG
+    Property: Language
+  - Tag: LATI
+    Property: Latitude
+  - Tag: LONG
+    Property: Longitude
+  - Tag: MAP
+    Property: Map
+  - Tag: MARB
+    Property: MarriageBanns
+  - Tag: MARC
+    Property: MarriageContract
+  - Tag: MARL
+    Property: MarriageLicense
+  - Tag: MARS
+    Property: MarriageSettlement
+  - Tag: MARR
+    Property: Marriage
+  - Tag: MEDI
+    Property: Media
+  - Tag: NAME
+    Property: Name
+  - Tag: NATI
+    Property: Nationality
+  - Tag: NATU
+    Property: Naturalization
+  - Tag: NCHI
+    Property: ChildrenCount
+  - Tag: NICK
+    Property: Nickname
+  - Tag: NMR
+    Property: MarriageCount
+  - Tag: NOTE
+    Property: Id
+    CollectAs: Notes
+  - Tag: NPFX
+    Property: NamePrefix
+  - Tag: NSFX
+    Property: NameSuffix
+  - Tag: OBJE
+    CollectAs: Object
+  - Tag: OCCU
+    Property: Occupation
+  - Tag: ORDI
+    Property: Ordianance
+  - Tag: ORDN
+    Property: Ordination
+  - Tag: PEDI
+    Property: Pedigree
+  - Tag: PHON
+    Property: Phone
+  - Tag: PLAC
+    Property: Place
+  - Tag: POST
+    Property: PostalCode
+  - Tag: PROB
+    Property: Probate
+  - Tag: PROP
+    Property: Property
+  - Tag: PUBL
+    Property: Publication
+  - Tag: QUAY
+    Property: QualityOfData
+  - Tag: REFN
+    Property: Reference
+  - Tag: REPO
+    Property: Id
+    CollectAs: Repositories
+    CollectAsArray: true
+  - Tag: RELA
+    Property: Relationship
+  - Tag: RELI
+    Property: Religion
+  - Tag: RESI
+    Property: Residence
+  - Tag: RESN
+    Property: Restriction
+  - Tag: RETI
+    Property: Retirement
+  - Tag: RFN
+    Property: RecordFileNumber
+  - Tag: RIN
+    Property: RecordIdNumber
+  - Tag: ROLE
+    Property: Role
+  - Tag: ROMN
+    Property: Romanized
+  - Tag: SEX
+    Property: Sex
+  - Tag: SLGC
+    Property: SealingChild
+  - Tag: SLGS
+    Property: SealingSpouse
+  - Tag: SOUR
+    Property: Name
+    CollectAs: Source
+  - Tag: SPFX
+    Property: SurnamePrefix
+  - Tag: SSN
+    Property: SocialSecNumber
+  - Tag: STAE
+    Property: State
+  - Tag: STAT
+    Property: Status
+  - Tag: SUBM
+    CollectAs: Submitter
+    CollectAsArray: true
+    Property: Id
+  - Tag: SUBN
+    Property: Submission
+  - Tag: TEMP
+    Property: TempFile
+  - Tag: TEXT
+    Property: Text
+  - Tag: TIME
+    Type: Time
+  - Tag: TITL
+    Property: Title
+  - Tag: TYPE
+    Property: Type
+  - Tag: VERS
+    Property: Version
+  - Tag: WIFE
+    Property: Wife
+  - Tag: WILL
+    Property: Will
+  - Tag: WWW
+    Property: Web
+  # not included in version 5.5.1
+  - Tag: COMM
+    Property: Comment
