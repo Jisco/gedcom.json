@@ -13,6 +13,7 @@ import LineParsingResult from '../models/LineParsingResult';
 import ParsingPath from '../models/ParsingPath';
 
 import { ClearDateTimeMergingInfos } from './parseDate';
+import { clone, forEach, includes } from 'lodash';
 
 const eachDeep = require('deepdash/eachDeep');
 let parsingOptions: any;
@@ -32,6 +33,28 @@ export function ResetProcessing() {
 }
 
 export function SetParsingOptions(options: any) {
+  const alwaysMergeTags = filter(options.Definition, (x) => x.AutoMerge);
+
+  forEach(options.Definition, (d) => {
+    if (find(alwaysMergeTags, (x) => x.Tag === d.Tag)) {
+      return;
+    }
+
+    if (!d.Properties) {
+      d.Properties = [];
+    }
+
+    forEach(alwaysMergeTags, (prop) => {
+      if (find(d.Properties, (x) => x.Tag === prop.Tag)) {
+        return;
+      }
+
+      const p = clone(prop);
+      p.MergeWithLast = d.Tag;
+      d.Properties.push(p);
+    });
+  });
+
   parsingOptions = options;
 }
 

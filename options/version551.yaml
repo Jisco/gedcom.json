@@ -87,6 +87,7 @@ Definition:
   - Tag: DATE
     Property: Date
     Type: Date
+    AutoMerge: true
   - Tag: DESC
     Property: Descendants
   - Tag: DESI
@@ -117,13 +118,6 @@ Definition:
   - Tag: EVEN
     CollectAs: Events
     Property: Name
-    Properties:
-      - Tag: TYPE
-        Property: Type
-        MergeWithLast: EVEN
-      - Tag: PLAC
-        Property: Place
-        MergeWithLast: EVEN
   - Tag: FACT
     Property: Fact
   - Tag: FAM
@@ -225,6 +219,7 @@ Definition:
     Property: Phone
   - Tag: PLAC
     Property: Place
+    AutoMerge: true
   - Tag: POST
     Property: PostalCode
   - Tag: PROB
@@ -292,6 +287,7 @@ Definition:
     Property: Title
   - Tag: TYPE
     Property: Type
+    AutoMerge: true
   - Tag: VERS
     Property: Version
   - Tag: WIFE

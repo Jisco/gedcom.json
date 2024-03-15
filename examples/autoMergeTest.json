@@ -1,0 +1,68 @@
+{
+  "Head": {
+    "Source": {
+      "Name": "TEST"
+    }
+  },
+  "Individuals": [
+    {
+      "Id": "@I1@",
+      "Surname": "Doe",
+      "Givenname": "John",
+      "Fullname": "John /Doe/",
+      "Marriage": [
+        {
+          "Place": "London, England",
+          "Date": {
+            "Original": "7 Jul 1912",
+            "HasYear": true,
+            "HasMonth": true,
+            "HasDay": true,
+            "Value": "1912-07-06T23:00:00.000Z"
+          }
+        },
+        {
+          "Place": "Paris, France",
+          "Date": {
+            "Original": "9 Sep 1915",
+            "HasYear": true,
+            "HasMonth": true,
+            "HasDay": true,
+            "Value": "1915-09-08T23:00:00.000Z"
+          }
+        }
+      ],
+      "Divorce": [
+        {
+          "Date": {
+            "Original": "8 Aug 1913",
+            "HasYear": true,
+            "HasMonth": true,
+            "HasDay": true,
+            "Value": "1913-08-07T23:00:00.000Z"
+          }
+        },
+        {
+          "Place": "Berlin, Germany",
+          "Date": {
+            "Original": "10 Sep 1916",
+            "HasYear": true,
+            "HasMonth": true,
+            "HasDay": true,
+            "Value": "1916-09-09T22:00:00.000Z"
+          }
+        }
+      ],
+      "Events": [
+        {
+          "Place": "London, England",
+          "Type": "Census"
+        },
+        {
+          "Place": "Paris, France",
+          "Type": "Employment"
+        }
+      ]
+    }
+  ]
+}

@@ -146,7 +146,8 @@ export function CreateMainObject(objects: ParsingObject[]): MainObject {
 
     let mergeObject = findLast(objectsToSearch, (x) => x.Definition.Tag === obj.Definition.MergeWithLast);
 
-    if (mergeObject) {
+    // prevent automerge with strings
+    if (mergeObject && isObject(mergeObject.Object)) {
       SetOrCreateArray(mergeObject.Object, split(obj.Definition.Path, '.'), obj.Definition, obj.Object);
       remove(objects, (x) => isEqual(x, obj));
     }
