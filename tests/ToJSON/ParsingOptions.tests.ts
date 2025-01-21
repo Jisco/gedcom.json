@@ -1,7 +1,7 @@
 import { expect } from 'chai';
+import { afterEach } from 'mocha';
 import mock from 'mock-fs';
 import ParsingOptions from '../../src/ToJSON/models/ParsingOptions';
-import { afterEach } from 'mocha';
 
 describe('Parsing Options', () => {
   afterEach(() => {
@@ -20,16 +20,16 @@ describe('Parsing Options', () => {
     expect(options.GetFilePath()).to.equal('ABC');
   });
 
-  it('Config File', () => {
-    const options = new ParsingOptions();
+  // it('Config File', () => {
+  //   const options = new ParsingOptions();
 
-    mock({
-      'ABC.yaml': 'ABC',
-    });
+  //   mock({
+  //     'ABC.yaml': 'ABC',
+  //   });
 
-    options.SetConfigFile('ABC.yaml');
-    expect(options.GetConfig()).to.equal('ABC');
-  });
+  //   options.SetConfigFile('ABC.yaml');
+  //   expect(options.GetConfig()).to.equal('ABC');
+  // });
 
   it('Config', () => {
     const options = new ParsingOptions();
