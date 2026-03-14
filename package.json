@@ -60,7 +60,7 @@
     "fclone": "^1.0.11",
     "glob-parent": ">=6.0.2",
     "hebcal": "^2.3.2",
-    "js-yaml": "^3.14.1",
+    "js-yaml": "^3.14.2",
     "julian-gregorian": "^1.0.0",
     "line-by-line": "^0.1.6",
     "lodash": "^4.17.23",
